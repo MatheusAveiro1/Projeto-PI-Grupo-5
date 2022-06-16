@@ -1,0 +1,88 @@
+/*** Reset - CSS ***/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/*** Container ***/
+.container {
+    max-width: 1280px;
+    margin: auto;
+}
+/*****************/
+
+
+/*** Header ***/
+header .contatiner nav {
+    display: flex;
+    flex-direction: column;
+}
+
+header .container nav div {
+    display: flex;
+    flex-direction: row;   
+}
+
+header .container nav .div-menu-1 a img {
+    width: 200px;
+}
+
+header .container nav div ul {
+    display: flex;
+    flex-direction: row;   
+}
+
+/**************/
+
+
+/*** Footer ***/
+
+/**************/
+
+
+/******************* @media ****************************/
+
+@media (min-width: 481px) {
+
+    /*** Header ***/
+
+    /**************/
+
+
+    /*** Footer ***/
+
+    /**************/
+}
+
+
+@media (min-width: 769px) {
+
+    /*** Header ***/
+
+    /**************/
+
+
+    /*** Footer ***/
+
+    /**************/
+}
+
+
+@media (min-width: 1280px) {
+
+    /*** Header ***/
+
+    /**************/
+
+
+    /*** Footer ***/
+
+    /**************/    
+}
+
+/*******************************************************/
+
+
