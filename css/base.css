@@ -18,8 +18,23 @@ body {
     max-width: 1280px;
     margin: auto;
     background-color: #fff;  
+    margin-top: 0;
+}
+
+.div-main-config-padrao {
+    padding-top: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.div-main-config-home {
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 /*****************/
+
+
 
 /*** Header ***/
 header {
