@@ -7,18 +7,27 @@
     font-family: 'Rajdhani', sans-serif;
 }
 
+/*** Body ***/
+body {
+    background-color: #eee;
+}
+/************/
+
 /*** Container ***/
 .container {
     max-width: 1280px;
     margin: auto;
+    background-color: #fff;  
 }
 /*****************/
 
-
 /*** Header ***/
 header {
+    position: fixed;
     border-bottom: 5px solid #FF914D;    
-    box-shadow: 0 0 1em #999; 
+    box-shadow: 0 0 1em #999;
+    width: 100%;
+    background-color: #fff;     
 }
 
 header .container nav {
@@ -229,7 +238,8 @@ header .container nav .div-menu-2 .div-barra-pesquisa .icon-lupa {
     }
 
     header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos:hover {
-        background-color: #eee;
+        /*background-color: #eee;*/
+        border-color: #ff904d;
     }
 
     header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos span {
