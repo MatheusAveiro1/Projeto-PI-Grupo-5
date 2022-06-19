@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TopSales6</title>
+    <link rel="shortcut icon" href="./img/fivicon.ico">
     <!--Fonte / Icons-->    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
@@ -50,21 +51,89 @@
                         <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
                     </div>
                     <div class="div-barra-pesquisa">
-                        <input class="barra-pesquisa" type="text" placeholder="PESQUISE SEU PRODUTO">
-                        <span class="material-icons-outlined icon-lupa">search</span>
+                        <form action="#" method="POST">
+                            <input class="barra-pesquisa" type="text" name="pesquisa-produto" placeholder="PESQUISE SEU PRODUTO">
+                            <span class="material-icons-outlined icon-lupa">search</span>
+                        </form>
                     </div>                    
                 </div>
             </nav>
         </div>
-    </header>
+    </header> 
     
+    
+
     <main>
         <div class="container">
             <div class="div-main-config-padrao">
-                <!--Comece aqui!-->                      
+                <!--Comece aqui!-->
+                
             </div>
         </div>
     </main>
-    
+
+    <footer>
+        <div class="div-footer-config">
+            <div class="div-informacoes">
+                <div class="div-media-pagamento">
+                    <img src="./img/logo.svg" alt="Imagem logo da empresa.">
+                    <div class="div-social">
+                        <ul>
+                            <li><a href="#"><img src="./img/img-facebook.svg" alt="Imagem logo facebook"></a></li>
+                            <li><a href="#"><img src="./img/img-twitter.svg" alt="Imagem logo twitter"></a></li>
+                            <li><a href="#"><img src="./img/img-instagram.svg" alt="Imagem logo instagrm"></a></li>
+                            <li><a href="#"><img src="./img/img-youtube.svg" alt="Imagem logo youtube"></a></li>
+                            <li><a href="#"><img src="./img/img-linkedin.svg" alt="Imagem logo linkedin"></a></li>                            
+                        </ul>
+                    </div>
+                    <div class="div-forma-pagamento">
+                        <h3>Forma de Pagamento</h3>
+                        <img src="./img/boleto.svg" alt="Imagem código de barra.">
+                    </div>
+                </div>
+                <div class="div-fale-conosco-horarios">
+                    <div class="div-fale-conosco">
+                        <h3>Fale conosco</h3>
+                        <p>
+                            <span class="material-icons">phone</span>
+                            (00) 0000-0000
+                        </p>
+                        <p>
+                            <span class="material-icons">email</span>
+                            sac@topsales6.com.br
+                        </p>
+                    </div>
+                    <div class="div-horarios-atendimento">
+                        <h3>Horários de atendimento</h3>
+                        <p>Os atendimentos são realizados de <strong>Seg a Sex das 8h às 18h</strong> para atendimento telefônico.
+                            As respostas envias por e-mail e pela Central de Atendimento são respondidas
+                            de <strong>Seg a Sex 07h às 19h (fique atento a sua caixa de entrada de e-mail)</strong>.</p>
+                    </div>
+                </div>
+                <div class="div-duvidas-institucional">
+                    <div class="div-duvidas">
+                        <h3>Dúvidas</h3>
+                        <p>Para sanar suas dúvidas acesse nossa <strong>Central de Atendimento</strong> 
+                        clicando no botão abaixo e envie sua mensagem.</p>                    
+                        <a href="#">CENTRAL DE ATENDIMENTO</a>
+                        
+                    </div>
+                    <div class="div-institucional">
+                        <h3>Institucional</h3>
+                        <a href="#">Sobre a TopSales6</a>
+                    </div>
+                </div>
+            </div>
+            <div class="div-receber-promocoes">
+                <form action="#">
+                    <input class="" type="email" name="email-enviar-promocao" placeholder="Digite seu E-mail e receba ofertas" required>
+                    <button>Enviar</button>
+                </form>
+            </div>            
+        </div>
+        <div class="div-Copyright">
+            <p>TopSalaes6 © Copyright 2022 - Todos os direitos reservados.</p>
+        </div>
+    </footer>    
 </body>
 </html>
