@@ -1,28 +1,117 @@
 /*@Alisson*/
 
 /*** Main ***/
+.testebackgroud
+{
+    display: flex;
+    border: 2px solid blue;
+    width: 100%;
+    height: 0%;
+    flex-wrap: wrap;
+    color: red;
+}
 
+h1
+{
+    display: flex;
+    justify-content:center;
+    padding-bottom: 1.5%;
+
+}
+
+.listaDaDireita
+{
+border: 2px solid rgb(247, 243, 243);
+width: 80vw;
+}
+
+.itens_do_carrinho
+{
+    padding: 1%;
+    border: 2px solid blue;
+}
+
+.bucador_de_cep
+{
+    padding: 1%;
+    border: 2px solid blue;
+}
+
+.listaDaEsquerda
+{
+    border: 2px solid blue;
+    width: 100%;
+    height: 100px;
+
+}
 /************/
 
 /******************* @media ****************************/
 
 @media (min-width: 481px) {
-    /*** Main ***/
+    /*** Main "TELA DE MOBILE" ***/  
+    .testebackgroud
+    {
+        display: flex;
+        border: 2px solid blue;
+        width: 99%;
+        height: 220px;
+        justify-content: space-between;
+    }
 
+    .listaDaDireita
+{
+border: 2px solid rgb(247, 243, 243);
+width: 60vw;
+}
+
+.listaDaEsquerda
+{
+    border: 2px solid blue;
+    width: 33%;
+
+}
+    
     /************/
 }
 
 
 @media (min-width: 769px) {
-    /*** Main ***/
+    /*** Main "TELA DE TABLET" ***/
+
+    .testebackgroud
+    {
+        border: 2px solid blue;
+
+        width: 99%;
+        height: 220px;
+    }
+
+    h1
+{
+    padding-top: 1%;
+
+}
+
+.listaDaDireita
+{
+border: 2px solid rgb(247, 243, 243);
+width: 60vw;
+}
 
     /************/
 }
 
 
 @media (min-width: 1280px) {
-    /*** Main ***/
-
+    /*** Main   "TELA DE COMPUTADOR" ***/
+    .testebackgroud
+    {
+        border: 2px solid blue;
+        background-color: rgb(236, 226, 226);
+        width: 99%;
+        height: 220px;
+    }
     /************/
 }
 
