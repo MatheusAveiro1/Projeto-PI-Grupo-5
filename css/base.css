@@ -3,13 +3,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: 'Rajdhani', sans-serif;
 }
 
 /*** Body ***/
 body {
-    background-color: #eee;
+    background-color: #fff;
 }
 /************/
 
@@ -28,6 +28,12 @@ body {
 }
 
 .div-main-config-home {
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.div-footer-config {
     padding-top: 50px;
     padding-left: 30px;
     padding-right: 30px;
@@ -74,7 +80,7 @@ header .container nav .div-menu-1 div .btn-hamburger-mobile {
 }
 
 header .container nav .div-menu-1 div .btn-hamburger-mobile span {    
-    font-size: 35px;
+    font-size: 2.188rem;
     font-weight: bold;
     cursor: pointer;
 }
@@ -98,7 +104,7 @@ header .container nav .div-menu-1 .link-carrinho {
 
 header .container nav .div-menu-1 .link-carrinho span{
     color: #000;
-    font-size: 40px; 
+    font-size: 2.5rem; 
     transition: 0.3s;  
 }
 
@@ -108,7 +114,7 @@ header .container nav .div-menu-1 .link-carrinho .img-carrinho:hover{
 
 header .container nav .div-menu-1 .link-carrinho .qt-item-carrinho {
     position: absolute;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
     background-color: #FF914D;
     padding: 2px 5px 2px 5px;
@@ -129,16 +135,16 @@ header .container nav .div-menu-2 .div-barra-pesquisa {
     position: relative;
 }
 
-header .container nav .div-menu-2 .div-barra-pesquisa .barra-pesquisa {
+header .container nav .div-menu-2 .div-barra-pesquisa form .barra-pesquisa {
     width: 100%;
     padding: 10px 10px 10px 20px;
-    font-size: 12px;
+    font-size: 0.75rem;
     background-color: #eee;
     border: none;
     border-radius: 7px;
 }
 
-header .container nav .div-menu-2 .div-barra-pesquisa .icon-lupa {
+header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
     position: absolute;
     right: 10px;
     top: 5px;
@@ -148,7 +154,226 @@ header .container nav .div-menu-2 .div-barra-pesquisa .icon-lupa {
 
 
 /*** Footer ***/
+    footer {
+        border-top: 20px solid #ff914d;
+        background-color: #fff;
+    }
 
+    footer .div-footer-config .div-informacoes {
+        display: flex;
+        flex-direction: column;        
+        align-items: center;
+    }
+
+    footer .div-footer-config .div-informacoes .div-media-pagamento {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    footer .div-footer-config .div-informacoes .div-media-pagamento img {
+        width: 200px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-media-pagamento .div-social {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    footer .div-footer-config .div-informacoes .div-media-pagamento .div-social ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;        
+    }
+
+    footer .div-footer-config .div-informacoes .div-media-pagamento .div-social ul li {
+        list-style-type: none;  
+        transition: 0.3s;      
+    }
+
+    footer .div-footer-config .div-informacoes .div-media-pagamento .div-social ul li:hover {
+        opacity: 0.8;        
+    }
+
+    footer .div-footer-config .div-informacoes .div-media-pagamento .div-social ul li a img {
+        width: 32px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-media-pagamento .div-forma-pagamento {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-media-pagamento .div-forma-pagamento h3 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.063rem;
+    }
+
+    footer .div-footer-config .div-informacoes .div-media-pagamento .div-forma-pagamento img {
+        width: 100px;
+        margin-top: 20px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios {
+        width: 100%;
+    }
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios .div-fale-conosco {        
+        margin-top: 40px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios .div-fale-conosco h3 {
+        font-size: 1.063rem;
+        margin-bottom: 15px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios .div-fale-conosco p {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 0.813rem;
+        margin-top: 5px;
+        color: #333;
+    }
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios .div-fale-conosco p span {
+        margin-right: 5px;
+        color: #000;
+    }
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios .div-horarios-atendimento {
+        margin-top: 30px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios .div-horarios-atendimento h3 {
+        font-size: 1.063rem;
+    }
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios .div-horarios-atendimento p {
+        font-size: 0.813rem;
+        margin-top: 10px;
+        color: #333;
+    }
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios .div-horarios-atendimento p strong {
+        font-size: 0.813rem;        
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional {
+        width: 100%;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional .div-duvidas {
+        margin-top: 40px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional .div-duvidas h3{
+        font-size: 1.063rem;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional .div-duvidas p{
+        margin-top: 10px;
+        font-size: 0.813rem;
+        margin-bottom: 20px;        
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional .div-duvidas p strong{       
+        font-size: 0.813rem;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional .div-duvidas a {
+        background-color: #000;
+        border: 1px solid #000;
+        padding: 7px 15px;
+        border-radius: 15px;       
+        font-size: 0.813rem;
+        color: #fff;
+        text-decoration: none;
+        margin-top: 10px;
+        transition: 0.3s;      
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional .div-duvidas a:hover {
+        background-color: #fff;
+        color: #000;       
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional .div-institucional {
+        margin-top: 33px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional .div-institucional h3 {
+        font-size: 1.063rem;
+        margin-bottom: 10px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional .div-institucional a {        
+        font-size: 0.813rem;
+        text-decoration: none;
+        color: #2980b9;
+        transition: 0.3s;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional .div-institucional a:hover {        
+        color: #1a6699;
+    }
+
+    footer .div-footer-config .div-receber-promocoes {       
+        margin-top: 30px;                
+    }
+
+    footer .div-footer-config .div-receber-promocoes form {        
+        position: relative;        
+    }
+
+    footer .div-footer-config .div-receber-promocoes form input{
+        font-size: 0.75rem;
+        padding: 10px 10px 10px 20px;
+        background-color: #eee;
+        border: none;
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    footer .div-footer-config .div-receber-promocoes form input:focus {
+        box-shadow: 0 0 0 0;
+        outline: 0;
+    }
+
+    footer .div-footer-config .div-receber-promocoes form button{
+        position: absolute;
+        right: 0;
+        padding: 10px;
+        font-size: 0.688rem;
+        border: none;
+        background-color: #ff904d;
+        color: #fff;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    footer .div-footer-config .div-receber-promocoes form button:hover{        
+        background-color: #f78037;        
+    }
+
+    footer .div-Copyright {
+        margin-top: 50px;
+        background-color: #000;  
+        padding: 40px;      
+    }
+
+    footer .div-Copyright p{
+        font-size: 0.75rem;
+        color: #fff;
+        text-align: center;      
+    }
 /**************/
 
 
@@ -162,7 +387,33 @@ header .container nav .div-menu-2 .div-barra-pesquisa .icon-lupa {
 
 
     /*** Footer ***/
+    footer .div-footer-config .div-informacoes .div-media-pagamento {      
+        width: 420px;
+    } 
 
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios {
+        width: 420px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional {
+        width: 420px;
+    }
+    
+    footer .div-footer-config .div-receber-promocoes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;        
+    }
+
+    footer .div-footer-config .div-receber-promocoes form{
+        width: 420px;        
+    }
+
+    footer .div-footer-config .div-receber-promocoes form button{
+        font-size: 0.875rem;
+        padding: 9px;
+        width: 80px;   
+    }
     /**************/
 }
 
@@ -175,7 +426,7 @@ header .container nav .div-menu-2 .div-barra-pesquisa .icon-lupa {
     }
 
     header .container nav .div-menu-1 .link-carrinho span{        
-        font-size: 60px;
+        font-size: 3.75rem;
         padding-top: 8px;
     }
 
@@ -220,7 +471,7 @@ header .container nav .div-menu-2 .div-barra-pesquisa .icon-lupa {
     }
     
     header .container nav .div-menu-1 div .lista-menu li a span{
-        font-size: 50px;
+        font-size: 3.125rem;
         margin-bottom: 8px;
         margin-right: 8px;        
     }
@@ -242,7 +493,7 @@ header .container nav .div-menu-2 .div-barra-pesquisa .icon-lupa {
         align-items: center;
         width: 220px;
         padding: 6px;
-        font-size: 13px;
+        font-size: 0.813rem;
         font-weight: bold;
         color: #000;
         background-color: #fff;
@@ -252,14 +503,13 @@ header .container nav .div-menu-2 .div-barra-pesquisa .icon-lupa {
         transition: 0.3s;
     }
 
-    header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos:hover {
-        /*background-color: #eee;*/
+    header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos:hover {                
         border-color: #ff904d;
     }
 
     header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos span {
         margin-right: 8px;
-        font-size: 20px;
+        font-size: 1.25rem;
         color: #000;
         font-weight: bold;
     }
@@ -278,8 +528,82 @@ header .container nav .div-menu-2 .div-barra-pesquisa .icon-lupa {
 
 
     /*** Footer ***/
+    footer .div-footer-config .div-informacoes {
+        display: flex;
+        flex-direction: row;        
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 
+    footer .div-footer-config .div-informacoes .div-media-pagamento {      
+        width: 480px;
+    } 
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios {
+        width: 480px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional {
+        width: 480px;
+    }
+
+    footer .div-footer-config .div-receber-promocoes {        
+        flex-direction: row;
+        justify-content: center;        
+    }
+
+    footer .div-footer-config .div-receber-promocoes form{
+        width: 480px;        
+    }
     /**************/
+}
+
+
+@media (min-width: 940px) {
+
+    /*** Header ***/
+    
+    /**************/
+
+
+    /*** Footer ***/
+    footer .div-footer-config {
+        padding-top: 10px;        
+    }
+
+    footer .div-footer-config .div-informacoes { 
+        justify-content: space-between;
+    }
+
+    footer .div-footer-config .div-informacoes .div-media-pagamento {      
+        width: 260px;
+    } 
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios {
+        width: 260px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios .div-fale-conosco {
+        margin-top: 58px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional {
+        width: 260px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional .div-duvidas {
+        margin-top: 0;
+    }
+    
+    footer .div-footer-config .div-receber-promocoes form{
+        width: 570px;        
+    }
+
+    footer .div-footer-config .div-receber-promocoes {        
+        justify-content: end;        
+    }
+
+    /**************/    
 }
 
 
@@ -291,7 +615,31 @@ header .container nav .div-menu-2 .div-barra-pesquisa .icon-lupa {
 
 
     /*** Footer ***/
+    footer .div-footer-config {
+        padding-top: 40px;        
+        max-width: 1280px;
+        margin: auto;
+    }
 
+    footer .div-footer-config .div-informacoes .div-media-pagamento {      
+        width: 340px;
+    } 
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios {
+        width: 340px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-fale-conosco-horarios .div-fale-conosco {
+        margin-top: 20px;
+    }
+
+    footer .div-footer-config .div-informacoes .div-duvidas-institucional {
+        width: 340px;
+    }  
+    
+    footer .div-footer-config .div-receber-promocoes form{
+        width: 780px;        
+    }
     /**************/    
 }
 
