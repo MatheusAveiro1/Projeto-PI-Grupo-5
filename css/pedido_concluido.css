@@ -91,6 +91,7 @@ main .boleto .link-gerar-boleto .btn-gerar-boleto {
     cursor: pointer;
     transition: 0.3s;
     background-color: rgb(195, 194, 201);
+    text-decoration: none;
 }
 
 main .pedido .boleto .link-gerar-boleto .btn-gerar-boleto:hover {
