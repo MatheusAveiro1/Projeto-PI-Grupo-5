@@ -134,23 +134,66 @@ padding: 2%;
     text-decoration: none;
     color: #ffffff;
     background-color: #F59E3B;
-    margin: 1%;
+    margin: 5%;
     font-weight: bold;
 }
 
 /*** fim do css da caixa de continuar_comprando class=continuar_comprando***/
-.subtotal
-{
-    border: 5px solid #F59E3B;
-    border-radius: 10px;
-    height: 100px;
-}
+
+
 /*** inicio do css da caixa de subtotal class=subtotal***/
 
+.subtotal
+{
+    
+    border: 5px solid #F59E3B;
+    border-radius: 10px;
+    height: 190px; 
+    padding: 6%; 
+    text-transform: uppercase; 
+    
+}
+
+.subtotal_filho
+{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    
+}
+
+.valor_frete
+{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20%;
+    
+}
 
 
 /*** fim do css da caixa de subtotal class=subtotal***/
 
+
+/*** inicio do css da caixa de subtotal class=subtotal***/
+
+.total
+{
+    
+    border: 5px solid #F59E3B;
+    border-radius: 10px;
+    height: 80px; 
+    padding: 6%; 
+    text-transform: uppercase; 
+    margin-top: 2%;
+}
+
+.valor_total
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*** fim do css da caixa de continuar_comprando class=continuar_comprando***/
 /************/
 
 /******************* @media ****************************/
@@ -165,6 +208,7 @@ padding: 2%;
 @media (min-width: 769px) {
     /*** Main ***/
 
+
     /************/
 }
 
@@ -172,6 +216,22 @@ padding: 2%;
 @media (min-width: 1280px) {
     /*** Main ***/
 
+    .caixa_da_direita_carrinho
+    {
+        width: 30%;
+    }
+
+    .caixa_da_esqerda_carrinho
+    {
+        width: 30%;
+    }
+
+    div .container_pai_de_todos
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    
     /************/
 }
 
