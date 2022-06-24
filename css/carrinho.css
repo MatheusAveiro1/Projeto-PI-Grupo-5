@@ -4,10 +4,8 @@
 .container_pai_de_todos
 {
     display: flex;
-    flex-direction: column;
-    border: 2px solid black;
+    border: none;
     height: 700px;
-    
 }
 
 .h1_carrinho
@@ -35,11 +33,11 @@
 display: flex;
 justify-content: flex-end;
 padding: 2%;
-
 }
+
 .botao_de_exluir_item
 {
-    width: 8%;
+    width: 21px;
     background-color: #F59E3B;
     border-radius: 10px;
     border: none;
@@ -198,16 +196,65 @@ padding: 2%;
 
 /******************* @media ****************************/
 
-@media (min-width: 481px) {
+@media (max-width: 768px) {
+   
+
+    div .container_pai_de_todos
+    {
+        flex-direction: column;
+    }
+
+    .container_pai_de_todos
+    {
+        height: 1000px;
+    }
+
+    .valor_frete
+{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10%;
+    
+}
+  
+}
+
+
+@media (max-width: 481px) {
     /*** Main ***/
 
+    div .container_pai_de_todos
+    {
+        flex-direction: column;
+    }
+
+    .container_pai_de_todos
+    {
+        height: 800px;
+    }
     /************/
 }
+
 
 
 @media (min-width: 769px) {
     /*** Main ***/
 
+    .caixa_da_direita_carrinho
+    {
+        width: 67%;
+    }
+
+    .caixa_da_esqerda_carrinho
+    {
+        width: 30%;
+    }
+
+    div .container_pai_de_todos
+    {
+        
+        justify-content: space-between;
+    }
 
     /************/
 }
@@ -218,7 +265,7 @@ padding: 2%;
 
     .caixa_da_direita_carrinho
     {
-        width: 30%;
+        width: 67%;
     }
 
     .caixa_da_esqerda_carrinho
@@ -228,10 +275,20 @@ padding: 2%;
 
     div .container_pai_de_todos
     {
-        display: flex;
+        height: auto;
         justify-content: space-between;
     }
-    
+
+    .continuar_comprando 
+    {
+        width: 100%;
+        padding: 2%;
+        margin: 0%;
+        margin-bottom: 1%;
+    }
+
+ 
+
     /************/
 }
 
