@@ -69,11 +69,11 @@ padding: 2%;
 
 .botao_de_menos_itens_do_carrinho
 {
-    width: 15%;
+    width: 15px;
 }
 .botao_de_mais_itens_do_carrinho
 {
-    width: 15%;
+    width: 15px;
 }
 
 /*** fim do css da caixa de itens ***/
@@ -179,7 +179,7 @@ padding: 2%;
     
     border: 5px solid #F59E3B;
     border-radius: 10px;
-    height: 80px; 
+    height: 130px; 
     padding: 6%; 
     text-transform: uppercase; 
     margin-top: 2%;
@@ -189,6 +189,23 @@ padding: 2%;
 {
     display: flex;
     justify-content: space-between;
+}
+
+.caixa_finalizar_pedido
+{
+    display: flex;
+    justify-content: center;
+    margin: 4%; 
+}
+
+.botao_finalizar_pedido
+{
+    width: 100%;
+    padding: 3%;
+    text-transform: uppercase; 
+    background-color: #F59E3B;
+    border: none;
+    color: #fff;
 }
 
 /*** fim do css da caixa de continuar_comprando class=continuar_comprando***/
@@ -232,6 +249,9 @@ padding: 2%;
     {
         height: 800px;
     }
+
+
+
     /************/
 }
 
@@ -256,6 +276,18 @@ padding: 2%;
         justify-content: space-between;
     }
 
+    .caixa_de_itens 
+    {
+        display: flex;
+        justify-content: space-around;
+    
+    }
+
+    .valor_da_quantidade_de_itens_do_carrinho 
+    {
+        width: 20%;
+    }
+    
     /************/
 }
 
@@ -287,7 +319,31 @@ padding: 2%;
         margin-bottom: 1%;
     }
 
+    .total
+{
+    
  
+    border-radius: 10px;
+    height: 150px; 
+}
+
+.caixa_finalizar_pedido
+{
+   
+    margin-top: 10%;
+}
+
+.caixa_de_itens
+{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.valor_da_quantidade_de_itens_do_carrinho 
+    {
+        width: 15%;
+    }
 
     /************/
 }
