@@ -3,6 +3,110 @@
 /*** Main ***/
 
 /************/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+main .pedido {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+main .conteudo {
+    justify-content: center;
+}
+
+main .pedido-concluido {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+main .pedido .pedido-concluido .div-pedido-concluido {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    width: 50%;
+    padding: 5px;
+    margin-top: 20px;
+    background-color: rgb(233, 231, 227);
+}
+
+main .resumo-informacoes-pedido {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 50%;
+    margin-left: 375px;
+}
+
+main .resumo-informacoes-pedido .informacoes-pedido .div-informacoes-pedido {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    
+}
+
+main .pedido .resumo-informacoes-pedido .resumo-pedido {
+    display: flex;
+    margin-bottom: 20px;
+    
+}
+
+main .pedido .pedido-concluido .div-informacoes-pedido {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+main .boleto {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+main .boleto .link-gerar-boleto {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+main .boleto .link-gerar-boleto .btn-gerar-boleto {
+    display: flex;
+    border-radius: 10px;
+    width: 50%;
+    justify-content: center;
+    padding: 10px;
+    font-size: 0.5rem;
+    font-weight: bold;
+    font-style: normal;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: rgb(195, 194, 201);
+    text-decoration: none;
+}
+
+main .pedido .boleto .link-gerar-boleto .btn-gerar-boleto:hover {
+    background-color: rgb(114, 114, 209);
+}
+
+main .pedido .boleto .link-gerar-boleto .btn-gerar-boleto p {
+    font: color black;
+}
+
+a:link {
+    cursor: pointer;
+    font-style: black;
+
+}
 
 /******************* @media ****************************/
 
