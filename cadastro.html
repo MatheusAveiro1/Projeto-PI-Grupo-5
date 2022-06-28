@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
     <!--CSS-->
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
 </head>
 <body>    
     <header>
@@ -67,22 +67,27 @@
         <div class="container">
             <div class="div-main-config-padrao">
                 <main id="Master">
-                    <div id="login-container">  
-                       <!-- <div id="Olá-TopSale6">
-                            <h1>Login</h1>
-                            <h4>Olá! se você ja comprou na loja</h4>
-                            <h4>da topsale6 antes, por favor,</h4>  
-                            <h4>inforome seu email e senha.</h4>
-                        </div> -->
+                    <div id="login-container"> 
+                        <div class="meus_dados">Meus dados</div> 
+                        <br>
                         <form>
+                            <label for="nome">Nome Completo</label>
+                            <input type="nome" id="nome" name="nome" placeholder="Informe seu nome completo">
+                            <br>
+                            <label for="cpf">CPF</label>
+                            <input type="cpf" id="cpf" name="cpf" placeholder="Informe seu CPF">
+                            <br>
+                            <label for="endereço">ENDEREÇO</label>
+                            <input type="endereço" id="endereço" name="endereço" placeholder="Informe seu endereço">
+                            <br>
                             <label for="email">E-mail</label>
                             <input type="email" id="email" name="email" placeholder="email@topsale6.com">
                             <br>
                             <label for="senha">Senha</label>
                             <input type="password" name="password" id="password" placeholder="Digite sua senha">
                             <br>
-                            <button id="botao-login-entrar" type="submit">Entrar</button>
-                            <a id="botao-login-criar_conta" href="./cadastro.html">CRIAR CONTA</a>
+                            <button id="botao-cadastro" type="submit">CRIAR CONTA</button>
+                         
                         </form> 
                     </div>
                 </main>
