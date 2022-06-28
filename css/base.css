@@ -1,19 +1,19 @@
-/*** Reset - CSS ***/
+/* Reset - CSS */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 16px;
     font-family: 'Rajdhani', sans-serif;
 }
 
-/*** Body ***/
+/* Body */
 body {
-    background-color: #fff;
+    background-color: #fff;    
 }
-/************/
+/****/
 
-/*** Container ***/
+/* Container */
 .container {
     max-width: 1280px;
     margin: auto;
@@ -22,7 +22,7 @@ body {
 }
 
 .div-main-config-padrao {
-    padding-top: 150px;
+    padding-top: 200px;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -38,17 +38,18 @@ body {
     padding-left: 30px;
     padding-right: 30px;
 }
-/*****************/
+/*******/
 
 
 
-/*** Header ***/
+/* Header */
 header {
     position: fixed;
     border-bottom: 5px solid #FF914D;    
     box-shadow: 0 0 1em #999;
     width: 100%;
-    background-color: #fff;     
+    background-color: #fff;
+    z-index: 15;     
 }
 
 header .container nav {
@@ -150,10 +151,10 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
     top: 5px;
     color: #757575;
 }
-/**************/
+/******/
 
 
-/*** Footer ***/
+/* Footer */
     footer {
         border-top: 20px solid #ff914d;
         background-color: #fff;
@@ -374,19 +375,19 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
         color: #fff;
         text-align: center;      
     }
-/**************/
+/******/
 
 
-/******************* @media ****************************/
+/******* @media **********/
 
 @media (min-width: 481px) {
 
-    /*** Header ***/
+    /* Header */
 
-    /**************/
+    /******/
 
 
-    /*** Footer ***/
+    /* Footer */
     footer .div-footer-config .div-informacoes .div-media-pagamento {      
         width: 420px;
     } 
@@ -414,13 +415,13 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
         padding: 9px;
         width: 80px;   
     }
-    /**************/
+    /******/
 }
 
 
 @media (min-width: 769px) {
 
-    /*** Header ***/
+    /* Header */
     header .container nav {       
         padding: 15px 15px 15px 15px;    
     }
@@ -483,7 +484,7 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
     }
 
     header .container nav .div-menu-2 .div-btn-departamentos {
-        display: block;
+        display: block;        
         position: relative;
     }
 
@@ -491,20 +492,21 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
         display: flex;
         flex-direction: row;
         align-items: center;
+        position: relative;
         width: 220px;
         padding: 6px;
         font-size: 0.813rem;
-        font-weight: bold;
-        color: #000;
+        font-weight: 800;
+        color: #333;
         background-color: #fff;
         border-radius: 4px;
         cursor: pointer;
         border: 1px solid #333;
-        transition: 0.3s;
-    }
+        transition: all 0.3s;
+    }    
 
     header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos:hover {                
-        border-color: #ff904d;
+        border-color: #ff904d;        
     }
 
     header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos span {
@@ -514,20 +516,90 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
         font-weight: bold;
     }
 
-    header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos-seta-para-baixo {
+    header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos .btn-departamentos-seta-para-baixo {
         position: absolute;
         top: 4px;
-        right: 3px;
+        right: 0;
     }
+
+/* Submenu Dropdown */
+    header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos .submenu-departamentos { 
+        display: none;               
+        position: absolute;
+        top: 33px;
+        left: 0;
+        width: 220px;
+        background-color: #333;        
+    }
+
+    header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos:hover .submenu-departamentos {                
+        display: block;
+        border: 1px solid #f78037;
+    }
+
+    header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos .submenu-departamentos li{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;                
+        list-style-type: none;
+        padding: 10px;
+        text-align: left;
+        transition: .3s;
+    }
+
+    header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos .submenu-departamentos li:hover {                
+        background-color: #f78037;
+    }
+
+    header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos .submenu-departamentos li a{                
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.813rem;
+        font-weight: 400;        
+    }    
+
+    header .container nav .div-menu-2 .div-btn-departamentos .btn-departamentos .submenu-departamentos li span{                
+        margin-right: 0;
+        color: #fff;
+        font-size: 0.813rem;
+        font-weight: 400;
+    }
+
+     /* Conf Submenu opções */
+    .btn-departamentos .submenu-departamentos .submenu-departamentos-li-pc-gamer, .submenu-departamentos-li-hardware {
+        position: relative;
+    }
+
+    .btn-departamentos .submenu-departamentos .submenu-departamentos-li-pc-gamer .submenu-pc-gamer,.submenu-hardware  {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        border: 1px solid #f78037;
+        right: -221px;
+        top: 0;
+        width: 220px;
+    }
+
+    /* Submenu Hardware */
+    .btn-departamentos .submenu-departamentos .submenu-departamentos-li-pc-gamer:hover .submenu-pc-gamer {
+        display: block;
+    }    
+
+    /* Submenu Hardware */    
+    .btn-departamentos .submenu-departamentos .submenu-departamentos-li-hardware:hover .submenu-hardware {
+        display: block;
+    }    
+/**********/    
 
     header .container nav .div-menu-2 .div-barra-pesquisa {
         width: 100%;
         margin-left: 22px;        
     }
-    /**************/
+    /******/
 
 
-    /*** Footer ***/
+    /* Footer */
     footer .div-footer-config .div-informacoes {
         display: flex;
         flex-direction: row;        
@@ -555,18 +627,18 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
     footer .div-footer-config .div-receber-promocoes form{
         width: 480px;        
     }
-    /**************/
+    /******/
 }
 
 
 @media (min-width: 940px) {
 
-    /*** Header ***/
+    /* Header */
     
-    /**************/
+    /******/
 
 
-    /*** Footer ***/
+    /* Footer */
     footer .div-footer-config {
         padding-top: 10px;        
     }
@@ -603,18 +675,18 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
         justify-content: end;        
     }
 
-    /**************/    
+    /******/    
 }
 
 
 @media (min-width: 1280px) {
 
-    /*** Header ***/
+    /* Header */
 
-    /**************/
+    /******/
 
 
-    /*** Footer ***/
+    /* Footer */
     footer .div-footer-config {
         padding-top: 40px;        
         max-width: 1280px;
@@ -640,9 +712,7 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
     footer .div-footer-config .div-receber-promocoes form{
         width: 780px;        
     }
-    /**************/    
+    /******/    
 }
 
-/*******************************************************/
-
-
+/*******************/

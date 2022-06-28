@@ -17,6 +17,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/cards.css">
 </head>
 <body>    
     <header>
@@ -31,7 +32,7 @@
                         <a href="./index.html" class="link-logo-empresa-mobile"><img src="./img/logo2.svg" alt="Imagem Logo TopSales6"></a>
                         <ul class="lista-menu">
                             <li>
-                                <a href="./login.html"><span class="material-icons">account_circle</span>Minha Conta</a>
+                                <a href="#"><span class="material-icons">account_circle</span>Minha Conta</a>
                             </li>
                             <li>
                                 <a href="#"><span class="material-icons-outlined">headset_mic</span>Central de Atendimento</a>
@@ -47,8 +48,29 @@
                     <div class="div-btn-departamentos">
                         <button class="btn-departamentos">
                             <span class="material-icons-outlined">menu</span> DEPARTAMENTOS
-                        </button>
-                        <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
+                            <ul class="submenu-departamentos">
+                                <li class="submenu-departamentos-li-pc-gamer">
+                                    <a href="#">PC Gamer</a>
+                                    <span class="material-icons-outlined">navigate_next</span>
+                                    <ul class="submenu-pc-gamer">
+                                        <li><a href="#">Fast White</a></li>
+                                        <li><a href="#">Red Force</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="submenu-departamentos-li-hardware">
+                                    <a href="#">Hardware</a>
+                                    <span class="material-icons-outlined">navigate_next</span>
+                                    <ul class="submenu-hardware">
+                                        <li><a href="#">Pl-Vídeo</a></li>
+                                        <li><a href="#">Processador</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#">Smartphone</a></li>
+                            </ul>
+                            <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
+                        </button>                        
                     </div>
                     <div class="div-barra-pesquisa">
                         <form action="#" method="POST">
@@ -62,80 +84,324 @@
     </header> 
     
     <!--Carrossel-->
-    <div class="div-carrossel">
-        <div style="width: 100%; height: 400px; background-color: black;"></div>
-    </div>  
+    <input type="radio" name="slides-carrossel" id="slide-carrossel-1" checked>
+    <input type="radio" name="slides-carrossel" id="slide-carrossel-2">
+
+    <section class="div-carrossel">
+        <div class="div-carrossel-slides">
+            <div class="slide slide1">
+                <img class="img-banner" src="./img/banner-pi-dh-1.png" alt="Banner de PC Gamer 30% Off">
+                <img class="img-banner-mobile" src="./img/banner-pi-dh-1-mobile.png" alt="Banner de PC Gamer 30% Off">                
+            </div>
+            <div class="slide">
+                <img class="img-banner" src="./img/banner-pi-dh-2.png" alt="Banner de PC Gamer 30% Off">
+                <img class="img-banner-mobile" src="./img/banner-pi-dh-2-mobile.png" alt="Banner de PC Gamer 30% Off">
+            </div> 
+        </div>
+        <div class="barra-navegacao-slides">
+            <label for="slide-carrossel-1" class="btn-barra-navegacao-slides btn-slide-1"></label>
+            <label for="slide-carrossel-2" class="btn-barra-navegacao-slides btn-slide-2"></label>
+        </div>
+    </section> 
+    <!--***********--> 
 
     <main>
-        <div class="container">
-            <div class="div-main-config-home">
-                <!--Começa aqui!-->
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolorem voluptatibus quod culpa similique, nostrum fuga amet asperiores ut minus.</p>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
+        <div class="div-main-config-home">            
+            <section class="container">
+                <h2 class="home-section-titulos">
+                    <span class="material-icons-outlined">paid</span> PROMOÇÕES
+                </h2>  
+                <div class="div-cards-principal">      
+                    <div class="div-cards">
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pc-gamer.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+            
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/processador-amd-ryzen.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+                    </div>
+                    <div class="div-cards">
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pc-gamer-mais-peças.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+            
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pl-video.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+                    </div>
+                    <div class="div-cards">
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pc-gamer.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+            
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/processador-amd-ryzen.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+                    </div>
+                    <div class="div-cards">
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pc-gamer-mais-peças.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+            
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pl-video.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+                    </div>
+                </div>                                  
+            </section>
+            
+            <section class="container">
+                <h2 class="home-section-titulos">
+                    <span class="material-icons-outlined">location_searching</span> MAIS PROCURADOS
+                </h2>  
+                <div class="div-cards-principal">      
+                    <div class="div-cards">
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pc-gamer.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+            
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/processador-amd-ryzen.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+                    </div>
+                    <div class="div-cards">
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pc-gamer-mais-peças.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+            
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pl-video.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+                    </div>
+                    <div class="div-cards">
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pc-gamer.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+            
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/processador-amd-ryzen.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+                    </div>
+                    <div class="div-cards">
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pc-gamer-mais-peças.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+            
+                        <article class="card">
+                            <div class="div-card-img-infos">
+                                <figure>
+                                    <img src="./img/pl-video.jpg" alt="Imagem PC Gamer">
+                                </figure>
+                                <div class="card-infos">
+                                    <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                    <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                    <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                    <p class="card-preco-parcelado">12x de R$191,58</p>
+                                </div>                                
+                            </div>
+                            <button>
+                                <span class="material-icons-outlined">shopping_cart</span> Comprar
+                            </button>
+                        </article>
+                    </div>
+                </div>                                  
+            </section>       
         </div>
     </main>
 
