@@ -17,7 +17,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/cards.css">
 </head>
 <body>    
     <header>
@@ -32,7 +32,7 @@
                         <a href="./index.html" class="link-logo-empresa-mobile"><img src="./img/logo2.svg" alt="Imagem Logo TopSales6"></a>
                         <ul class="lista-menu">
                             <li>
-                                <a href="./login.html"><span class="material-icons">account_circle</span>Minha Conta</a>
+                                <a href="#"><span class="material-icons">account_circle</span>Minha Conta</a>
                             </li>
                             <li>
                                 <a href="#"><span class="material-icons-outlined">headset_mic</span>Central de Atendimento</a>
@@ -48,8 +48,29 @@
                     <div class="div-btn-departamentos">
                         <button class="btn-departamentos">
                             <span class="material-icons-outlined">menu</span> DEPARTAMENTOS
-                        </button>
-                        <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
+                            <ul class="submenu-departamentos">
+                                <li class="submenu-departamentos-li-pc-gamer">
+                                    <a href="#">PC Gamer</a>
+                                    <span class="material-icons-outlined">navigate_next</span>
+                                    <ul class="submenu-pc-gamer">
+                                        <li><a href="#">Fast White</a></li>
+                                        <li><a href="#">Red Force</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="submenu-departamentos-li-hardware">
+                                    <a href="#">Hardware</a>
+                                    <span class="material-icons-outlined">navigate_next</span>
+                                    <ul class="submenu-hardware">
+                                        <li><a href="#">Pl-Vídeo</a></li>
+                                        <li><a href="#">Processador</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#">Smartphone</a></li>
+                            </ul>
+                            <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
+                        </button>                        
                     </div>
                     <div class="div-barra-pesquisa">
                         <form action="#" method="POST">
@@ -68,24 +89,21 @@
 
     <section class="div-carrossel">
         <div class="div-carrossel-slides">
-
-            
-                        
             <div class="slide slide1">
-                <img src="./img/banner-pi-dh-1.png" alt="Banner de PC Gamer 30% Off">
+                <img class="img-banner" src="./img/banner-pi-dh-1.png" alt="Banner de PC Gamer 30% Off">
+                <img class="img-banner-mobile" src="./img/banner-pi-dh-1-mobile.png" alt="Banner de PC Gamer 30% Off">                
             </div>
             <div class="slide">
-                <img src="./img/banner-pi-dh-2.png" alt="Banner de PC Gamer 30% Off">
-            </div>          
-            
+                <img class="img-banner" src="./img/banner-pi-dh-2.png" alt="Banner de PC Gamer 30% Off">
+                <img class="img-banner-mobile" src="./img/banner-pi-dh-2-mobile.png" alt="Banner de PC Gamer 30% Off">
+            </div> 
         </div>
-        
         <div class="barra-navegacao-slides">
             <label for="slide-carrossel-1" class="btn-barra-navegacao-slides btn-slide-1"></label>
             <label for="slide-carrossel-2" class="btn-barra-navegacao-slides btn-slide-2"></label>
         </div>
-        
-    </section>
+    </section> 
+    <!--***********--> 
 
     <main>
         <div class="div-main-config-home">            
