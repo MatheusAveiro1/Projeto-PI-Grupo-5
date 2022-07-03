@@ -1,0 +1,98 @@
+.div-area-restrita {
+    display: flex;
+    flex-direction: column;
+    margin-top: -40px;    
+}
+
+.div-area-restrita .menu-lateral-area-restrita {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;    
+}
+
+.div-area-restrita .menu-lateral-area-restrita .ul-menu-lateral {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 2px 10px 4px #888;
+        
+}
+
+.div-area-restrita .menu-lateral-area-restrita .ul-menu-lateral li {
+    display: flex;
+    justify-content: start;
+    align-items: center;         
+    border-bottom: 1px solid #eee;    
+}
+
+.div-area-restrita .menu-lateral-area-restrita .ul-menu-lateral li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+    padding: 14px;
+    padding-left: 20px;
+    transition: 0.3s;
+}
+
+.div-area-restrita .menu-lateral-area-restrita .ul-menu-lateral li a:hover {
+    background-color: #ff914d;
+    color: #fff;
+    font-weight: bold;
+}
+
+.div-area-restrita .menu-lateral-area-restrita .ul-menu-lateral li a span {
+    margin-right: 5px;
+}
+
+.div-area-restrita .div-info-usuario-principal {
+    padding: 20px;
+    border-radius: 7px;;
+    box-shadow: 3px 2px 10px 4px #888;
+    margin-bottom: 50px;
+
+}
+
+/******************* @media ****************************/
+
+@media (min-width: 481px) {
+    /*** Menu área restrita ***/
+
+    /************/
+}
+
+
+@media (min-width: 769px) { 
+    /*** Menu área restrita ***/
+
+    /************/
+}
+
+@media (min-width: 900px) { 
+    /*** Menu área restrita ***/
+    .div-area-restrita {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;           
+    }   
+    
+    .div-area-restrita .menu-lateral-area-restrita .ul-menu-lateral {
+        width: 220px;
+    }
+
+    .div-area-restrita .div-info-usuario-principal {
+        width: 100%;       
+        margin-left: 30px;
+    }
+    /************/
+}
+
+
+@media (min-width: 1280px) {
+    /*** Menu área restrita ***/
+
+    /************/
+}
+
+/*******************************************************/
