@@ -17,7 +17,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/base-area-restrita.css">
-    <link rel="stylesheet" href="./css/perfil-usuario.css">
+    <link rel="stylesheet" href="./css/meus-dados.css">
 </head>
 <body>    
     <header>
@@ -91,13 +91,13 @@
                     <nav class="menu-lateral-area-restrita">                       
                         <ul class="ul-menu-lateral">
                             <li>
-                                <a href="#">
+                                <a href="./perfil-usuario.html">
                                     <span class="material-icons">person</span>
                                     Minha Conta
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="./meus-dados.html">
                                     <span class="material-icons">article</span>
                                     Meus Dados
                                 </a>
@@ -105,24 +105,46 @@
                         </ul>
                     </nav>
                     <div class="div-info-usuario-principal">
-                        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Quas recusandae exercitationem modi quis soluta voluptas aliquam dolore eligendi 
-                            consequuntur ducimus ratione sequi laboriosam vero reprehenderit animi, officiis ex accusantium. 
-                            Sequi quas assumenda harum natus laborum commodi, id incidunt aliquam eligendi quo dolor atque amet 
-                            deserunt voluptatem porro quod veritatis iusto.
+                        <p class="titulo-meus-dados">
+                            <span class="material-icons">article</span> MEUS DADOS
                         </p>
-                        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Quas recusandae exercitationem modi quis soluta voluptas aliquam dolore eligendi 
-                            consequuntur ducimus ratione sequi laboriosam vero reprehenderit animi, officiis ex accusantium. 
-                            Sequi quas assumenda harum natus laborum commodi, id incidunt aliquam eligendi quo dolor atque amet 
-                            deserunt voluptatem porro quod veritatis iusto.
-                        </p>
-                        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Quas recusandae exercitationem modi quis soluta voluptas aliquam dolore eligendi 
-                            consequuntur ducimus ratione sequi laboriosam vero reprehenderit animi, officiis ex accusantium. 
-                            Sequi quas assumenda harum natus laborum commodi, id incidunt aliquam eligendi quo dolor atque amet 
-                            deserunt voluptatem porro quod veritatis iusto.
-                        </p>
+                        <form action="#" metod="POST" class="form-meus-dados">
+                            <div class="div-nome-completo">
+                                <label for="nome-completo">Nome Completo</label>
+                                <input id="nome-completo" name="nome-completo" type="text" placeholder="Digite seu nome completo" required>
+                            </div>
+                            <div class="div-cpf-rg-data-nasc">
+                                <div class="div-cpf">
+                                    <label for="cpf">CPF</label>
+                                    <input id="cpf" name="cpf" type="text" placeholder="Digite apenas números" required>
+                                </div>
+                                <div class="div-rg">
+                                    <label for="rg">RG</label>
+                                    <input id="rg" name="rg" type="text" placeholder="Digite apenas números" required>
+                                </div>
+                                <div class="div-data-nasc">
+                                    <label for="data-nasc">Data de Nascimento</label>
+                                    <input id="data-nasc" name="data-nasc" type="date" required>
+                                </div>
+                            </div>
+                            <div class="div-email-tel">
+                                <div class="div-email">
+                                    <label for="email">E-Mail</label>
+                                    <input id="email" name="email" type="email" value="fernandofm3@gmail.com" disabled required>
+                                </div>
+                                <div class="div-tel">
+                                    <label for="tel">Telefone</label>
+                                    <input id="tel" name="tel" type="text" placeholder="(11) 98651-9872" required>
+                                </div>
+                            </div>
+                            <div class="div-autoriza-promocoes">
+                                <input id="autoriza-promocoes" name="autoriza-promocoes" type="checkbox" required>
+                                <label for="autoriza-promocoes">Autorizo o recebimento de e-mails sobre promoções</label>                                
+                            </div>
+                            <div class="div-btn-atualiza-cadastro">
+                                <button type="submit">ATUALIZAR CADASTRO</button>                                
+                            </div>                             
+                        </form>
                     </div>
                 </div>
                 
