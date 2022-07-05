@@ -92,7 +92,17 @@
 
 
 /*** Main ***/
+    .home-section-titulos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;        
+    }
 
+    .home-section-titulos span {
+        font-size: 1.25rem;
+        margin-right: 5px;
+    }
 /************/
 
 
@@ -140,7 +150,15 @@
 
 
     /*** Main ***/
-
+        .home-section-titulos {
+            justify-content: flex-start;        
+            font-size: 2rem;
+            margin: 40px 0 20px 10px;        
+        }
+        
+        .home-section-titulos span {
+            font-size: 2rem;        
+        } 
     /************/
 }
 
