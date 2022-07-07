@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
     <!--CSS-->
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/base-area-restrita.css">
+    <link rel="stylesheet" href="./css/meus-dados.css">
 </head>
 <body>    
     <header>
@@ -47,8 +48,29 @@
                     <div class="div-btn-departamentos">
                         <button class="btn-departamentos">
                             <span class="material-icons-outlined">menu</span> DEPARTAMENTOS
-                        </button>
-                        <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
+                            <ul class="submenu-departamentos">
+                                <li class="submenu-departamentos-li-pc-gamer">
+                                    <a href="#">PC Gamer</a>
+                                    <span class="material-icons-outlined">navigate_next</span>
+                                    <ul class="submenu-pc-gamer">
+                                        <li><a href="#">Fast White</a></li>
+                                        <li><a href="#">Red Force</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="submenu-departamentos-li-hardware">
+                                    <a href="#">Hardware</a>
+                                    <span class="material-icons-outlined">navigate_next</span>
+                                    <ul class="submenu-hardware">
+                                        <li><a href="#">Pl-Vídeo</a></li>
+                                        <li><a href="#">Processador</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#">Smartphone</a></li>
+                            </ul>
+                            <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
+                        </button>                        
                     </div>
                     <div class="div-barra-pesquisa">
                         <form action="#" method="POST">
@@ -59,33 +81,73 @@
                 </div>
             </nav>
         </div>
-    </header> 
-    
-    
+    </header>    
 
     <main>
         <div class="container">
             <div class="div-main-config-padrao">
-                <main id="Master">
-                    <div id="login-container">  
-                       <!-- <div id="Olá-TopSale6">
-                            <h1>Login</h1>
-                            <h4>Olá! se você ja comprou na loja</h4>
-                            <h4>da topsale6 antes, por favor,</h4>  
-                            <h4>inforome seu email e senha.</h4>
-                        </div> -->
-                        <form action="./perfil-usuario.html" motod="POST">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" placeholder="email@topsale6.com" required>
-                            <br>
-                            <label for="senha">Senha</label>
-                            <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
-                            <br>
-                            <button id="botao-login-entrar" type="submit">Entrar</button>
-                            <a id="botao-login-criar_conta" href="./cadastro.html">CRIAR CONTA</a>
-                        </form> 
+                <!--Comece aqui!-->
+                <div class="div-area-restrita">
+                    <nav class="menu-lateral-area-restrita">                       
+                        <ul class="ul-menu-lateral">
+                            <li>
+                                <a href="./perfil-usuario.html">
+                                    <span class="material-icons">person</span>
+                                    Minha Conta
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./meus-dados.html">
+                                    <span class="material-icons">article</span>
+                                    Meus Dados
+                                </a>
+                            </li>                            
+                        </ul>
+                    </nav>
+                    <div class="div-info-usuario-principal">
+                        <p class="titulo-meus-dados">
+                            <span class="material-icons">article</span> MEUS DADOS
+                        </p>
+                        <form action="#" metod="POST" class="form-meus-dados">
+                            <div class="div-nome-completo">
+                                <label for="nome-completo">Nome Completo</label>
+                                <input id="nome-completo" name="nome-completo" type="text" placeholder="Digite seu nome completo" required>
+                            </div>
+                            <div class="div-cpf-rg-data-nasc">
+                                <div class="div-cpf">
+                                    <label for="cpf">CPF</label>
+                                    <input id="cpf" name="cpf" type="text" placeholder="Digite apenas números" required>
+                                </div>
+                                <div class="div-rg">
+                                    <label for="rg">RG</label>
+                                    <input id="rg" name="rg" type="text" placeholder="Digite apenas números" required>
+                                </div>
+                                <div class="div-data-nasc">
+                                    <label for="data-nasc">Data de Nascimento</label>
+                                    <input id="data-nasc" name="data-nasc" type="date" required>
+                                </div>
+                            </div>
+                            <div class="div-email-tel">
+                                <div class="div-email">
+                                    <label for="email">E-Mail</label>
+                                    <input id="email" name="email" type="email" value="fernandofm3@gmail.com" disabled required>
+                                </div>
+                                <div class="div-tel">
+                                    <label for="tel">Telefone</label>
+                                    <input id="tel" name="tel" type="text" placeholder="(11) 98651-9872" required>
+                                </div>
+                            </div>
+                            <div class="div-autoriza-promocoes">
+                                <input id="autoriza-promocoes" name="autoriza-promocoes" type="checkbox" required>
+                                <label for="autoriza-promocoes">Autorizo o recebimento de e-mails sobre promoções</label>                                
+                            </div>
+                            <div class="div-btn-atualiza-cadastro">
+                                <button type="submit">ATUALIZAR CADASTRO</button>                                
+                            </div>                             
+                        </form>
                     </div>
-                </main>
+                </div>
+                
             </div>
         </div>
     </main>

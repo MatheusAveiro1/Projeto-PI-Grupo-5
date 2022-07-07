@@ -1,0 +1,123 @@
+.titulo-meus-dados {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.titulo-meus-dados span {
+    margin-right: 5px;
+}
+
+.form-meus-dados {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-meus-dados div {
+    margin-bottom: 25px;
+}
+
+.form-meus-dados div label {
+    font-size: 0.875rem;
+}
+
+.form-meus-dados div input {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 7px;
+}
+
+.form-meus-dados div input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-meus-dados div input::-moz-placeholder { /* Firefox 19+ */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-meus-dados div input:-ms-input-placeholder { /* IE 10+ */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-meus-dados div input:-moz-placeholder { /* Firefox 18- */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-meus-dados .div-cpf-rg-data-nasc, .form-meus-dados .div-email-tel {
+    margin-bottom: 0;
+}
+
+.form-meus-dados .div-email-tel .div-email input{
+    background-color: #eee;
+}
+
+.form-meus-dados .div-autoriza-promocoes {
+    margin-bottom: 60px;
+}
+
+.form-meus-dados .div-autoriza-promocoes input {
+    width: auto;
+    margin-right: 5px;
+}
+
+.form-meus-dados .div-btn-atualiza-cadastro {
+    margin-bottom: 0;
+}
+
+.form-meus-dados .div-btn-atualiza-cadastro button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3498DB;
+    border-radius: 7px;
+    color: #fff;
+    background-color: #3498DB;
+    font-size: 0.75rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.form-meus-dados .div-btn-atualiza-cadastro button:hover {   
+    background-color: #3482b6;   
+}
+
+
+/******************* @media ****************************/
+
+@media (min-width: 769px) {
+    .form-meus-dados .div-cpf-rg-data-nasc, .form-meus-dados .div-email-tel {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .form-meus-dados .div-cpf-rg-data-nasc .div-cpf, .form-meus-dados .div-cpf-rg-data-nasc .div-rg {
+        margin-right: 30px;
+    }
+
+    .form-meus-dados .div-cpf-rg-data-nasc .div-cpf {
+        width: 35%;
+    }
+
+    .form-meus-dados .div-cpf-rg-data-nasc .div-rg {
+        width: 35%;
+    }
+
+    .form-meus-dados .div-cpf-rg-data-nasc .div-data-nasc {
+        width: 30%;
+    }
+
+    .form-meus-dados .div-email-tel .div-email {
+        flex-grow: 1;
+        margin-right: 65px;
+    }
+}

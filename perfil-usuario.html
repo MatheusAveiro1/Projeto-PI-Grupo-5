@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
     <!--CSS-->
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/base-area-restrita.css">
+    <link rel="stylesheet" href="./css/perfil-usuario.css">    
 </head>
 <body>    
     <header>
@@ -47,8 +48,29 @@
                     <div class="div-btn-departamentos">
                         <button class="btn-departamentos">
                             <span class="material-icons-outlined">menu</span> DEPARTAMENTOS
-                        </button>
-                        <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
+                            <ul class="submenu-departamentos">
+                                <li class="submenu-departamentos-li-pc-gamer">
+                                    <a href="#">PC Gamer</a>
+                                    <span class="material-icons-outlined">navigate_next</span>
+                                    <ul class="submenu-pc-gamer">
+                                        <li><a href="#">Fast White</a></li>
+                                        <li><a href="#">Red Force</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="submenu-departamentos-li-hardware">
+                                    <a href="#">Hardware</a>
+                                    <span class="material-icons-outlined">navigate_next</span>
+                                    <ul class="submenu-hardware">
+                                        <li><a href="#">Pl-Vídeo</a></li>
+                                        <li><a href="#">Processador</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#">Smartphone</a></li>
+                            </ul>
+                            <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
+                        </button>                        
                     </div>
                     <div class="div-barra-pesquisa">
                         <form action="#" method="POST">
@@ -59,33 +81,91 @@
                 </div>
             </nav>
         </div>
-    </header> 
-    
-    
+    </header>    
 
     <main>
         <div class="container">
             <div class="div-main-config-padrao">
-                <main id="Master">
-                    <div id="login-container">  
-                       <!-- <div id="Olá-TopSale6">
-                            <h1>Login</h1>
-                            <h4>Olá! se você ja comprou na loja</h4>
-                            <h4>da topsale6 antes, por favor,</h4>  
-                            <h4>inforome seu email e senha.</h4>
-                        </div> -->
-                        <form action="./perfil-usuario.html" motod="POST">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" placeholder="email@topsale6.com" required>
-                            <br>
-                            <label for="senha">Senha</label>
-                            <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
-                            <br>
-                            <button id="botao-login-entrar" type="submit">Entrar</button>
-                            <a id="botao-login-criar_conta" href="./cadastro.html">CRIAR CONTA</a>
-                        </form> 
+                <!--Comece aqui!-->
+                <div class="div-area-restrita">
+                    <nav class="menu-lateral-area-restrita">                       
+                        <ul class="ul-menu-lateral">
+                            <li>
+                                <a href="./perfil-usuario.html">
+                                    <span class="material-icons">person</span>
+                                    Minha Conta
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./meus-dados.html">
+                                    <span class="material-icons">article</span>
+                                    Meus Dados
+                                </a>
+                            </li>                            
+                        </ul>
+                    </nav>
+                    <div class="div-info-usuario-principal">
+                        <div class="div-info-acesso">
+                            <div class="div-info-acesso-texto">
+                                <p class="saudacao">Bem-Vindo,</p>
+                                <p class="nome-usuario">Fernando Ferreira Mendonça</p>
+                                <p class="email-usuario">fernandofm3@gmail.com</p>
+                            </div>
+                            <a class="btn-alterar-senha" href="">
+                                <span class="material-icons">lock</span> ALTERAR SENHA
+                            </a>
+                        </div>
+                        <div class="div-ultimo-pedido">
+                            <p class="titulo-ultimo-pedido">ÚLTIMO PEDIDO REALIZADO</p>
+                            <table class="tabela-pedido">
+                                <thead>
+                                    <tr>
+                                        <th>NÚMERO DO PEDIDO</th>
+                                        <th>STATUS</th>
+                                        <th>DATA</th>
+                                        <th>PAGAMENTO</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#36524</td>
+                                        <td style="color: #C60C0C;">CANCELADO</td>
+                                        <td>05/04/2022</td>
+                                        <td>BOLETO</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="div-end-entrega-produto">
+                                <div class="div-end-entrega">
+                                    <p class="titulo-end">ENDEREÇO DA ENTREGA</p>
+                                    <p>RUA NOVO HORIZONTE DO BELO PARAÍSO</p>
+                                    <p>NÚMERO 456, VALE DA SORTE</p>
+                                    <p>CEP 8429554 - SÃO PAULO, SP</p>
+                                </div>
+                                <div class="div-produto">
+                                    <p class="titulo-produto">PRODUTO COMPRADO</p>
+                                    <article class="card">
+                                        <div class="div-card-img-infos">                                            
+                                            <figure>
+                                                <img src="./img/pc-gamer.jpg" alt="Imagem PC Gamer">
+                                            </figure>
+                                            <div class="card-infos">
+                                                <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                                <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                                <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                                <p class="card-preco-parcelado">12x de R$191,58</p>
+                                            </div>                                
+                                        </div>                                       
+                                    </article>
+                                </div>                                
+                            </div>
+                            <div class="btn-ver-todos-pedidos">
+                                <a href="#">VER TODOS OS PEDIDOS</a>
+                            </div>                            
+                        </div>
                     </div>
-                </main>
+                </div>
+                
             </div>
         </div>
     </main>
