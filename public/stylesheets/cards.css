@@ -16,6 +16,7 @@
 
 .div-cards-principal .div-cards .div-card-img-infos {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;        
 }

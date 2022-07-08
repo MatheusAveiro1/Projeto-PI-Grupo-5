@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSales6</title>
+    <link rel="shortcut icon" href="./img/fivicon.ico">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/base-area-restrita.css">
+    <link rel="stylesheet" href="./css/perfil-usuario.css">    
+</head>
+<body>    
+
+    <%- include('./partials/header') %>
+
+    <main>
+        <div class="container">
+            <div class="div-main-config-padrao">
+                <!--Comece aqui!-->
+                <div class="div-area-restrita">
+                    <nav class="menu-lateral-area-restrita">                       
+                        <ul class="ul-menu-lateral">
+                            <li>
+                                <a href="./perfil-usuario.html">
+                                    <span class="material-icons">person</span>
+                                    Minha Conta
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./meus-dados.html">
+                                    <span class="material-icons">article</span>
+                                    Meus Dados
+                                </a>
+                            </li>                            
+                        </ul>
+                    </nav>
+                    <div class="div-info-usuario-principal">
+                        <div class="div-info-acesso">
+                            <div class="div-info-acesso-texto">
+                                <p class="saudacao">Bem-Vindo,</p>
+                                <p class="nome-usuario">Fernando Ferreira Mendonça</p>
+                                <p class="email-usuario">fernandofm3@gmail.com</p>
+                            </div>
+                            <a class="btn-alterar-senha" href="">
+                                <span class="material-icons">lock</span> ALTERAR SENHA
+                            </a>
+                        </div>
+                        <div class="div-ultimo-pedido">
+                            <p class="titulo-ultimo-pedido">ÚLTIMO PEDIDO REALIZADO</p>
+                            <table class="tabela-pedido">
+                                <thead>
+                                    <tr>
+                                        <th>NÚMERO DO PEDIDO</th>
+                                        <th>STATUS</th>
+                                        <th>DATA</th>
+                                        <th>PAGAMENTO</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#36524</td>
+                                        <td style="color: #C60C0C;">CANCELADO</td>
+                                        <td>05/04/2022</td>
+                                        <td>BOLETO</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="div-end-entrega-produto">
+                                <div class="div-end-entrega">
+                                    <p class="titulo-end">ENDEREÇO DA ENTREGA</p>
+                                    <p>RUA NOVO HORIZONTE DO BELO PARAÍSO</p>
+                                    <p>NÚMERO 456, VALE DA SORTE</p>
+                                    <p>CEP 8429554 - SÃO PAULO, SP</p>
+                                </div>
+                                <div class="div-produto">
+                                    <p class="titulo-produto">PRODUTO COMPRADO</p>
+                                    <article class="card">
+                                        <div class="div-card-img-infos">                                            
+                                            <figure>
+                                                <img src="./img/pc-gamer.jpg" alt="Imagem PC Gamer">
+                                            </figure>
+                                            <div class="card-infos">
+                                                <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
+                                                <p class="card-preco-anterior">De: R$2.500,00 por:</p>
+                                                <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
+                                                <p class="card-preco-parcelado">12x de R$191,58</p>
+                                            </div>                                
+                                        </div>                                       
+                                    </article>
+                                </div>                                
+                            </div>
+                            <div class="btn-ver-todos-pedidos">
+                                <a href="#">VER TODOS OS PEDIDOS</a>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSales6</title>
+    <link rel="shortcut icon" href="./img/fivicon.ico">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/base-area-restrita.css">
+    <link rel="stylesheet" href="./css/meus-dados.css">
+</head>
+<body>    
+
+    <%- include('./partials/header') %>
+
+    <main>
+        <div class="container">
+            <div class="div-main-config-padrao">
+                <!--Comece aqui!-->
+                <div class="div-area-restrita">
+                    <nav class="menu-lateral-area-restrita">                       
+                        <ul class="ul-menu-lateral">
+                            <li>
+                                <a href="./perfil-usuario.html">
+                                    <span class="material-icons">person</span>
+                                    Minha Conta
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./meus-dados.html">
+                                    <span class="material-icons">article</span>
+                                    Meus Dados
+                                </a>
+                            </li>                            
+                        </ul>
+                    </nav>
+                    <div class="div-info-usuario-principal">
+                        <p class="titulo-meus-dados">
+                            <span class="material-icons">article</span> MEUS DADOS
+                        </p>
+                        <form action="#" metod="POST" class="form-meus-dados">
+                            <div class="div-nome-completo">
+                                <label for="nome-completo">Nome Completo</label>
+                                <input id="nome-completo" name="nome-completo" type="text" placeholder="Digite seu nome completo" required>
+                            </div>
+                            <div class="div-cpf-rg-data-nasc">
+                                <div class="div-cpf">
+                                    <label for="cpf">CPF</label>
+                                    <input id="cpf" name="cpf" type="text" placeholder="Digite apenas números" required>
+                                </div>
+                                <div class="div-rg">
+                                    <label for="rg">RG</label>
+                                    <input id="rg" name="rg" type="text" placeholder="Digite apenas números" required>
+                                </div>
+                                <div class="div-data-nasc">
+                                    <label for="data-nasc">Data de Nascimento</label>
+                                    <input id="data-nasc" name="data-nasc" type="date" required>
+                                </div>
+                            </div>
+                            <div class="div-email-tel">
+                                <div class="div-email">
+                                    <label for="email">E-Mail</label>
+                                    <input id="email" name="email" type="email" value="fernandofm3@gmail.com" disabled required>
+                                </div>
+                                <div class="div-tel">
+                                    <label for="tel">Telefone</label>
+                                    <input id="tel" name="tel" type="text" placeholder="(11) 98651-9872" required>
+                                </div>
+                            </div>
+                            <div class="div-autoriza-promocoes">
+                                <input id="autoriza-promocoes" name="autoriza-promocoes" type="checkbox" required>
+                                <label for="autoriza-promocoes">Autorizo o recebimento de e-mails sobre promoções</label>                                
+                            </div>
+                            <div class="div-btn-atualiza-cadastro">
+                                <button type="submit">ATUALIZAR CADASTRO</button>                                
+                            </div>                             
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>
