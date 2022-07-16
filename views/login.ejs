@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wclass th=device-wclass th, initial-scale=1.0">
+    <title>TopSales6</title>
+    <link rel="shortcut icon" href="/images/fivicon.ico">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+<body>  
+
+ <%- include("./partials/header")%>
+    
+
+    <main class="main-login">
+        <div class="container">
+            <div class="div-main-config-padrao">
+                <form action="./perfil-usuario.html" motod="POST">
+                    <label for="email"> 
+                        <span class="material-icons-outlined">email</span>
+                         E-mail
+                    </label>
+                    <input type="email" class="email" name="email" placeholder="email@topsale6.com" required>
+                    <label for="senha">
+                        <span class="material-icons-outlined">lock</span>
+                        Senha
+                    </label>
+                    <input type="password" name="password" class="password" placeholder="Digite sua senha" required>
+                    <button class="botao-login-entrar" type="submit">Entrar</button>
+                    <a class="botao-login-criar_conta" href="/cadastro">CRIAR CONTA</a>
+                </form> 
+            </div>
+        </div>
+    </main>
+ <%- include("./partials/footer")%>
+  
+</body>
+</html>
