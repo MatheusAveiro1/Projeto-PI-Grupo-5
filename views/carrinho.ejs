@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSales6</title>
+    <link rel="shortcut icon" href="./images/fivicon">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="./stylesheets/base.css">
+    <link rel="stylesheet" href="./stylesheets/carrinho.css">
+</head>
+<body>    
+
+    <%- include("./partials/header")%>
+    
+
+    <main>
+        <div class="container">
+            <div class="div-main-config-padrao">
+                <!--Comece aqui!-->
+                
+                <h1 class="h1_carrinho">CARRINHO</h1>
+
+                <div class="container_pai_de_todos">
+
+                            <div class="caixa_da_direita_carrinho">
+
+                                <ul class="itens_da_lista">
+                                    <li >
+                                        
+                                        <div class="pai_dos_itens">
+                                            <div class="caixa_botao_de_exluir_item">
+                                                <button class="botao_de_exluir_item">x</button>
+                                            </div>
+    
+                                            <div class="caixa_de_itens">
+                                                
+                                                <div class="primeira_sessao_de_itens">
+                                                    <img src="/images/processador-amd-ryzen.jpg" alt="" width="100px">
+                                                    <a class="um_espacinho" href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, dolore.</a>
+                                                </div>
+                                            
+                                                <div class="segunda_sessao_de_itens">
+                                                    <div class="quantidade_de_itens_do_carrinho">
+                                                        <button class="botao_de_menos_itens_do_carrinho">-</button>
+                                                        <input class="valor_da_quantidade_de_itens_do_carrinho" type="text">
+                                                        <button class="botao_de_mais_itens_do_carrinho">+</button>
+                                                    </div>
+                
+                                                    <div class="valor_do_iten_do_carrinho">
+                                                        R$2.550,00
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+    
+                                           
+                                        
+                                        </div>
+                                        
+                                        
+                                   </li>
+
+
+                                </ul>
+    
+                                <div class="bucador_de_cep">
+                                    <h2 class="h2_frete">CALCULE SEU FRETE</h2>
+        
+                                    <form class="form_pesquisa_cep" action="">
+                                        <input class="barra_pesquisa_cep" type="text" placeholder="QUAL O CEP DE ENTREGA? ">
+                                        <button class="button_pesquisa_cep">CALCULAR</button>
+                                    </form>
+                                    
+                                </div>
+
+                            </div>
+                                
+                            <div class="caixa_da_esqerda_carrinho">
+                                <div class="continuar_comprando">
+                                    <a class="continuar_comprando" href="">
+                                        CONTINUAR COMPRANDO
+                                    </a>
+                                </div>
+
+                                <div class="subtotal">
+                                    <div class="subtotal_filho">
+                                        <p>subtotal</p> 
+                                        <p>R$1.230,00</p>
+                                    </div>
+        
+                                    <div class="valor_frete"> 
+                                        <p>frete</p>
+                                        <p>R$230,00</p>
+                                    </div>
+                                </div>
+
+                                <div class="total">
+                                    <div class="valor_total">
+                                        <p>total</p>
+                                        <p>R$430,00</p>
+                                    </div>
+
+                                    <div class="caixa_finalizar_pedido" >
+                                        <button class="botao_finalizar_pedido">finalizar  pedido</button>
+                                    </div>
+
+                                    
+                                </div>
+
+                                
+
+                            </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+    <%- include("./partials/footer")%>
+
+</body>
+</html>
