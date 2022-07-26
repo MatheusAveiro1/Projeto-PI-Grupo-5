@@ -17,6 +17,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="./stylesheets/base.css">
     <link rel="stylesheet" href="./stylesheets/carrinho.css">
+    <link rel="stylesheet" href="./stylesheets/carrinhoDeCompras.css">
 </head>
 <body>    
 
@@ -30,99 +31,89 @@
                 
                 <h1 class="h1_carrinho">CARRINHO</h1>
 
-                <div class="container_pai_de_todos">
 
-                            <div class="caixa_da_direita_carrinho">
+                <div class="div_Carrinho_Pai">
 
-                                <ul class="itens_da_lista">
-                                    <li >
-                                        
-                                        <div class="pai_dos_itens">
-                                            <div class="caixa_botao_de_exluir_item">
-                                                <button class="botao_de_exluir_item">x</button>
-                                            </div>
-    
-                                            <div class="caixa_de_itens">
-                                                
-                                                <div class="primeira_sessao_de_itens">
-                                                    <img src="/images/processador-amd-ryzen.jpg" alt="" width="100px">
-                                                    <a class="um_espacinho" href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, dolore.</a>
-                                                </div>
-                                            
-                                                <div class="segunda_sessao_de_itens">
-                                                    <div class="quantidade_de_itens_do_carrinho">
-                                                        <button class="botao_de_menos_itens_do_carrinho">-</button>
-                                                        <input class="valor_da_quantidade_de_itens_do_carrinho" type="text">
-                                                        <button class="botao_de_mais_itens_do_carrinho">+</button>
-                                                    </div>
-                
-                                                    <div class="valor_do_iten_do_carrinho">
-                                                        R$2.550,00
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-    
-                                           
-                                        
+                    <div class="div_Caixa_Direita">
+                        
+                            <ul class="itens_da_lista">
+                                <li class="separacao_de_itens_carrinho">
+                                    <div class="caixa_botao_de_exluir_item_carrinho">
+                                        <button class="botao_de_exluir_item_carrinho" type="submit">X</button>
+                                    </div>
+
+                                    <div class="sessão_de_produtos">
+
+                                        <div class="primeira_sessão_de_produtos" >
+                                            <img src="/images/pl-video.jpg" alt="">
+                                            <a href="">Processador Intel Core i3 12100F 3.3GHz (4.3GHz Turbo), 12ª Geração, 4-Cores 8-Threads, LGA 1700, BX8071512100F </a>
                                         </div>
-                                        
-                                        
-                                   </li>
+
+                                        <div class="segunda_sessão_de_produtos" >
+                                            <div class="quantidade_de_itens_do_carrinho">
+                                                <button class="botao_de_menos_itens_do_carrinho">-</button>
+                                                <input class="valor_da_quantidade_de_itens_do_carrinho" type="text">
+                                                <button class="botao_de_mais_itens_do_carrinho">+</button>
+                                            </div>
+        
+                                            <div class="valor_do_iten_do_carrinho">
+                                                R$2.550,00
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </li>
 
 
-                                </ul>
+                            </ul>
+                            
+                            <div class="bucador_de_cep_carrinho">
+                                <h2 class="h2_frete_carrinho">CALCULE SEU FRETE</h2>
     
-                                <div class="bucador_de_cep">
-                                    <h2 class="h2_frete">CALCULE SEU FRETE</h2>
-        
-                                    <form class="form_pesquisa_cep" action="">
-                                        <input class="barra_pesquisa_cep" type="text" placeholder="QUAL O CEP DE ENTREGA? ">
-                                        <button class="button_pesquisa_cep">CALCULAR</button>
-                                    </form>
-                                    
-                                </div>
-
-                            </div>
+                                <form class="form_pesquisa_cep_carrinho" action="">
+                                    <input  type="text" placeholder="QUAL O CEP DE ENTREGA? ">
+                                    <button type="submit">CALCULAR</button>
+                                </form>
                                 
-                            <div class="caixa_da_esqerda_carrinho">
-                                <div class="continuar_comprando">
-                                    <a class="continuar_comprando" href="">
-                                        CONTINUAR COMPRANDO
-                                    </a>
-                                </div>
-
-                                <div class="subtotal">
-                                    <div class="subtotal_filho">
-                                        <p>subtotal</p> 
-                                        <p>R$1.230,00</p>
-                                    </div>
-        
-                                    <div class="valor_frete"> 
-                                        <p>frete</p>
-                                        <p>R$230,00</p>
-                                    </div>
-                                </div>
-
-                                <div class="total">
-                                    <div class="valor_total">
-                                        <p>total</p>
-                                        <p>R$430,00</p>
-                                    </div>
-
-                                    <div class="caixa_finalizar_pedido" >
-                                        <button class="botao_finalizar_pedido">finalizar  pedido</button>
-                                    </div>
-
-                                    
-                                </div>
-
-                                
-
                             </div>
+
+                    </div>
+
+                    <div class="div_Caixa_Esquerda">
+
+                        <button class="continuar_comprando_carrinho" >CONTINUAR COMPRANDO</button>
+
+                        <div class="subtotal_carrinho">
+
+                            <div class="subtotal_filho_carrinho">
+                                <p>subtotal</p> 
+                                <p>R$1.230,00</p>
+                            </div>
+
+                            <div class="valor_frete_carrinho"> 
+                                <p>frete</p>
+                                <p>R$230,00</p>
+                            </div>
+                        </div>
+
+                        <div class="total_carrinho">
+                            <div class="valor_total_carrinho">
+                                <p>total</p>
+                                <p>R$430,00</p>
+                            </div>
+
+                            <div class="caixa_finalizar_pedido_carrinho" >
+                                <button class="botao_finalizar_pedido_carrinho">finalizar  pedido</button>
+                            </div>
+
+                            
+                        </div>
+
+
+                    </div>
 
                 </div>
-
 
             </div>
         </div>
