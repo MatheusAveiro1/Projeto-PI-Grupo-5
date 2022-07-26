@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSales6</title>
+    <link rel="shortcut icon" href="/images/fivicon.ico">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/cadastro.css">
+</head>
+<body>    
+
+    <%- include("./partials/header")%>
+    
+
+    <main class="main-cadastro">
+        <div class="container">
+            <div class="div-main-config-padrao">
+                <form>
+                    <h2>
+                    <span class="material-icons-outlined">content_paste</span>    
+                    CADASTRO
+                    </h2>
+                    <label for="nome">Nome Completo</label>
+                    <input type="nome" id="nome" name="nome" placeholder="Informe seu nome completo">
+                    <label for="cpf">CPF</label>
+                    <input type="cpf" id="cpf" name="cpf" placeholder="Informe seu CPF">
+                    <label for="endereço">ENDEREÇO</label>
+                    <input type="endereço" id="endereço" name="endereço" placeholder="Informe seu endereço">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="email@topsale6.com">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                    <button id="botao-cadastro" type="submit">CRIAR CONTA</button>
+                </form>    
+            </div>
+        </div>
+    </main>
+
+    <%- include("./partials/footer")%>    
+
+</body>
+</html>
