@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSales6</title>
+    <link rel="shortcut icon" href="/images/fivicon.ico">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/pedido_concluido.css">
+</head>
+<body>    
+    
+    <%- include('./partials/header') %>
+    
+
+    <main>
+        <div class="container">
+            <div class="div-main-config-padrao">
+                <!--Comece aqui!-->
+                
+            </div>
+        </div>
+    </main>
+
+
+    <main class = "main-pedido-concluido">
+        <section class = "conteudo">
+                <div class = "div-pedido-concluido">
+                    <p class = pedido-concluido> PEDIDO CONCLUÍDO </p>
+                    <br>
+                    <p class = realizado-com-sucesso> Seu pedido foi realizado com sucesso! </p>
+                    <br>
+                    <p class = informacoes-pedido>Número do pedido: <br>
+                        Total: <br>
+                        Forma de pagamento: Boleto <br>
+                        Endereço de entrega: <br>
+                        <br>
+                        <br>
+                        *Os produtos serão enviados em até 3 dias úteis após a confirmação do pagamento
+                        <br>
+                        <br>
+                    </p>
+                <div class = btn-gerar-boleto>
+                   <a href = "#" > GERAR BOLETO </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%-include('./partials/footer')%>
+
+   
+</body>
+</html>
