@@ -1,351 +1,282 @@
-/*@Alisson continuar no dia 22/06*/
-
-/*** Main ***/
-.container_pai_de_todos
-{
-    display: flex;
-    border: none;
-    height: 700px;
-}
-
 .h1_carrinho
 {
-    display: flex;
-    justify-content: center;
-    padding: 1%;
+    font-size: 20px;
 }
 
-
-
-
-/*** inicio do css da caixa de itens "class=itens_da_lista" ***/
-.pai_dos_itens
+.div_Carrinho_Pai
 {
     display: flex;
-    flex-direction: column;
-    border: 5px solid #F59E3B;
-    border-radius: 10px;
-    
-}
-
-.caixa_botao_de_exluir_item
-{
-display: flex;
-justify-content: flex-end;
-padding: 2%;
-}
-
-.botao_de_exluir_item
-{
-    width: 21px;
-    background-color: #F59E3B;
-    border-radius: 10px;
     border: none;
-}
-
-
-.primeira_sessao_de_itens
-{
-    display: flex;
-    align-items: center;
-}
-
-.segunda_sessao_de_itens
-{
-    display: flex;
-    align-items: center;
-    padding: 10%;
-}
-
-.valor_da_quantidade_de_itens_do_carrinho
-{
-    width: 15%;
+   
+    margin-bottom: 30px;
+    padding: 0.3%;
 }
 
 .itens_da_lista
 {
-    list-style: none;
+    list-style-type: none ;
 }
 
-.botao_de_menos_itens_do_carrinho
+
+.div_Caixa_Direita
 {
-    width: 15px;
+    border: none;
+    /*width: 70%;*/
+    margin-right: 1.9%;
+    padding-top: 0.9%;  
 }
-.botao_de_mais_itens_do_carrinho
-{
-    width: 15px;
-}
-
-/*** fim do css da caixa de itens ***/
-
-/*** inicio do css da caixa de buscar cep class=bucador_de_cep***/
-
-.bucador_de_cep
-{
-    border: 5px solid #F59E3B;
-    border-radius: 10px;
-    margin-top: 1%;
-    padding: 2%;
-}
-
-.form_pesquisa_cep
+                        
+.div_Caixa_Esquerda
 {
     display: flex;
-    width: 100%;
-    background-color: #F59E3B;
-    padding: 3%;
-    border-radius: 10px;
-    
+    flex-direction: column;
+    border: none;
+    width: 30%;
 }
 
-.barra_pesquisa_cep
+.separacao_de_itens_carrinho
 {
-    width: 100%;
-    font-size: 85%;
-    border-radius: 4px;
+    box-shadow: 3px 2px 10px 4px #888;
+    margin-bottom: 1%;
+}
+
+.caixa_botao_de_exluir_item_carrinho
+{
+display: flex;
+justify-content: flex-end;
+padding: 1%;
+}
+
+.botao_de_exluir_item_carrinho
+{
+    background-color: #ccc;
+    border-radius: 50%;
     border: none;
-    background: none;
+    padding: 5px;
+    font-size: 0.875rem;
     color: #fff;
-}
-
-.button_pesquisa_cep
-{
-    background: #fff;
-    border-radius: 10px;
-    width: 50%;
-    border: none;
-}
-
-/*** fim do css da caixa de buscar cep class=bucador_de_cep***/
-
-/*** inicio do css da caixa de continuar_comprando class=continuar_comprando***/
-
-
-.continuar_comprando
-{
-    display: flex;
-    justify-content: center;
-    border: 5px solid #F59E3B; 
-    border-radius: 10px;
-    padding: 2%;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #F59E3B;
-    margin: 5%;
+    transition: 0.3s;
+    cursor: pointer;
     font-weight: bold;
+
 }
 
-/*** fim do css da caixa de continuar_comprando class=continuar_comprando***/
+.botao_de_exluir_item_carrinho:hover
+{
+color: #ff3838;
+
+}
+
+.sessão_de_produtos
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.primeira_sessão_de_produtos
+{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    
+}
+
+.primeira_sessão_de_produtos a
+{
+    font-size: 12px;
+    text-decoration: none;
+    color: #777;
+
+}
+
+.primeira_sessão_de_produtos img
+{
+    width: 120px;
+}
 
 
-/*** inicio do css da caixa de subtotal class=subtotal***/
+.segunda_sessão_de_produtos
+{
+    display: flex;
+    align-items: center;
+    padding-right: 5%;
+    
+}
 
-.subtotal
+.bucador_de_cep_carrinho
 {
     
-    border: 5px solid #F59E3B;
-    border-radius: 10px;
-    height: 190px; 
-    padding: 6%; 
-    text-transform: uppercase; 
-    
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 2%;
+    box-shadow: 3px 2px 10px 4px #888;
 }
 
-.subtotal_filho
+.barra_pesquisa_cep_carrinho
+{
+    margin-top:1%;
+    width: 60%;
+    padding: 1%;
+}
+
+.form_pesquisa_cep_carrinho
+{
+    display: flex;
+    align-items: center;
+    padding: 15px 0px 10px 0px;
+}
+
+.form_pesquisa_cep_carrinho input
+{
+    padding: 15px;
+    width: 70%;
+    border-top-left-radius: 7px ;
+    border-bottom-left-radius: 7px;
+    border: 1px solid #999;
+}
+
+.form_pesquisa_cep_carrinho button
+{
+    padding: 15px;
+    width: 30%;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+    border: 1px solid #999;
+    margin-left: -2px;
+    cursor: pointer;
+    background-color: #00A000;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.form_pesquisa_cep_carrinho button:hover
+{
+    background-color: #017a01;
+}
+
+
+.continuar_comprando_carrinho
+{
+    margin-top: 3%;
+    width: 100%;
+    padding: 3%;
+    box-shadow: 3px 2px 10px 4px #888;
+}
+
+.subtotal_carrinho
+{
+    margin-top: 5%;
+    box-shadow: 3px 2px 10px 4px #888;
+    padding: 4%;
+}
+
+
+.subtotal_filho_carrinho
 {
     display: flex;
     justify-content: space-between;
-    text-transform: uppercase;
-    
+    margin-bottom: 20%;
 }
 
-.valor_frete
+.valor_frete_carrinho
 {
     display: flex;
     justify-content: space-between;
-    padding-top: 20%;
-    
 }
 
-
-/*** fim do css da caixa de subtotal class=subtotal***/
-
-
-/*** inicio do css da caixa de subtotal class=subtotal***/
-
-.total
+.total_carrinho
 {
-    
-    border: 5px solid #F59E3B;
-    border-radius: 10px;
-    height: 130px; 
-    padding: 6%; 
-    text-transform: uppercase; 
+    padding: 4%;
     margin-top: 2%;
+    box-shadow: 3px 2px 10px 4px #888;
 }
 
-.valor_total
+.valor_total_carrinho
 {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20%; 
 }
 
-.caixa_finalizar_pedido
+.caixa_finalizar_pedido_carrinho
 {
     display: flex;
     justify-content: center;
-    margin: 4%; 
 }
 
-.botao_finalizar_pedido
+.botao_finalizar_pedido_carrinho
 {
-    width: 100%;
-    padding: 3%;
-    text-transform: uppercase; 
-    background-color: #F59E3B;
-    border: none;
-    color: #fff;
+    padding: 5%;
+    text-transform: uppercase;
 }
 
-/*** fim do css da caixa de continuar_comprando class=continuar_comprando***/
-/************/
+.quantidade_de_itens_do_carrinho{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
 
-/******************* @media ****************************/
+}
+
+.valor_da_quantidade_de_itens_do_carrinho
+{
+    width: 30px;
+   margin-left: 5px;
+   margin-right: 5px;
+}
+
+
 
 @media (max-width: 768px) {
-   
 
-    div .container_pai_de_todos
-    {
+
+    .div_Carrinho_Pai {
+        display: flex;
         flex-direction: column;
     }
 
-    .container_pai_de_todos
-    {
-        height: 1000px;
+    .sessão_de_produtos {
+
+        flex-direction: column;
+        padding: 5%;
     }
 
-    .valor_frete
-{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10%;
-    
-}
-  
+    .div_Caixa_Direita {
+        border: none;
+        width: 100%;
+        margin-right: 1.9%;
+        padding-top: 0.9%;
+    }
+
+    .div_Caixa_Esquerda {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        width: 100%;   
+    }
+
+    .quantidade_de_itens_do_carrinho{
+        flex-direction: row;
+
+    }
+
+    .segunda_sessão_de_produtos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
 }
 
 
 @media (max-width: 481px) {
-    /*** Main ***/
-
-    div .container_pai_de_todos
-    {
-        flex-direction: column;
-    }
-
-    .container_pai_de_todos
-    {
-        height: 800px;
-    }
-
-
-
-    /************/
-}
-
-
-
-@media (min-width: 769px) {
-    /*** Main ***/
-
-    .caixa_da_direita_carrinho
-    {
-        width: 67%;
-    }
-
-    .caixa_da_esqerda_carrinho
-    {
-        width: 30%;
-    }
-
-    div .container_pai_de_todos
-    {
-        
-        justify-content: space-between;
-    }
-
-    .caixa_de_itens 
-    {
-        display: flex;
-        justify-content: space-around;
-    
-    }
-
-    .valor_da_quantidade_de_itens_do_carrinho 
-    {
-        width: 20%;
-    }
-    
-    /************/
-}
-
-
-@media (min-width: 1280px) {
-    /*** Main ***/
-
-    .caixa_da_direita_carrinho
-    {
-        width: 67%;
-    }
-
-    .caixa_da_esqerda_carrinho
-    {
-        width: 30%;
-    }
-
-    div .container_pai_de_todos
-    {
-        height: auto;
-        justify-content: space-between;
-    }
-
-    .continuar_comprando 
-    {
-        width: 100%;
-        padding: 2%;
-        margin: 0%;
-        margin-bottom: 1%;
-    }
-
-    .total
-{
-    
- 
-    border-radius: 10px;
-    height: 150px; 
-}
-
-.caixa_finalizar_pedido
-{
    
-    margin-top: 10%;
-}
-
-.caixa_de_itens
-{
-    display: flex;
-    justify-content: space-around;
-    
-}
-
-.valor_da_quantidade_de_itens_do_carrinho 
+    .form_pesquisa_cep_carrinho button
     {
-        width: 15%;
+        font-size: 0.75rem;
+        padding: 17.5px;
     }
-
-    /************/
+  
 }
-
-/*******************************************************/

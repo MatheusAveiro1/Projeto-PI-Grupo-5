@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSales6</title>
+    <link rel="shortcut icon" href="./images/fivicon">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="./stylesheets/base.css">
+    <link rel="stylesheet" href="./stylesheets/carrinho.css">
+    <link rel="stylesheet" href="./stylesheets/carrinhoDeCompras.css">
+</head>
+<body>    
+
+    <%- include("./partials/header")%>
+    
+
+    <main>
+        <div class="container">
+            <div class="div-main-config-padrao">
+                <!--Comece aqui!-->
+                
+                <h1 class="h1_carrinho">CARRINHO</h1>
+
+
+                <div class="div_Carrinho_Pai">
+
+                    <div class="div_Caixa_Direita">
+                        
+                            <ul class="itens_da_lista">
+                                <li class="separacao_de_itens_carrinho">
+                                    <div class="caixa_botao_de_exluir_item_carrinho">
+                                        <button class="botao_de_exluir_item_carrinho" type="submit">X</button>
+                                    </div>
+
+                                    <div class="sessão_de_produtos">
+
+                                        <div class="primeira_sessão_de_produtos" >
+                                            <img src="/images/pl-video.jpg" alt="">
+                                            <a href="">Processador Intel Core i3 12100F 3.3GHz (4.3GHz Turbo), 12ª Geração, 4-Cores 8-Threads, LGA 1700, BX8071512100F </a>
+                                        </div>
+
+                                        <div class="segunda_sessão_de_produtos" >
+                                            <div class="quantidade_de_itens_do_carrinho">
+                                                <button class="botao_de_menos_itens_do_carrinho">-</button>
+                                                <input class="valor_da_quantidade_de_itens_do_carrinho" type="text">
+                                                <button class="botao_de_mais_itens_do_carrinho">+</button>
+                                            </div>
+        
+                                            <div class="valor_do_iten_do_carrinho">
+                                                R$2.550,00
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+
+                            </ul>
+                            
+                            <div class="bucador_de_cep_carrinho">
+                                <h2 class="h2_frete_carrinho">CALCULE SEU FRETE</h2>
+    
+                                <form class="form_pesquisa_cep_carrinho" action="">
+                                    <input  type="text" placeholder="QUAL O CEP DE ENTREGA? ">
+                                    <button type="submit">CALCULAR</button>
+                                </form>
+                                
+                            </div>
+
+                    </div>
+
+                    <div class="div_Caixa_Esquerda">
+
+                        <button class="continuar_comprando_carrinho" >CONTINUAR COMPRANDO</button>
+
+                        <div class="subtotal_carrinho">
+
+                            <div class="subtotal_filho_carrinho">
+                                <p>subtotal</p> 
+                                <p>R$1.230,00</p>
+                            </div>
+
+                            <div class="valor_frete_carrinho"> 
+                                <p>frete</p>
+                                <p>R$230,00</p>
+                            </div>
+                        </div>
+
+                        <div class="total_carrinho">
+                            <div class="valor_total_carrinho">
+                                <p>total</p>
+                                <p>R$430,00</p>
+                            </div>
+
+                            <div class="caixa_finalizar_pedido_carrinho" >
+                                <button class="botao_finalizar_pedido_carrinho">finalizar  pedido</button>
+                            </div>
+
+                            
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <%- include("./partials/footer")%>
+
+</body>
+</html>
