@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nome": "PC-Gamer Fast",
+        "categoria": "PC-Gamer",
+        "preco": "2.100",
+        "img": "imgProduto.jpg"        
+    },
+    {
+        "id": 2,
+        "nome": "PC-Gamer Fire",
+        "categoria": "PC-Gamer",
+        "preco": "2.400",
+        "img": "imgProduto.jpg"        
+    },
+    {
+        "id": 3,
+        "nome": "PC-Gamer Brutal",
+        "categoria": "PC-Gamer",
+        "preco": "2.800",
+        "img": "imgProduto.jpg"        
+    }
+]
