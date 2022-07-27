@@ -1,23 +1,115 @@
 [
     {
         "id": 1,
-        "nome": "PC-Gamer Fast",
-        "categoria": "PC-Gamer",
-        "preco": "2.100",
-        "img": "imgProduto.jpg"        
+        "nome": "Notebook Acer Aspire 5 Intel Core i7-10510U",
+        "categoria": "notebook",
+        "preco": "2100",
+        "img": "notebook-acer-aspire-5.jpg"        
     },
     {
         "id": 2,
-        "nome": "PC-Gamer Fire",
-        "categoria": "PC-Gamer",
-        "preco": "2.400",
-        "img": "imgProduto.jpg"        
+        "nome": "Note Dell Lat 3410 14",
+        "categoria": "notebook",
+        "preco": "7229.99",
+        "img": "Note-Dell-Lat-3410-14.jpg"           
     },
     {
         "id": 3,
-        "nome": "PC-Gamer Brutal",
-        "categoria": "PC-Gamer",
-        "preco": "2.800",
-        "img": "imgProduto.jpg"        
+        "nome": "Processador AMD Athlon",
+        "categoria": "hardware",
+        "preco": "2800.00",
+        "img": "processador-amd-ryzen-5.jpg"        
+    },
+    {
+        "id": 4,
+        "nome": "Headset Gamer SuperFrame AURA, 7.1",
+        "categoria": "hardware",
+        "preco": "149.99",
+        "img": "headset-gamer-superframe.jpg"        
+    },
+    {
+        "id": 5,
+        "nome": "Smartphone Samsung Galaxy A03",
+        "categoria": "mobile",
+        "preco": "859.99",
+        "img": "smartphone-samsung-galaxy-a03.jpg"        
+    },
+    {
+        "id": 6,
+        "nome": "Smartphone Motorola Moto G20",
+        "categoria": "mobile",
+        "preco": "1164.00",
+        "img": "smartphone-motorola-moto-g20.jpg"        
+    },
+    {
+        "id": 7,
+        "nome": "Computador Lenovo V50S Intel Core i3-10100",
+        "categoria": "desktop",
+        "preco": "2499.99",
+        "img": "computador-lenovo.jpg"        
+    },
+    {
+        "id": 8,
+        "nome": "All In One LG 24V50N Intel Core",
+        "categoria": "desktop",
+        "preco": "4199.90",
+        "img": "all-in-one-lg-24v50n.jpg"        
+    },
+    {
+        "id": 9,
+        "nome": "Fonte Corsair VS600, 600W, 80 Plus White",
+        "categoria": "hardware",
+        "preco": "505.76",
+        "img": "fonte-corsair-vs600-600w-80-plus.jpg"        
+    },
+    {
+        "id": 10,
+        "nome": "Memória Corsair Vengeance LPX, 8GB, 2666MHz, DDR4, C16, Preto",
+        "categoria": "hardware",
+        "preco": "352.82",
+        "img": "89940_index_gg.jpg"        
+    },
+    {
+        "id": 11,
+        "nome": "HD Seagate BarraCuda, 2TB, 3.5, SATA - ST2000DM008",
+        "categoria": "hardware",
+        "preco": "399.88",
+        "img": "100916_1552934430_index_gg.jpg"        
+    },
+    {
+        "id": 12,
+        "nome": "Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3060 Eagle 12G",
+        "categoria": "hardware",
+        "preco": "3411.65",
+        "img": "placa-de-video-gigabyte-nvidia-geforce-rtx-3060.jpg"        
+    },
+    {
+        "id": 13,
+        "nome": "Placa-Mãe ASRock B450M Steel Legend",
+        "categoria": "hardware",
+        "preco": "964.59",
+        "img": "placa-mae-asrock-b450m-steel-legend.jpg"        
+    },
+    {
+        "id": 14,
+        "nome": "Cooler para Processador Gamer Rise Mode X5",
+        "categoria": "hardware",
+        "preco": "70.47",
+        "img": "cooler-para-processador-gamer-rise-mode-x5.jpg"        
+    },
+    {
+        "id": 15,
+        "nome": "Tablet Lenovo Tab P11 Plus, 64GB, Tela 11, Android 11",
+        "categoria": "mobile",
+        "preco": "1577.89",
+        "img": "tablet-lenovo-tab-p11-plus.jpg"        
+    },
+    {
+        "id": 16,
+        "nome": "Smart TV LG 55 4K UHD",
+        "categoria": "eletronico",
+        "preco": "2900",
+        "img": "smart-tv-lg-55-4k-uhd.jpg"        
     }
+
 ]
