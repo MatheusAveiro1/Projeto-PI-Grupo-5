@@ -4,17 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var produtosRouter = require('./routes/produtos');
-
-var checkoutRouter = require('./routes/checkout');
-
-var loginRouter = require('./routes/login');
-var cadastroRouter = require('./routes/cadastro');
-
-var carrinhoRouter = require('./routes/carrinho');
+var indexRouter = require('./routes/indexRouter');
+var usuariosRouter = require('./routes/usuariosRouter');
+var checkoutRouter = require('./routes/checkoutRouter');
+var carrinhoRouter = require('./routes/carrinhoRouter');
 
 
 
@@ -31,14 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-app.use('/produto', produtosRouter);
-
+app.use('/usuarios', usuariosRouter);
 app.use('/checkout', checkoutRouter);
-
-app.use('/login', loginRouter);
-app.use('/cadastro', cadastroRouter);
 app.use('/carrinho', carrinhoRouter);
 
 
