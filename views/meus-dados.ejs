@@ -15,9 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
     <!--CSS-->
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/base-area-restrita.css">
-    <link rel="stylesheet" href="./css/meus-dados.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/base-area-restrita.css">
+    <link rel="stylesheet" href="/stylesheets/meus-dados.css">
 </head>
 <body>    
 
@@ -28,22 +28,7 @@
             <div class="div-main-config-padrao">
                 <!--Comece aqui!-->
                 <div class="div-area-restrita">
-                    <nav class="menu-lateral-area-restrita">                       
-                        <ul class="ul-menu-lateral">
-                            <li>
-                                <a href="./perfil-usuario.html">
-                                    <span class="material-icons">person</span>
-                                    Minha Conta
-                                </a>
-                            </li>
-                            <li>
-                                <a href="./meus-dados.html">
-                                    <span class="material-icons">article</span>
-                                    Meus Dados
-                                </a>
-                            </li>                            
-                        </ul>
-                    </nav>
+    <%- include('./partials/menu-lateral-perfil') %>
                     <div class="div-info-usuario-principal">
                         <p class="titulo-meus-dados">
                             <span class="material-icons">article</span> MEUS DADOS
