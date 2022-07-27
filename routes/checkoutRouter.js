@@ -4,6 +4,6 @@ const checkoutController = require('../controllers/checkoutController');
 
 
 
-router.get('/', checkoutController.pedidoConcluido);
+router.get('/pedido-concluido', checkoutController.pedidoConcluido);
 
 module.exports = router;

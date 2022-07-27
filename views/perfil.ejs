@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TopSales6</title>
-    <link rel="shortcut icon" href="./img/fivicon.ico">
+    <link rel="shortcut icon" href="/images/fivicon.ico">
     <!--Fonte / Icons-->    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
@@ -15,9 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
     <!--CSS-->
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/base-area-restrita.css">
-    <link rel="stylesheet" href="./css/perfil-usuario.css">    
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/base-area-restrita.css">
+    <link rel="stylesheet" href="/stylesheets/perfil-usuario.css">    
 </head>
 <body>    
 
@@ -28,22 +28,7 @@
             <div class="div-main-config-padrao">
                 <!--Comece aqui!-->
                 <div class="div-area-restrita">
-                    <nav class="menu-lateral-area-restrita">                       
-                        <ul class="ul-menu-lateral">
-                            <li>
-                                <a href="/perfil">
-                                    <span class="material-icons">person</span>
-                                    Minha Conta
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/meus-dados">
-                                    <span class="material-icons">article</span>
-                                    Meus Dados
-                                </a>
-                            </li>                            
-                        </ul>
-                    </nav>
+                    <%- include('./partials/menu-lateral-perfil') %>
                     <div class="div-info-usuario-principal">
                         <div class="div-info-acesso">
                             <div class="div-info-acesso-texto">
