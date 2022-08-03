@@ -28,6 +28,10 @@ app.use('/usuarios', usuariosRouter);
 app.use('/checkout', checkoutRouter);
 app.use('/carrinho', carrinhoRouter);
 
+//Adicionando rota para meu arquivo de erro 404
+app.use((req, res)=>{
+  res.status(404).render('not-found');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
