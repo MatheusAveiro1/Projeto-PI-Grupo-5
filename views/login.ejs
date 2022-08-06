@@ -20,30 +20,40 @@
 </head>
 <body>  
 
- <%- include("./partials/header")%>
+<%- include("./partials/header")%>
     
+<main class="main-login">
+    <div class="container">
+        <div class="div-main-config-padrao">
+            <form action="/usuarios/perfil" motod="POST">
 
-    <main class="main-login">
-        <div class="container">
-            <div class="div-main-config-padrao">
-                <form action="/usuarios/perfil" motod="POST">
-                    <label for="email"> 
-                        <span class="material-icons-outlined">email</span>
-                         E-mail
-                    </label>
-                    <input type="email" class="email" name="email" placeholder="email@topsale6.com" required>
-                    <label for="senha">
-                        <span class="material-icons-outlined">lock</span>
-                        Senha
-                    </label>
-                    <input type="password" name="password" class="password" placeholder="Digite sua senha" required>
-                    <button class="botao-login-entrar"  type="submit">Entrar</button>
-                    <a class="botao-login-criar_conta" href="/usuarios/cadastro">CRIAR CONTA</a>
-                </form> 
-            </div>
+                <h1>LOGIN</h1>
+                <p>Entre com seus dados corretamente para acessar o sistema.</p>
+
+                <label for="email"> 
+                    <span class="material-icons-outlined">email</span>
+                    E-mail
+                </label>
+                <input type="email" class="email" name="email" placeholder="email@topsale6.com" required>
+                <label for="senha">
+                    <span class="material-icons-outlined">lock</span>
+                    Senha
+                </label>
+                <input type="password" name="password" class="password" placeholder="Digite sua senha" required>
+
+                <div class="div-lembrar">
+                    <input type="checkbox" class="checkbox-lembrar" id="lembrar">
+                    <label for="lembrar">Lembrar-se</label>
+                </div>
+
+                <button class="botao-login-entrar" type="submit">Entrar</button>
+                <a class="botao-login-criar_conta" href="/usuarios/cadastro">Criar Conta</a>
+            </form> 
         </div>
-    </main>
- <%- include("./partials/footer")%>
-  
+    </div>
+</main>
+
+<%- include("./partials/footer")%>
+
 </body>
 </html>
