@@ -1,0 +1,23 @@
+.main-not-found .banner-not-found-mobile {
+    width: 100%;    
+    margin-bottom: 100px;   
+}
+
+.main-not-found .banner-not-found {
+    display: none;
+}
+
+
+/******* @media ********************************/
+
+@media (min-width: 769px) {
+    .main-not-found .banner-not-found-mobile {
+        display: none;
+    }
+    
+    .main-not-found .banner-not-found {
+        display: block;
+        width: 100%;    
+        margin-bottom: 100px;        
+    }
+}

@@ -13,14 +13,6 @@ body {
 }
 /****/
 
-/* Página Not Found */
-.main-not-found img {
-    width: 100%;
-    margin-top: 30px; 
-    margin-bottom: 100px;   
-}
-/********************/
-
 /* Container */
 .container {
     max-width: 1280px;
