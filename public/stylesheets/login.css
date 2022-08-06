@@ -2,9 +2,10 @@
 
 /*** Main ***/
 
-.main-login form{
-    width: 300px;
-    padding: 30px;
+.main-login form {
+    max-width: 500px;
+    height: 470px;
+    padding: 30px 20px 40px 20px;
     margin: auto;
     margin-bottom: 100px;
     box-shadow: 3px 2px 10px 4px #888;
@@ -12,102 +13,87 @@
 
 }
 
-.main-login form input{
+.main-login h1 {
+    font-size: 1.875rem;
+    margin-bottom: 5px;    
+    color: #333;
+}
+
+.main-login p {
+    font-size: 0.875rem;
+    margin-bottom: 30px;    
+    color: #777;
+}
+
+.main-login form input {
     border: 1px solid #999;
     display: block;
     width: 100%;
     padding: 10px;
     text-align: left;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
 }
-.main-login form label{
+.main-login form label {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
     text-align: left;
-    }
+}
 
-.main-login form label span{
+.main-login form label span {
     margin-right: 5px;
 }
 
-.main-login form .botao-login-entrar{
+.main-login form .botao-login-entrar {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
     border: none;
-    padding: 10px;
+    padding: 10px 20px 10px 20px;
+    font-size: 0.875rem;
     border-radius: 20px;
     color: white;
     background-color: #00A000;
     cursor: pointer;
-    }
+    transition: 0.3s;
+}
+
+.main-login form .div-lembrar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: -5px;
+    margin-left: 3px;
+}
+
+.main-login form .div-lembrar .checkbox-lembrar { 
+    width: auto;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.main-login form .div-lembrar label {
+    margin-bottom: 0;
+}
+
+.main-login form .botao-login-entrar:hover {    
+    background-color: #008b00;
+}    
     
-    .main-login form .botao-login-criar_conta{
-    color: #F59E3B;
-    margin-left:35px;
+.main-login form .botao-login-criar_conta {    
+    margin-left: 10px;
+    color: #1a6699;
+    transition: 0.3s;
 }
 
-
-
-
-
-
-
-
-
-/***.login-container{
-    width: 350px;
-    border: none;
-    height: 250px;
-    padding: 0%;
-    margin: 30%;
+.main-login form .botao-login-criar_conta:hover {    
+    color: #003457;
 }
-
-.form{
-
-
-}
-
-label, input{
-    display: block;
-    width: 90%;
-    height:20%;
-    text-align: left;
-    border-radius: 10px;
-}  
-
-label{
-    font-weight: bold;
-}
-
-
-.botao-login-entrar{
-text-align: center;
-text-transform: uppercase;
-font-weight: bold;
-border: none;
-height: 40px;
-width: 100px;
-border-radius: 20px;
-color: #323232;
-background-color: #00A000;
-cursor: pointer;
-
-   
-}
-
-.botao-login-criar_conta{
-color: #F59E3B;
-
-
-}/***
-
-
-
 
 /************/
 
