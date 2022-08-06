@@ -110,6 +110,61 @@
         "categoria": "eletronico",
         "preco": "2900",
         "img": "smart-tv-lg-55-4k-uhd.jpg"        
+    }, 
+    {
+        "id": 17,
+        "nome": "HD Seagate BarraCuda, 2TB, 3.5, SATA - ST2000DM008",
+        "categoria": "hardware",
+        "preco": "399.88",
+        "img": "100916_1552934430_index_gg.jpg"        
+    },
+    {
+        "id": 18,
+        "nome": "Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3060 Eagle 12G",
+        "categoria": "hardware",
+        "preco": "3411.65",
+        "img": "placa-de-video-gigabyte-nvidia-geforce-rtx-3060.jpg"        
+    },
+    {
+        "id": 19,
+        "nome": "Placa-Mãe ASRock B450M Steel Legend",
+        "categoria": "hardware",
+        "preco": "964.59",
+        "img": "placa-mae-asrock-b450m-steel-legend.jpg"        
+    },
+    {
+        "id": 20,
+        "nome": "Cooler para Processador Gamer Rise Mode X5",
+        "categoria": "hardware",
+        "preco": "70.47",
+        "img": "cooler-para-processador-gamer-rise-mode-x5.jpg"        
+    },
+    {
+        "id": 21,
+        "nome": "Memória Corsair Vengeance LPX, 8GB, 2666MHz, DDR4, C16, Preto",
+        "categoria": "hardware",
+        "preco": "352.82",
+        "img": "89940_index_gg.jpg"        
+    },
+    {
+        "id": 22,
+        "nome": "Tablet Lenovo Tab P11 Plus, 64GB, Tela 11, Android 11",
+        "categoria": "mobile",
+        "preco": "1577.89",
+        "img": "tablet-lenovo-tab-p11-plus.jpg"        
+    },
+    {
+        "id": 23,
+        "nome": "Smart TV LG 55 4K UHD",
+        "categoria": "eletronico",
+        "preco": "2900",
+        "img": "smart-tv-lg-55-4k-uhd.jpg"        
+    },
+    {
+        "id": 24,
+        "nome": "Processador AMD Athlon",
+        "categoria": "hardware",
+        "preco": "2800.00",
+        "img": "processador-amd-ryzen-5.jpg"        
     }
-
 ]
