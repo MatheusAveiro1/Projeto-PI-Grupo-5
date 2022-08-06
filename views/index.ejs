@@ -54,28 +54,27 @@
                 <div class="div-cards-principal">      
                     <div class="div-cards">
                         
-                        <% for (let i=0; i<8; i++) { %> 
+                        <% for (let i=0; i<=11; i++) { %> 
 
-                        <article class="card">
-                            <div class="div-card-img-infos">
-                                <figure>
-                                    <img src="/images/produtos/<%= produtos[i].img %> " alt="Imagem PC Gamer">
-                                </figure>
-                                <div class="card-infos">
-                                    <p class="card-nome-produto"><%= produtos[i].nome %></p>
-                                    <p class="card-preco-anterior">De: R$<%= produtos[i].preco %> por:</p>
-                                    <p class="card-preco-atual"><strong>R$<%= ((produtos[i].preco / 10 ) * 9).toFixed(2) %> à vista</strong></p>
-                                    <p class="card-preco-parcelado">12x de R$<%= (produtos[i].preco / 12).toFixed(2) %></p>
-                                </div>                                
-                            </div>
-                            <button>
-                                <span class="material-icons-outlined">shopping_cart</span> Comprar
-                            </button>
-                        </article>
+                            <article class="card">
+                                <div class="div-card-img-infos">
+                                    <figure>
+                                        <img src="/images/produtos/<%= produtos[i].img %> " alt="Imagem PC Gamer">
+                                    </figure>
+                                    <div class="card-infos">
+                                        <p class="card-nome-produto"><%= produtos[i].nome %></p>
+                                        <p class="card-preco-anterior">De: R$<%= produtos[i].preco %> por:</p>
+                                        <p class="card-preco-atual"><strong>R$<%= ((produtos[i].preco / 10 ) * 9).toFixed(2) %> à vista</strong></p>
+                                        <p class="card-preco-parcelado">12x de R$<%= (produtos[i].preco / 12).toFixed(2) %></p>
+                                    </div>                                
+                                </div>
+                                <button>
+                                    <span class="material-icons-outlined">shopping_cart</span> Comprar
+                                </button>
+                            </article>
 
-                        <% } %> 
+                            <% } %> 
             
-                      
                     </div>
                 </div>                                  
             </section>
@@ -87,7 +86,7 @@
                 <div class="div-cards-principal">      
                     <div class="div-cards">
 
-                        <% for (let i=8; i<=15; i++) { %> 
+                        <% for (let i=12; i<=23; i++) { %> 
 
                             <article class="card">
                                 <div class="div-card-img-infos">
@@ -106,11 +105,8 @@
                                 </button>
                             </article>
     
-                            <% } %> 
+                        <% } %>
 
-
-            
-                      
                     </div>
                 </div>
             </section>       

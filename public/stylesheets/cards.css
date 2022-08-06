@@ -8,8 +8,8 @@
 
 .div-cards-principal .div-cards {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: row;    
+    justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 0px;           
 }
@@ -17,11 +17,11 @@
 .div-cards-principal .div-cards .div-card-img-infos {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;        
 }
 
-.div-cards-principal .div-cards .card {    
+.div-cards-principal .div-cards .card {        
     margin-bottom: 40px;
     width: 100%;
     padding: 20px;
@@ -51,6 +51,7 @@
     font-weight: 600;
     color: #333;
     margin-bottom: 10px;
+    height: 50px;
 }
 
 .div-cards-principal .div-cards .card .div-card-img-infos .card-infos .card-preco-anterior {
@@ -102,10 +103,8 @@
 
 
 @media (min-width: 600px) {
-    .div-cards-principal .div-cards .card { 
-        margin-left: 20px;
-        margin-right: 20px;      
-        width: 230px;      
+    .div-cards-principal .div-cards .card {                    
+        width: 46%;      
     }
 
     .div-cards-principal .div-cards .div-card-img-infos {
@@ -118,12 +117,6 @@
     }
 }
 
-@media (min-width: 700px) {    
-    .div-cards-principal .div-cards .card {           
-        width: 280px;      
-    }
-}
-
 @media (min-width: 769px) { 
     .home-section-titulos {        
         font-size: 1.5rem;        
@@ -131,22 +124,16 @@
     
     .home-section-titulos span {
         font-size: 1.5rem;        
-    } 
-
-    .div-cards-principal .div-cards .card {           
-        width: 300px;      
     }
-}
-
-@media (min-width: 800px) {    
+    
     .div-cards-principal .div-cards .card {           
-        width: 330px;      
+        width: 47%;      
     }
 }
 
 @media (min-width: 900px) {
     .div-cards-principal .div-cards .card {           
-        width: 370px;      
+        width: 31%;      
     }
 }
 
@@ -158,17 +145,12 @@
     
     .home-section-titulos span {
         font-size: 1.8rem;        
-    } 
-
-    .div-cards-principal .div-cards .card {           
-        width: 200px;      
     }
 }
 
-
 @media (min-width: 1280px) { 
     .div-cards-principal .div-cards .card {           
-        width: 265px;      
+        width: 23%;      
     }
 }
 
