@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const usuariosController = require('../controllers/usuariosController')
 const uploadFile = require('../middlewares/multerMiddlewares');
-const validaFormCadastroMiddlewares = require('../middlewares/validacadastro');
+const validaFormCadastroMiddlewares = require('../middlewares/validaCadastro');
 
 
 router.get('/login', usuariosController.login); 
