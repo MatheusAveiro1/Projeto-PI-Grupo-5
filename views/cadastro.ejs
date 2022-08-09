@@ -26,22 +26,116 @@
     <main class="main-cadastro">
         <div class="container">
             <div class="div-main-config-padrao">
-                <form>
+                <form action="/usuarios/cadastro" method="POST" enctype="multipart/form-data">  
                     <h2>
-                    <span class="material-icons-outlined">content_paste</span>    
-                    CADASTRO
+                        <span class="material-icons-outlined">content_paste</span>    
+                        CADASTRO
                     </h2>
-                    <label for="nome">Nome Completo</label>
-                    <input type="nome" id="nome" name="nome" placeholder="Informe seu nome completo">
-                    <label for="cpf">CPF</label>
-                    <input type="cpf" id="cpf" name="cpf" placeholder="Informe seu CPF">
-                    <label for="endereço">ENDEREÇO</label>
-                    <input type="endereço" id="endereço" name="endereço" placeholder="Informe seu endereço">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="email@topsale6.com">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="password" id="password" placeholder="Digite sua senha">
-                    <button id="botao-cadastro" type="submit">CRIAR CONTA</button>
+                    
+                    <div class="div-nome-sobrenome">
+                        <div class="div-nome">
+                            <label for="nome">* Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Informe seu nome " value="<%= locals.dadosPreenchido && dadosPreenchido.nome %>">
+
+                            <% if(locals.errorsFormCadastro && errorsFormCadastro.nome) { %>
+
+                                <p class="msg-erro-form-cadastro"> 
+                                    <b><%= errorsFormCadastro.nome.param + ":  " %></b>  <%= errorsFormCadastro.nome.msg %>
+                                </p> 
+                                
+                            <% } %>                    
+                        </div>
+
+                        <div class="div-sobrenome">
+                            <label for="sobrenome">* Sobrenome</label>
+                            <input type="text" id="sobrenome" name="sobrenome" placeholder="Informe seu sobrenome" value="<%= locals.dadosPreenchido && dadosPreenchido.sobrenome %>">
+
+                            <% if(locals.errorsFormCadastro && errorsFormCadastro.sobrenome) { %>
+
+                                <p class="msg-erro-form-cadastro"> 
+                                    <b><%= errorsFormCadastro.sobrenome.param + ":  " %></b>  <%= errorsFormCadastro.sobrenome.msg %>
+                                </p> 
+                                
+                            <% } %>  
+
+                        </div>
+                    </div>  
+
+
+                    <div class="div-cpf-email">
+                        <div class="div-cpf">
+                            <label for="cpf">* CPF</label>
+                            <input type="text" id="cpf" name="cpf" placeholder="Informe seu CPF" value="<%= locals.dadosPreenchido && dadosPreenchido.cpf %>">
+
+                            <% if(locals.errorsFormCadastro && errorsFormCadastro.cpf) { %>
+
+                                <p class="msg-erro-form-cadastro"> 
+                                    <b><%= errorsFormCadastro.cpf.param + ":  " %></b>  <%= errorsFormCadastro.cpf.msg %>
+                                </p> 
+                                
+                            <% } %>  
+
+                        </div>
+
+                        <div class="div-email">
+                            <label for="email">* E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="Exp: email@topsale6.com" value="<%= locals.dadosPreenchido && dadosPreenchido.email %>">
+
+                            <% if(locals.errorsFormCadastro && errorsFormCadastro.email) { %>
+
+                                <p class="msg-erro-form-cadastro"> 
+                                    <b><%= errorsFormCadastro.email.param + ":  " %></b>  <%= errorsFormCadastro.email.msg %>
+                                </p> 
+                                
+                            <% } %>  
+
+                        </div>
+                    </div>
+                    
+                    <div class="div-senha-confirmar-senha">
+                        <div class="div-senha">
+                            <label for="senha">* Senha</label>
+                            <input type="password" name="senha" id="senha" placeholder="Digite uma senha" value="<%= locals.dadosPreenchido && dadosPreenchido.senha %>">
+
+                            <% if(locals.errorsFormCadastro && errorsFormCadastro.senha) { %>
+
+                                <p class="msg-erro-form-cadastro"> 
+                                    <b><%= errorsFormCadastro.senha.param + ":  " %></b>  <%= errorsFormCadastro.senha.msg %>
+                                </p> 
+                                
+                            <% } %>  
+
+                        </div>
+
+                        <div class="div-confirmar-senha">
+                            <label for="confirmarSenha">* Confirmação da senha</label>
+                            <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirme sua senha" value="<%= locals.dadosPreenchido && dadosPreenchido.confirmarSenha %>">
+
+                            <% if(locals.errorsFormCadastro && errorsFormCadastro.confirmarSenha) { %>
+
+                                <p class="msg-erro-form-cadastro"> 
+                                    <b><%= errorsFormCadastro.confirmarSenha.param + ":  " %></b>  <%= errorsFormCadastro.confirmarSenha.msg %>
+                                </p> 
+                                
+                            <% } %>  
+                        </div>
+                    </div>
+                    
+                    <label for="foto_de_perfil">Escolha uma foto de perfil</label>
+                    <input class="input-upload-file" id="foto_de_perfil" type="file" name="foto_de_perfil"> 
+
+                    <% if(locals.errorsFormCadastro && errorsFormCadastro.foto_de_perfil) { %>
+
+                        <p class="msg-erro-form-cadastro"> 
+                            <%= errorsFormCadastro.foto_de_perfil.msg %>
+                        </p> 
+                        
+                    <% } %>  
+                    
+                    <div class="div-form-botoes">
+                        <button class="botao-cadastro" type="submit">CRIAR CONTA</button>
+                        <a class="botao-cadastro-voltar" href="/usuarios/login">Voltar</a>
+                    </div>
                 </form>    
             </div>
         </div>
