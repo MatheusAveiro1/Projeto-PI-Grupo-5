@@ -48,7 +48,7 @@ module.exports = [
 
             if(!acceptedExtensions.includes(fileExtension)) {
                 //Excluir o arquivo com a extensão errada                
-                fs.rm('./public/images/avatar/' + file.filename, { recursive:true }, (err) => {
+                fs.rm('./public/images/avatares/' + file.filename, { recursive:true }, (err) => {
                     if(err){
                         // Se a exclusão falhar
                         console.error(err.message);
