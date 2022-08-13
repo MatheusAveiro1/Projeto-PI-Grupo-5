@@ -39,7 +39,7 @@ module.exports = [
         let file = req.file;
         
         // criando um array com as extensões de imagens permitidas 
-        let acceptedExtensions = ['.jpg','.png','.gif'];
+        let acceptedExtensions = ['.jpg','.png','.gif', '.jpeg'];
 
         if(!file) {     
             /*throw new Error('Precisa escolher um arquivo');*/            
