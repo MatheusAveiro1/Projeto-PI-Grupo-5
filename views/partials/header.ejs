@@ -1,13 +1,39 @@
 <header>
     <div class="container">
-        <nav>
+        <nav id="nav-header">
             <div class="div-menu-1">
                 <div>                        
-                    <button class="btn-hamburger-mobile">                            
-                        <span class="material-icons-outlined">menu</span>
+                    <button id="btn-nav-mobile" class="btn-hamburger-mobile" aria-expanded="false" aria-controls="lista-nav-menu-mibile" aria-haspopup="true" aria-label="Abrir menu.">                            
+                        <span class="material-icons-outlined span-btn-open">menu</span>
+                        <span class="material-icons-outlined span-btn-close">close</span>
                     </button>
+
+                    <ul class="lista-nav-menu-mobile" role="menu">
+                        <li>
+                            <a id="link-mobile-home" href="/">
+                                <span class="material-icons-outlined">home</span>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a id="link-mobile-experiencia" href="/usuarios/login">
+                                <span class="material-icons-outlined">person</span>
+                                Minha conta
+                            </a>
+                        </li>                        
+                        <li>
+                            <a id="link-mobile-conhecimentos" href="#">
+                                <span class="material-icons-outlined">headset_mic</span>
+                                Central de Atendimento
+                            </a>
+                        </li>                        
+                        <!--li><a id="link-mobile-social" href="#social">SOCIAL</a></li>                        
+                        <li><a href="#">CONTATO</a></li-->
+                    </ul>
+
                     <a href="/" class="link-logo-empresa"><img src="/images/logo.svg" alt="Imagem Logo TopSales6"></a>
                     <a href="/" class="link-logo-empresa-mobile"><img src="/images/logo2.svg" alt="Imagem Logo TopSales6"></a>
+                    
                     <ul class="lista-menu">
                         <li>
                             <a href="/usuarios/login"><span class="material-icons">account_circle</span>Minha Conta</a>
@@ -16,12 +42,15 @@
                             <a href="#"><span class="material-icons-outlined">headset_mic</span>Central de Atendimento</a>
                         </li>                            
                     </ul>
-                </div>                    
+                </div>
+
                 <a href="/carrinho" class="link-carrinho">
                     <span class="material-icons-outlined img-carrinho">shopping_cart</span>
                     <span class="qt-item-carrinho">0</span>
-                </a>                                        
+                </a>
             </div>
+
+
             <div class="div-menu-2">
                 <div class="div-btn-departamentos">
                     <button class="btn-departamentos">
