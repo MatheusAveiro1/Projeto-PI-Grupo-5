@@ -30,6 +30,20 @@
                 <h1>LOGIN</h1>
                 <p>Entre com seus dados corretamente para acessar o sistema.</p>
 
+                <% if(locals.usuarioCadastrado) { %>
+
+                    <p  class="infoCadastroSucesso">
+                        O usuário <strong><%= locals.usuarioCadastrado %></strong> foi cadastrado com sucesso.
+                        
+                    </p> 
+
+                <% } %>
+
+
+
+
+             
+
                 <label for="email"> 
                     <span class="material-icons-outlined">email</span>
                     E-mail
