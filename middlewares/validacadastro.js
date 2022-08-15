@@ -30,37 +30,24 @@ module.exports = [
             // Se a senha e a confirmação da senha não forem iguais
             // o login não será validado e retornará um erro
             if(senha !== confirmarSenha){
-            throw new Error('As senhas digitadas não conferem!')
+                throw new Error('As senhas digitadas não conferem!');
             }
         }),
     check('foto_de_perfil').custom((value, {req})=>{
         
-        //recuperando informações da imagem (nome, tamanho, extensão... etc)
+        //Recuperando informações da imagem (nome, tamanho, extensão... etc)
         let file = req.file;
         
-        // criando um array com as extensões de imagens permitidas 
+        //Criando um array com as extensões de imagens permitidas 
         let acceptedExtensions = ['.jpg','.png','.gif', '.jpeg'];
 
-        if(!file) {     
-            /*throw new Error('Precisa escolher um arquivo');*/            
-        } else {
+        if(file) {            
             let fileExtension = path.extname(file.originalname);
-
             if(!acceptedExtensions.includes(fileExtension)) {
-                //Excluir o arquivo com a extensão errada                
-                fs.rm('./public/images/avatares/' + file.filename, { recursive:true }, (err) => {
-                    if(err){
-                        // Se a exclusão falhar
-                        console.error(err.message);
-                        return;
-                    }
-
-                    console.log("File deleted successfully");                    
-                });
-
                 throw new Error(`As extenssões permitidas são:  ${acceptedExtensions.join(', ')}`);
             }
         }
+        
         return true;
     })
 ];

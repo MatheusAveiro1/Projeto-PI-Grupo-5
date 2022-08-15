@@ -1,10 +1,5 @@
 //Capturando os elementos do html
 const btnMobile = document.getElementById('btn-nav-mobile'); 
-/*const linkMenuMobileHome = document.getElementById('link-mobile-home');
-const linkMenuMobileExperiencia = document.getElementById('link-mobile-experiencia');
-const linkMenuMobileConhecimentos = document.getElementById('link-mobile-conhecimentos');
-const linkMenuMobileSocial = document.getElementById('link-mobile-social');*/
-
 
 function mostraMenuMobile (event) {
 
@@ -37,11 +32,6 @@ function mostraMenuMobile (event) {
 
 //Colocando ação de abrir e fechar o menu mobile no btn hamburguer
 btnMobile.addEventListener('click', mostraMenuMobile);
-//Colocando ação de fechar o menu mobile nos links dentro do menu mobile
-/*linkMenuMobileHome.addEventListener('click', mostraMenuMobile);
-linkMenuMobileExperiencia.addEventListener('click', mostraMenuMobile);
-linkMenuMobileConhecimentos.addEventListener('click', mostraMenuMobile);
-linkMenuMobileSocial.addEventListener('click', mostraMenuMobile);*/
 
 //Melhora a fluidez no mobobile
 btnMobile.addEventListener('touchstart', mostraMenuMobile);
