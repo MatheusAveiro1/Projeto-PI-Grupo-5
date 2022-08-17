@@ -56,18 +56,18 @@
                         
                         <% for (let i=0; i<=11; i++) { %> 
 
-                            <article class="card">
+                            <article class="card" onclick="location.href='/produto';">
                                 <div class="div-card-img-infos">
                                     <figure>
 
-                                        <a href="/produto">
+                                       
                                             <img src="/images/produtos/<%= produtos[i].img %> " alt="Imagem PC Gamer">
-                                        </a>
+                                       
 
                                         
                                     </figure>
 
-                                    <a href="/produto" class="card-infos">
+                                    
 
                                         <div class="card-infos">
                                             <p class="card-nome-produto"><%= produtos[i].nome %></p>
@@ -76,7 +76,7 @@
                                             <p class="card-preco-parcelado">12x de R$<%= (produtos[i].preco / 12).toFixed(2) %></p>
                                         </div>  
 
-                                    </a>
+                                   
 
                               
                                 </div>
@@ -105,24 +105,26 @@
 
                         <% for (let i=12; i<=23; i++) { %> 
 
-                            <article class="card">
+                            
+
+                            <article class="card" onclick="location.href='/produto';">
                                 <div class="div-card-img-infos">
                                     <figure>
                                         
-                                        <a href="/produto">
+                                     
                                             <img src="/images/produtos/<%= produtos[i].img %> " alt="Imagem PC Gamer">
-                                        </a>
+                                       
                                         
                                         
                                     </figure>
                                     <div class="card-infos">
 
-                                        <a href="/produto" class="card-infos">
+                                    
                                             <p class="card-nome-produto"><%= produtos[i].nome %></p>
                                             <p class="card-preco-anterior">De: R$<%= produtos[i].preco %> por:</p>
                                             <p class="card-preco-atual"><strong>R$<%= ((produtos[i].preco / 10 ) * 9).toFixed(2) %> à vista</strong></p>
                                             <p class="card-preco-parcelado">12x de R$<%= (produtos[i].preco / 12).toFixed(2) %></p>    
-                                        </a>
+                                     
 
                                        </div>                                
                                 </div>
@@ -137,7 +139,9 @@
 
 
                             </article>
-    
+                            
+                        
+
                         <% } %>
 
                     </div>
