@@ -82,18 +82,19 @@ header .container nav .div-menu-1 div .btn-hamburger-mobile {
 }
 
 header .container nav .div-menu-1 div .btn-hamburger-mobile span {    
-    font-size: 2.188rem;
+    font-size: 2.25rem;
     font-weight: bold;
     cursor: pointer;
+    margin-top: -10px;
 }
 
 /* Menu mobile */
     header .container nav .div-menu-1 div .lista-nav-menu-mobile {
-        position: absolute;
-        display: block;        
-        width: 112%;
-        left: -15px;
-        top: 105px;               
+        position: fixed;
+        display: block; 
+        width: 100%;
+        left: 0px;
+        top: 130px;               
         height: 0px;
         list-style: none;        
         background-color: #fff;
@@ -103,8 +104,8 @@ header .container nav .div-menu-1 div .btn-hamburger-mobile span {
         transition: 0.5s;   
     }
 
-    #nav-header.active .lista-nav-menu-mobile {        
-        height: calc(100vh - 105px);  
+    #nav-header.active .lista-nav-menu-mobile {                
+        height: calc(100vh - 130px);       
         visibility: visible;
         overflow-y: auto;
     }
@@ -112,9 +113,11 @@ header .container nav .div-menu-1 div .btn-hamburger-mobile span {
     header .container nav .div-menu-1 div .btn-hamburger-mobile .span-btn-close {        
         display: none;
     }
-
+    
     header .container nav .div-menu-1 div .lista-nav-menu-mobile li a {  
-        display: block;
+        display: flex;
+        flex-direction: row;
+        align-items: center;        
         width: 100%;         
         padding: 20px 20px 20px 20px;         
         border-bottom: 1px solid #eee;    
@@ -123,10 +126,39 @@ header .container nav .div-menu-1 div .btn-hamburger-mobile span {
         font-weight: bold;        
         transition: 0.3s;
     }
-    header .container nav .div-menu-1 div .lista-nav-menu-mobile li a:hover {
-        /*background-color: #333;*/
+    
+    header .container nav .div-menu-1 div .lista-nav-menu-mobile li a span {
+        font-size: 1.875rem;
+        margin-right: 8px;
+    }    
+
+    header .container nav .div-menu-1 div .lista-nav-menu-mobile .li-departamentos .link-expandir-departamentos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;        
+        padding-right: 5px;
     }
 
+    header .container nav .div-menu-1 div .lista-nav-menu-mobile .li-departamentos .span-departamentos-seta-cima {
+        display: none;
+    }
+
+    header .container nav .div-menu-1 div .lista-nav-menu-mobile .li-departamentos .submenu-departamentos-mobile {    
+        display: none; 
+    }
+
+    #li-sub-menu-mobile.active .submenu-departamentos-mobile { 
+        display: block;
+    }
+
+    header .container nav .div-menu-1 div .lista-nav-menu-mobile .li-departamentos .submenu-departamentos-mobile li a {
+        background-color: #f6f6f6;
+        padding-left: 62px;
+        font-size: 0.938rem;
+        transition: 0s;
+    }
+        
 /***************/
 
 
@@ -137,7 +169,7 @@ header .container nav .div-menu-1 div .link-logo-empresa {
 
 header .container nav .div-menu-1 div .link-logo-empresa-mobile img {
     width: 150px;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 header .container nav .div-menu-1 div .lista-menu {
