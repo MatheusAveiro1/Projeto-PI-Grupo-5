@@ -3,10 +3,10 @@ const {validationResult, Result} = require('express-validator');
 //Chamando o fs
 const fs = require('fs');
 //Chamando nosso model
-const {sequelize, Usuario} = require('../models')
+const {sequelize, Usuario} = require('../database/models')
 //Chamando o manipulado de hash
 const bcrypt = require('bcrypt');
-const db = require('../models');
+const db = require('../database/models');
 const { reject } = require('bcrypt/promises');
 
 //** Funções ***//
