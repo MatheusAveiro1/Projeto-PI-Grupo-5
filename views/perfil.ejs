@@ -33,12 +33,12 @@
                         <div class="div-info-acesso">
                             <div class="div-info-avatar">
 
-                                <img src="/images/avatares/default.jpeg" alt="Foto do avatar." class="foto-avatar">
+                                <img src="/images/avatares/<%= usuarioLogado.foto %>" alt="Foto do avatar." class="foto-avatar">
 
                                 <div class="div-info-acesso-texto">
                                     <p class="saudacao">Bem-Vindo,</p>
-                                    <p class="nome-usuario">Fernando Ferreira Mendonça</p>
-                                    <p class="email-usuario">fernandofm3@gmail.com</p>
+                                    <p class="nome-usuario"> <%= usuarioLogado.nome + " " + usuarioLogado.sobrenome %>  </p>
+                                    <p class="email-usuario"><%= usuarioLogado.email %></p>
                                 </div>
                             </div>
 

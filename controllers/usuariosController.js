@@ -7,12 +7,77 @@ const {sequelize, Usuario} = require('../models')
 //Chamando o manipulado de hash
 const bcrypt = require('bcrypt');
 const db = require('../models');
-const { reject } = require('bcrypt/promises');
+const { reject, promise } = require('bcrypt/promises');
 
 //** Funções ***//
+
 const funcoesUsuarios = {
   
-  verificaErrosDoForm: (req,res)=>{
+  verificaErrosDoFormLogin: (req, res) => {
+    return new Promise((resolve, reject) => {
+      //Recuperando possiveis erros do form
+      let errors = validationResult(req);
+      //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
+      if (!errors.isEmpty()) {
+        //Retornaremos para page de cadastro com os erros
+        reject(res.render('login', { errors: errors.mapped(), dadosPreenchido: req.body }));
+      } else {
+        resolve();
+      }
+    });
+  },
+
+  validaEmailSenhaLogin: (req, res, usuarioParaVerificar) =>{
+
+    return new Promise((resolve, reject) => {
+
+      //Verifica se veio infomação do usuário ou não
+      if(usuarioParaVerificar.length>0){
+
+        //organizando o array
+        let usuarioParaLogin = usuarioParaVerificar.map(u => u.toJSON());
+
+        //trasnformando o array em objeto
+        usuarioParaLogin = usuarioParaLogin[0]
+        
+        
+       
+        //Comparando a senha do post com a senha criptografada da base de dados
+        let senhaVerificada = bcrypt.compareSync(req.body.senha, usuarioParaLogin.senha);
+
+        
+
+        if(senhaVerificada)
+        {
+          //Iniciando sessão
+          delete usuarioParaLogin.senha;
+          //resolve(console.log(usuarioParaLogin))
+
+          req.session.usuarioLogado = usuarioParaLogin;
+
+          //resolve(console.log(req.session.usuarioLogado))
+          
+          if(req.body.lembrarUsuario){
+              res.cookie('emailDoUsuario', req.body.email, {maxAge: (1000 * 60) * 30});
+          }
+
+          resolve(res.redirect('/usuario/perfil'));
+
+        }else{
+          reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", dadosPreenchido: req.body}))
+        }
+
+      }else{
+
+       //Retorna o erro para usuário
+       reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", dadosPreenchido: req.body}));
+
+      }
+
+    })   
+  },
+
+  verificaErrosDoFormCadastro: (req,res)=>{
     return new Promise((resolve,reject) => {
       //Recuperando possiveis erros do form
       let errors = validationResult(req);
@@ -121,16 +186,50 @@ const funcoesUsuarios = {
 
 //*** Controlador ***//
 const controlador = {
-  login: (req, res)=> {
-    res.render('login', {usuarioCadastrado:req.query.usuarioCadastrado});
+  login: (req, res) => {
+    res.render('login', { usuarioCadastrado: req.query.usuarioCadastrado });
+  },
+
+  validaLogin: async (req, res) => {
+    try{
+      //verifica erros no formulario
+      await funcoesUsuarios.verificaErrosDoFormLogin(req, res);
+      
+      //Consulta o EMAIL no BD
+      const usuarioParaVerificar = await Usuario.findAll({
+        where: {
+          email: req.body.email
+          
+        }
+      }) 
+
+      //verifica email e senha no banco de dados
+      await funcoesUsuarios.validaEmailSenhaLogin(req, res, usuarioParaVerificar);
+
+      //console.log(usuarioParaVerificar)
+
+      
+
+
+
+
+      //res.redirect('/usuario/perfil')
+    }
+
+    catch (err) {
+      console.log(err)
+    }
+
+
+
   },
   cadastro: (req, res)=> {
     res.render ('cadastro')
   },
   validaCadastro: async (req, res)=> {
     try {
-      //Verrifica erros no formulário
-      await funcoesUsuarios.verificaErrosDoForm(req,res);
+      //Verifica erros no formulário
+      await funcoesUsuarios.verificaErrosDoFormCadastro(req,res);
       
       //Consulta o CPF no BD
       const cpfParaVerificar = await Usuario.findAll({
@@ -156,7 +255,7 @@ const controlador = {
       const usuarioCriadoNoBd = await Usuario.create({nome: usuarioParaCriarNoBd.nome,sobrenome: usuarioParaCriarNoBd.sobrenome,email: usuarioParaCriarNoBd.email,senha: usuarioParaCriarNoBd.senha,foto: usuarioParaCriarNoBd.foto,cpf: usuarioParaCriarNoBd.cpf});
       
       //Após o cadastro do usuário redireciona para tela de login
-      return res.redirect('/usuarios/login?usuarioCadastrado=' + usuarioParaCriarNoBd.nome + ' ' + usuarioParaCriarNoBd.sobrenome);
+      return res.redirect('/usuario/login?usuarioCadastrado=' + usuarioParaCriarNoBd.nome + ' ' + usuarioParaCriarNoBd.sobrenome);
     
     }
     catch (err) {
@@ -164,7 +263,9 @@ const controlador = {
     }
   },
   perfil: (req, res)=> {
-    res.render ('perfil')
+
+    res.render('perfil',{usuarioLogado: req.session.usuarioLogado})
+    
   },
   meusDados: (req, res)=> {
     res.render ('meus-dados')
