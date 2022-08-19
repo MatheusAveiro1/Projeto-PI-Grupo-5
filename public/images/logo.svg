@@ -68,16 +68,17 @@
        transform="matrix(0.96963886,-0.24454135,0.25314146,0.96742927,0,0)" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.75px;line-height:1.25;font-family:Unispace;-inkscape-font-specification:'Unispace Bold';fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.75px;line-height:1.25;font-family:Arial, Helvetica, sans-serif;-inkscape-font-specification:'Unispace Bold';fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="91.962311"
        y="59.500465"
        id="text1205"><tspan
          sodipodi:role="line"
          id="tspan1203"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.75px;font-family:Unispace;-inkscape-font-specification:'Unispace Bold';fill:#808080;stroke-width:0.264583"
-         x="91.962311"
-         y="59.500465">TopSales<tspan
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Unispace;-inkscape-font-specification:'Unispace Bold';fill:#000000"
-   id="tspan7396">6</tspan></tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.75px;font-family:Arial, Helvetica, sans-serif;-inkscape-font-specification:'Unispace Bold';fill:#808080;stroke-width:0.264583"
+         x="97.962311"
+         y="59.500465">TopSales<tspan         
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial, Helvetica, sans-serif;-inkscape-font-specification:'Unispace Bold';fill:#000000"
+   id="tspan7396"
+   x="238.962311">6</tspan></tspan></text>
   </g>
 </svg>
