@@ -42,8 +42,19 @@
     text-align: left;
     border-radius: 10px;
     margin-bottom: 20px;
-
 }
+
+.main-login form .msg-erro-form-login{
+    margin-top: -10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 0.875rem;
+    color: #c0392b;
+    text-transform: capitalize;
+}
+
+
+
 .main-login form label {
     display: flex;
     flex-direction: row;

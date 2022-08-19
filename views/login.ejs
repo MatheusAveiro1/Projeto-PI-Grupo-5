@@ -25,7 +25,7 @@
 <main class="main-login">
     <div class="container">
         <div class="div-main-config-padrao">
-            <form action="/usuarios/perfil" motod="POST">
+            <form action="/usuario/login" method="POST">
 
                 <h1>LOGIN</h1>
                 <p>Entre com seus dados corretamente para acessar o sistema.</p>
@@ -48,20 +48,38 @@
                     <span class="material-icons-outlined">email</span>
                     E-mail
                 </label>
-                <input type="email" class="email" name="email" placeholder="Exp: email@topsale6.com" required>
+                <input type="email" class="email" name="email" placeholder="Exp: email@topsale6.com" >
+
+                <% if(locals.errors && errors.email) { %>
+
+                    <p class="msg-erro-form-login"> 
+                        <b> <%= errors.email.param + ": " %></b>  <%=errors.email.msg %>
+                    </p> 
+                    
+                <% } %>  
+
                 <label for="senha">
                     <span class="material-icons-outlined">lock</span>
                     Senha
                 </label>
-                <input type="password" name="password" class="password" placeholder="Digite sua senha" required>
+                <input id="senha" type="password" name="senha" class="password" placeholder="Digite sua senha" >
+
+                <% if(locals.errors && errors.senha) { %>
+
+                    <p class="msg-erro-form-login"> 
+                        <b> <%= errors.senha.param + ": " %></b>  <%=errors.senha.msg %>
+                    </p> 
+                    
+                <% } %>
+
 
                 <div class="div-lembrar">
-                    <input type="checkbox" class="checkbox-lembrar" id="lembrar">
-                    <label for="lembrar">Lembrar-se</label>
+                    <input name="lembrarUsuario" type="checkbox" class="checkbox-lembrar" id="lembrarUsuario">
+                    <label for="lembrarUsuario">Lembrar-se</label>
                 </div>
 
                 <button class="botao-login-entrar" type="submit">Entrar</button>
-                <a class="botao-login-criar_conta" href="/usuarios/cadastro">Criar Conta</a>
+                <a class="botao-login-criar_conta" href="/usuario/cadastro">Criar Conta</a>
             </form> 
         </div>
     </div>

@@ -13,7 +13,20 @@
     margin-bottom: 40px;
 }
 
+.div-area-restrita .div-info-usuario-principal .div-info-acesso .div-info-avatar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;   
+}
+
+.div-area-restrita .div-info-usuario-principal .div-info-acesso .div-info-avatar .foto-avatar{
+    width: 90px;
+    margin-right: 15px;
+    border-radius: 7px;       
+}
+
 .div-area-restrita .div-info-usuario-principal .div-info-acesso .div-info-acesso-texto p{
+    margin-top: 5px;
     margin-bottom: 10px;
     color: #333;
     font-weight: bold;
