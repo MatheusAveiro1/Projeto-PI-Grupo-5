@@ -17,6 +17,10 @@
     flex-direction: column;
 }
 
+.form-meus-dados .div-nome-completo {    
+    margin-bottom: 0;        
+}
+
 .form-meus-dados div {
     margin-bottom: 25px;
 }
@@ -101,6 +105,24 @@
     }
 
     .form-meus-dados .div-cpf-rg-data-nasc .div-cpf, .form-meus-dados .div-cpf-rg-data-nasc .div-rg {
+        margin-right: 30px;
+    }
+
+    .form-meus-dados .div-nome-completo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;              
+    }
+
+    .form-meus-dados .div-nome-completo .div-nome {
+        width: 40%;
+    }
+    
+    .form-meus-dados .div-nome-completo .div-sobrenome {
+        width: 60%;
+    }
+
+    .form-meus-dados .div-nome-completo .div-nome {
         margin-right: 30px;
     }
 
