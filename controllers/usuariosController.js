@@ -269,6 +269,13 @@ const controlador = {
   },
   meusDados: (req, res)=> {
     res.render ('meus-dados')
+  },
+  logout: (req, res)=>{
+
+    res.clearCookie("emailDoUsuario")
+    req.session.destroy()
+
+    res.redirect("/")
   }    
 }
   
