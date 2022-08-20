@@ -50,13 +50,14 @@ header {
     box-shadow: 0 0 1em #999;
     width: 100%;
     background-color: #fff;
-    z-index: 1001;     
+    z-index: 1001;         
 }
 
 header .container nav {
     display: flex;
     flex-direction: column;
-    padding: 25px 15px 15px 15px;    
+    padding: 25px 15px 15px 15px;
+    transition: 0.3s;    
 }
 
 header .container nav .div-menu-1 {
