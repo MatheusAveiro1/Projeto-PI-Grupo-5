@@ -54,8 +54,9 @@
                     <ul class="lista-menu">
                         <% if(locals.usuarioEstaLogado == true) { %>
 
-                            <li>
+                            <li class="btn_minhaConta_sair">
                                 <a href="/usuario/login"><span class="material-icons">account_circle</span>Minha conta</a>
+                                
                             </li>
         
                         <% }%>
@@ -64,6 +65,7 @@
 
                             <li>
                                 <a href="/usuario/login"><span class="material-icons">account_circle</span>Login</a>
+                                
                             </li>
         
                         <% }%>
@@ -71,7 +73,7 @@
                         <% if(locals.usuarioEstaLogado == true) { %>
 
                             <li>
-                                <a href="/usuario/logout"><span class="material-icons">account_circle</span>sair</a>
+                                <a href="/usuario/logout"> <b>Sair</b> </a>
                             </li>
         
                         <% }%>
