@@ -11,7 +11,10 @@ const controlador = {
 
   },
   produto: (req, res)=>{
-    res.render('produto')
+    let nomeDoArquivo = './database/produtos.json'
+    let produtos = JSON.parse(fs.readFileSync(nomeDoArquivo, 'utf-8')); // conversão do json para um objeto: fs read lê o arquivo, e json.parse converte o aruivo para objeto literal
+    let id = req.params.id;
+    res.render('produto',{produtos: produtos , idProduto: id})
   }
 }
 

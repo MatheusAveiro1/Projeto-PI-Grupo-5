@@ -1,20 +1,26 @@
 var express = require('express');
 var router = express.Router();
 const usuariosController = require('../controllers/usuariosController')
+
+//chamada dos middlewares
 const uploadFile = require('../middlewares/multerMiddlewares');
 const validaFormCadastroMiddlewares = require('../middlewares/validaCadastro');
 const validaLogin = require('../middlewares/validaLogin');
+const usuarioNaoLogadoMiddleware = require('../middlewares/usuarioNaoLogadoMiddlewares')
+const usuarioLogadoMiddleware = require('../middlewares/usuarioLogadoMiddleware')
 
 //rota get e post da pagina de login
-router.get('/login', usuariosController.login); 
+router.get('/login',usuarioLogadoMiddleware, usuariosController.login); 
 router.post('/login',validaLogin, usuariosController.validaLogin); 
 
 //rota get e post da pagina de cadastro
-router.get('/cadastro', usuariosController.cadastro);
-router.post('/cadastro',uploadFile.single('foto_de_perfil'), validaFormCadastroMiddlewares, usuariosController.validaCadastro);
+router.get('/cadastro',usuarioLogadoMiddleware, usuariosController.cadastro);
+router.post('/cadastro',usuarioLogadoMiddleware, uploadFile.single('foto_de_perfil'), validaFormCadastroMiddlewares, usuariosController.validaCadastro);
 
 //rota get e post da pagina de perfil 
-router.get('/perfil', usuariosController.perfil);
-router.get('/meus-dados', usuariosController.meusDados);
+router.get('/perfil',usuarioNaoLogadoMiddleware, usuariosController.perfil);
+router.get('/meus-dados',usuarioNaoLogadoMiddleware, usuariosController.meusDados);
+//rota logout
+router.get('/logout',usuarioNaoLogadoMiddleware, usuariosController.logout);
 
 module.exports = router;

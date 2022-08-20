@@ -33,6 +33,16 @@
     border-radius: 7px;
 }
 
+.main-login .infoFalhaCadastro{
+
+    background-color: #f8d7da;
+    color: #842029;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+
 
 .main-login form input {
     border: 1px solid #999;

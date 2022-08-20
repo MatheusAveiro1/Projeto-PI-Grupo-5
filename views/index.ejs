@@ -56,20 +56,37 @@
                         
                         <% for (let i=0; i<=11; i++) { %> 
 
-                            <article class="card">
+                            <article class="card" onclick="location.href='/produto/<%=[i]%>';">
                                 <div class="div-card-img-infos">
                                     <figure>
-                                        <img src="/images/produtos/<%= produtos[i].img %> " alt="Imagem PC Gamer">
+
+                                       
+                                            <img src="/images/produtos/<%= produtos[i].img %> " alt="Imagem PC Gamer">
+                                       
+
+                                        
                                     </figure>
-                                    <div class="card-infos">
-                                        <p class="card-nome-produto"><%= produtos[i].nome %></p>
-                                        <p class="card-preco-anterior">De: R$<%= produtos[i].preco %> por:</p>
-                                        <p class="card-preco-atual"><strong>R$<%= ((produtos[i].preco / 10 ) * 9).toFixed(2) %> à vista</strong></p>
-                                        <p class="card-preco-parcelado">12x de R$<%= (produtos[i].preco / 12).toFixed(2) %></p>
-                                    </div>                                
+
+                                    
+
+                                        <div class="card-infos">
+                                            <p class="card-nome-produto"><%= produtos[i].nome %></p>
+                                            <p class="card-preco-anterior">De: R$<%= produtos[i].preco %> por:</p>
+                                            <p class="card-preco-atual"><strong>R$<%= ((produtos[i].preco / 10 ) * 9).toFixed(2) %> à vista</strong></p>
+                                            <p class="card-preco-parcelado">12x de R$<%= (produtos[i].preco / 12).toFixed(2) %></p>
+                                        </div>  
+
+                                   
+
+                              
                                 </div>
                                 <button>
-                                    <span class="material-icons-outlined">shopping_cart</span> Comprar
+
+                                    <a class="btn_a" href="/carrinho">
+                                        <span class="material-icons-outlined">shopping_cart</span> Comprar
+                                    </a>
+
+
                                 </button>
                             </article>
 
@@ -88,23 +105,43 @@
 
                         <% for (let i=12; i<=23; i++) { %> 
 
-                            <article class="card">
+                            
+
+                            <article class="card" onclick="location.href='/produto/<%=[i]%>';">
                                 <div class="div-card-img-infos">
                                     <figure>
-                                        <img src="/images/produtos/<%= produtos[i].img %> " alt="Imagem PC Gamer">
+                                        
+                                     
+                                            <img src="/images/produtos/<%= produtos[i].img %> " alt="Imagem PC Gamer">
+                                       
+                                        
+                                        
                                     </figure>
                                     <div class="card-infos">
-                                        <p class="card-nome-produto"><%= produtos[i].nome %></p>
-                                        <p class="card-preco-anterior">De: R$<%= produtos[i].preco %> por:</p>
-                                        <p class="card-preco-atual"><strong>R$<%= ((produtos[i].preco / 10 ) * 9).toFixed(2) %> à vista</strong></p>
-                                        <p class="card-preco-parcelado">12x de R$<%= (produtos[i].preco / 12).toFixed(2) %></p>
-                                    </div>                                
+
+                                    
+                                            <p class="card-nome-produto"><%= produtos[i].nome %></p>
+                                            <p class="card-preco-anterior">De: R$<%= produtos[i].preco %> por:</p>
+                                            <p class="card-preco-atual"><strong>R$<%= ((produtos[i].preco / 10 ) * 9).toFixed(2) %> à vista</strong></p>
+                                            <p class="card-preco-parcelado">12x de R$<%= (produtos[i].preco / 12).toFixed(2) %></p>    
+                                     
+
+                                       </div>                                
                                 </div>
-                                <button>
-                                    <span class="material-icons-outlined">shopping_cart</span> Comprar
+
+                                <button class="btn_div">
+
+                                    <a class="btn_a" href="/carrinho">
+                                        <span class="material-icons-outlined">shopping_cart</span> Comprar
+                                    </a>
+
                                 </button>
+
+
                             </article>
-    
+                            
+                        
+
                         <% } %>
 
                     </div>
