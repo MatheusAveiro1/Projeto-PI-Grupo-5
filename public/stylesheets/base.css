@@ -18,7 +18,7 @@ body {
     max-width: 1280px;
     margin: auto;
     background-color: #fff;  
-    margin-top: 0;
+    margin-top: 0;    
 }
 
 .div-main-config-padrao {
@@ -127,12 +127,25 @@ header .container nav .div-menu-1 div .btn-hamburger-mobile span {
         font-weight: bold;        
         transition: 0.3s;
     }
+
+    header .container nav .div-menu-1 div .lista-nav-menu-mobile .btn-nav-logout-mobile {
+        display: block;
+        width: 100px;
+        padding: 10px 15px;
+        margin: 20px 25px 20px 25px;
+        background-color: #ff914d;
+        border-radius: 7px;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+    }
     
     header .container nav .div-menu-1 div .lista-nav-menu-mobile li a span {
         font-size: 1.875rem;
-        margin-right: 8px;
-    }    
-
+        margin-right: 8px;        
+    }   
+    
     header .container nav .div-menu-1 div .lista-nav-menu-mobile .li-departamentos .link-expandir-departamentos {
         display: flex;
         flex-direction: row;
@@ -189,6 +202,10 @@ header .container nav .div-menu-1 .link-carrinho span{
 
 header .container nav .div-menu-1 .link-carrinho .img-carrinho:hover{
     color: #666;    
+}
+
+header .container nav .div-menu-1 .link-carrinho .img-carrinho-2{
+    display: none;    
 }
 
 header .container nav .div-menu-1 .link-carrinho .qt-item-carrinho {
@@ -499,14 +516,26 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
 
 @media (min-width: 769px) {
 
-    /* Header */
-    header .container nav {       
-        padding: 15px 15px 15px 15px;    
-    }
-
+    /* Header */    
     header .container nav .div-menu-1 .link-carrinho span{        
         font-size: 3.75rem;
         padding-top: 8px;
+    }
+
+    header .container nav .div-menu-1 .link-carrinho {
+        text-decoration: none;
+    }
+
+    header .container nav .div-menu-1 .link-carrinho .img-carrinho-2{
+        display: block;          
+    }
+
+    header .container nav .div-menu-1 .link-carrinho .img-carrinho-2:hover {
+        color: #666;     
+    }
+
+    header .container nav .div-menu-1 .link-carrinho .img-carrinho{
+        display: none;    
     }
 
     header .container nav .div-menu-1 .link-carrinho .qt-item-carrinho {       
@@ -540,14 +569,31 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
         list-style-type:none;
     }
 
+    header .container nav .div-menu-1 div .lista-menu .li-link-minhaConta-sair {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    header .container nav .div-menu-1 div .lista-menu .li-link-minhaConta-sair .link-sair {
+        margin-left: 3px;        
+        font-weight: bold;        
+        color: #c0392b;
+        font-size: 0.875rem;        
+    }
+
+    header .container nav .div-menu-1 div .lista-menu .li-link-minhaConta-sair .link-sair:hover {
+        color: #e74c3c;        
+    }
+
     header .container nav .div-menu-1 div .lista-menu li a{
         display: flex;
         align-items: center;
         color: #000;
         margin-left: 20px;
-        text-decoration: none;
-        transition: 0.3s;              
-    }
+        text-decoration: none;  
+        transition: 0.1s;                    
+    }   
 
     header .container nav .div-menu-1 div .lista-menu li a:hover {
         color: #666;
@@ -556,9 +602,10 @@ header .container nav .div-menu-2 .div-barra-pesquisa form .icon-lupa {
     header .container nav .div-menu-1 div .lista-menu li a span{
         font-size: 3.125rem;
         margin-bottom: 8px;
-        margin-right: 8px;        
+        margin-right: 8px; 
+        transition: 0.3s;       
     }
-    
+
     header .container nav .div-menu-2 {
         display: flex;
         flex-direction: row;

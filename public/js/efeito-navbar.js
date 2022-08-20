@@ -1,6 +1,8 @@
 //Pegando a navbar
 var header = document.getElementById("navbar");
 var nav = document.getElementById("nav-header");
+var imgCarrinho = document.getElementById("img-carrinho");
+var imgBtnMenuNav = document.getElementsByClassName("imgBtnMenuNav");
 //Pegando o botão voltar ai top
 //var btn = document.getElementById("btn-voltar-ao-topo");
 
@@ -13,12 +15,17 @@ window.onscroll = function() {
 
 function scrollFunctionNavbar() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {        
-        header.style.border = "none";
-        nav.style.padding = "10px 15px 10px 15px";
+        imgCarrinho.style.fontSize = "2.5rem";
 
-    } else { 
-        header.style.border = "";
-        nav.style.padding = "";
+        for(let i = 0; i < imgBtnMenuNav.length; i ++) {
+            imgBtnMenuNav[i].style.fontSize = "2rem";
+        }
+    } else {   
+        imgCarrinho.style.fontSize = "3.75rem";
+
+        for(let i = 0; i < imgBtnMenuNav.length; i ++) {
+            imgBtnMenuNav[i].style.fontSize = "3.125rem";
+        }        
     }
 }
 
