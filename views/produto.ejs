@@ -33,45 +33,47 @@
                     <P> Produto </P>
                 </div>
                 <section>
-                    <div class="img-nome-valor-comprar">
-                        <div class="small-img">
+                        <% let id = idProduto %> 
+                            <div class="img-nome-valor-comprar">
+                                <div class="small-img">
+                                    
 
-                            <img src="/images/pc-gamer-mais-peças.jpg" alt="">
-                            <img src="/images/pc-gamer-mais-peças.jpg" alt="">
-                            <img src="/images/pc-gamer-mais-peças.jpg" alt="">
-                        </div>
-                        <div class="main-img">
-                            <img src="/images/pc-gamer-mais-peças.jpg" alt="">
-                        </div>
-                        <div class="nome-valor-comprar">
-                            <div class="nome-produto">
-                                <p>PC Gamer Fast White + HeadSet <p>
+                                    <img src="/images/produtos/<%= produtos[id].img %>" alt="">
+                                    <img src="/images/produtos/<%= produtos[id].img %>" alt="">
+                                    <img src="/images/produtos/<%= produtos[id].img %>" alt="">
+                                </div>
+                                <div class="main-img">
+                                    <img width="40%" src="/images/produtos/<%= produtos[id].img %>" alt="">
+                                </div>
+                                <div class="nome-valor-comprar">
+                                    <div class="nome-produto">
+                                        <p><%= produtos[id].nome %><p>
+                                    </div>
+                                    <div class="valor-produto">
+                                        <p class="valor-anterior"> De: R$<%= produtos[id].preco %> por:</p>
+                                        <p class="valor-atual"> R$<%= ((produtos[id].preco / 10 ) * 9).toFixed(2) %> à vista</p>
+                                        <p class="valor-parcelado"> 12x de R$<%= (produtos[id].preco / 12).toFixed(2) %></p>
+                                    </div>
+
+                                    <button class="button-produto">
+
+                                        <span class="material-icons-outlined">shopping_cart</span>
+                                        Comprar
+                                    </button> 
+
+                                
+                                </div>
+
                             </div>
-                            <div class="valor-produto">
-                                <p class="valor-anterior"> De: R$2.500,00 por:</p>
-                                <p class="valor-atual"> R$2.299,00 à vista</p>
-                                <p class="valor-parcelado"> 12x de R$191,58</p>
+                            <div class="descricao-produto">
+                                <p class="descricao-main">
+                                    Características do produto.
+                                </p>
+                                <p class="descricao-geral">
+                                    <%=  %> 
+                                </p>
+
                             </div>
-
-                            <button class="button-produto">
-
-                                <span class="material-icons-outlined">shopping_cart</span>
-                                Comprar
-                            </button> 
-
-                        
-                        </div>
-
-                    </div>
-                    <div class="descricao-produto">
-                        <p class="descricao-main">
-                            Características do produto.
-                        </p>
-                        <p class="descricao-geral">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis velit rhoncus, tempor lorem a, tempor risus. Curabitur non odio et est blandit gravida sed sit amet purus. Quisque sodales ex quis velit gravida, sit amet congue sapien auctor. Sed et orci non metus maximus molestie nec nec lorem. Vestibulum gravida quam diam, a posuere nisl efficitur sit amet. Morbi malesuada massa dui, eu ullamcorper neque sagittis sit amet. Integer commodo pellentesque odio a sagittis. 
-                        </p>
-
-                    </div>
                     
                     
                 
@@ -86,19 +88,19 @@
                 <div class="mais-produtos">
                     <section class="produto">
                         <div class="img-produto">
-                            <img src="/images/pc-gamer-mais-peças.jpg" alt="">
+                            <img src="/images/<%=  %>" alt="">
                         </div>
                         <div class="nome-produto">
-                            <p class="nome-produto">PC Gamer Fast White + HeadSet</p>
+                            <p class="nome-produto"><%=  %></p>
                         </div>
                         <div class="valor-anterior">
-                            <p class="valor-anterior">De: R$2.500,00 por:</p>
+                            <p class="valor-anterior">De: R$<%=  %> por:</p>
                         </div>
                         <div class="valor-atual">
-                            <p class="valor-atual"> R$2.299,00 à vista </p>
+                            <p class="valor-atual"> R$<%=  %> à vista </p>
                         </div>
                         <div class="valor-parcelado">
-                            <p class="valor-parcelado"> 12x de R$191,58 </p>
+                            <p class="valor-parcelado"> 12x de R$<%=  %> </p>
                         </div>
                         <button class="button-produto">
                             <span class="material-icons-outlined" > shopping_cart</span>
@@ -109,19 +111,19 @@
                     </section>
                     <section class="produto">
                         <div class="img-produto">
-                            <img src="/images/pc-gamer-mais-peças.jpg" alt="">
+                            <img src="/images/<%=  %>" alt="">
                         </div>
                         <div class="nome-produto">
-                            <p class="nome-produto">PC Gamer Fast White + HeadSet</p>
+                            <p class="nome-produto"><%=  %></p>
                         </div>
                         <div class="valor-anterior">
-                            <p class="valor-anterior">De: R$2.500,00 por:</p>
+                            <p class="valor-anterior">De: R$<%=  %> por:</p>
                         </div>
                         <div class="valor-atual">
-                            <p class="valor-atual"> R$2.299,00 à vista </p>
+                            <p class="valor-atual"> R$<%=  %> à vista </p>
                         </div>
                         <div class="valor-parcelado">
-                            <p class="valor-parcelado"> 12x de R$191,58 </p>
+                            <p class="valor-parcelado"> 12x de R$<%=  %> </p>
                         </div>
                         <button class="button-produto">
                             <span class="material-icons-outlined" > shopping_cart</span>
@@ -132,19 +134,19 @@
                     </section>
                     <section class="produto">
                         <div class="img-produto">
-                            <img src="/images/pc-gamer-mais-peças.jpg" alt="">
+                            <img src="/images/<%=  %>" alt="">
                         </div>
                         <div class="nome-produto">
-                            <p class="nome-produto">PC Gamer Fast White + HeadSet</p>
+                            <p class="nome-produto"><%=  %></p>
                         </div>
                         <div class="valor-anterior">
-                            <p class="valor-anterior">De: R$2.500,00 por:</p>
+                            <p class="valor-anterior">De: R$<%=  %> por:</p>
                         </div>
                         <div class="valor-atual">
-                            <p class="valor-atual"> R$2.299,00 à vista </p>
+                            <p class="valor-atual"> R$<%=  %> à vista </p>
                         </div>
                         <div class="valor-parcelado">
-                            <p class="valor-parcelado"> 12x de R$191,58 </p>
+                            <p class="valor-parcelado"> 12x de R$<%=  %> </p>
                         </div>
                         <button class="button-produto">
                             <span class="material-icons-outlined" > shopping_cart</span>
@@ -155,19 +157,19 @@
                     </section>
                     <section class="produto">
                         <div class="img-produto">
-                            <img src="/images/pc-gamer-mais-peças.jpg" alt="">
+                            <img src="/images/<%= %> " alt="">
                         </div>
                         <div class="nome-produto">
-                            <p class="nome-produto">PC Gamer Fast White + HeadSet</p>
+                            <p class="nome-produto"><%=  %></p>
                         </div>
                         <div class="valor-anterior">
-                            <p class="valor-anterior">De: R$2.500,00 por:</p>
+                            <p class="valor-anterior">De: R$<%=  %> por:</p>
                         </div>
                         <div class="valor-atual">
-                            <p class="valor-atual"> R$2.299,00 à vista </p>
+                            <p class="valor-atual"> R$<%=  %> à vista </p>
                         </div>
                         <div class="valor-parcelado">
-                            <p class="valor-parcelado"> 12x de R$191,58 </p>
+                            <p class="valor-parcelado"> 12x de R$<%=  %> </p>
                         </div>
                         <button class="button-produto">
                             <span class="material-icons-outlined" > shopping_cart</span>
