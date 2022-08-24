@@ -1,4 +1,4 @@
-<header>
+<header id="navbar">
     <div class="container">
         <nav id="nav-header">
             <div class="div-menu-1">
@@ -15,12 +15,25 @@
                                 Home
                             </a>
                         </li>
-                        <li>
-                            <a id="" href="/usuario/login">
-                                <span class="material-icons-outlined">person</span>
-                                Minha conta
-                            </a>
-                        </li>                        
+
+                        <% if(locals.usuarioEstaLogado == false) { %>
+                            <li>
+                                <a id="" href="/usuario/login">
+                                    <span class="material-icons-outlined">person</span>
+                                    Login
+                                </a>
+                            </li>
+                        <% } %> 
+                        
+                        <% if(locals.usuarioEstaLogado == true) { %>
+                            <li>
+                                <a id="" href="/usuario/perfil">
+                                    <span class="material-icons-outlined">person</span>
+                                    Minha conta
+                                </a>
+                            </li>
+                        <% } %>
+                            
                         <li>
                             <a id="" href="#">
                                 <span class="material-icons-outlined">headset_mic</span>
@@ -46,6 +59,13 @@
                                 <li><a href="#">Tablet</a></li>                               
                             </ul>
                         </li>
+                        
+                        <% if(locals.usuarioEstaLogado == true) { %>
+
+                            <a class="btn-nav-logout-mobile" href="/usuario/logout">Sair</a>
+                            
+                        <% } %>     
+
                     </ul>
 
                     <a href="/" class="link-logo-empresa"><img src="/images/logo.svg" alt="Imagem Logo TopSales6"></a>
@@ -54,9 +74,15 @@
                     <ul class="lista-menu">
                         <% if(locals.usuarioEstaLogado == true) { %>
 
+<<<<<<< HEAD
                             <li class="btn_minhaConta_sair">
                                 <a href="/usuario/login"><span class="material-icons">account_circle</span>Minha conta</a>
                                 
+=======
+                            <li class="li-link-minhaConta-sair">
+                                <a href="/usuario/login"><span class="material-icons imgBtnMenuNav">account_circle</span>Minha conta |</a>
+                                <a class="link-sair" href="/usuario/logout">sair</a>
+>>>>>>> f9231eae0a74cb5cbd6bc4533f11f7923ac1ee6f
                             </li>
         
                         <% }%>
@@ -64,6 +90,7 @@
                         <% if(locals.usuarioEstaLogado == false) { %>
 
                             <li>
+<<<<<<< HEAD
                                 <a href="/usuario/login"><span class="material-icons">account_circle</span>Login</a>
                                 
                             </li>
@@ -77,15 +104,22 @@
                             </li>
         
                         <% }%>
+=======
+                                <a href="/usuario/login"><span class="material-icons imgBtnMenuNav">account_circle</span>Login</a>
+                            </li>
+        
+                        <% }%>                        
+>>>>>>> f9231eae0a74cb5cbd6bc4533f11f7923ac1ee6f
 
                         <li>
-                            <a href="#"><span class="material-icons-outlined">headset_mic</span>Central de Atendimento</a>
+                            <a href="#"><span class="material-icons-outlined imgBtnMenuNav">headset_mic</span>Central de Atendimento</a>
                         </li>                                                   
                     </ul>
                 </div>
 
                 <a href="/carrinho" class="link-carrinho">
                     <span class="material-icons-outlined img-carrinho">shopping_cart</span>
+                    <span id="img-carrinho" class="material-icons-outlined img-carrinho-2">shopping_cart</span>
                     <span class="qt-item-carrinho">0</span>
                 </a>
             </div>
