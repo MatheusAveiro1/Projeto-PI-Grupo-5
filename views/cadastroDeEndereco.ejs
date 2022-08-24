@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TopSales6</title>    
+
+    <title>TopSales6</title>
+
+    <link rel="shortcut icon" href="/images/fivicon.ico">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/base-area-restrita.css">
+    <link rel="stylesheet" href="/stylesheets/enderecos.css">
+</head>
+<body>    
+
+    <%- include('./partials/header') %>
+
+    <main>
+        <div class="container">
+            <div class="div-main-config-padrao">
+                <!--Comece aqui!-->
+                <div class="div-area-restrita">
+
+                    <%- include('./partials/menu-lateral-perfil') %>
+                    
+                    <div class="div-info-usuario-principal">
+                        <p class="titulo-meus-enderecos">
+                            <span class="material-icons-outlined">location_on</span> CADASTRAR ENDEREÇO
+                        </p>
+                        <form action="/usuario/enderecos/criar" metod="POST" class="form-enderecos">
+                            <div class="div-rua-nunero">
+                                <div class="div-rua">
+                                    <label for="rua">Rua</label>
+                                    <input id="rua" name="rua" type="text" placeholder="Digite o nome da rua" required>
+                                </div>
+                                <div class="div-numero">
+                                    <label for="numero">Número</label>
+                                    <input id="numero" name="numero" type="text" placeholder="Digite o número" required>
+                                </div>                                
+                            </div>
+                            <div class="div-complemento-cep-bairro">
+                                <div class="div-complemento">
+                                    <label for="complemento">Complemento</label>
+                                    <input id="complemento" name="complemento" type="text" placeholder="Digite o complemento" required>
+                                </div>
+                                <div class="div-cep">
+                                    <label for="cep">CEP</label>
+                                    <input id="cep" name="cep" type="text" placeholder="Digite o seu CEP" required>
+                                </div>
+                                <div class="div-bairro">
+                                    <label for="bairro">Bairro</label>
+                                    <input id="bairro" name="bairro" type="text" placeholder="Digite o seu bairro" required>
+                                </div>
+                            </div>
+                            <div class="div-cidade-estado">
+                                <div class="div-cidade">
+                                    <label for="cidade">Cidade</label>
+                                    <input id="cidade" name="cidade" type="text" placeholder="Digite o nome da sua cidade" required>
+                                </div>
+                                <div class="div-estado">
+                                    <label for="estado">Estado</label>
+                                    <input id="estado" name="estado" type="text" placeholder="Digite o nome do seu estado" required>
+                                </div>
+                            </div>
+
+                            <div class="div-btn-atualiza-endereco">
+                                <button type="submit">CADASTRAR</button>                                
+                            </div>                             
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

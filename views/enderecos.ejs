@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TopSales6</title>    
+
+    <title>TopSales6</title>
+
+    <link rel="shortcut icon" href="/images/fivicon.ico">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/base-area-restrita.css">
+    <link rel="stylesheet" href="/stylesheets/enderecos.css">
+
+</head>
+<body>    
+
+    <%- include('./partials/header') %>
+
+    <main>
+        <div class="container">
+            <div class="div-main-config-padrao">
+                <!--Comece aqui!-->
+                <div class="div-area-restrita">
+
+                    <%- include('./partials/menu-lateral-perfil') %>
+                    
+                    <div class="div-info-usuario-principal">
+                        <p class="titulo-meus-dados">
+                            <span class="material-icons-outlined">location_on</span> ENDEREÇOS
+                        </p>
+
+                        <a href="/usuario/enderecos/criar">Adicionar novo endereço</a>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>
