@@ -23,8 +23,9 @@ main div div .home-produto {
     margin: 1%;
     justify-content: flex-start;
 }
-.paginaproduto div div section .img-nome-valor-comprar .main-img {
+.paginaproduto div div section .img-nome-valor-comprar .main-img img{
     margin: 1%;
+    width: 40%;
 }
 
 

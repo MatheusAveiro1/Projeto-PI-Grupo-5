@@ -74,9 +74,15 @@
                     <ul class="lista-menu">
                         <% if(locals.usuarioEstaLogado == true) { %>
 
+<<<<<<< HEAD
+                            <li class="btn_minhaConta_sair">
+                                <a href="/usuario/login"><span class="material-icons">account_circle</span>Minha conta</a>
+                                
+=======
                             <li class="li-link-minhaConta-sair">
                                 <a href="/usuario/login"><span class="material-icons imgBtnMenuNav">account_circle</span>Minha conta |</a>
                                 <a class="link-sair" href="/usuario/logout">sair</a>
+>>>>>>> f9231eae0a74cb5cbd6bc4533f11f7923ac1ee6f
                             </li>
         
                         <% }%>
@@ -84,10 +90,26 @@
                         <% if(locals.usuarioEstaLogado == false) { %>
 
                             <li>
+<<<<<<< HEAD
+                                <a href="/usuario/login"><span class="material-icons">account_circle</span>Login</a>
+                                
+                            </li>
+        
+                        <% }%>
+
+                        <% if(locals.usuarioEstaLogado == true) { %>
+
+                            <li>
+                                <a href="/usuario/logout"> <b>Sair</b> </a>
+                            </li>
+        
+                        <% }%>
+=======
                                 <a href="/usuario/login"><span class="material-icons imgBtnMenuNav">account_circle</span>Login</a>
                             </li>
         
                         <% }%>                        
+>>>>>>> f9231eae0a74cb5cbd6bc4533f11f7923ac1ee6f
 
                         <li>
                             <a href="#"><span class="material-icons-outlined imgBtnMenuNav">headset_mic</span>Central de Atendimento</a>
