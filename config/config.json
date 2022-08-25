@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "gaivota775",
+    "password": "Acm.12345",
     "database": "topsales6",
-    "host": "192.168.0.48",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "port": "3306"
   },
