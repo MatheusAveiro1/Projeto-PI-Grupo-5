@@ -20,6 +20,15 @@ router.post('/cadastro',usuarioLogadoMiddleware, uploadFile.single('foto_de_perf
 //rota get e post da pagina de perfil 
 router.get('/perfil',usuarioNaoLogadoMiddleware, usuariosController.perfil);
 router.get('/meus-dados',usuarioNaoLogadoMiddleware, usuariosController.meusDados);
+
+
+//rota de endereço
+router.get('/enderecos',usuarioNaoLogadoMiddleware, usuariosController.mostraEnderecos);
+router.get('/enderecos/criar',usuarioNaoLogadoMiddleware, usuariosController.criarEndereco);
+router.post('/enderecos/criar',usuarioNaoLogadoMiddleware, usuariosController.cadastrarEndereco);
+//router.post('/enderecos/editar',usuarioNaoLogadoMiddleware, usuariosController.editarEndereco);
+router.post('/enderecos/delete',usuarioNaoLogadoMiddleware, usuariosController.deletarEndereco);
+
 //rota logout
 router.get('/logout',usuarioNaoLogadoMiddleware, usuariosController.logout);
 

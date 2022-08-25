@@ -270,6 +270,26 @@ const controlador = {
   meusDados: (req, res)=> {
     res.render ('meus-dados')
   },
+  mostraEnderecos: (req, res) =>{
+
+    res.render ('enderecos')
+
+  },
+  criarEndereco: (req, res) =>{
+    res.render ('cadastroDeEndereco')
+  },  
+  cadastrarEndereco: (req, res) =>{
+
+  },
+  deletarEndereco: (req, res) =>{
+
+  },
+
+
+
+
+
+
   logout: (req, res)=>{
 
     res.clearCookie("emailDoUsuario")

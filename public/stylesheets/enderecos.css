@@ -1,0 +1,159 @@
+.titulo-meus-enderecos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.titulo-meus-enderecos span {
+    margin-right: 5px;
+    font-size: 2rem;
+}
+
+
+.form-enderecos {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-enderecos .div-rua-nunero {    
+    margin-bottom: 0;        
+}
+
+.form-enderecos div {
+    margin-bottom: 25px;
+}
+
+.form-enderecos div label {
+    font-size: 0.875rem;
+}
+
+.form-enderecos div input {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 7px;
+}
+
+.form-enderecos div input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-enderecos div input::-moz-placeholder { /* Firefox 19+ */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-enderecos div input:-ms-input-placeholder { /* IE 10+ */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-enderecos div input:-moz-placeholder { /* Firefox 18- */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-enderecos .div-complemento-cep-bairro, .form-enderecos .div-cidade-estado {
+    margin-bottom: 0;
+}
+
+
+
+.form-enderecos .div-autoriza-promocoes {
+    margin-bottom: 60px;
+}
+
+.form-enderecos .div-autoriza-promocoes input {
+    width: auto;
+    margin-right: 5px;
+}
+
+.form-enderecos .div-btn-atualiza-endereco {
+    margin-bottom: 0;
+}
+
+.form-enderecos .div-btn-atualiza-endereco button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3498DB;
+    border-radius: 7px;
+    color: #fff;
+    background-color: #3498DB;
+    font-size: 0.75rem;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 20px;
+    
+}
+
+.form-enderecos .div-btn-atualiza-endereco button:hover {   
+    background-color: #3482b6;   
+}
+
+
+/******************* @media ****************************/
+
+@media (min-width: 769px) {
+    .form-enderecos .div-complemento-cep-bairro, .form-enderecos .div-cidade-estado {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .form-enderecos .div-complemento-cep-bairro .div-complemento,
+    .form-enderecos .div-complemento-cep-bairro .div-cep, 
+    .form-enderecos .div-cidade-estado .div-cidade {
+        margin-right: 30px;
+
+    }
+
+    .form-enderecos .div-rua-nunero {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;              
+    }
+
+    .form-enderecos .div-rua-nunero .div-rua {
+        width: 80%;
+    }
+    
+    .form-enderecos .div-rua-nunero .div-numero {
+        width: 20%;
+    }
+
+    .form-enderecos .div-rua-nunero .div-rua {
+        margin-right: 30px;
+    }
+
+    .form-enderecos .div-complemento-cep-bairro .div-complemento {
+        width: 40%;
+    }
+
+    .form-enderecos .div-complemento-cep-bairro .div-cep {
+        width: 20%;
+    }
+
+    .form-enderecos .div-complemento-cep-bairro .div-bairro {
+        width: 40%;
+    }
+
+
+    .form-enderecos .div-cidade-estado .div-cidade {
+
+        width: 85%;
+    }
+
+    .form-enderecos .div-cidade-estado .div-estado {
+
+        width: 15%;
+    }
+
+
+
+}
