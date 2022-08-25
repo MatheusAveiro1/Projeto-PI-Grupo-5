@@ -1,13 +1,25 @@
+ /***main div .div-main-config-padrao {
+    display: flex;
+    flex-direction: column;
+
+ }***/
+
 main div div .home-produto {
     display: flex;
     margin-top: 1%;
     margin-left: 1%;
-    justify-content: space-around;
+    justify-content: space-between;
     justify-items: flex-start;
     width: 13%;
     color: #333;
 
 }
+
+main div div .home-produto p {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
 .paginaproduto div div section .img-nome-valor-comprar {
     display: flex;
     border-radius: 8px;
@@ -24,8 +36,8 @@ main div div .home-produto {
     justify-content: flex-start;
 }
 .paginaproduto div div section .img-nome-valor-comprar .main-img img{
-    margin: 1%;
-    width: 40%;
+    margin-left: 20%;
+    width: 50%;
 }
 
 
@@ -204,7 +216,41 @@ main div div .home-produto {
 
 
 
-@media (mx-width: 481px) {
+@media (max-width: 650px) {
+    * {
+        font-size: 16px;
+    }
+    .paginaproduto div div section .img-nome-valor-comprar {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .paginaproduto div div section .img-nome-valor-comprar .main-img img {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+    }
+
+    .paginaproduto div div section .img-nome-valor-comprar .small-img {
+
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+    }
+
+    .paginaproduto div div section .img-nome-valor-comprar .small-img img {
+        width: 80px;
+    }
+
+    .paginaproduto div div section .img-nome-valor-comprar .nome-valor-comprar {
+        margin: 2%;
+    }
     /*** Main ***/
 
     /************/
