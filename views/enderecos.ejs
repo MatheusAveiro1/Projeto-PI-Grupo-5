@@ -37,12 +37,45 @@
                     <%- include('./partials/menu-lateral-perfil') %>
                     
                     <div class="div-info-usuario-principal">
-                        <p class="titulo-meus-dados">
-                            <span class="material-icons-outlined">location_on</span> ENDEREÇOS
+                        <p class="titulo-meus-enderecos">
+                            <span class="material-icons-outlined">location_on</span>MEUS ENDEREÇOS
                         </p>
 
-                        <a href="/usuario/enderecos/criar">Adicionar novo endereço</a>
+                        <a class="botao_adiciona_endereco" href="/usuario/enderecos/criar"> 
+                            <span class="material-icons-outlined">add</span> 
+                            Adicionar endereço
+                        </a>
 
+                        <div class="div_card_principal">
+                            <% for(let i=0; i<enderecos.length; i++){ %> 
+                                <article class="card_endereco">
+                                    <ul>
+                                        <li>
+                                            <b>Rua:</b> <%= enderecos[i].rua %> , <b>Numero:</b>  <%= enderecos[i].numero %>, 
+                                        </li>
+                                        <li>
+                                            <b>Complemento:</b>  <%= enderecos[i].complemento %> 
+                                        </li>
+                                        <li>
+                                            <b>CEP:</b>  <%= enderecos[i].cep %>,<b>Bairro:</b>  <%= enderecos[i].bairro %> 
+                                        </li>
+                                        <li>
+                                            <b>Cidade:</b>  <%= enderecos[i].cidade %>, <b>Estado:</b>  <%= enderecos[i].estado %>
+                                        </li>
+                                    </ul>
+
+                                    <% if(enderecos.length>1){ %> 
+
+                                    <form action="/usuario/enderecos/delete" method="POST">
+                                        <input type="text" name="endereco_para_excluir" value="<%= enderecos[i].id %>" hidden>
+                                        <button type="submit" onclick="return confirm('Este endereço será excluído!');" >DELETAR</button>
+                                    </form>
+                                    <% } %> 
+
+                                    
+                                </article>
+                            <% } %> 
+                        </div>
                     </div>
                 </div>
                 

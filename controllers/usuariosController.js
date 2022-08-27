@@ -3,11 +3,12 @@ const {validationResult, Result} = require('express-validator');
 //Chamando o fs
 const fs = require('fs');
 //Chamando nosso model
-const {sequelize, Usuario} = require('../models')
+const {sequelize, Usuario, Endereco} = require('../models')
 //Chamando o manipulado de hash
 const bcrypt = require('bcrypt');
 const db = require('../models');
 const { reject, promise } = require('bcrypt/promises');
+
 
 //** Funções ***//
 
@@ -182,6 +183,21 @@ const funcoesUsuarios = {
     })
   },
 
+  verificaErrosDoFormEndereco: (req,res)=>{
+    return new Promise((resolve,reject) => {
+      //Recuperando possiveis erros do form
+      let errors = validationResult(req);
+      //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
+      if (!errors.isEmpty()) {
+        //Retornaremos para page de cadatro de endereço com os erros
+        reject (res.render('cadastroDeEndereco', { errorsFormEndereco: errors.mapped(), dadosPreenchido: req.body }));
+      } else {
+        resolve();
+      }
+    });
+  }
+
+
 }
 
 //*** Controlador ***//
@@ -189,40 +205,24 @@ const controlador = {
   login: (req, res) => {
     res.render('login', { usuarioCadastrado: req.query.usuarioCadastrado });
   },
-
   validaLogin: async (req, res) => {
     try{
       //verifica erros no formulario
       await funcoesUsuarios.verificaErrosDoFormLogin(req, res);
-      
       //Consulta o EMAIL no BD
       const usuarioParaVerificar = await Usuario.findAll({
         where: {
-          email: req.body.email
-          
+          email: req.body.email 
         }
       }) 
-
       //verifica email e senha no banco de dados
       await funcoesUsuarios.validaEmailSenhaLogin(req, res, usuarioParaVerificar);
-
-      //console.log(usuarioParaVerificar)
-
-      
-
-
-
-
-      //res.redirect('/usuario/perfil')
     }
-
     catch (err) {
       console.log(err)
     }
-
-
-
   },
+
   cadastro: (req, res)=> {
     res.render ('cadastro')
   },
@@ -264,38 +264,93 @@ const controlador = {
   },
   perfil: (req, res)=> {
 
-    res.render('perfil',{usuarioLogado: req.session.usuarioLogado})
+   return res.render('perfil',{usuarioLogado: req.session.usuarioLogado})
     
   },
   meusDados: (req, res)=> {
-    res.render ('meus-dados')
-  },
-  mostraEnderecos: (req, res) =>{
+    const meusDados = req.session.usuarioLogado
+    console.log(">>>>>>>>>>>>>>teste de impressão<<<<<<<<<<<<<<<<<<<<")
+    console.log(meusDados.email)
 
-    res.render ('enderecos')
+   return res.render ('meus-dados', {meusDados: meusDados})
+  },
+  mostraEnderecos: async (req, res) =>{
+
+    try{
+       const enderecos = await Endereco.findAll({
+        where: {
+            id_usuario: req.session.usuarioLogado.id
+        }
+     })
+   
+     return res.render ('enderecos', {enderecos: enderecos})
+    }
+    catch (err) {
+      console.log(err)
+    }
 
   },
   criarEndereco: (req, res) =>{
-    res.render ('cadastroDeEndereco')
+    
+   return res.render ('cadastroDeEndereco')
   },  
-  cadastrarEndereco: (req, res) =>{
+  cadastrarEndereco: async (req, res) =>{
+
+    try{
+      
+      //verifica erros no formulario
+      await funcoesUsuarios.verificaErrosDoFormEndereco(req, res);
+
+      
+      
+      //Gravando os dados do novo endereço no BD           
+      await Endereco.create({
+        id_usuario: req.session.usuarioLogado.id,
+        rua: req.body.rua,
+        numero: req.body.numero,
+        complemento: req.body.complemento,
+        cep: req.body.cep,
+        bairro: req.body.bairro,
+        cidade: req.body.cidade,
+        estado: req.body.estado
+      });
+      
+      //Após o cadastro de endereco redireciona para tela de endereco
+      return res.redirect('/usuario/enderecos');
+    
+
+    }
+    catch (err) {
+      console.log(err)
+    }
 
   },
-  deletarEndereco: (req, res) =>{
+
+  deletarEndereco: async (req, res) =>{
+
+    try{
+
+       await Endereco.destroy({
+        where: { id: req.body.endereco_para_excluir},
+      });
+
+      return res.redirect('/usuario/enderecos')
+    }
+  
+    
+   
+   catch (err) {
+     console.log(err)
+   }
 
   },
-
-
-
-
-
 
   logout: (req, res)=>{
 
     res.clearCookie("emailDoUsuario")
     req.session.destroy()
 
-    res.redirect("/")
+    return res.redirect("/")
   }    
 }
   
