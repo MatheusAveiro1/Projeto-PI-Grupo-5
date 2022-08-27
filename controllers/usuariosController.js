@@ -269,8 +269,6 @@ const controlador = {
   },
   meusDados: (req, res)=> {
     const meusDados = req.session.usuarioLogado
-    console.log(">>>>>>>>>>>>>>teste de impressão<<<<<<<<<<<<<<<<<<<<")
-    console.log(meusDados.email)
 
    return res.render ('meus-dados', {meusDados: meusDados})
   },
