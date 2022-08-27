@@ -39,6 +39,19 @@
     border-radius: 7px;
 }
 
+.form-enderecos div .msg-erro-form-endereco {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 0.875rem;
+    color: #c0392b; 
+}
+
+.form-enderecos div .msg-erro-form-endereco b {
+    font-size: 0.875rem;
+    text-transform: capitalize;
+}
+
+
 .form-enderecos div input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     font-size: 13px;
     color: #aaa;
@@ -95,6 +108,99 @@
 .form-enderecos .div-btn-atualiza-endereco button:hover {   
     background-color: #3482b6;   
 }
+
+.div_card_principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card_endereco{
+    padding: 20px; 
+    list-style: none;
+    box-shadow: 3px 2px 10px 4px #888;
+    border-radius: 7px;
+    margin-top: 30px;
+    transition: 0.3s;
+    background-color: white;
+    width: 100%;
+    
+}
+.card_endereco:hover{
+    box-shadow: 5px 4px 15px 6px #888;
+}
+
+.titulo-meus-enderecos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.botao_adiciona_endereco {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    text-decoration: none;
+    background-color: #198754;
+    color: white;
+    width: 250px;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border-radius: 7px;
+}
+
+.botao_adiciona_endereco:hover{
+    background-color: #157347
+    
+}
+
+
+
+.card_endereco ul{
+    list-style: none;
+    
+}
+
+.card_endereco ul li{
+    margin-top: 5px;
+    color: #333;
+}
+
+.card_endereco ul li b{
+    color: #555;
+
+}
+
+.card_endereco form button{
+    text-decoration: none;
+    padding: 10px;
+    background-color: #e74c3c;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    width: 100px;
+    color: white;
+    font-weight: bold;
+    border-radius: 7px;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+}
+.card_endereco form button:hover{
+    background-color: #c0392b;
+}
+
+
 
 
 /******************* @media ****************************/
@@ -154,6 +260,15 @@
         width: 15%;
     }
 
+
+
+}
+
+@media (min-width: 1280px){
+
+    .card_endereco{
+        width: 48%;
+    }
 
 
 }
