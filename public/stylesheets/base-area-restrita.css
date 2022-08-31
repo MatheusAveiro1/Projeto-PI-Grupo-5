@@ -4,6 +4,10 @@
     margin-top: -40px;    
 }
 
+.pagina-ativa {
+    border-left: 8px solid #ff914d;
+}
+
 .div-area-restrita .menu-lateral-area-restrita {
     display: flex;
     flex-direction: column;
@@ -33,7 +37,7 @@
     width: 100%;
     padding: 14px;
     padding-left: 20px;
-    transition: 0.3s;
+    transition: 0.3s;    
 }
 
 .div-area-restrita .menu-lateral-area-restrita .ul-menu-lateral li a:hover {
