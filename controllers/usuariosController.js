@@ -190,7 +190,7 @@ const funcoesUsuarios = {
       //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
       if (!errors.isEmpty()) {
         //Retornaremos para page de cadatro de endereço com os erros
-        reject (res.render('cadastroDeEndereco', { errorsFormEndereco: errors.mapped(), dadosPreenchido: req.body }));
+        reject (res.render('cadastroDeEndereco', { errorsFormEndereco: errors.mapped(), dadosPreenchido: req.body, paginaAtual: 'enderecos'}));
       } else {
         resolve();
       }
@@ -314,7 +314,7 @@ const controlador = {
       });
       
       //Após o cadastro de endereco redireciona para tela de endereco
-      return res.redirect('/usuario/enderecos');
+      return res.redirect('/usuario/enderecos',{paginaAtual: 'enderecos'});
     
 
     }
@@ -323,6 +323,44 @@ const controlador = {
     }
 
   },
+
+  
+  editarEndereco: async (req, res) =>{
+    try{
+      const endereco = await Endereco.findByPk(req.body.endereco_para_editar)
+      res.render('editarEndereco',{paginaAtual: 'enderecos', endereco: endereco})
+    }
+   catch (err) {
+     console.log(err)
+    }
+  },
+
+  atualizarEndereco: async (req, res) =>{
+    try{
+
+        const result = await Endereco.update({ 
+            id_usuario: req.session.usuarioLogado.id,
+            rua: req.body.rua,
+            numero: req.body.numero,
+            complemento: req.body.complemento,
+            cep: req.body.cep,
+            bairro: req.body.bairro,
+            cidade: req.body.cidade,
+            estado: req.body.estado 
+          },
+          { where: { id: req.body.endereco_para_atualizar } }
+
+        )
+        
+      
+      res.redirect('/usuario/enderecos')
+    }
+   catch (err) {
+     console.log(err)
+    }
+  },
+
+  
 
   deletarEndereco: async (req, res) =>{
 

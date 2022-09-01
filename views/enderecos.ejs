@@ -66,7 +66,7 @@
                                             <%= enderecos[i].bairro %> - <%= enderecos[i].cidade %> - <%= enderecos[i].estado %>
                                         </li>
 
-                                        <% if(enderecos.length>1){ %>
+
 
                                             <div class="div-btn-edicao-delete">
                                             
@@ -77,15 +77,16 @@
                                                     </button>
                                                 </form>
 
-                                                <form class="form-btn-deletar-endereco" action="/usuario/enderecos/delete?_method=DELETE" method="POST">
-                                                    <input type="text" name="endereco_para_excluir" value="<%= enderecos[i].id %>" hidden>
-                                                    <button type="submit" onclick="return confirm('Este endereço será excluído!');" >
-                                                        <span class="material-icons-outlined">delete</span>
-                                                    </button>
-                                                </form>
-
+                                                    <% if(enderecos.length>1){ %>
+                                                        <form class="form-btn-deletar-endereco" action="/usuario/enderecos/delete?_method=DELETE" method="POST">
+                                                            <input type="text" name="endereco_para_excluir" value="<%= enderecos[i].id %>" hidden>
+                                                            <button type="submit" onclick="return confirm('Este endereço será excluído!');" >
+                                                                <span class="material-icons-outlined">delete</span>
+                                                            </button>
+                                                        </form>
+                                                    <% } %> 
                                             </div>
-                                        <% } %> 
+                                        
                                     </ul>
 
                                     
