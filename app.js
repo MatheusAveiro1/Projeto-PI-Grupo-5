@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
 const dadosDoUsuarioLogadoMiddleware = require('./middlewares/dadosDoUsuarioLogadoMiddlewares');
+const methodOverride = require('method-override'); 
 
 var indexRouter = require('./routes/indexRouter');
 var usuariosRouter = require('./routes/usuariosRouter');
@@ -33,6 +34,7 @@ app.use(cookieParser());
 //Seta o uauário como logado ou não 
 app.use(dadosDoUsuarioLogadoMiddleware);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/usuario', usuariosRouter);

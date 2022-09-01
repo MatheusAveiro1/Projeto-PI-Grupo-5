@@ -290,7 +290,7 @@ const controlador = {
   },
   criarEndereco: (req, res) =>{
     
-   return res.render ('cadastroDeEndereco')
+   return res.render ('cadastroDeEndereco', {paginaAtual: 'enderecos'})
   },  
   cadastrarEndereco: async (req, res) =>{
 
