@@ -1,19 +1,38 @@
-<nav class="menu-lateral-area-restrita">                       
+<nav class="menu-lateral-area-restrita"> 
+    
+    <% 
+        let paginaPerfil = '';
+        let paginaMeusDados = '';
+        let paginaEnderecos = '';
+
+        switch (paginaAtual) {
+            case "perfil":
+                paginaPerfil = 'pagina-ativa';
+                break;
+            case "meusDados":
+                paginaMeusDados = 'pagina-ativa';
+                break;
+            case  "enderecos":
+                paginaEnderecos =  'pagina-ativa';
+                break;
+        }       
+    %>
+
     <ul class="ul-menu-lateral">
         <li>
-            <a href="/usuario/perfil">
+            <a href="/usuario/perfil" class="<%= paginaPerfil %>">
                 <span class="material-icons">person</span>
                 Minha Conta
             </a>
         </li>
         <li>
-            <a href="/usuario/meus-dados">
+            <a href="/usuario/meus-dados" class="<%= paginaMeusDados %>">
                 <span class="material-icons">article</span>
                 Meus Dados
             </a>
         </li>   
         <li>
-            <a href="/usuario/enderecos">
+            <a href="/usuario/enderecos" class="<%= paginaEnderecos %>">
                 <span class="material-icons-outlined">location_on</span>
                 Endereço
             </a>

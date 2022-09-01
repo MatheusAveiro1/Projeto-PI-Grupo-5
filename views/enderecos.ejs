@@ -37,8 +37,8 @@
                     <%- include('./partials/menu-lateral-perfil') %>
                     
                     <div class="div-info-usuario-principal">
-                        <p class="titulo-meus-enderecos">
-                            <span class="material-icons-outlined">location_on</span>MEUS ENDEREÇOS
+                        <p class="titulo-meus-enderecos">                            
+                            <span class="material-icons-outlined">map</span>MEUS ENDEREÇOS
                         </p>
 
                         <a class="botao_adiciona_endereco" href="/usuario/enderecos/criar"> 
@@ -47,30 +47,48 @@
                         </a>
 
                         <div class="div_card_principal">
-                            <% for(let i=0; i<enderecos.length; i++){ %> 
+                            <% for(let i=0; i<enderecos.length; i++){ %>                                
                                 <article class="card_endereco">
+                                    <div class="div-icon-endereco">
+                                        <span class="material-icons-outlined">location_on</span>
+                                    </div>
                                     <ul>
                                         <li>
-                                            <b>Rua:</b> <%= enderecos[i].rua %> , <b>Numero:</b>  <%= enderecos[i].numero %>, 
+                                            <%= enderecos[i].rua %>, <%= enderecos[i].numero %> 
                                         </li>
                                         <li>
-                                            <b>Complemento:</b>  <%= enderecos[i].complemento %> 
+                                            <%= enderecos[i].complemento %> 
                                         </li>
                                         <li>
-                                            <b>CEP:</b>  <%= enderecos[i].cep %>,<b>Bairro:</b>  <%= enderecos[i].bairro %> 
+                                            Cep <%= enderecos[i].cep %> 
                                         </li>
                                         <li>
-                                            <b>Cidade:</b>  <%= enderecos[i].cidade %>, <b>Estado:</b>  <%= enderecos[i].estado %>
+                                            <%= enderecos[i].bairro %> - <%= enderecos[i].cidade %> - <%= enderecos[i].estado %>
                                         </li>
+
+                                        <% if(enderecos.length>1){ %>
+
+                                            <div class="div-btn-edicao-delete">
+                                            
+                                                <form class="form-btn-editar-endereco" action="/usuario/enderecos/editar" method="POST">
+                                                    <input type="text" name="endereco_para_editar" value="<%= enderecos[i].id %>" hidden>
+                                                    <button type="submit">
+                                                        <span class="material-icons-outlined">edit</span>
+                                                    </button>
+                                                </form>
+
+                                                <form class="form-btn-deletar-endereco" action="/usuario/enderecos/delete" method="POST">
+                                                    <input type="text" name="endereco_para_excluir" value="<%= enderecos[i].id %>" hidden>
+                                                    <button type="submit" onclick="return confirm('Este endereço será excluído!');" >
+                                                        <span class="material-icons-outlined">delete</span>
+                                                    </button>
+                                                </form>
+
+                                            </div>
+                                        <% } %> 
                                     </ul>
 
-                                    <% if(enderecos.length>1){ %> 
-
-                                    <form action="/usuario/enderecos/delete" method="POST">
-                                        <input type="text" name="endereco_para_excluir" value="<%= enderecos[i].id %>" hidden>
-                                        <button type="submit" onclick="return confirm('Este endereço será excluído!');" >DELETAR</button>
-                                    </form>
-                                    <% } %> 
+                                    
 
                                     
                                 </article>
@@ -83,7 +101,7 @@
         </div>
     </main>
 
-    <%- include('./partials/footer') %>
+    <%- //include('./partials/footer') %>
 
 </body>
 </html>

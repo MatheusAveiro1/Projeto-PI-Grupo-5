@@ -264,13 +264,13 @@ const controlador = {
   },
   perfil: (req, res)=> {
 
-   return res.render('perfil',{usuarioLogado: req.session.usuarioLogado})
+   return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil'})
     
   },
   meusDados: (req, res)=> {
     const meusDados = req.session.usuarioLogado
 
-   return res.render ('meus-dados', {meusDados: meusDados})
+   return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados'})
   },
   mostraEnderecos: async (req, res) =>{
 
@@ -281,7 +281,7 @@ const controlador = {
         }
      })
    
-     return res.render ('enderecos', {enderecos: enderecos})
+     return res.render ('enderecos', {enderecos: enderecos, paginaAtual: 'enderecos'})
     }
     catch (err) {
       console.log(err)
