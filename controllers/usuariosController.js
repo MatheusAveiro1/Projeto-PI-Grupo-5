@@ -314,7 +314,7 @@ const controlador = {
       });
       
       //Após o cadastro de endereco redireciona para tela de endereco
-      return res.redirect('/usuario/enderecos',{paginaAtual: 'enderecos'});
+      return res.redirect('/usuario/enderecos');
     
 
     }
@@ -370,6 +370,7 @@ const controlador = {
         where: { id: req.body.endereco_para_excluir},
       });
 
+      
       return res.redirect('/usuario/enderecos')
     }
   
