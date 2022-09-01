@@ -29,7 +29,8 @@ router.get('/meus-dados',usuarioNaoLogadoMiddleware, usuariosController.meusDado
 router.get('/enderecos',usuarioNaoLogadoMiddleware, usuariosController.mostraEnderecos);
 router.get('/enderecos/criar',usuarioNaoLogadoMiddleware, usuariosController.criarEndereco);
 router.post('/enderecos/criar',usuarioNaoLogadoMiddleware,validaEnderecoMiddlewares, usuariosController.cadastrarEndereco);
-//router.post('/enderecos/editar',usuarioNaoLogadoMiddleware, usuariosController.editarEndereco);
+router.post('/enderecos/editar',usuarioNaoLogadoMiddleware, usuariosController.editarEndereco);
+router.put('/enderecos/atualizar',usuarioNaoLogadoMiddleware, usuariosController.atualizarEndereco);
 router.delete('/enderecos/delete',usuarioNaoLogadoMiddleware, usuariosController.deletarEndereco);
 
 //rota logout
