@@ -13,7 +13,7 @@ module.exports = [
     check('cpf')        
         .notEmpty().withMessage("Esse campo não pode ficar vazio!").bail()
         .isNumeric().withMessage("Esse campo só aceita números!").bail()
-        .isLength({min: 11, max: 11}).withMessage("Difite um CPF válido!"),
+        .isLength({min: 11, max: 11}).withMessage("Digite um CPF válido!"),
     check('email')
         .notEmpty().withMessage("Esse campo não pode ficar vazio!").bail()
         .isEmail().withMessage("Por favor preencha uma e-mail válido!").bail(),        
