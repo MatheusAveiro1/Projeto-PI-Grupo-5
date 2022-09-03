@@ -91,6 +91,23 @@
     margin-bottom: 0;
 }
 
+.form-enderecos .div-btn-cadastra-endereco button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #198754;
+    border-radius: 7px;
+    color: #fff;
+    background-color: #198754;
+    font-size: 0.75rem;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 20px;    
+}
+
+.form-enderecos .div-btn-cadastra-endereco button:hover {   
+    background-color: #157347;   
+}
+
 .form-enderecos .div-btn-atualiza-endereco button {
     width: 100%;
     padding: 10px;

@@ -30,7 +30,7 @@ router.get('/enderecos',usuarioNaoLogadoMiddleware, usuariosController.mostraEnd
 router.get('/enderecos/criar',usuarioNaoLogadoMiddleware, usuariosController.criarEndereco);
 router.post('/enderecos/criar',usuarioNaoLogadoMiddleware,validaEnderecoMiddlewares, usuariosController.cadastrarEndereco);
 router.post('/enderecos/editar',usuarioNaoLogadoMiddleware, usuariosController.editarEndereco);
-router.put('/enderecos/atualizar',usuarioNaoLogadoMiddleware, usuariosController.atualizarEndereco);
+router.put('/enderecos/atualizar',usuarioNaoLogadoMiddleware, validaEnderecoMiddlewares, usuariosController.atualizarEndereco);
 router.delete('/enderecos/delete',usuarioNaoLogadoMiddleware, usuariosController.deletarEndereco);
 
 //rota logout
