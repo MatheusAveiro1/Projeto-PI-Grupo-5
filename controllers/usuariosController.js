@@ -277,9 +277,12 @@ const controlador = {
   },
   meusDados: (req, res)=> {
     const meusDados = req.session.usuarioLogado
-    console.log('>>>>>>>teste meus dados<<<<<<<<')
-    console.log(meusDados)
-   return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados'})
+    console.log('>>>>>>>teste cadastroOk<<<<<<<<')
+    console.log(req.session.cadstroOk )
+    var cadastroOk = req.session.cadstroOk
+    req.session.cadstroOk = 0
+    
+   return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados',cadastroOk: cadastroOk })
   },
 
   atualizarMeusDados: async (req, res) =>{
@@ -304,7 +307,8 @@ const controlador = {
         )
 
         
-
+        
+        req.session.cadstroOk = resultadoDoEnvioDeDadosDoBanco
 
         return res.redirect('/usuario/meus-dados'); 
         

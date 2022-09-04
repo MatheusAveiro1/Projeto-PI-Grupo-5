@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/stylesheets/base.css">
     <link rel="stylesheet" href="/stylesheets/base-area-restrita.css">
     <link rel="stylesheet" href="/stylesheets/meus-dados.css">
+    
 </head>
 <body>    
 
@@ -39,16 +40,19 @@
                         <p class="titulo-meus-dados">
                             <span class="material-icons">article</span> MEUS DADOS
                         </p>
+
+                        <% if(cadastroOk) { %>
+
+                            <p  class="infoAtualizacaoSucesso">
+                                Olá <strong><%= meusDados.nome + " " + meusDados.sobrenome %></strong> seus dados foram atualizados com sucesso.
+                                
+                            </p> 
+        
+                        <% } %>
+
                         <form action="/usuario/meus-dados?_method=PUT" method="POST" class="form-meus-dados">
 
-                            <% if(meusDados != 0) { %>
 
-                                <p  class="infoCadastroSucesso">
-                                    Cadastro <strong><%=  %></strong> foi atualizado com sucesso.
-                                    
-                                </p> 
-            
-                            <% } %>
 
 
                             <div class="div-nome-completo">
