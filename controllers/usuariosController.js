@@ -187,7 +187,7 @@ const funcoesUsuarios = {
     })
   },
 
-  verificaErrosDoFormEndereco: (req,res)=>{
+  verificaErrosDoFormCriarEndereco: (req,res)=>{
     return new Promise((resolve,reject) => {
       //Recuperando possiveis erros do form
       let errors = validationResult(req);
@@ -199,9 +199,21 @@ const funcoesUsuarios = {
         resolve();
       }
     });
+  },
+
+  verificaErrosDoFormAtualizarEndereco: (req,res)=>{
+    return new Promise((resolve,reject) => {
+      //Recuperando possiveis erros do form
+      let errors = validationResult(req);
+      //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
+      if (!errors.isEmpty()) {
+        //Retornaremos para page de cadatro de endereço com os erros
+        reject (res.render('editarEndereco', { errorsFormEndereco: errors.mapped(), dadosPreenchido: req.body, endereco: null, paginaAtual: 'enderecos'}));
+      } else {
+        resolve();
+      }
+    });
   }
-
-
 }
 
 //*** Controlador ***//
@@ -341,18 +353,14 @@ const controlador = {
     }
 
   },
-  criarEndereco: (req, res) =>{
-    
-   return res.render ('cadastroDeEndereco', {paginaAtual: 'enderecos'})
+  criarEndereco: (req, res) =>{    
+    return res.render ('cadastroDeEndereco', {paginaAtual: 'enderecos'});
   },  
   cadastrarEndereco: async (req, res) =>{
 
-    try{
-      
+    try{      
       //verifica erros no formulario
-      await funcoesUsuarios.verificaErrosDoFormEndereco(req, res);
-
-      
+      await funcoesUsuarios.verificaErrosDoFormCriarEndereco(req, res);
       
       //Gravando os dados do novo endereço no BD           
       await Endereco.create({
@@ -368,42 +376,39 @@ const controlador = {
       
       //Após o cadastro de endereco redireciona para tela de endereco
       return res.redirect('/usuario/enderecos');
-    
 
     }
     catch (err) {
       console.log(err)
     }
 
-  },
-
-  
+  },  
   editarEndereco: async (req, res) =>{
     try{
-      const endereco = await Endereco.findByPk(req.body.endereco_para_editar)
-      res.render('editarEndereco',{paginaAtual: 'enderecos', endereco: endereco})
+      const endereco = await Endereco.findByPk(req.body.endereco_para_editar);
+      res.render('editarEndereco',{paginaAtual: 'enderecos', endereco: endereco});
     }
    catch (err) {
      console.log(err)
     }
   },
-
   atualizarEndereco: async (req, res) =>{
     try{
+      console.log(req.body);
+        //verifica erros no formulario
+      await funcoesUsuarios.verificaErrosDoFormAtualizarEndereco(req, res);
 
-        const result = await Endereco.update({ 
-            id_usuario: req.session.usuarioLogado.id,
-            rua: req.body.rua,
-            numero: req.body.numero,
-            complemento: req.body.complemento,
-            cep: req.body.cep,
-            bairro: req.body.bairro,
-            cidade: req.body.cidade,
-            estado: req.body.estado 
-          },
-          { where: { id: req.body.endereco_para_atualizar } }
-
-        )
+      const result = await Endereco.update({ 
+          id_usuario: req.session.usuarioLogado.id,
+          rua: req.body.rua,
+          numero: req.body.numero,
+          complemento: req.body.complemento,
+          cep: req.body.cep,
+          bairro: req.body.bairro,
+          cidade: req.body.cidade,
+          estado: req.body.estado 
+        },
+        { where: { id: req.body.endereco_para_atualizar } })
         
       
       res.redirect('/usuario/enderecos')
@@ -412,9 +417,6 @@ const controlador = {
      console.log(err)
     }
   },
-
-  
-
   deletarEndereco: async (req, res) =>{
 
     try{
@@ -434,7 +436,6 @@ const controlador = {
    }
 
   },
-
   logout: (req, res)=>{
 
     res.clearCookie("emailDoUsuario")

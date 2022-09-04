@@ -43,7 +43,7 @@
                             <div class="div-rua-nunero">
                                 <div class="div-rua">
                                     <label for="rua">Rua</label>
-                                    <input id="rua" name="rua" type="text" placeholder="Digite o nome da rua" >
+                                    <input id="rua" name="rua" type="text" value="<%= locals.dadosPreenchido && dadosPreenchido.rua %>" placeholder="Digite o nome da rua" >
 
                                     <% if(locals.errorsFormEndereco && errorsFormEndereco.rua) { %>
                                         <p class="msg-erro-form-endereco"> 
@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="div-numero">
                                     <label for="numero">Número</label>
-                                    <input id="numero" name="numero" type="text" placeholder="Digite o número" >
+                                    <input id="numero" name="numero" type="text" value="<%= locals.dadosPreenchido && dadosPreenchido.numero %>" placeholder="Digite o número" >
                                     <% if(locals.errorsFormEndereco && errorsFormEndereco.numero) { %>
                                         <p class="msg-erro-form-endereco"> 
                                             <b><%= errorsFormEndereco.numero.param + ":  " %></b>  <%= errorsFormEndereco.numero.msg %>
@@ -65,7 +65,7 @@
                             <div class="div-complemento-cep-bairro">
                                 <div class="div-complemento">
                                     <label for="complemento">Complemento</label>
-                                    <input id="complemento" name="complemento" type="text" placeholder="Digite o complemento" >
+                                    <input id="complemento" name="complemento" type="text" value="<%= locals.dadosPreenchido && dadosPreenchido.complemento %>" placeholder="Digite o complemento" >
                                     <% if(locals.errorsFormEndereco && errorsFormEndereco.complemento) { %>
                                         <p class="msg-erro-form-endereco"> 
                                             <b><%= errorsFormEndereco.complemento.param + ":  " %></b>  <%= errorsFormEndereco.complemento.msg %>
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="div-cep">
                                     <label for="cep">CEP</label>
-                                    <input id="cep" name="cep" type="text" placeholder="Digite o seu CEP" >
+                                    <input id="cep" name="cep" type="text" value="<%= locals.dadosPreenchido && dadosPreenchido.cep %>" placeholder="Digite o seu CEP" >
                                     <% if(locals.errorsFormEndereco && errorsFormEndereco.cep) { %>
                                         <p class="msg-erro-form-endereco"> 
                                             <b><%= errorsFormEndereco.cep.param + ":  " %></b>  <%= errorsFormEndereco.cep.msg %>
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="div-bairro">
                                     <label for="bairro">Bairro</label>
-                                    <input id="bairro" name="bairro" type="text" placeholder="Digite o seu bairro" >
+                                    <input id="bairro" name="bairro" type="text" value="<%= locals.dadosPreenchido && dadosPreenchido.bairro %>" placeholder="Digite o seu bairro" >
                                     <% if(locals.errorsFormEndereco && errorsFormEndereco.bairro) { %>
                                         <p class="msg-erro-form-endereco"> 
                                             <b><%= errorsFormEndereco.bairro.param + ":  " %></b>  <%= errorsFormEndereco.bairro.msg %>
@@ -94,7 +94,7 @@
                             <div class="div-cidade-estado">
                                 <div class="div-cidade">
                                     <label for="cidade">Cidade</label>
-                                    <input id="cidade" name="cidade" type="text" placeholder="Digite o nome da sua cidade" >
+                                    <input id="cidade" name="cidade" type="text" value="<%= locals.dadosPreenchido && dadosPreenchido.cidade %>" placeholder="Digite o nome da sua cidade" >
                                     <% if(locals.errorsFormEndereco && errorsFormEndereco.cidade) { %>
                                         <p class="msg-erro-form-endereco"> 
                                             <b><%= errorsFormEndereco.cidade.param + ":  " %></b>  <%= errorsFormEndereco.cidade.msg %>
@@ -103,7 +103,7 @@
                                 </div>
                                 <div class="div-estado">
                                     <label for="estado">Estado</label>
-                                    <input id="estado" name="estado" type="text" placeholder="Digite o nome do seu estado" >
+                                    <input id="estado" name="estado" type="text" value="<%= locals.dadosPreenchido && dadosPreenchido.estado %>" placeholder="Digite o nome do seu estado" >
                                     <% if(locals.errorsFormEndereco && errorsFormEndereco.estado) { %>
                                         <p class="msg-erro-form-endereco"> 
                                             <b><%= errorsFormEndereco.estado.param + ":  " %></b>  <%= errorsFormEndereco.estado.msg %>
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
 
-                            <div class="div-btn-atualiza-endereco">
+                            <div class="div-btn-cadastra-endereco">
                                 <button type="submit">CADASTRAR</button>                                
                             </div>                             
                         </form>
