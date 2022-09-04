@@ -285,6 +285,7 @@ const controlador = {
    return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados',cadastroOk: cadastroOk })
   },
 
+  
   atualizarMeusDados: async (req, res) =>{
 
       try{
