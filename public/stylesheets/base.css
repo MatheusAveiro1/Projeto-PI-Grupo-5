@@ -18,6 +18,26 @@ body {
 }
 /****/
 
+/**** Mensagens de status ****/
+
+.msgStatusSucesso{
+    color: #0f5132 !important;
+    background-color: #d1e7dd;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+.msgStatusErro{
+    color: #a94442 !important;
+    background-color: #f2dede;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+/******************************/
+
 /* Container */
 .container {
     max-width: 1280px;
