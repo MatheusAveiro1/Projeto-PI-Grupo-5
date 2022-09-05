@@ -19,7 +19,6 @@ body {
 /****/
 
 /**** Mensagens de status ****/
-
 .msgStatusSucesso{
     color: #0f5132 !important;
     background-color: #d1e7dd;
@@ -35,7 +34,6 @@ body {
     padding: 15px;
     border-radius: 7px;
 }
-
 /******************************/
 
 /* Container */

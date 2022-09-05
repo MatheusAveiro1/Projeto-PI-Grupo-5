@@ -13,7 +13,7 @@ const controlador = {
           ]
       })
       console.log(produtos[0].nome)
-      res.render('index', {produtos: produtos})
+      res.render('index', {produtos: produtos, carrinho: req.session.carrinho})
 
     }
     catch (err){
@@ -25,7 +25,7 @@ const controlador = {
     let nomeDoArquivo = './database/produtos.json'
     let produtos = JSON.parse(fs.readFileSync(nomeDoArquivo, 'utf-8')); // conversão do json para um objeto: fs read lê o arquivo, e json.parse converte o aruivo para objeto literal
     let id = req.params.id;
-    res.render('produto',{produtos: produtos , idProduto: id})
+    res.render('produto',{produtos: produtos , idProduto: id, carrinho: req.session.carrinho})
   }
 }
 
