@@ -215,7 +215,7 @@ const funcoesUsuarios = {
 //*** Controlador ***//
 const controlador = {
   login: (req, res) => {
-    res.render('login', { usuarioCadastrado: req.query.usuarioCadastrado });
+    res.render('login', { usuarioCadastrado: req.query.usuarioCadastrado, carrinho: req.session.carrinho });
   },
   validaLogin: async (req, res) => {
     try{

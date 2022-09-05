@@ -37,33 +37,40 @@
                     <div class="div_Caixa_Direita">
                         
                             <ul class="itens_da_lista">
-                                <li class="separacao_de_itens_carrinho">
-                                    <div class="caixa_botao_de_exluir_item_carrinho">
-                                        <button class="botao_de_exluir_item_carrinho" type="submit">X</button>
-                                    </div>
 
-                                    <div class="sessão_de_produtos">
-
-                                        <div class="primeira_sessão_de_produtos" >
-                                            <img src="/images/produtos/computador-lenovo.jpg" alt="">
-                                            <a href="">Processador Intel Core i3 12100F 3.3GHz (4.3GHz Turbo), 12ª Geração, 4-Cores 8-Threads, LGA 1700, BX8071512100F </a>
+                                <% if(locals.carrinho) {                                    
+                                    
+                                    for(produto of carrinho) { %>                                   
+                                
+                                    <li class="separacao_de_itens_carrinho">
+                                        <div class="caixa_botao_de_exluir_item_carrinho">
+                                            <button class="botao_de_exluir_item_carrinho" type="submit">X</button>
                                         </div>
 
-                                        <div class="segunda_sessão_de_produtos" >
-                                            <div class="quantidade_de_itens_do_carrinho">
-                                                <button class="botao_de_menos_itens_do_carrinho">-</button>
-                                                <input class="valor_da_quantidade_de_itens_do_carrinho" type="text">
-                                                <button class="botao_de_mais_itens_do_carrinho">+</button>
+                                        <div class="sessão_de_produtos">
+
+                                            <div class="primeira_sessão_de_produtos" >
+                                                <img src="/images/produtos/<%= produto.img%>" alt="">
+                                                <a href=""><%= produto.produto_categoria.nome + " " + produto.produto_marca.nome + " " + produto.nome %></a>
                                             </div>
-        
-                                            <div class="valor_do_iten_do_carrinho">
-                                                R$2.550,00
+
+                                            <div class="segunda_sessão_de_produtos" >
+                                                <div class="quantidade_de_itens_do_carrinho">
+                                                    <button class="botao_de_menos_itens_do_carrinho">-</button>
+                                                    <input class="valor_da_quantidade_de_itens_do_carrinho" type="text">
+                                                    <button class="botao_de_mais_itens_do_carrinho">+</button>
+                                                </div>
+            
+                                                <div class="valor_do_iten_do_carrinho">
+                                                    <%= produto.preco%>
+                                                </div>
                                             </div>
                                         </div>
+                                    </li>
 
-                                    </div>
-
-                                </li>
+                                <% }} else { %>
+                                    <li>Carrinho vazio.</li>
+                                <% } %>
 
 
                             </ul>

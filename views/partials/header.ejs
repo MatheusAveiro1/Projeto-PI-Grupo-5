@@ -102,7 +102,12 @@
                 <a href="/carrinho" class="link-carrinho">
                     <span class="material-icons-outlined img-carrinho">shopping_cart</span>
                     <span id="img-carrinho" class="material-icons-outlined img-carrinho-2">shopping_cart</span>
-                    <span class="qt-item-carrinho">0</span>
+
+                    <% if(locals.carrinho) {%>
+                        <span class="qt-item-carrinho"><%=carrinho.length %></span>
+                    <%} else { %> 
+                        <span class="qt-item-carrinho">0</span>
+                    <%}%>
                 </a>
             </div>
 
