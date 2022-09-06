@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/stylesheets/base.css">
     <link rel="stylesheet" href="/stylesheets/base-area-restrita.css">
     <link rel="stylesheet" href="/stylesheets/meus-dados.css">
+    
 </head>
 <body>    
 
@@ -39,43 +40,57 @@
                         <p class="titulo-meus-dados">
                             <span class="material-icons">article</span> MEUS DADOS
                         </p>
-                        <form action="#" metod="POST" class="form-meus-dados">
+
+                        <% if(cadastroOk) { %>
+
+                            <p  class="infoAtualizacaoSucesso">
+                                Olá <strong><%= meusDados.nome + " " + meusDados.sobrenome %></strong> seus dados foram atualizados com sucesso.
+                                
+                            </p> 
+        
+                        <% } %>
+
+                        <form action="/usuario/meus-dados?_method=PUT" method="POST" class="form-meus-dados">
+
+
+
+
                             <div class="div-nome-completo">
                                 <div class="div-nome">
                                     <label for="nome">Nome</label>
-                                    <input id="nome" name="nome" type="text" placeholder="Digite seu nome" required>
+                                    <input id="nome" name="nome" value="<%= meusDados.nome %>" type="text" placeholder="Digite seu nome" >
                                 </div>
                                 <div class="div-sobrenome">
                                     <label for="sobrenome">Sobrenome</label>
-                                    <input id="sobrenome" name="sobrenome" type="text" placeholder="Digite seu sobrenome" required>
+                                    <input id="sobrenome" name="sobrenome" value="<%= meusDados.sobrenome %>" type="text" placeholder="Digite seu sobrenome" >
                                 </div>                                
                             </div>
                             <div class="div-cpf-rg-data-nasc">
                                 <div class="div-cpf">
                                     <label for="cpf">CPF</label>
-                                    <input id="cpf" name="cpf" type="text" placeholder="Digite apenas números" required>
+                                    <input id="cpf" name="cpf" value="<%= meusDados.cpf %>" type="text" placeholder="Digite apenas números" >
                                 </div>
                                 <div class="div-rg">
                                     <label for="rg">RG</label>
-                                    <input id="rg" name="rg" type="text" placeholder="Digite apenas números" required>
+                                    <input id="rg" name="rg" value="<%= meusDados.rg %>"  type="text" placeholder="Digite apenas números" >
                                 </div>
                                 <div class="div-data-nasc">
                                     <label for="data-nasc">Data de Nascimento</label>
-                                    <input id="data-nasc" name="data-nasc" type="date" required>
+                                    <input id="data-nasc" name="data_nasc" value="<%= meusDados.data_nascimento %>" type="date" >
                                 </div>
                             </div>
                             <div class="div-email-tel">
                                 <div class="div-email">
                                     <label for="email">E-Mail</label>
-                                    <input id="email" name="email" type="email" value="<%= meusDados.email %> " disabled required>
+                                    <input id="email" name="email" type="email" value="<%= meusDados.email %>" disabled >
                                 </div>
                                 <div class="div-tel">
                                     <label for="tel">Telefone</label>
-                                    <input id="tel" name="tel" type="text" placeholder="(11) 98651-9872" required>
+                                    <input id="tel" name="tel" type="text" value="<%= meusDados.telefone %>" placeholder="(11) 98651-9872" >
                                 </div>
                             </div>
                             <div class="div-autoriza-promocoes">
-                                <input id="autoriza-promocoes" name="autoriza-promocoes" type="checkbox" required>
+                                <input id="autoriza-promocoes" name="autoriza-promocoes" type="checkbox" >
                                 <label for="autoriza-promocoes">Autorizo o recebimento de e-mails sobre promoções</label>                                
                             </div>
                             <div class="div-btn-atualiza-cadastro">
