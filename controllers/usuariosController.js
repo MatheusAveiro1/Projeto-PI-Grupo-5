@@ -208,7 +208,7 @@ const funcoesUsuarios = {
       //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
       if (!errors.isEmpty()) {
         //Retornaremos para page de cadatro de endereço com os erros
-        reject (res.render('editarEndereco', { errorsFormEndereco: errors.mapped(), dadosPreenchido: req.body, endereco: null, paginaAtual: 'enderecos'}));
+        reject (res.render('editarEndereco', { errorsFormEndereco: errors.mapped(), endereco: req.body, paginaAtual: 'enderecos'}));
       } else {
         resolve();
       }
@@ -219,7 +219,7 @@ const funcoesUsuarios = {
 //*** Controlador ***//
 const controlador = {
   login: (req, res) => {
-    res.render('login', { usuarioCadastrado: req.query.usuarioCadastrado });
+    res.render('login', { usuarioCadastrado: req.query.usuarioCadastrado, carrinho: req.session.carrinho });
   },
   validaLogin: async (req, res) => {
     try{
@@ -346,10 +346,13 @@ const controlador = {
         }
      })
    
-     return res.render ('enderecos', {enderecos: enderecos, paginaAtual: 'enderecos'})
+     return res.render ('enderecos', {enderecos: enderecos, paginaAtual: 'enderecos', statusEndereco: {status: req.query.statusEndereco}, statusEnderecoErro: req.query.statusEnderecoErro})
     }
     catch (err) {
-      console.log(err)
+      if(err){
+        console.log(err);
+        res.send('ANTENÇÃO!!! No momento não é possivel acessar a página de ENDEREÇOS por causa do seguinto ERRO: "' + err + '"');
+      }
     }
 
   },
@@ -375,11 +378,14 @@ const controlador = {
       });
       
       //Após o cadastro de endereco redireciona para tela de endereco
-      return res.redirect('/usuario/enderecos');
+      return res.redirect('/usuario/enderecos?statusEndereco=cadastradoSucesso');
 
     }
     catch (err) {
-      console.log(err)
+      if(err){
+        console.log(err);
+        res.redirect('/usuario/enderecos?statusEnderecoErro=' + err);
+      }
     }
 
   },  
@@ -393,9 +399,8 @@ const controlador = {
     }
   },
   atualizarEndereco: async (req, res) =>{
-    try{
-      console.log(req.body);
-        //verifica erros no formulario
+    try{      
+      //verifica erros no formulario
       await funcoesUsuarios.verificaErrosDoFormAtualizarEndereco(req, res);
 
       const result = await Endereco.update({ 
@@ -408,13 +413,15 @@ const controlador = {
           cidade: req.body.cidade,
           estado: req.body.estado 
         },
-        { where: { id: req.body.endereco_para_atualizar } })
-        
+        { where: { id: req.body.endereco_para_atualizar } })                
       
-      res.redirect('/usuario/enderecos')
+      res.redirect('/usuario/enderecos?statusEndereco=atualizadoSucesso');
     }
    catch (err) {
-     console.log(err)
+      if(err){
+        console.log(err);
+        res.redirect('/usuario/enderecos?statusEnderecoErro=' + err);
+      }
     }
   },
   deletarEndereco: async (req, res) =>{
@@ -426,7 +433,7 @@ const controlador = {
       });
 
       
-      return res.redirect('/usuario/enderecos')
+      return res.redirect('/usuario/enderecos?statusEndereco=deletadoSucesso')
     }
   
     

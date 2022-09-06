@@ -83,8 +83,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 6px;
+    width: 100%;    
     background-color: #FF914D;
     border: 1px solid #FF914D;
     border-radius: 4px;
@@ -102,8 +101,7 @@
     text-decoration: none;
     color: #fff;
     padding: 3%;
-    padding-left: 25%;
-    padding-right: 25%;
+    width: 100%;
 }
 
 .div-cards-principal .div-cards .card button span{
