@@ -41,13 +41,9 @@ const funcoesUsuarios = {
 
         //trasnformando o array em objeto
         usuarioParaLogin = usuarioParaLogin[0]
-        
-        
-       
+
         //Comparando a senha do post com a senha criptografada da base de dados
         let senhaVerificada = bcrypt.compareSync(req.body.senha, usuarioParaLogin.senha);
-
-        
 
         if(senhaVerificada)
         {

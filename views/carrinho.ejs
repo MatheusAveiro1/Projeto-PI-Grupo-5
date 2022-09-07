@@ -57,12 +57,12 @@
                                             <div class="segunda_sessão_de_produtos" >
                                                 <div class="quantidade_de_itens_do_carrinho">
                                                     <button class="botao_de_menos_itens_do_carrinho">-</button>
-                                                    <input class="valor_da_quantidade_de_itens_do_carrinho" type="text">
+                                                    <input class="valor_da_quantidade_de_itens_do_carrinho" type="text" value="<%=produto.qt%>">
                                                     <button class="botao_de_mais_itens_do_carrinho">+</button>
                                                 </div>
             
                                                 <div class="valor_do_iten_do_carrinho">
-                                                    <%= produto.preco%>
+                                                    <%= produto.qt * produto.preco%>
                                                 </div>
                                             </div>
                                         </div>
