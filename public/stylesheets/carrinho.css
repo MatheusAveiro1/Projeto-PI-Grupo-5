@@ -66,6 +66,21 @@ color: #ff3838;
 
 }
 
+.btn-adicao-subtracao-qt {
+    border: 1px solid #333;
+    width: 17px;
+    background-color: #eee;
+    border-radius: 4px; 
+    text-decoration: none; 
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;  
+}
+
+.btn-adicao-subtracao-qt:hover {
+    background-color: #ddd;
+}
+
 .sessão_de_produtos
 {
     display: flex;

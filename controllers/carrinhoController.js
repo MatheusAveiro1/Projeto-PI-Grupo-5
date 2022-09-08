@@ -3,7 +3,6 @@ const {sequelize, Produto} = require('../models');
 
 const controlador = {
     itens: async (req, res)=> {
-
       try{
 
         if(req.query.idProd) {
@@ -57,14 +56,51 @@ const controlador = {
       catch (erro) {
         console.log(erro);
       }
-
-      
     },
-    deletarItem: (req, res)=>{
+    adicionarQtNoItem: (req, res)=>{
+      //Recupera o ID do produto que será adicionado 1 na qt
+      let itemParaAdicionarQt = req.params.id;
 
+      //Adicionando 1 na QT do item
+      for(let i = 0; i < req.session.carrinho.length; i++) {
+        if(req.session.carrinho[i].id == itemParaAdicionarQt){
+          req.session.carrinho[i].qt = req.session.carrinho[i].qt + 1;
+        }    
+      }
+
+      return res.redirect("/carrinho");
+
+    },
+    removerQtNoItem: (req, res)=>{
+      //Recupera o ID do produto que será adicionado 1 na qt
+      let itemParaAdicionarQt = req.params.id;
+
+      //Removendo 1 na QT do item
+      for(let i = 0; i < req.session.carrinho.length; i++) {
+        if(req.session.carrinho[i].id == itemParaAdicionarQt){
+
+          if(req.session.carrinho[i].qt >= 2) {
+            req.session.carrinho[i].qt = req.session.carrinho[i].qt - 1;
+          }
+        }    
+      }
+
+      return res.redirect("/carrinho");;
+
+    },
+    deletarItemDoCarrinho: (req, res)=>{
+      //Recupera o ID do produto que será removido do carrinho
+      let itemParaExcluir = req.params.id;      
+      //Criar um novo carrinho atualizado (sem o item que foi solicitado a exclusão).
+      let carrinhoAtualizado = req.session.carrinho.filter((item) => item.id != itemParaExcluir);
+      //Atualiza a session com o novo carrinho
+      req.session.carrinho = carrinhoAtualizado;
+
+      return res.redirect("/carrinho");
     },
     limparCarrinho: (req,res)=>{
-
+      delete req.session.carrinho;
+      return res.redirect("/carrinho");
     }
   }
   

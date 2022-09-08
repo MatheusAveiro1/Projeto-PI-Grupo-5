@@ -28,14 +28,10 @@
         <div class="container">
             <div class="div-main-config-padrao">
                 <!--Comece aqui!-->
-                
                 <h1 class="h1_carrinho">CARRINHO</h1>
 
-
                 <div class="div_Carrinho_Pai">
-
                     <div class="div_Caixa_Direita">
-                        
                             <ul class="itens_da_lista">
 
                                 <% if(locals.carrinho) {                                    
@@ -44,7 +40,7 @@
                                 
                                     <li class="separacao_de_itens_carrinho">
                                         <div class="caixa_botao_de_exluir_item_carrinho">
-                                            <button class="botao_de_exluir_item_carrinho" type="submit">X</button>
+                                            <a href="/carrinho/deletarItem/<%= produto.id %>" class="botao_de_exluir_item_carrinho" type="submit">X</a>
                                         </div>
 
                                         <div class="sessão_de_produtos">
@@ -56,24 +52,30 @@
 
                                             <div class="segunda_sessão_de_produtos" >
                                                 <div class="quantidade_de_itens_do_carrinho">
-                                                    <button class="botao_de_menos_itens_do_carrinho">-</button>
+                                                    <a href="/carrinho/removerQtNoItem/<%= produto.id %>" class="botao_de_menos_itens_do_carrinho btn-adicao-subtracao-qt">-</a>
                                                     <input class="valor_da_quantidade_de_itens_do_carrinho" type="text" value="<%=produto.qt%>">
-                                                    <button class="botao_de_mais_itens_do_carrinho">+</button>
+                                                    <a href="/carrinho/adicionarQtNoItem/<%= produto.id %>" class="botao_de_mais_itens_do_carrinho btn-adicao-subtracao-qt">+</a>
                                                 </div>
             
                                                 <div class="valor_do_iten_do_carrinho">
-                                                    <%= produto.qt * produto.preco%>
+                                                    <%= (produto.qt * produto.preco).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});%>
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
 
-                                <% }} else { %>
+                                <% }} %>
+                                    
+                                <% if(!locals.carrinho || carrinho == "") { %>                                    
                                     <li>Carrinho vazio.</li>
                                 <% } %>
-
-
+                            
                             </ul>
+
+                            <br>
+                            <a href="/carrinho/limparCarrinho">LIMPAR CARRINHO</a>
+                            <br><br>
+                            
                             
                             <div class="bucador_de_cep_carrinho">
                                 <h2 class="h2_frete_carrinho">CALCULE SEU FRETE</h2>
@@ -82,48 +84,48 @@
                                     <input  type="text" placeholder="QUAL O CEP DE ENTREGA? ">
                                     <button type="submit">CALCULAR</button>
                                 </form>
-                                
-                            </div>
-
+                            </div>                            
                     </div>
 
                     <div class="div_Caixa_Esquerda">
 
                         <div class="caixa_continuar_comprando">
-
                             <a href="/" class="continuar_comprando_carrinho" >CONTINUAR COMPRANDO</a>
-
                         </div>
 
-                        
+                        <% let subTotal = 0;  
+                            
+                            if(locals.carrinho) {
+                                for(let i = 0; i < carrinho.length; i++) {
+                                    subTotal = subTotal + (carrinho[i].preco * carrinho[i].qt);
+                                }
+                            }
+                        %>
 
                         <div class="subtotal_carrinho">
 
                             <div class="subtotal_filho_carrinho">
-                                <p>subtotal</p> 
-                                <p>R$1.230,00</p>
+                                <p>Subtotal</p>
+                                <p><%= subTotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
                             </div>
 
                             <div class="valor_frete_carrinho"> 
-                                <p>frete</p>
-                                <p>R$230,00</p>
+                                <p>Frete</p>
+                                <% let valorFrete = 0%>
+                                <p><%= valorFrete.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
                             </div>
                         </div>
 
                         <div class="total_carrinho">
                             <div class="valor_total_carrinho">
                                 <p>total</p>
-                                <p>R$430,00</p>
+                                <p><%= (subTotal + valorFrete).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
                             </div>
 
                             <div class="caixa_finalizar_pedido_carrinho" >
                                 <a href="/checkout/pedido-concluido" class="botao_finalizar_pedido_carrinho">finalizar  pedido</a>
-                            </div>
-
-                            
+                            </div>                            
                         </div>
-
-
                     </div>
 
                 </div>
