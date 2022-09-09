@@ -21,11 +21,27 @@ const controlador = {
     }
 
   },
-  produto: (req, res)=>{
-    let nomeDoArquivo = './database/produtos.json'
-    let produtos = JSON.parse(fs.readFileSync(nomeDoArquivo, 'utf-8')); // conversão do json para um objeto: fs read lê o arquivo, e json.parse converte o aruivo para objeto literal
-    let id = req.params.id;
-    res.render('produto',{produtos: produtos , idProduto: id, carrinho: req.session.carrinho})
+  produto: async (req, res)=>{
+
+    try {
+      //let nomeDoArquivo = './database/produtos.json'
+      //pegando id que esta vendo da pagina index
+      let id = req.params.id;
+      // buscando informacoes de produto banco de dados
+      let infoProduto = await Produto.findByPk (id, {
+        include: ['produto_categoria', 'produto_marca']
+      })
+      infoProduto = infoProduto.dataValues
+        //console.log (infoProduto)
+
+    res.render('produto',{produto: infoProduto , idProduto: id, carrinho: req.session.carrinho})
+
+
+    }
+    catch (err){
+      console.log(err)
+    //let produtos = JSON.parse(fs.readFileSync(nomeDoArquivo, 'utf-8')); // conversão do json para um objeto: fs read lê o arquivo, e json.parse converte o aruivo para objeto literal
+    }
   }
 }
 

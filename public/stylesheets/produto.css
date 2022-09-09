@@ -203,13 +203,42 @@ main div div .home-produto {
 
 
 
+@media (max-width: 650px) {
 
-@media (mx-width: 481px) {
-    /*** Main ***/
+    * {
+        font-size: 16px;
+    }
+    .paginaproduto div div section .img-nome-valor-comprar {
 
-    /************/
-}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
+    }
+    .paginaproduto div div section .img-nome-valor-comprar .main-img img {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+    }
+
+    .paginaproduto div div section .img-nome-valor-comprar .small-img {
+
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+    }
+
+    .paginaproduto div div section .img-nome-valor-comprar .small-img img {
+        width: 80px;
+    }
+
+    .paginaproduto div div section .img-nome-valor-comprar .nome-valor-comprar {
+        margin: 2%;
+    }
 
 @media (max-width: 769px) { 
     /*** Main ***/
