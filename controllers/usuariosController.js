@@ -47,18 +47,20 @@ const funcoesUsuarios = {
         if(senhaVerificada)
         {
           //Iniciando sessão
-          delete usuarioParaLogin.senha;
-          //resolve(console.log(usuarioParaLogin))
+          delete usuarioParaLogin.senha;         
 
-          req.session.usuarioLogado = usuarioParaLogin;
-
-          //resolve(console.log(req.session.usuarioLogado))
+          req.session.usuarioLogado = usuarioParaLogin;          
           
           if(req.body.lembrarUsuario){
               res.cookie('emailDoUsuario', req.body.email, {maxAge: (1000 * 60) * 30});
           }
 
-          resolve(res.redirect('/usuario/perfil'));
+          //Verificando se o link veio das páginas relacionadas ao carrinho
+          if(req.body.linkCarrinho == 'linkCarrinho') {
+            resolve(res.redirect('/checkout/checkout-endereco'));
+          } else {
+            resolve(res.redirect('/usuario/perfil'));
+          }
 
         }else{
           reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", dadosPreenchido: req.body}))
@@ -209,7 +211,7 @@ const funcoesUsuarios = {
 //*** Controlador ***//
 const controlador = {
   login: (req, res) => {
-    res.render('login', { usuarioCadastrado: req.query.usuarioCadastrado, carrinho: req.session.carrinho });
+    res.render('login', { usuarioCadastrado: req.query.usuarioCadastrado, carrinho: req.session.carrinho, linkCarrinho: req.query.linkCarrinho });
   },
   validaLogin: async (req, res) => {
     try{

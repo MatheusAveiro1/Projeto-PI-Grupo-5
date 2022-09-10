@@ -1,6 +1,11 @@
 function usuarioNaoLogadoMiddleware(req, res, next) {
     if(!req.session.usuarioLogado){
-        return res.redirect('/usuario/login');
+        
+        if(req.query.linkCarrinho){
+            return res.redirect('/usuario/login?linkCarrinho=' + req.query.linkCarrinho);
+        } else {
+            return res.redirect('/usuario/login');
+        }        
     }
 
     next();

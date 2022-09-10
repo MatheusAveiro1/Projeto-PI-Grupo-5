@@ -12,6 +12,11 @@ html {
     scroll-behavior: smooth;
 }
 
+/*### Adiciona uma margin no top da view port, assim qunado a rolagem até um elemento acontecer não será cortado parte do conteúdo ###*/
+:target {
+    scroll-margin-top: 15rem;
+}
+
 /* Body */
 body {
     background-color: #fff;    

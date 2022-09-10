@@ -1,0 +1,109 @@
+<ul class="ul-barra-progresso-pedido">
+
+    <% if(locals.paginaAtual && paginaAtual == 'carrinho'){ %>
+        <li class="li-barra-progresso-pedido-editando">
+            <span class="span-barra-progresso-pedido-editando material-icons-outlined">shopping_cart</span>
+        </li>  
+        <li class="">
+            <span class="material-icons-outlined">lock</span>
+        </li>
+        <li class="">
+            <span class=" material-icons-outlined">location_on</span>
+        </li>
+        <li>
+            <span class="material-icons-outlined">credit_card</span>
+        </li>
+        <li>
+            <span class="material-icons-outlined">done_outline</span>                        
+        </li>  
+    <% } %>
+    
+    
+    <% if(locals.paginaAtual && paginaAtual == 'checkoutEndereco'){ %>
+        <li class="li-barra-progresso-pedido-concluido" onclick="location.href='/carrinho';" style="cursor:pointer">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">shopping_cart</span>
+        </li> 
+        <li class="li-barra-progresso-pedido-concluido" onclick="location.href='/carrinho';" style="cursor:pointer">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">lock</span>
+        </li>
+        <li class="li-barra-progresso-pedido-editando">
+            <span class="span-barra-progresso-pedido-editando material-icons-outlined">location_on</span>
+        </li>
+        <li>
+            <span class="material-icons-outlined">credit_card</span>
+        </li>
+        <li>
+            <span class="material-icons-outlined">done_outline</span>                        
+        </li>  
+    <% } %>
+
+    <% if(locals.paginaAtual && paginaAtual == 'checkoutPagamento'){ %>
+        <li class="li-barra-progresso-pedido-concluido" onclick="location.href='/carrinho';" style="cursor:pointer">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">shopping_cart</span>
+        </li> 
+        <li class="li-barra-progresso-pedido-concluido" onclick="location.href='/carrinho';" style="cursor:pointer">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">lock</span>
+        </li>
+        <li class="li-barra-progresso-pedido-concluido" onclick="location.href='/checkout/checkout-endereco';" style="cursor:pointer">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">location_on</span>
+        </li>
+        <li class="li-barra-progresso-pedido-editando">
+            <span class="span-barra-progresso-pedido-editando material-icons-outlined">credit_card</span>
+        </li>
+        <li>
+            <span class="material-icons-outlined">done_outline</span>                        
+        </li>  
+    <% } %>
+
+    <% if(locals.paginaAtual && paginaAtual == 'checkoutConfirmacaoPedido'){ %>
+        <li class="li-barra-progresso-pedido-concluido" onclick="location.href='/carrinho';" style="cursor:pointer">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">shopping_cart</span>
+        </li> 
+        <li class="li-barra-progresso-pedido-concluido" onclick="location.href='/carrinho';" style="cursor:pointer">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">lock</span>
+        </li>
+        <li class="li-barra-progresso-pedido-concluido" onclick="location.href='/checkout/checkout-endereco';" style="cursor:pointer">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">location_on</span>
+        </li>
+        <li class="li-barra-progresso-pedido-concluido" onclick="location.href='/checkout/checkout-pagamento';" style="cursor:pointer">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">credit_card</span>
+        </li>
+        <li class="li-barra-progresso-pedido-editando">
+            <span class="span-barra-progresso-pedido-editando material-icons-outlined">done_outline</span>                        
+        </li>  
+    <% } %>
+    
+    
+
+    <div class="div-linha-progresso-principal">
+
+        <% if(locals.paginaAtual && paginaAtual == 'carrinho'){ %>
+            <div class="div-linha-progersso"></div>
+            <div class="div-linha-progersso"></div>
+            <div class="div-linha-progersso"></div>
+            <div class="div-linha-progersso"></div>
+
+        <% } %> 
+
+        <% if(locals.paginaAtual && paginaAtual == 'checkoutEndereco'){ %>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+            <div class="div-linha-progersso"></div>
+            <div class="div-linha-progersso"></div>
+        <% } %> 
+
+        <% if(locals.paginaAtual && paginaAtual == 'checkoutPagamento'){ %>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+            <div class="div-linha-progersso"></div>
+        <% } %> 
+
+        <% if(locals.paginaAtual && paginaAtual == 'checkoutConfirmacaoPedido'){ %>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+        <% } %>
+    </div>
+</ul>

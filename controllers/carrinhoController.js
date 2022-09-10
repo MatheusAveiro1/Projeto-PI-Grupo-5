@@ -45,10 +45,10 @@ const controlador = {
             req.session.carrinho.push(infoProduto);
           }           
 
-          res.render ('carrinho',{carrinho: req.session.carrinho});
+          res.render ('carrinho',{carrinho: req.session.carrinho, paginaAtual: 'carrinho'});
           
         } else {
-          res.render ('carrinho',{carrinho: req.session.carrinho});
+          res.render ('carrinho',{carrinho: req.session.carrinho, paginaAtual: 'carrinho'});
         }
         
       } 
@@ -68,7 +68,7 @@ const controlador = {
         }    
       }
 
-      return res.redirect("/carrinho");
+      return res.redirect("/carrinho#produto" + req.params.id);
 
     },
     removerQtNoItem: (req, res)=>{
@@ -85,7 +85,7 @@ const controlador = {
         }    
       }
 
-      return res.redirect("/carrinho");;
+      return res.redirect("/carrinho#produto" + req.params.id);;
 
     },
     deletarItemDoCarrinho: (req, res)=>{
