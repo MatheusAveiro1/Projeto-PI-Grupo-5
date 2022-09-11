@@ -86,21 +86,26 @@
                     <p style="text-align: center;">Veja também!</p>
                 </div>
                 <div class="mais-produtos">
+                    <% for (produtosRelacionado of produtosRelacionados) {
+                        if (produtosRelacionado.id != produto.id) {
+
+                        
+                         %>
                     <section class="produto">
                         <div class="img-produto">
-                            <img src="/images/produtos/<%= produto.img %>" alt="">
+                            <img src="/images/produtos/<%= produtosRelacionado.img %>" alt="">
                         </div>
                         <div class="nome-produto">
-                            <p class="nome-produto"><%= produto.nome %></p>
+                            <p class="nome-produto"><%= produtosRelacionado.nome %></p>
                         </div>
                         <div class="valor-anterior">
-                            <p class="valor-anterior">De: <span style="text-decoration: line-through"> <%= produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </span> </p>
+                            <p class="valor-anterior">De: <span style="text-decoration: line-through"> <%= produtosRelacionado.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </span> </p>
                         </div>
                         <div class="valor-atual">
-                            <p class="valor-atual"> <%= ((produto.preco / 10 ) * 9).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista </p>
+                            <p class="valor-atual"> <%= ((produtosRelacionado.preco / 10 ) * 9).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista </p>
                         </div>
                         <div class="valor-parcelado">
-                            <p class="valor-parcelado"> 12x de <%= (produto.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </p>
+                            <p class="valor-parcelado"> 12x de <%= (produtosRelacionado.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </p>
                         </div>
                         <button class="button-produto">
                             <span class="material-icons-outlined" > shopping_cart</span>
@@ -109,6 +114,7 @@
 
 
                     </section>
+                     <% } } %> 
                     <!--<section class="produto">
                         <div class="img-produto">
                             <img src="/images/produtos/<%= produto.img %>" alt="">
