@@ -1,0 +1,162 @@
+.mail-checkout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 3px 2px 10px 4px #888;
+    border-radius: 7px;
+    margin-bottom: 60px;
+}
+
+.mail-checkout .div-checkout-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;    
+    margin-bottom: 30px;
+}
+
+/*** Estilo Resumo de Preços *******/
+
+.mail-checkout .div-checkout-resuso-preco {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #eee;    
+}
+
+.mail-checkout .div-checkout-resuso-preco div {   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    padding: 15px 20px;
+    border-bottom: 1px solid white;           
+}
+
+.mail-checkout .div-checkout-resuso-preco div p {
+    font-size: 0.875rem;
+    font-weight: bold;   
+    color: #777;        
+}
+
+.mail-checkout .div-checkout-resuso-preco .div-titulo-resumo h2 {
+    width: 100%;
+    text-align: center;   
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.mail-checkout .div-checkout-resuso-preco .div-total-para-pagar {
+    background-color: #ccc;
+}
+
+.mail-checkout .div-checkout-resuso-preco .div-total-para-pagar p {
+    color: #333;
+    font-size: 1.375rem;    
+}
+
+.mail-checkout .div-checkout-resuso-preco .div-total-a-vista-pagar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #000;
+}
+
+.mail-checkout .div-checkout-resuso-preco .div-total-a-vista-pagar p {
+    color: #fff;
+    font-size: 0.875rem;    
+}
+
+/************************************/
+
+/**** Estilo botões continuar progresso e voltal prograsso ****/
+
+.mail-checkout .div-checkout-info .div-botoes-continuar-voltar {
+    display: flex;
+    flex-direction: column;    
+}
+
+.mail-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-voltar-progresso {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 7px; 
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+    box-shadow: 3px 2px 10px 4px #888;   
+    transition: 0.3s;
+}
+
+.mail-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-voltar-progresso:hover {
+    background-color: #111;
+}
+
+.mail-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-voltar-progresso span {
+    margin-right: 10px;
+    font-size: 1.25rem;
+}
+
+.mail-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-continuar-progresso {    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 20px 10px;
+    background-color: #00a202;
+    color: #fff;
+    border-radius: 7px;
+    font-weight: bold; 
+    font-size: 0.875rem;
+    box-shadow: 3px 2px 10px 4px #888;   
+    transition: 0.3s;
+}
+
+.mail-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-continuar-progresso:hover {
+    background-color: #018302;
+}
+
+.mail-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-continuar-progresso span {
+    margin-left: 10px;
+    font-size: 1.25rem;
+}
+
+
+/**************************************************************/
+
+/****************** @media *****************************/
+
+@media (min-width: 900px) { 
+    .mail-checkout {        
+        flex-direction: row;
+        justify-content: space-between;        
+        padding: 30px;        
+    }
+
+    .mail-checkout .div-checkout-info {       
+        width: 64%;        
+    }
+
+    .mail-checkout .div-checkout-resuso-preco {        
+        width: 34%;        
+    }
+
+    .mail-checkout .div-checkout-info .div-botoes-continuar-voltar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .mail-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-voltar-progresso {
+        width: 39%;
+    }
+
+    .mail-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-continuar-progresso {    
+        width: 59%;
+    }
+
+}

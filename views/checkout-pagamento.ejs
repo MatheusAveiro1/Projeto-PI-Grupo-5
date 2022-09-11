@@ -15,25 +15,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
     <!--CSS-->
-    <link rel="stylesheet" href="/stylesheets/base.css">
-    <link rel="stylesheet" href="/stylesheets/checkout-pagamento.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">       
     <link rel="stylesheet" href="/stylesheets/barra-progresso-pedido.css">
+    <link rel="stylesheet" href="/stylesheets/checkout.css">
 </head>
 <body>   
     <%- include('./partials/header') %>
     
-    <main>
-        <div class="container">
-            <div class="div-main-config-padrao">
-                <!--Comece aqui!-->
-                <%- include('./partials/barra-progresso-pedido') %>
-                
-                <a href="/checkout/checkout-confirmacao-pedido"><h1>continuar</h1></a>
+    <div class="container">
+        <div class="div-main-config-padrao">
+            <!--Comece aqui!-->
+            <%- include('./partials/barra-progresso-pedido') %>
 
-            </div>
-        </div>    
+            <main class="mail-checkout">
+                <div class="div-checkout-info">
+                    <div class="div-endereoco-entrega">
+                        <h2>Endereço de Entrega</h2>                        
+                    </div>
 
+                    <div class="div-transportadora-envio">
+                        <h2>Transportadora de Envio</h2>
+                    </div>
 
+                    <div class="div-botoes-continuar-voltar">
+                        <a href="/checkout/checkout-endereco" class="btn-voltar-progresso">
+                            <span class="material-icons-outlined">keyboard_backspace</span>
+                            VOLTAR AO ENDERECO
+                        </a>
+                        <a href="/checkout/checkout-confirmacao-pedido" class="btn-continuar-progresso">
+                            IR PARA REVISÃO
+                            <span class="material-icons-outlined">east</span>
+                        </a>
+                    </div>            
+                </div>
+    
+                <div class="div-checkout-resuso-preco">
+                    <div class="div-titulo-resumo">
+                        <h2>Resumo</h2>
+                    </div>
+
+                    <div class="div-subtotal">
+                        <p>Subtotal</p>
+                        <p>R$500,00</p>
+                    </div>
+
+                    <div class="div-disconto">
+                        <p>Desconto</p>
+                        <p>R$25,00</p>
+                    </div>
+
+                    <div class="div-transportadora-escolhida">
+                        <p>TopSales6 7 dias úteis</p>
+                        <p>R$0,00</p>
+                    </div>
+                    
+                    <div class="div-total-para-pagar">
+                        <p>Total</p>
+                        <p>R$525,00</p>
+                    </div>
+
+                    <div class="div-total-a-vista-pagar">
+                        <p>à vista no Boleto - R$525,00</p>                        
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
 
     <%-include('./partials/footer')%>
 </body>
