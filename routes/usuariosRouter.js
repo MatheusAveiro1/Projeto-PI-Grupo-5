@@ -23,7 +23,7 @@ router.post('/cadastro',usuarioLogadoMiddleware, uploadFile.single('foto_de_perf
 //rota get e post da pagina de perfil 
 router.get('/perfil',usuarioNaoLogadoMiddleware, usuariosController.perfil);
 router.get('/meus-dados',usuarioNaoLogadoMiddleware, usuariosController.meusDados);
-router.put('/meus-dados',usuarioNaoLogadoMiddleware, usuariosController.atualizarMeusDados);
+
 
 //rota de endereço
 router.get('/enderecos',usuarioNaoLogadoMiddleware, usuariosController.mostraEnderecos);
