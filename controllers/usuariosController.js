@@ -231,7 +231,7 @@ const controlador = {
     }
   },
   cadastro: (req, res)=> {
-    res.render ('cadastro')
+    res.render ('cadastro',{carrinho: req.session.carrinho})
   },
   validaCadastro: async (req, res)=> {
     try {
@@ -271,7 +271,7 @@ const controlador = {
   },
   perfil: (req, res)=> {
 
-    return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil'})
+    return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil', carrinho: req.session.carrinho})
     
   },
   meusDados: (req, res)=> {
@@ -279,7 +279,7 @@ const controlador = {
     var cadastroOk = req.session.cadstroOk
     req.session.cadstroOk = 0
     
-    return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados',cadastroOk: cadastroOk })
+    return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados',cadastroOk: cadastroOk, carrinho: req.session.carrinho })
   },
   atualizarMeusDados: async (req, res) =>{
       try{
@@ -313,7 +313,7 @@ const controlador = {
         }
      })
    
-     return res.render ('enderecos', {enderecos: enderecos, paginaAtual: 'enderecos', statusEndereco: {status: req.query.statusEndereco}, statusEnderecoErro: req.query.statusEnderecoErro})
+     return res.render ('enderecos', {enderecos: enderecos, paginaAtual: 'enderecos', statusEndereco: {status: req.query.statusEndereco}, statusEnderecoErro: req.query.statusEnderecoErro, carrinho: req.session.carrinho})
     }
     catch (err) {
       if(err){
@@ -324,7 +324,7 @@ const controlador = {
 
   },
   criarEndereco: (req, res) =>{    
-    return res.render ('cadastroDeEndereco', {paginaAtual: 'enderecos'});
+    return res.render ('cadastroDeEndereco', {paginaAtual: 'enderecos', carrinho: req.session.carrinho});
   },  
   cadastrarEndereco: async (req, res) =>{
     try{      
@@ -358,7 +358,7 @@ const controlador = {
   editarEndereco: async (req, res) =>{
     try{
       const endereco = await Endereco.findByPk(req.body.endereco_para_editar);
-      res.render('editarEndereco',{paginaAtual: 'enderecos', endereco: endereco});
+      res.render('editarEndereco',{paginaAtual: 'enderecos', endereco: endereco, carrinho: req.session.carrinho});
     }
    catch (err) {
      console.log(err)

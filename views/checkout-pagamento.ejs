@@ -17,7 +17,8 @@
     <!--CSS-->
     <link rel="stylesheet" href="/stylesheets/base.css">       
     <link rel="stylesheet" href="/stylesheets/barra-progresso-pedido.css">
-    <link rel="stylesheet" href="/stylesheets/checkout.css">    
+    <link rel="stylesheet" href="/stylesheets/checkout.css">
+    <link rel="stylesheet" href="/stylesheets/checkout-pagamento.css">
 </head>
 <body>   
     <%- include('./partials/header') %>
@@ -29,6 +30,44 @@
 
             <main class="main-checkout">
                 <div class="div-checkout-info">
+                    <div class="div-opcao-pagamento">
+                        <h2>
+                            <span class="material-icons-outlined">credit_card</span>
+                            Mátodo do Pagamento
+                        </h2>
+                        
+                        <a href="#" class="link-card link-card-escolhido">
+                            <div class="div-radio">
+                                <span class="material-icons-outlined span-opcao-escolhida">adjust</span>
+                            </div>
+
+                            <div class="div-info-texto-img">
+                                <div class="div-info-img">
+                                    <p>BOLETO BANCÁRIO</p>
+                                    <img src="/images/boleto.svg" alt="Imagem Boleto">                               
+                                </div>
+                                <div class="div-info-prazo">
+                                    <p>Em um prazo de 2 dias úteis seu pedido será processado.</p>                                                               
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="#" class="link-card">
+                            <div class="div-radio">
+                                <span class="material-icons-outlined">circle</span>
+                            </div>
+
+                            <div class="div-info-texto-img">
+                                <div class="div-info-img">
+                                    <p>BOLETO BANCÁRIO</p>
+                                    <img src="/images/boleto.svg" alt="Imagem Boleto">                               
+                                </div>
+                                <div class="div-info-prazo">
+                                    <p>Em um prazo de 2 dias úteis seu pedido será processado.</p>                                                               
+                                </div>
+                            </div>
+                        </a>
+                    </div>        
                     
                     <div class="div-botoes-continuar-voltar">
                         <a href="/checkout/checkout-endereco" class="btn-voltar-progresso">

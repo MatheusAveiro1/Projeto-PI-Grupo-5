@@ -1,8 +1,4 @@
-.main-checkout .div-checkout-info .div-endereco-entrega {
-    margin-bottom: 40px;    
-}
-
-.main-checkout .div-checkout-info .div-transportadora-envio {
+.main-checkout .div-checkout-info .div-opcao-pagamento {
     margin-bottom: 40px;    
 }
 
@@ -42,30 +38,6 @@
     background-color: #eee;   
 }
 
-.main-checkout .div-checkout-info .link-adivionar-endereco {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: #fc8f45;
-    padding: 10px;    
-    color: #fff;
-    margin-top: 10px;    
-    border-radius: 7px;
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.main-checkout .div-checkout-info .link-adivionar-endereco:hover {   
-    background-color: #ff771d;        
-}
-
-.main-checkout .div-checkout-info .link-adivionar-endereco span {   
-    margin-right: 5px;    
-}
-
 .main-checkout .div-checkout-info  .link-card-escolhido {  
     color: #555;  
     background-color: #eee;
@@ -85,30 +57,49 @@
     color: #00a202;
 }
 
-.main-checkout .div-checkout-info  .link-card .div-info-texto p{
-    margin-bottom: 5px;    
+.main-checkout .div-checkout-info  .link-card .div-info-texto-img {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-.main-checkout .div-checkout-info  .link-card .div-info-texto .nome-destinatario {
-    font-weight: bold;
-}
-
-.main-checkout .div-checkout-info  .link-card .div-info-texto-transportadora {
+.main-checkout .div-checkout-info  .link-card .div-info-texto-img .div-info-img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 15px;
 }
 
-.main-checkout .div-checkout-info  .link-card .div-info-texto-transportadora p{
+.main-checkout .div-checkout-info  .link-card .div-info-texto-img .div-info-img p{
+    margin-bottom: 5px;
     font-weight: bold;
 }
+
+.main-checkout .div-checkout-info  .link-card .div-info-texto-img .div-info-img img{
+    width: 100px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #333; 
+    border-radius: 7px;  
+}
+
+.main-checkout .div-checkout-info  .link-card .div-info-texto-img .div-info-prazo p {
+    background-color: #888;
+    color: #fff;
+    font-size: 0.875rem;
+    padding: 15px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
 
 /****************** @media *****************************/
 
 @media (min-width: 500px) { 
-    .main-checkout .div-checkout-info  .link-card .div-info-texto-transportadora {        
-        flex-direction: row;        
+    .main-checkout .div-checkout-info  .link-card .div-info-texto-img .div-info-img {        
+        flex-direction: row;
+        align-items: center;        
     }
 }
 

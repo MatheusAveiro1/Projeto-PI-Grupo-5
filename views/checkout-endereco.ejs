@@ -35,28 +35,51 @@
                             <span class="material-icons-outlined">home_work</span>
                             Endereço de Entrega
                         </h2>
+
+                        <% if(locals.enderecoNaoExiste && enderecoNaoExiste == 'true') { %> 
+                            <p  class="msgStatusErro">
+                                Por favor escolha o <strong>Endereço de Entrega</strong> para finalizar o pedido.                        
+                            </p>
+                            <br>
+                        <% } %> 
+
+                        <% if(locals.enderecos) {
+
+                                    if(locals.enderecoEscolhido && enderecoEscolhido != '') { %> 
+
+                                        <a class="link-card link-card-escolhido">
+                                            <div class="div-radio">
+                                                <span class="material-icons-outlined span-opcao-escolhida">adjust</span>
+                                            </div>
+                                            <div class="div-info-texto">
+                                                <p class="nome-destinatario"></p>
+                                                <p class="info-endereco"><%=enderecoEscolhido.rua%>, <%=enderecoEscolhido.bairo%>, <%=enderecoEscolhido.numero%>, <%=enderecoEscolhido.complemento%> - <%=enderecoEscolhido.cep%></p>
+                                                <p class="info-cidade-estado"><%=enderecoEscolhido.cidade%> / <%=enderecoEscolhido.estado%></p>
+                                            </div>
+                                        </a>
+
+                                <% } %>
+
+                                <% for(endereco of enderecos){                                    
+                                        
+                                    if(endereco.id != enderecoEscolhido.id) { %>
                         
-                        <a href="#" class="link-card link-card-escolhido">
-                            <div class="div-radio">
-                                <span class="material-icons-outlined span-opcao-escolhida">adjust</span>
-                            </div>
-                            <div class="div-info-texto">
-                                <p class="nome-destinatario">Fernando Ferreira Mendonça</p>
-                                <p class="info-endereco">Rua Doutor Ubaldo Franco Caiubi, Vila São Paulo, 313, Casa 12 - 04651-020</p>
-                                <p class="info-cidade-estado">São Paulo / SP</p>
-                            </div>
+                                        <a href="/checkout//checkout-endereco-escolhido/<%=endereco.id%>" class="link-card">
+                                            <div class="div-radio">
+                                                <span class="material-icons-outlined">circle</span>
+                                            </div>
+                                            <div class="div-info-texto">
+                                                <p class="nome-destinatario"></p>
+                                                <p class="info-endereco"><%=endereco.rua%>, <%=endereco.bairo%>, <%=endereco.numero%>, <%=endereco.complemento%> - <%=endereco.cep%></p>
+                                                <p class="info-cidade-estado"><%=endereco.cidade%> / <%=endereco.estado%></p>
+                                            </div>
+                                        </a>
+                        <% }}} %> 
+                        
+                        <a href="/usuario/enderecos/criar?linkPedidoEndereco=ativo" class="link-adivionar-endereco">
+                            <span class="material-icons-outlined">add</span>
+                            ADICIONAR ENDEREÇO
                         </a>
-                    
-                        <a href="#" class="link-card">
-                            <div class="div-radio">
-                                <span class="material-icons-outlined">circle</span>
-                            </div>
-                            <div class="div-info-texto">
-                                <p class="nome-destinatario">Fernando Ferrira Mendonça</p>
-                                <p class="info-endereco">Rua Doutor Ubaldo Franco Caiubi, Vila São Paulo, 313, Casa 12 - 04651-020</p>
-                                <p class="info-cidade-estado">São Paulo / SP</p>
-                            </div>
-                        </a>                        
                     </div>
 
                     <div class="div-transportadora-envio">
