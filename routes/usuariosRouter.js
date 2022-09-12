@@ -8,9 +8,9 @@ const usuariosController = require('../controllers/usuariosController')
 const uploadFile = require('../middlewares/multerMiddlewares');
 const validaFormCadastroMiddlewares = require('../middlewares/validaCadastro');
 const validaLogin = require('../middlewares/validaLogin');
-const usuarioNaoLogadoMiddleware = require('../middlewares/usuarioNaoLogadoMiddlewares')
-const usuarioLogadoMiddleware = require('../middlewares/usuarioLogadoMiddleware')
-const validaEnderecoMiddlewares = require('../middlewares/validaEnderecoMiddlewares')
+const usuarioNaoLogadoMiddleware = require('../middlewares/usuarioNaoLogadoMiddlewares');
+const usuarioLogadoMiddleware = require('../middlewares/usuarioLogadoMiddleware');
+const validaEnderecoMiddlewares = require('../middlewares/validaEnderecoMiddlewares');
 
 //rota get e post da pagina de login
 router.get('/login',usuarioLogadoMiddleware, usuariosController.login); 

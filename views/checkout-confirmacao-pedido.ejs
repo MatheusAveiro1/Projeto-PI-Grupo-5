@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSales6</title>
+    <link rel="shortcut icon" href="/images/fivicon.ico">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/base.css">       
+    <link rel="stylesheet" href="/stylesheets/barra-progresso-pedido.css">
+    <link rel="stylesheet" href="/stylesheets/checkout.css">    
+    <link rel="stylesheet" href="/stylesheets/checkout-confirmacao-pedido.css">    
+</head>
+<body>   
+    <%- include('./partials/header') %>
+    
+    <div class="container">
+        <div class="div-main-config-padrao">
+            <!--Comece aqui!-->
+            <%- include('./partials/barra-progresso-pedido') %>
+
+            <main class="main-checkout">
+                <div class="div-checkout-info">                    
+                    <div class="div-info-confirmacao">
+                        <h2>
+                            <span class="material-icons-outlined">task</span>
+                            Revisão do Pedido
+                        </h2>
+                        
+                        <div href="#" class="div-conteudo-confirmacao">
+                            <div class="div-meus-dados">
+                                <h3>
+                                    <span class="material-icons-outlined">person</span>
+                                    Meus Dados
+                                </h3>
+                                <p>Fernando Ferreira Mendonca</p>
+                                <p>fernandofm3@gmail.com</p>
+                                <p>CPF: 65496325856</p>
+                            </div>
+                                                        
+                            <div class="div-entrega">
+                                <h3>
+                                    <span class="material-icons-outlined">local_shipping</span>
+                                    Entrega
+                                </h3>
+                                <p>Destinatário: <b>Fernando Ferreira Mendonca</b></p>
+                                <p>Rua Doutor Ubaldo Franco Caiubi, Vila São Paulo, 313, Casa 12</p>
+                                <p>04651-020 - São Paulo / SP</p>
+                            </div>
+
+                            <div class="div-pagamento">
+                                <h3>
+                                    <span class="material-icons-outlined">credit_card</span>
+                                    Pagamento
+                                </h3>
+                                <p>BOLETO BANCÁRIO</p>                                    
+                            </div>
+                        </div>
+
+                        <div href="#" class="div-conteudo-confirmacao">
+                            <h3>
+                                <span class="material-icons-outlined">shopping_bag</span>
+                                Produto
+                            </h3>
+
+                            <div class="div-info-produto">
+                                <div class="img-produto">
+                                    <img src="/images/produtos/placa-de-video-gigabyte-nvidia-geforce-rtx-3060.jpg " alt="">
+                                    <p>
+                                        Lampada Inteligente Zinnia Crux CR100, 10W <br>
+                                        Wi-Fi, RGB, Branca, ZNS-ZNCR10W-RGBC01 <br>
+                                        SKU: ZNS-ZNCR10W-RGBC01
+                                    </p>
+                                </div>
+
+                                <div class="div-qt-produto">
+                                    <p class="p-titulos">QT</p>
+                                    <p>1</p>
+                                </div>
+                                
+                                <div class="div-preco-produto">
+                                    <p class="p-titulos">Preço</p>
+                                    <p>1x R$100,00</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>        
+
+                    <div class="div-botoes-continuar-voltar">
+                        <a href="/checkout/checkout-pagamento" class="btn-voltar-progresso">
+                            <span class="material-icons-outlined">keyboard_backspace</span>
+                            VOLTAR AO PAGAMENTO
+                        </a>
+                        <a href="#" class="btn-continuar-progresso">
+                            FINALIZAR PEDIDO
+                            <span class="material-icons-outlined">check_circle</span>
+                        </a>
+                    </div>            
+                </div>
+    
+                <div class="div-checkout-resuso-preco">
+                    <div class="div-titulo-resumo">
+                        <h2>Resumo</h2>
+                    </div>
+
+                    <div class="div-subtotal">
+                        <p>Subtotal</p>
+                        <p>R$500,00</p>
+                    </div>
+
+                    <div class="div-disconto">
+                        <p>Desconto</p>
+                        <p>R$25,00</p>
+                    </div>
+
+                    <div class="div-transportadora-escolhida">
+                        <p>TopSales6 7 dias úteis</p>
+                        <p>R$0,00</p>
+                    </div>
+                    
+                    <div class="div-total-para-pagar">
+                        <p>Total</p>
+                        <p>R$525,00</p>
+                    </div>
+
+                    <div class="div-total-a-vista-pagar">
+                        <p>à vista no Boleto - R$525,00</p>                        
+                    </div>                    
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <%-include('./partials/footer')%>
+</body>
+</html>

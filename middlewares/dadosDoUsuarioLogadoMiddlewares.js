@@ -1,6 +1,4 @@
-const {sequelize, Usuario} = require('../models')
-
-
+const {sequelize, Usuario} = require('../models');
 
 async function dadosDoUsuarioLogadoMiddleware  (req, res, next) {
     res.locals.usuarioEstaLogado = false;
@@ -18,10 +16,8 @@ async function dadosDoUsuarioLogadoMiddleware  (req, res, next) {
         where: {
         email: emailDoCookie
         }
-        })  
-
-        
-        
+        })
+                
     }
     
     //se o usuário for encontrado passa as informações para logar o usuário
@@ -35,12 +31,6 @@ async function dadosDoUsuarioLogadoMiddleware  (req, res, next) {
     if(req.session.usuarioLogado){
         res.locals.usuarioEstaLogado = true;
     }
-
-    
-    
-    
-    
-
 
     next();
 }

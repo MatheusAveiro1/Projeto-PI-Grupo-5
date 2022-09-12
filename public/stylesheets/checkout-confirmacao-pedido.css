@@ -1,0 +1,135 @@
+.main-checkout .div-checkout-info .div-info-confirmacao {
+    margin-bottom: 40px;    
+}
+
+.main-checkout .div-checkout-info h2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 25px;    
+}
+
+.main-checkout .div-checkout-info h2 span {
+    color: #555;
+    margin-right: 10px;
+}
+
+.main-checkout .div-checkout-info  {
+    margin-bottom: 15px;
+}
+
+.main-checkout .div-checkout-info  .div-conteudo-confirmacao {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background-color: #eee;
+    padding: 30px;    
+    color: #888;   
+    margin-bottom: 15px; 
+    width: 100%;
+    transition: 0.3s;
+}
+
+.main-checkout .div-checkout-info  .div-conteudo-confirmacao div {
+    margin-bottom: 30px;
+}
+
+.main-checkout .div-checkout-info  .div-conteudo-confirmacao .div-info-produto {
+    margin-bottom: 0;
+}
+
+.main-checkout .div-checkout-info  .div-conteudo-confirmacao div p {
+    margin-bottom: 8px;
+    color: #333
+}
+
+.main-checkout .div-checkout-info  .div-conteudo-confirmacao div .p-titulos {
+    font-weight: bold;
+}
+
+.main-checkout .div-checkout-info  .div-conteudo-confirmacao h3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.main-checkout .div-checkout-info  .div-conteudo-confirmacao h3 span {
+    margin-right: 10px;    
+}
+
+.main-checkout .div-checkout-info  .div-conteudo-confirmacao .div-info-produto .img-produto {
+    width: 100%;       
+}
+.main-checkout .div-checkout-info  .div-conteudo-confirmacao .div-info-produto .img-produto img {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+/**** Estilo botões continuar progresso e voltal prograsso ****/
+.main-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-continuar-progresso {
+    font-size: 1.1rem;
+}
+
+.main-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-continuar-progresso span {
+    font-size: 1.3rem;
+}
+/*****************************************************************/
+
+
+/******************* @media ****************************/
+
+@media (min-width: 481px) {
+    /*** Main ***/
+    .main-checkout .div-checkout-info  .div-conteudo-confirmacao .div-info-produto .img-produto {
+        display: flex;
+        flex-direction: row;       
+    }
+
+    .main-checkout .div-checkout-info  .div-conteudo-confirmacao .div-info-produto .img-produto img {
+        width: 100px;
+        margin-bottom: 0px;
+        margin-right: 15px;
+    }
+
+    /************/
+}
+
+@media (min-width: 1280px) {
+    /*** Main ***/
+    .main-checkout .div-checkout-info  .div-conteudo-confirmacao .div-info-produto {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 0px;
+    }
+    
+    .main-checkout .div-checkout-info  .div-conteudo-confirmacao .div-info-produto .img-produto {
+        width: 70%;
+        margin-right: 20px;
+        margin-bottom: 0px;       
+    }
+
+    .main-checkout .div-checkout-info  .div-conteudo-confirmacao .div-info-produto .div-qt-produto {
+        width: 10%; 
+        margin-right: 20px; 
+        text-align: center;
+        margin-bottom: 0px;     
+    }
+
+    .main-checkout .div-checkout-info  .div-conteudo-confirmacao .div-info-produto .div-preco-produto {
+        width: 20%;
+        text-align: center; 
+        margin-bottom: 0px;      
+    }
+
+    /************/
+}
+
+/*******************************************************/
