@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/stylesheets/base.css">       
     <link rel="stylesheet" href="/stylesheets/barra-progresso-pedido.css">
     <link rel="stylesheet" href="/stylesheets/checkout.css">
+    <link rel="stylesheet" href="/stylesheets/checkout-endereco.css">
 </head>
 <body>   
     <%- include('./partials/header') %>
@@ -27,14 +28,52 @@
             <!--Comece aqui!-->
             <%- include('./partials/barra-progresso-pedido') %>
 
-            <main class="mail-checkout">
+            <main class="main-checkout">
                 <div class="div-checkout-info">
-                    <div class="div-endereoco-entrega">
-                        <h2>Endereço de Entrega</h2>                        
+                    <div class="div-endereco-entrega">
+                        <h2>
+                            <span class="material-icons-outlined">home_work</span>
+                            Endereço de Entrega
+                        </h2>
+                        
+                        <a href="#" class="link-card link-card-escolhido">
+                            <div class="div-radio">
+                                <span class="material-icons-outlined span-opcao-escolhida">adjust</span>
+                            </div>
+                            <div class="div-info-texto">
+                                <p class="nome-destinatario">Fernando Ferreira Mendonça</p>
+                                <p class="info-endereco">Rua Doutor Ubaldo Franco Caiubi, Vila São Paulo, 313, Casa 12 - 04651-020</p>
+                                <p class="info-cidade-estado">São Paulo / SP</p>
+                            </div>
+                        </a>
+                    
+                        <a href="#" class="link-card">
+                            <div class="div-radio">
+                                <span class="material-icons-outlined">circle</span>
+                            </div>
+                            <div class="div-info-texto">
+                                <p class="nome-destinatario">Fernando Ferrira Mendonça</p>
+                                <p class="info-endereco">Rua Doutor Ubaldo Franco Caiubi, Vila São Paulo, 313, Casa 12 - 04651-020</p>
+                                <p class="info-cidade-estado">São Paulo / SP</p>
+                            </div>
+                        </a>                        
                     </div>
 
                     <div class="div-transportadora-envio">
-                        <h2>Transportadora de Envio</h2>
+                        <h2>
+                            <span class="material-icons-outlined">local_shipping</span>
+                            Transportadora de Envio
+                        </h2>
+                        
+                        <a href="#" class="link-card link-card-escolhido">
+                            <div class="div-radio">
+                                <span class="material-icons-outlined span-opcao-escolhida">adjust</span>
+                            </div>
+                            <div class="div-info-texto div-info-texto-transportadora">
+                                <p>TopSales6 Trans - 7 dias úteis</p>
+                                <p>R$0,00</p>                                
+                            </div>
+                        </a>                        
                     </div>
 
                     <div class="div-botoes-continuar-voltar">

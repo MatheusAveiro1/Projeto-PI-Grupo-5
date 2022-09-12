@@ -17,7 +17,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="/stylesheets/base.css">       
     <link rel="stylesheet" href="/stylesheets/barra-progresso-pedido.css">
-    <link rel="stylesheet" href="/stylesheets/checkout.css">
+    <link rel="stylesheet" href="/stylesheets/checkout.css">    
 </head>
 <body>   
     <%- include('./partials/header') %>
@@ -27,23 +27,16 @@
             <!--Comece aqui!-->
             <%- include('./partials/barra-progresso-pedido') %>
 
-            <main class="mail-checkout">
+            <main class="main-checkout">
                 <div class="div-checkout-info">
-                    <div class="div-endereoco-entrega">
-                        <h2>Endereço de Entrega</h2>                        
-                    </div>
-
-                    <div class="div-transportadora-envio">
-                        <h2>Transportadora de Envio</h2>
-                    </div>
-
+                    
                     <div class="div-botoes-continuar-voltar">
                         <a href="/checkout/checkout-endereco" class="btn-voltar-progresso">
                             <span class="material-icons-outlined">keyboard_backspace</span>
-                            VOLTAR AO ENDERECO
+                            VOLTAR AO CARRINHO
                         </a>
                         <a href="/checkout/checkout-confirmacao-pedido" class="btn-continuar-progresso">
-                            IR PARA REVISÃO
+                            IR PARA O PAGAMENTO
                             <span class="material-icons-outlined">east</span>
                         </a>
                     </div>            

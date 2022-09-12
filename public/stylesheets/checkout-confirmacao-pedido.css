@@ -1,11 +1,11 @@
 /**** Estilo botões continuar progresso e voltal prograsso ****/
 
-.mail-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-continuar-progresso {
+.main-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-continuar-progresso {
     font-size: 1.1rem;
 }
 
-.mail-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-continuar-progresso span {
-    font-size: 1.875rem;
+.main-checkout .div-checkout-info .div-botoes-continuar-voltar .btn-continuar-progresso span {
+    font-size: 1.3rem;
 }
 
 /*****************************************************************/
