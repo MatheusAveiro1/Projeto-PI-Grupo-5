@@ -33,26 +33,26 @@
                     <P> Produto </P>
                 </div>
                 <section>
-                        <% let id = idProduto %> 
+                        
                             <div class="img-nome-valor-comprar">
                                 <div class="small-img">
                                     
 
-                                    <img src="/images/produtos/<%= produtos[id].img %>" alt="">
-                                    <img src="/images/produtos/<%= produtos[id].img %>" alt="">
-                                    <img src="/images/produtos/<%= produtos[id].img %>" alt="">
+                                    <img src="/images/produtos/<%= produto.img %>" alt="">
+                                    <img src="/images/produtos/<%= produto.img %>" alt="">
+                                    <img src="/images/produtos/<%= produto.img %>" alt="">
                                 </div>
                                 <div class="main-img">
-                                    <img src="/images/produtos/<%= produtos[id].img %>" alt="">
+                                    <img src="/images/produtos/<%= produto.img %>" alt="">
                                 </div>
                                 <div class="nome-valor-comprar">
                                     <div class="nome-produto">
-                                        <p><%= produtos[id].nome %><p>
+                                        <p><%= produto.nome %><p>
                                     </div>
                                     <div class="valor-produto">
-                                        <p class="valor-anterior"> De: R$<%= produtos[id].preco %> por:</p>
-                                        <p class="valor-atual"> R$<%= ((produtos[id].preco / 10 ) * 9).toFixed(2) %> à vista</p>
-                                        <p class="valor-parcelado"> 12x de R$<%= (produtos[id].preco / 12).toFixed(2) %></p>
+                                        <p class="valor-anterior" > De: <span style="text-decoration: line-through"> <%= produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </span> por:</p>
+                                        <p class="valor-atual"> <%= ((produto.preco / 10 ) * 9).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista</p>
+                                        <p class="valor-parcelado"> 12x de <%= (produto.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %></p>
                                     </div>
 
                                     <button class="button-produto">
@@ -70,7 +70,7 @@
                                     Características do produto.
                                 </p>
                                 <p class="descricao-geral">
-                                    <%=  %> 
+                                    <%= produto.descricao %> 
                                 </p>
 
                             </div>
@@ -83,24 +83,53 @@
                 
                 </section>
                 <div class="veja-tambem">
-                    <p>Veja também!</p>
+                    <p style="text-align: center;">Veja também!</p>
                 </div>
                 <div class="mais-produtos">
+                    <% for (produtosRelacionado of produtosRelacionados) {
+                        if (produtosRelacionado.id != produto.id) {
+
+                        
+                         %>
                     <section class="produto">
                         <div class="img-produto">
-                            <img src="/images/<%=  %>" alt="">
+                            <img src="/images/produtos/<%= produtosRelacionado.img %>" alt="">
                         </div>
                         <div class="nome-produto">
-                            <p class="nome-produto"><%=  %></p>
+                            <p class="nome-produto"><%= produtosRelacionado.nome %></p>
                         </div>
                         <div class="valor-anterior">
-                            <p class="valor-anterior">De: R$<%=  %> por:</p>
+                            <p class="valor-anterior">De: <span style="text-decoration: line-through"> <%= produtosRelacionado.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </span> </p>
                         </div>
                         <div class="valor-atual">
-                            <p class="valor-atual"> R$<%=  %> à vista </p>
+                            <p class="valor-atual"> <%= ((produtosRelacionado.preco / 10 ) * 9).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista </p>
                         </div>
                         <div class="valor-parcelado">
-                            <p class="valor-parcelado"> 12x de R$<%=  %> </p>
+                            <p class="valor-parcelado"> 12x de <%= (produtosRelacionado.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </p>
+                        </div>
+                        <button class="button-produto">
+                            <span class="material-icons-outlined" > shopping_cart</span>
+                            Comprar
+                        </button>
+
+
+                    </section>
+                     <% } } %> 
+                    <!--<section class="produto">
+                        <div class="img-produto">
+                            <img src="/images/produtos/<%= produto.img %>" alt="">
+                        </div>
+                        <div class="nome-produto">
+                            <p class="nome-produto"><%= produto.nome %></p>
+                        </div>
+                        <div class="valor-anterior">
+                            <p class="valor-anterior">De: <span style="text-decoration: line-through"> <%= produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </span> </p>
+                        </div>
+                        <div class="valor-atual">
+                            <p class="valor-atual"> <%= ((produto.preco / 10 ) * 9).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista </p>
+                        </div>
+                        <div class="valor-parcelado">
+                            <p class="valor-parcelado"> 12x de <%= (produto.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </p>
                         </div>
                         <button class="button-produto">
                             <span class="material-icons-outlined" > shopping_cart</span>
@@ -111,19 +140,19 @@
                     </section>
                     <section class="produto">
                         <div class="img-produto">
-                            <img src="/images/<%=  %>" alt="">
+                            <img src="/images/produtos/<%= produto.img %>" alt="">
                         </div>
                         <div class="nome-produto">
-                            <p class="nome-produto"><%=  %></p>
+                            <p class="nome-produto"><%= produto.nome %></p>
                         </div>
                         <div class="valor-anterior">
-                            <p class="valor-anterior">De: R$<%=  %> por:</p>
+                            <p class="valor-anterior">De: <span style="text-decoration: line-through"> <%= produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </span> </p>
                         </div>
                         <div class="valor-atual">
-                            <p class="valor-atual"> R$<%=  %> à vista </p>
+                            <p class="valor-atual"> <%= ((produto.preco / 10 ) * 9).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista </p>
                         </div>
                         <div class="valor-parcelado">
-                            <p class="valor-parcelado"> 12x de R$<%=  %> </p>
+                            <p class="valor-parcelado"> 12x de <%= (produto.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </p>
                         </div>
                         <button class="button-produto">
                             <span class="material-icons-outlined" > shopping_cart</span>
@@ -134,19 +163,19 @@
                     </section>
                     <section class="produto">
                         <div class="img-produto">
-                            <img src="/images/<%=  %>" alt="">
+                            <img src="/images/produtos/<%= produto.img %> " alt="">
                         </div>
                         <div class="nome-produto">
-                            <p class="nome-produto"><%=  %></p>
+                            <p class="nome-produto"><%= produto.nome %></p>
                         </div>
                         <div class="valor-anterior">
-                            <p class="valor-anterior">De: R$<%=  %> por:</p>
+                            <p class="valor-anterior">De: <span style="text-decoration: line-through"> <%= produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </span> </p>
                         </div>
                         <div class="valor-atual">
-                            <p class="valor-atual"> R$<%=  %> à vista </p>
+                            <p class="valor-atual"> <%= ((produto.preco / 10 ) * 9).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista </p>
                         </div>
                         <div class="valor-parcelado">
-                            <p class="valor-parcelado"> 12x de R$<%=  %> </p>
+                            <p class="valor-parcelado"> 12x de <%= (produto.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </p>
                         </div>
                         <button class="button-produto">
                             <span class="material-icons-outlined" > shopping_cart</span>
@@ -154,30 +183,7 @@
                         </button>
 
 
-                    </section>
-                    <section class="produto">
-                        <div class="img-produto">
-                            <img src="/images/<%= %> " alt="">
-                        </div>
-                        <div class="nome-produto">
-                            <p class="nome-produto"><%=  %></p>
-                        </div>
-                        <div class="valor-anterior">
-                            <p class="valor-anterior">De: R$<%=  %> por:</p>
-                        </div>
-                        <div class="valor-atual">
-                            <p class="valor-atual"> R$<%=  %> à vista </p>
-                        </div>
-                        <div class="valor-parcelado">
-                            <p class="valor-parcelado"> 12x de R$<%=  %> </p>
-                        </div>
-                        <button class="button-produto">
-                            <span class="material-icons-outlined" > shopping_cart</span>
-                            Comprar
-                        </button>
-
-
-                    </section>
+                    </section> -->
                 </div>
 
                 
@@ -186,68 +192,10 @@
         </div>
     </main>
 
-    <footer>
-        <div class="div-footer-config">
-            <div class="div-informacoes">
-                <div class="div-media-pagamento">
-                    <img src="/images/logo.svg" alt="Imagem logo da empresa.">
-                    <div class="div-social">
-                        <ul>
-                            <li><a href="#"><img src="/images/img-facebook.svg" alt="Imagem logo facebook"></a></li>
-                            <li><a href="#"><img src="/images/img-twitter.svg" alt="Imagem logo twitter"></a></li>
-                            <li><a href="#"><img src="/images/img-instagram.svg" alt="Imagem logo instagrm"></a></li>
-                            <li><a href="#"><img src="/images/img-youtube.svg" alt="Imagem logo youtube"></a></li>
-                            <li><a href="#"><img src="/images/img-linkedin.svg" alt="Imagem logo linkedin"></a></li>                            
-                        </ul>
-                    </div>
-                    <div class="div-forma-pagamento">
-                        <h3>Forma de Pagamento</h3>
-                        <img src="/images/boleto.svg" alt="Imagem código de barra.">
-                    </div>
-                </div>
-                <div class="div-fale-conosco-horarios">
-                    <div class="div-fale-conosco">
-                        <h3>Fale conosco</h3>
-                        <p>
-                            <span class="material-icons">phone</span>
-                            (00) 0000-0000
-                        </p>
-                        <p>
-                            <span class="material-icons">email</span>
-                            sac@topsales6.com.br
-                        </p>
-                    </div>
-                    <div class="div-horarios-atendimento">
-                        <h3>Horários de atendimento</h3>
-                        <p>Os atendimentos são realizados de <strong>Seg a Sex das 8h às 18h</strong> para atendimento telefônico.
-                            As respostas envias por e-mail e pela Central de Atendimento são respondidas
-                            de <strong>Seg a Sex 07h às 19h (fique atento a sua caixa de entrada de e-mail)</strong>.</p>
-                    </div>
-                </div>
-                <div class="div-duvidas-institucional">
-                    <div class="div-duvidas">
-                        <h3>Dúvidas</h3>
-                        <p>Para sanar suas dúvidas acesse nossa <strong>Central de Atendimento</strong> 
-                        clicando no botão abaixo e envie sua mensagem.</p>                    
-                        <a href="#">CENTRAL DE ATENDIMENTO</a>
-                        
-                    </div>
-                    <div class="div-institucional">
-                        <h3>Institucional</h3>
-                        <a href="#">Sobre a TopSales6</a>
-                    </div>
-                </div>
-            </div>
-            <div class="div-receber-promocoes">
-                <form action="#">
-                    <input class="" type="email" name="email-enviar-promocao" placeholder="Digite seu E-mail e receba ofertas" required>
-                    <button>Enviar</button>
-                </form>
-            </div>            
-        </div>
-        <div class="div-Copyright">
-            <p>TopSalaes6 © Copyright 2022 - Todos os direitos reservados.</p>
-        </div>
-    </footer>    
+    <%- include('./partials/footer') %>   
+
+
+
+
 </body>
 </html>
