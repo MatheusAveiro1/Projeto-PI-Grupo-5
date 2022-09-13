@@ -12,7 +12,7 @@ const controlador = {
               'produto_marca'
           ]
       })
-      console.log(produtos[0].nome)
+            
       res.render('index', {produtos: produtos, carrinho: req.session.carrinho})
 
     }

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSales6</title>
+    <link rel="shortcut icon" href="/images/fivicon.ico">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/base.css">       
+    <link rel="stylesheet" href="/stylesheets/barra-progresso-pedido.css">
+    <link rel="stylesheet" href="/stylesheets/checkout.css">
+    <link rel="stylesheet" href="/stylesheets/checkout-pagamento.css">
+</head>
+<body>   
+    <%- include('./partials/header') %>
+    
+    <div class="container">
+        <div class="div-main-config-padrao">
+            <!--Comece aqui!-->
+            <%- include('./partials/barra-progresso-pedido') %>
+
+            <main class="main-checkout">
+                <div class="div-checkout-info">
+                    <div class="div-opcao-pagamento">
+                        <h2>
+                            <span class="material-icons-outlined">credit_card</span>
+                            Mátodo do Pagamento
+                        </h2>
+                        
+                        <a href="#" class="link-card link-card-escolhido">
+                            <div class="div-radio">
+                                <span class="material-icons-outlined span-opcao-escolhida">adjust</span>
+                            </div>
+
+                            <div class="div-info-texto-img">
+                                <div class="div-info-img">
+                                    <p>BOLETO BANCÁRIO</p>
+                                    <img src="/images/boleto.svg" alt="Imagem Boleto">                               
+                                </div>
+                                <div class="div-info-prazo">
+                                    <p>Em um prazo de 2 dias úteis seu pedido será processado.</p>                                                               
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="#" class="link-card">
+                            <div class="div-radio">
+                                <span class="material-icons-outlined">circle</span>
+                            </div>
+
+                            <div class="div-info-texto-img">
+                                <div class="div-info-img">
+                                    <p>BOLETO BANCÁRIO</p>
+                                    <img src="/images/boleto.svg" alt="Imagem Boleto">                               
+                                </div>
+                                <div class="div-info-prazo">
+                                    <p>Em um prazo de 2 dias úteis seu pedido será processado.</p>                                                               
+                                </div>
+                            </div>
+                        </a>
+                    </div>        
+                    
+                    <div class="div-botoes-continuar-voltar">
+                        <a href="/checkout/checkout-endereco" class="btn-voltar-progresso">
+                            <span class="material-icons-outlined">keyboard_backspace</span>
+                            VOLTAR AO CARRINHO
+                        </a>
+                        <a href="/checkout/checkout-confirmacao-pedido" class="btn-continuar-progresso">
+                            IR PARA O PAGAMENTO
+                            <span class="material-icons-outlined">east</span>
+                        </a>
+                    </div>            
+                </div>
+    
+                <div class="div-checkout-resuso-preco">
+                    <div class="div-titulo-resumo">
+                        <h2>Resumo</h2>
+                    </div>
+
+                    <div class="div-subtotal">
+                        <p>Subtotal</p>
+                        <p>R$500,00</p>
+                    </div>
+
+                    <div class="div-disconto">
+                        <p>Desconto</p>
+                        <p>R$25,00</p>
+                    </div>
+
+                    <div class="div-transportadora-escolhida">
+                        <p>TopSales6 7 dias úteis</p>
+                        <p>R$0,00</p>
+                    </div>
+                    
+                    <div class="div-total-para-pagar">
+                        <p>Total</p>
+                        <p>R$525,00</p>
+                    </div>
+
+                    <div class="div-total-a-vista-pagar">
+                        <p>à vista no Boleto - R$525,00</p>                        
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <%-include('./partials/footer')%>
+</body>
+</html>

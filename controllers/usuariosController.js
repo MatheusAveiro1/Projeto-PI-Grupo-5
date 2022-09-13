@@ -28,7 +28,6 @@ const funcoesUsuarios = {
       }
     });
   },
-
   validaEmailSenhaLogin: (req, res, usuarioParaVerificar) =>{
 
     return new Promise((resolve, reject) => {
@@ -41,29 +40,27 @@ const funcoesUsuarios = {
 
         //trasnformando o array em objeto
         usuarioParaLogin = usuarioParaLogin[0]
-        
-        
-       
+
         //Comparando a senha do post com a senha criptografada da base de dados
         let senhaVerificada = bcrypt.compareSync(req.body.senha, usuarioParaLogin.senha);
-
-        
 
         if(senhaVerificada)
         {
           //Iniciando sessão
-          delete usuarioParaLogin.senha;
-          //resolve(console.log(usuarioParaLogin))
+          delete usuarioParaLogin.senha;         
 
-          req.session.usuarioLogado = usuarioParaLogin;
-
-          //resolve(console.log(req.session.usuarioLogado))
+          req.session.usuarioLogado = usuarioParaLogin;          
           
           if(req.body.lembrarUsuario){
               res.cookie('emailDoUsuario', req.body.email, {maxAge: (1000 * 60) * 30});
           }
 
-          resolve(res.redirect('/usuario/perfil'));
+          //Verificando se o link veio das páginas relacionadas ao carrinho
+          if(req.body.linkCarrinho == 'linkCarrinho') {
+            resolve(res.redirect('/checkout/checkout-endereco'));
+          } else {
+            resolve(res.redirect('/usuario/perfil'));
+          }
 
         }else{
           reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", dadosPreenchido: req.body}))
@@ -78,7 +75,6 @@ const funcoesUsuarios = {
 
     })   
   },
-
   verificaErrosDoFormCadastro: (req,res)=>{
     return new Promise((resolve,reject) => {
       //Recuperando possiveis erros do form
@@ -108,7 +104,6 @@ const funcoesUsuarios = {
       
     });
   },
-
   validaCpfEmailExistente: (req,res,cpfParaVerificar,emailParaVerificar)=> {
     return new Promise((resolve, reject) => {
       //Organizando o array vindo do sequelize/BD
@@ -159,8 +154,7 @@ const funcoesUsuarios = {
         resolve();
       }
     });
-  },
-  
+  },  
   criarUsuarioParaCadastrarNoBd: (req,res)=>{
     return new Promise((resolve, reject) => {
       let novoUsuario = {}
@@ -186,7 +180,6 @@ const funcoesUsuarios = {
         reject();
     })
   },
-
   verificaErrosDoFormCriarEndereco: (req,res)=>{
     return new Promise((resolve,reject) => {
       //Recuperando possiveis erros do form
@@ -200,7 +193,6 @@ const funcoesUsuarios = {
       }
     });
   },
-
   verificaErrosDoFormAtualizarEndereco: (req,res)=>{
     return new Promise((resolve,reject) => {
       //Recuperando possiveis erros do form
@@ -219,7 +211,7 @@ const funcoesUsuarios = {
 //*** Controlador ***//
 const controlador = {
   login: (req, res) => {
-    res.render('login', { usuarioCadastrado: req.query.usuarioCadastrado, carrinho: req.session.carrinho });
+    res.render('login', { usuarioCadastrado: req.query.usuarioCadastrado, carrinho: req.session.carrinho, linkCarrinho: req.query.linkCarrinho });
   },
   validaLogin: async (req, res) => {
     try{
@@ -238,9 +230,8 @@ const controlador = {
       console.log(err)
     }
   },
-
   cadastro: (req, res)=> {
-    res.render ('cadastro')
+    res.render ('cadastro',{carrinho: req.session.carrinho})
   },
   validaCadastro: async (req, res)=> {
     try {
@@ -263,13 +254,9 @@ const controlador = {
 
       //Valida se o CPF e o EMAIL já existe no BD
       await funcoesUsuarios.validaCpfEmailExistente(req,res,cpfParaVerificar,emailParaVerificar);
-      
-
 
       //Cria um objeto com as informações do novo usuário
-      const usuarioParaCriarNoBd = await funcoesUsuarios.criarUsuarioParaCadastrarNoBd(req,res);      
-      
-
+      const usuarioParaCriarNoBd = await funcoesUsuarios.criarUsuarioParaCadastrarNoBd(req,res);
 
       //Gravando os dados do novo usuário no BD           
       const usuarioCriadoNoBd = await Usuario.create({nome: usuarioParaCriarNoBd.nome,sobrenome: usuarioParaCriarNoBd.sobrenome,email: usuarioParaCriarNoBd.email,senha: usuarioParaCriarNoBd.senha,foto: usuarioParaCriarNoBd.foto,cpf: usuarioParaCriarNoBd.cpf});
@@ -284,26 +271,18 @@ const controlador = {
   },
   perfil: (req, res)=> {
 
-   return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil'})
+    return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil', carrinho: req.session.carrinho})
     
   },
   meusDados: (req, res)=> {
-    const meusDados = req.session.usuarioLogado
-    console.log('>>>>>>>teste cadastroOk<<<<<<<<')
-    console.log(req.session.cadstroOk )
+    const meusDados = req.session.usuarioLogado    
     var cadastroOk = req.session.cadstroOk
     req.session.cadstroOk = 0
     
-   return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados',cadastroOk: cadastroOk })
+    return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados',cadastroOk: cadastroOk, carrinho: req.session.carrinho })
   },
-
-  
   atualizarMeusDados: async (req, res) =>{
-
       try{
-
-  
-
 
         const resultadoDoEnvioDeDadosDoBanco =  await Usuario.update({
           nome: req.body.nome,
@@ -313,13 +292,8 @@ const controlador = {
           rg: req.body.rg,
           telefone: req.body.tel,
           data_nascimento: req.body.data_nasc
-
-
         },
-        { where: { id: req.session.usuarioLogado.id} }
-        )
-
-        
+        { where: { id: req.session.usuarioLogado.id} })
         
         req.session.cadstroOk = resultadoDoEnvioDeDadosDoBanco
 
@@ -331,14 +305,7 @@ const controlador = {
       }
 
     },
-
-
-
-   
-  
-
   mostraEnderecos: async (req, res) =>{
-
     try{
        const enderecos = await Endereco.findAll({
         where: {
@@ -346,7 +313,7 @@ const controlador = {
         }
      })
    
-     return res.render ('enderecos', {enderecos: enderecos, paginaAtual: 'enderecos', statusEndereco: {status: req.query.statusEndereco}, statusEnderecoErro: req.query.statusEnderecoErro})
+     return res.render ('enderecos', {enderecos: enderecos, paginaAtual: 'enderecos', statusEndereco: {status: req.query.statusEndereco}, statusEnderecoErro: req.query.statusEnderecoErro, carrinho: req.session.carrinho})
     }
     catch (err) {
       if(err){
@@ -357,10 +324,9 @@ const controlador = {
 
   },
   criarEndereco: (req, res) =>{    
-    return res.render ('cadastroDeEndereco', {paginaAtual: 'enderecos'});
+    return res.render ('cadastroDeEndereco', {paginaAtual: 'enderecos', carrinho: req.session.carrinho});
   },  
   cadastrarEndereco: async (req, res) =>{
-
     try{      
       //verifica erros no formulario
       await funcoesUsuarios.verificaErrosDoFormCriarEndereco(req, res);
@@ -392,7 +358,7 @@ const controlador = {
   editarEndereco: async (req, res) =>{
     try{
       const endereco = await Endereco.findByPk(req.body.endereco_para_editar);
-      res.render('editarEndereco',{paginaAtual: 'enderecos', endereco: endereco});
+      res.render('editarEndereco',{paginaAtual: 'enderecos', endereco: endereco, carrinho: req.session.carrinho});
     }
    catch (err) {
      console.log(err)
@@ -425,31 +391,27 @@ const controlador = {
     }
   },
   deletarEndereco: async (req, res) =>{
-
     try{
 
-       await Endereco.destroy({
+      await Endereco.destroy({
         where: { id: req.body.endereco_para_excluir},
       });
 
       
       return res.redirect('/usuario/enderecos?statusEndereco=deletadoSucesso')
     }
-  
-    
-   
-   catch (err) {
-     console.log(err)
-   }
+
+    catch (err) {
+      console.log(err)
+    }
 
   },
   logout: (req, res)=>{
-
-    res.clearCookie("emailDoUsuario")
-    req.session.destroy()
-
-    return res.redirect("/")
+    res.clearCookie("emailDoUsuario");
+    //req.session.destroy();
+    delete req.session.usuarioLogado;
+    return res.redirect("/");
   }    
 }
   
-  module.exports = controlador;
+module.exports = controlador;

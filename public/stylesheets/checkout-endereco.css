@@ -1,0 +1,116 @@
+.main-checkout .div-checkout-info .div-endereco-entrega {
+    margin-bottom: 40px;    
+}
+
+.main-checkout .div-checkout-info .div-transportadora-envio {
+    margin-bottom: 40px;    
+}
+
+.main-checkout .div-checkout-info h2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 25px;    
+}
+
+.main-checkout .div-checkout-info h2 span {
+    color: #555;
+    margin-right: 10px;
+}
+
+.main-checkout .div-checkout-info  {
+    margin-bottom: 15px;
+}
+
+.main-checkout .div-checkout-info  .link-card {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    background-color: #ddd;
+    padding: 15px 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    color: #888;   
+    margin-bottom: 15px; 
+    transition: 0.3s;
+}
+
+.main-checkout .div-checkout-info  .link-card:hover { 
+    color: #555;   
+    background-color: #eee;   
+}
+
+.main-checkout .div-checkout-info .link-adivionar-endereco {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #fc8f45;
+    padding: 10px;    
+    color: #fff;
+    margin-top: 10px;    
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.main-checkout .div-checkout-info .link-adivionar-endereco:hover {   
+    background-color: #ff771d;        
+}
+
+.main-checkout .div-checkout-info .link-adivionar-endereco span {   
+    margin-right: 5px;    
+}
+
+.main-checkout .div-checkout-info  .link-card-escolhido {  
+    color: #555;  
+    background-color: #eee;
+    cursor: context-menu;   
+}
+
+.main-checkout .div-checkout-info  .link-card .div-radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    margin-right: 10px;    
+}
+
+.main-checkout .div-checkout-info  .link-card .div-radio .span-opcao-escolhida {
+    color: #00a202;
+}
+
+.main-checkout .div-checkout-info  .link-card .div-info-texto p{
+    margin-bottom: 5px;    
+}
+
+.main-checkout .div-checkout-info  .link-card .div-info-texto .nome-destinatario {
+    font-weight: bold;
+}
+
+.main-checkout .div-checkout-info  .link-card .div-info-texto-transportadora {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main-checkout .div-checkout-info  .link-card .div-info-texto-transportadora p{
+    font-weight: bold;
+}
+
+/****************** @media *****************************/
+
+@media (min-width: 500px) { 
+    .main-checkout .div-checkout-info  .link-card .div-info-texto-transportadora {        
+        flex-direction: row;        
+    }
+}
+
+
+

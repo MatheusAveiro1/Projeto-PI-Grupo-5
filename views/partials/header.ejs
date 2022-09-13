@@ -102,9 +102,15 @@
                 <a href="/carrinho" class="link-carrinho">
                     <span class="material-icons-outlined img-carrinho">shopping_cart</span>
                     <span id="img-carrinho" class="material-icons-outlined img-carrinho-2">shopping_cart</span>
-
-                    <% if(locals.carrinho) {%>
-                        <span class="qt-item-carrinho"><%=carrinho.length %></span>
+                    
+                    <% if(locals.carrinho) {
+                        //Verificando a QT total de produtos no carrinho
+                        let qtTotalProdutos = 0;
+                        for(let i = 0; i < carrinho.length; i++) {
+                            qtTotalProdutos = qtTotalProdutos + carrinho[i].qt;
+                        }                      
+                    %>
+                        <span class="qt-item-carrinho"><%=qtTotalProdutos %></span>
                     <%} else { %> 
                         <span class="qt-item-carrinho">0</span>
                     <%}%>
