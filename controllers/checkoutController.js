@@ -26,7 +26,12 @@ const controlador = {
           enderecoEscolhido = ''
         }
         
-        res.render ('checkout-endereco', {paginaAtual: 'checkoutEndereco', enderecos: enderecos, enderecoEscolhido: enderecoEscolhido, enderecoNaoExiste: enderecoNaoExiste, carrinho: req.session.carrinho});
+        res.render ('checkout-endereco', {paginaAtual: 'checkoutEndereco',
+                                          enderecos: enderecos,
+                                          enderecoEscolhido: enderecoEscolhido,
+                                          enderecoNaoExiste: enderecoNaoExiste,
+                                          carrinho: req.session.carrinho,
+                                          enderecoCadastrado: req.query.enderecoCadastrado});
       }
       catch (err) {
         if(err){

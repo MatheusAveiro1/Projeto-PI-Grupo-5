@@ -43,6 +43,13 @@
                             <br>
                         <% } %> 
 
+                        <% if(locals.enderecoCadastrado && enderecoCadastrado == 'true') { %> 
+                            <p  class="msgStatusSucesso">
+                                Cadastrado realizado com <b>sucesso</b>. Selecione o endereço para finalizar o pedido.                        
+                            </p>
+                            <br>
+                        <% } %>
+
                         <% if(locals.enderecos) {
 
                                     if(locals.enderecoEscolhido && enderecoEscolhido != '') { %> 

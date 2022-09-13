@@ -112,6 +112,10 @@
                                 </div>
                             </div>
 
+                            <% if(locals.linkPedidoEndereco) { %> 
+                                <input type="hidden" name="linkPedidoEndereco" value="<%= linkPedidoEndereco %>">
+                            <% } %>
+
                             <div class="div-btn-cadastra-endereco">
                                 <button type="submit">CADASTRAR</button>                                
                             </div>                             

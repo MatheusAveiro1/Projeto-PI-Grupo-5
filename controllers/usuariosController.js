@@ -324,7 +324,7 @@ const controlador = {
 
   },
   criarEndereco: (req, res) =>{    
-    return res.render ('cadastroDeEndereco', {paginaAtual: 'enderecos', carrinho: req.session.carrinho});
+    return res.render ('cadastroDeEndereco', {paginaAtual: 'enderecos', carrinho: req.session.carrinho, linkPedidoEndereco: req.query.linkPedidoEndereco});
   },  
   cadastrarEndereco: async (req, res) =>{
     try{      
@@ -342,10 +342,15 @@ const controlador = {
         cidade: req.body.cidade,
         estado: req.body.estado
       });
-      
-      //Após o cadastro de endereco redireciona para tela de endereco
-      return res.redirect('/usuario/enderecos?statusEndereco=cadastradoSucesso');
 
+      console.log(req.body.linkPedidoEndereco);
+
+      //Verificando se o link veio das páginas relacionadas ao carrinho para fazer o redirecionamento correto
+      if(req.body.linkPedidoEndereco == 'ativo') {
+        resolve(res.redirect('/checkout/checkout-endereco?enderecoCadastrado=true'));
+      } else {
+        resolve(res.redirect('/usuario/enderecos?statusEndereco=cadastradoSucesso'));
+      }
     }
     catch (err) {
       if(err){
