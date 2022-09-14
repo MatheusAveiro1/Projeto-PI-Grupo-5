@@ -340,16 +340,15 @@ const controlador = {
         cep: req.body.cep,
         bairro: req.body.bairro,
         cidade: req.body.cidade,
-        estado: req.body.estado
+        estado: req.body.estado,
+        destinatario: req.body.destinatario
       });
-
-      console.log(req.body.linkPedidoEndereco);
-
+      
       //Verificando se o link veio das páginas relacionadas ao carrinho para fazer o redirecionamento correto
-      if(req.body.linkPedidoEndereco == 'ativo') {
-        resolve(res.redirect('/checkout/checkout-endereco?enderecoCadastrado=true'));
+      if(req.body.linkPedidoEndereco && req.body.linkPedidoEndereco == 'ativo') {
+        res.redirect('/checkout/checkout-endereco?enderecoCadastrado=true');
       } else {
-        resolve(res.redirect('/usuario/enderecos?statusEndereco=cadastradoSucesso'));
+        res.redirect('/usuario/enderecos?statusEndereco=cadastradoSucesso');
       }
     }
     catch (err) {
@@ -382,7 +381,8 @@ const controlador = {
           cep: req.body.cep,
           bairro: req.body.bairro,
           cidade: req.body.cidade,
-          estado: req.body.estado 
+          estado: req.body.estado,
+          destinatario: req.body.destinatario 
         },
         { where: { id: req.body.endereco_para_atualizar } })                
       

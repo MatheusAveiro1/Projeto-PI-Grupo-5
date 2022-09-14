@@ -45,7 +45,7 @@
 
                         <% if(locals.enderecoCadastrado && enderecoCadastrado == 'true') { %> 
                             <p  class="msgStatusSucesso">
-                                Cadastrado realizado com <b>sucesso</b>. Selecione o endereço para finalizar o pedido.                        
+                                Cadastro realizado com <b>sucesso</b>. Selecione o endereço para finalizar o pedido.                        
                             </p>
                             <br>
                         <% } %>
@@ -59,9 +59,10 @@
                                                 <span class="material-icons-outlined span-opcao-escolhida">adjust</span>
                                             </div>
                                             <div class="div-info-texto">
-                                                <p class="nome-destinatario"></p>
-                                                <p class="info-endereco"><%=enderecoEscolhido.rua%>, <%=enderecoEscolhido.bairo%>, <%=enderecoEscolhido.numero%>, <%=enderecoEscolhido.complemento%> - <%=enderecoEscolhido.cep%></p>
-                                                <p class="info-cidade-estado"><%=enderecoEscolhido.cidade%> / <%=enderecoEscolhido.estado%></p>
+                                                <p class="nome-destinatario"><%=enderecoEscolhido.destinatario%></p>
+                                                <p class="info-endereco"><%=enderecoEscolhido.rua%>, <%=enderecoEscolhido.numero%> - <%=enderecoEscolhido.complemento%></p>
+                                                <p class="info-endereco">Cep: <%=enderecoEscolhido.cep%></p>
+                                                <p class="info-cidade-estado"><%=enderecoEscolhido.bairro%> - <%=enderecoEscolhido.cidade%> / <%=enderecoEscolhido.estado%></p>
                                             </div>
                                         </a>
 
@@ -76,9 +77,10 @@
                                                 <span class="material-icons-outlined">circle</span>
                                             </div>
                                             <div class="div-info-texto">
-                                                <p class="nome-destinatario"></p>
-                                                <p class="info-endereco"><%=endereco.rua%>, <%=endereco.bairo%>, <%=endereco.numero%>, <%=endereco.complemento%> - <%=endereco.cep%></p>
-                                                <p class="info-cidade-estado"><%=endereco.cidade%> / <%=endereco.estado%></p>
+                                                <p class="nome-destinatario"><%=endereco.destinatario%></p>
+                                                <p class="info-endereco"><%=endereco.rua%>, <%=endereco.numero%> - <%=endereco.complemento%></p>                                                
+                                                <p class="info-endereco">Cep: <%=endereco.cep%></p>
+                                                <p class="info-cidade-estado"><%=endereco.bairro%> - <%=endereco.cidade%> / <%=endereco.estado%></p>
                                             </div>
                                         </a>
                         <% }}} %> 

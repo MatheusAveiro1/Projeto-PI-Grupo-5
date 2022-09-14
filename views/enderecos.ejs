@@ -80,16 +80,16 @@
                                     </div>
                                     <ul>
                                         <li>
-                                            <%= enderecos[i].rua %>, <%= enderecos[i].numero %> 
+                                            <b><i><%= enderecos[i].destinatario %></i></b> 
                                         </li>
                                         <li>
-                                            <%= enderecos[i].complemento %> 
-                                        </li>
+                                            <%= enderecos[i].rua %>, <%= enderecos[i].numero %> - <%= enderecos[i].complemento %> 
+                                        </li>                                        
                                         <li>
                                             Cep <%= enderecos[i].cep %> 
                                         </li>
                                         <li>
-                                            <%= enderecos[i].bairro %> - <%= enderecos[i].cidade %> - <%= enderecos[i].estado %>
+                                            <%= enderecos[i].bairro %> - <%= enderecos[i].cidade %> / <%= enderecos[i].estado %>
                                         </li>
 
                                         <div class="div-btn-edicao-delete">                                        
