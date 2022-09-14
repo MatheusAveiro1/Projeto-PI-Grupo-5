@@ -40,6 +40,19 @@
                             <span class="material-icons-outlined">location_on</span> EDITAR ENDEREÇO
                         </p>
                         <form action="/usuario/enderecos/atualizar?_method=PUT" method="POST"  class="form-enderecos">
+                            <div class="div-destinatario">
+                                <label for="destinatario">Destinatário</label>
+                                <% if(endereco != null) { %>
+                                    <input id="destinatario" name="destinatario" type="text" value="<%= endereco.destinatario %>" placeholder="Digite o nome do destinatario" >                                        
+                                <% } %>
+
+                                <% if(locals.errorsFormEndereco && errorsFormEndereco.destinatario) { %>
+                                    <p class="msg-erro-form-endereco"> 
+                                        <b><%= errorsFormEndereco.destinatario.param + ":  " %></b>  <%= errorsFormEndereco.destinatario.msg %>
+                                    </p> 
+                                <% } %>    
+                            </div>
+
                             <div class="div-rua-nunero">
                                 <div class="div-rua">
                                     <label for="rua">Rua</label>

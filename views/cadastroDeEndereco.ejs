@@ -40,6 +40,18 @@
                             <span class="material-icons-outlined">location_on</span> CADASTRAR ENDEREÇO
                         </p>
                         <form action="/usuario/enderecos/criar" method="POST"  class="form-enderecos">
+
+                            <div class="div-destinatario">
+                                <label for="destinatario">Destinatário</label>
+                                <input id="destinatario" name="destinatario" type="text" value="<%= locals.dadosPreenchido && dadosPreenchido.destinatario %>" placeholder="Digite o nome completo do destinatário" >
+
+                                <% if(locals.errorsFormEndereco && errorsFormEndereco.destinatario) { %>
+                                    <p class="msg-erro-form-endereco"> 
+                                        <b><%= errorsFormEndereco.destinatario.param + ":  " %></b>  <%= errorsFormEndereco.destinatario.msg %>
+                                    </p> 
+                                <% } %>
+                            </div>
+
                             <div class="div-rua-nunero">
                                 <div class="div-rua">
                                     <label for="rua">Rua</label>
@@ -114,6 +126,10 @@
 
                             <% if(locals.linkPedidoEndereco) { %> 
                                 <input type="hidden" name="linkPedidoEndereco" value="<%= linkPedidoEndereco %>">
+                            <% } %>
+
+                            <% if(locals.dadosPreenchido) { %> 
+                                <input type="hidden" name="linkPedidoEndereco" value="<%= dadosPreenchido.linkPedidoEndereco %>">
                             <% } %>
 
                             <div class="div-btn-cadastra-endereco">
