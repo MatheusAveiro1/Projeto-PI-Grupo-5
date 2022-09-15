@@ -290,7 +290,7 @@ const controlador = {
   meusDados: (req, res)=> {
     const meusDados = req.session.usuarioLogado;   
     
-    return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados', dadosAtualizados: req.query.dadosAtualizados, carrinho: req.session.carrinho })
+    return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados', dadosAtualizados: req.query.dadosAtualizados, dadosAtualizadosErro: req.query.dadosAtualizadosErro, carrinho: req.session.carrinho })
   },
   atualizarMeusDados: async (req, res) =>{
       try{        
@@ -317,7 +317,10 @@ const controlador = {
         return res.redirect('/usuario/meus-dados?dadosAtualizados=true');        
       }   
       catch (err) {
-          console.log(err)
+        if(err){
+          console.log(err);
+          res.redirect('/usuario/meus-dados?dadosAtualizadosErro=' + err);
+        }
       }
 
     },

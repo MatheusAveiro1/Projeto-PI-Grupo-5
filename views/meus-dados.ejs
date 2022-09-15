@@ -46,9 +46,15 @@
                                 Seus dados foram atualizados com <b>sucesso</b>.
                                 
                             </p>
-                            <br>
-                            <br> 
-                        <% } %>                      
+                            <br><br> 
+                        <% } %>   
+                        
+                        <% if(locals.dadosAtualizadosErro) { %>                            
+                            <p  class="msgStatusErro">
+                                <strong><%=dadosAtualizadosErro%>!</strong> O processo não foi concluído!                                
+                            </p>
+                            <br><br>       
+                        <% } %>
 
                         <form action="/usuario/meus-dados?_method=PUT" method="POST" class="form-meus-dados">
                             <div class="div-nome-completo">
