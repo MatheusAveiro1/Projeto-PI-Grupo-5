@@ -205,6 +205,19 @@ const funcoesUsuarios = {
         resolve();
       }
     });
+  },
+  verificaErrosDoFormAtualizarMeusDados: (req,res)=>{
+    return new Promise((resolve,reject) => {      
+      //Recuperando possiveis erros do form
+      let errors = validationResult(req);
+      //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
+      if (!errors.isEmpty()) {        
+        //Retornaremos para page de cadatro de endereço com os erros
+        reject (res.render('meus-dados', { errorsFormCadastro: errors.mapped(), paginaAtual: 'meusDados', dadosPreenchido: req.body, carrinho: req.session.carrinho}));
+      } else {
+        resolve();
+      }
+    });
   }
 }
 
@@ -275,16 +288,16 @@ const controlador = {
     
   },
   meusDados: (req, res)=> {
-    const meusDados = req.session.usuarioLogado    
-    var cadastroOk = req.session.cadstroOk
-    req.session.cadstroOk = 0
+    const meusDados = req.session.usuarioLogado;   
     
-    return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados',cadastroOk: cadastroOk, carrinho: req.session.carrinho })
+    return res.render ('meus-dados', {meusDados: meusDados, paginaAtual: 'meusDados', dadosAtualizados: req.query.dadosAtualizados, dadosAtualizadosErro: req.query.dadosAtualizadosErro, carrinho: req.session.carrinho })
   },
   atualizarMeusDados: async (req, res) =>{
-      try{
-
-        const resultadoDoEnvioDeDadosDoBanco =  await Usuario.update({
+      try{        
+        //Verifica erros no formulário
+        await funcoesUsuarios.verificaErrosDoFormAtualizarMeusDados(req,res);        
+        //Atualiza os dados do usuário
+        await Usuario.update({
           nome: req.body.nome,
           sobrenome: req.body.sobrenome,
           email: req.session.usuarioLogado.email,
@@ -293,15 +306,21 @@ const controlador = {
           telefone: req.body.tel,
           data_nascimento: req.body.data_nasc
         },
-        { where: { id: req.session.usuarioLogado.id} })
-        
-        req.session.cadstroOk = resultadoDoEnvioDeDadosDoBanco
+        { where: { id: req.session.usuarioLogado.id} });
+        //Recuperando informações atualizadas do usuário
+        let infoUsuarioAtualizado = await Usuario.findByPk(req.session.usuarioLogado.id);
+        //Atualizando as informações na sessão 
+        infoUsuarioAtualizado = infoUsuarioAtualizado.dataValues;        
+        delete infoUsuarioAtualizado.senha; 
+        req.session.usuarioLogado = infoUsuarioAtualizado;        
 
-        return res.redirect('/usuario/meus-dados'); 
-        
+        return res.redirect('/usuario/meus-dados?dadosAtualizados=true');        
       }   
       catch (err) {
-          console.log(err)
+        if(err){
+          console.log(err);
+          res.redirect('/usuario/meus-dados?dadosAtualizadosErro=' + err);
+        }
       }
 
     },
