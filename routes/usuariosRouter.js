@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const usuariosController = require('../controllers/usuariosController')
-
-
+const usuariosController = require('../controllers/usuariosController');
 
 //chamada dos middlewares
 const uploadFile = require('../middlewares/multerMiddlewares');
@@ -11,6 +9,7 @@ const validaLogin = require('../middlewares/validaLogin');
 const usuarioNaoLogadoMiddleware = require('../middlewares/usuarioNaoLogadoMiddlewares');
 const usuarioLogadoMiddleware = require('../middlewares/usuarioLogadoMiddleware');
 const validaEnderecoMiddlewares = require('../middlewares/validaEnderecoMiddlewares');
+const validaAtualizacaoMeusDadosMiddlewares = require('../middlewares/validaAtualizacaoMeusDadosMiddlewares');
 
 //rota get e post da pagina de login
 router.get('/login',usuarioLogadoMiddleware, usuariosController.login); 
@@ -23,7 +22,7 @@ router.post('/cadastro',usuarioLogadoMiddleware, uploadFile.single('foto_de_perf
 //rota get e post da pagina de perfil 
 router.get('/perfil',usuarioNaoLogadoMiddleware, usuariosController.perfil);
 router.get('/meus-dados',usuarioNaoLogadoMiddleware, usuariosController.meusDados);
-router.put('/meus-dados',usuarioNaoLogadoMiddleware, usuariosController.atualizarMeusDados);
+router.put('/meus-dados',usuarioNaoLogadoMiddleware, validaAtualizacaoMeusDadosMiddlewares, usuariosController.atualizarMeusDados);
 
 //rota de endereço
 router.get('/enderecos',usuarioNaoLogadoMiddleware, usuariosController.mostraEnderecos);

@@ -1,3 +1,15 @@
+.msg-erro-form-cadastro {
+    margin-top: 10px;
+    margin-left: 10px;   
+    font-size: 0.875rem;
+    color: #c0392b; 
+}
+
+.msg-erro-form-cadastro b {
+    font-size: 0.875rem;
+    text-transform: capitalize;
+}
+
 .titulo-meus-dados {
     display: flex;
     flex-direction: row;
@@ -64,6 +76,7 @@
 
 .form-meus-dados .div-email-tel .div-email input{
     background-color: #eee;
+    color: #888;
 }
 
 .form-meus-dados .div-autoriza-promocoes {
@@ -94,18 +107,6 @@
 .form-meus-dados .div-btn-atualiza-cadastro button:hover {   
     background-color: #3482b6;   
 }
-
-.infoAtualizacaoSucesso{
-
-    color: #0f5132;
-    background-color: #d1e7dd;
-    font-size: 1rem;
-    padding: 15px;
-    border-radius: 7px;
-    margin-bottom: 1%;
-
-}
-
 
 /******************* @media ****************************/
 
