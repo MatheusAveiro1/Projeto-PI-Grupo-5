@@ -27,7 +27,7 @@ const controlador = {
             //Pesquisando se o produto existe ou não no carrinho
             for(let i = 0; i < req.session.carrinho.length; i++){
               if(req.session.carrinho[i].id == infoProduto.id){
-                req.session.carrinho[i].qt++;
+                // req.session.carrinho[i].qt++;
                 produtoPesquisado = true;
                 break;
               }
