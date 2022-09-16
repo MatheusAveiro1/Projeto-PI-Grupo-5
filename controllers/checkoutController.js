@@ -26,6 +26,11 @@ const controlador = {
           enderecoEscolhido = ''
         }
         
+        //Adssionando a transportadora no carrinho
+        if(!req.session.transportadora) {
+          req.session.transportadora = "TopSales Trans"
+        }
+        
         res.render ('checkout-endereco', {paginaAtual: 'checkoutEndereco',
                                           enderecos: enderecos,
                                           enderecoEscolhido: enderecoEscolhido,
