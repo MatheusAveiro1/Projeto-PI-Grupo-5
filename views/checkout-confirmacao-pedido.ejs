@@ -99,43 +99,12 @@
                         <a href="/checkout/checkout-pagamento" class="btn-voltar-progresso">
                             <span class="material-icons-outlined">keyboard_backspace</span>
                             VOLTAR AO PAGAMENTO
-                        </a>
-                        <a href="#" class="btn-continuar-progresso">
-                            FINALIZAR PEDIDO
-                            <span class="material-icons-outlined">check_circle</span>
-                        </a>
+                        </a>                        
                     </div>            
                 </div>
     
-                <div class="div-checkout-resuso-preco">
-                    <div class="div-titulo-resumo">
-                        <h2>Resumo</h2>
-                    </div>
-
-                    <div class="div-subtotal">
-                        <p>Subtotal</p>
-                        <p>R$500,00</p>
-                    </div>
-
-                    <div class="div-disconto">
-                        <p>Desconto</p>
-                        <p>R$25,00</p>
-                    </div>
-
-                    <div class="div-transportadora-escolhida">
-                        <p>TopSales6 7 dias úteis</p>
-                        <p>R$0,00</p>
-                    </div>
-                    
-                    <div class="div-total-para-pagar">
-                        <p>Total</p>
-                        <p>R$525,00</p>
-                    </div>
-
-                    <div class="div-total-a-vista-pagar">
-                        <p>à vista no Boleto - R$525,00</p>                        
-                    </div>                    
-                </div>
+                <%- include('./partials/resumo-valores-carrinho') %>
+                
             </main>
         </div>
     </div>
