@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSales6</title>
+    <link rel="shortcut icon" href="./images/fivicon">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="./stylesheets/base.css">
+    <link rel="stylesheet" href="./stylesheets/carrinho.css">
+    <link rel="stylesheet" href="./stylesheets/carrinhoDeCompras.css">
+    <link rel="stylesheet" href="/stylesheets/barra-progresso-pedido.css">
+</head>
+<body>    
+
+    <%- include("./partials/header")%>
+    
+
+    <main>
+        <div class="container">
+            <div class="div-main-config-padrao">
+                <!--Comece aqui!-->
+                <h1 class="h1_carrinho">CARRINHO</h1>
+
+                <%- include('./partials/barra-progresso-pedido') %> 
+                
+                <% if(!locals.carrinho || carrinho == "") { %> 
+
+                    <div class="div-carrinho-vazio">
+                        <h1>Carrinho Vazio</h1>
+                        <span class="material-icons-outlined">remove_shopping_cart</span>
+                        <p>Não perca tempo!!! <br>
+                            <b>Adicione itens ao seu carrinho</b> <br><br>
+                            <a href="/">PÁGINA HOME</a>
+                        </p>
+                    </div>
+
+                <% } else { %>
+
+                    <div class="div_Carrinho_Pai">
+                        <div class="div_Caixa_Direita">
+                                <ul class="itens_da_lista">
+
+                                    <% if(locals.carrinho) {                                    
+                                        
+                                        for(produto of carrinho) { %>                                   
+                                    
+                                        <li id="produto<%=produto.id%>" class="separacao_de_itens_carrinho">
+                                            <div class="caixa_botao_de_exluir_item_carrinho">
+                                                <a href="/carrinho/deletarItem/<%= produto.id %>" class="botao_de_exluir_item_carrinho" type="submit">X</a>
+                                            </div>
+
+                                            <div class="sessão_de_produtos">
+
+                                                <div class="primeira_sessão_de_produtos" >
+                                                    <img src="/images/produtos/<%= produto.img%>" alt="">
+                                                    <a href=""><%= produto.produto_categoria.nome + " " + produto.produto_marca.nome + " " + produto.nome %></a>
+                                                </div>
+
+                                                <div class="segunda_sessão_de_produtos" >
+                                                    <div class="quantidade_de_itens_do_carrinho">
+                                                        <a href="/carrinho/removerQtNoItem/<%= produto.id %>" class="botao_de_menos_itens_do_carrinho btn-adicao-subtracao-qt">-</a>
+                                                        <input class="valor_da_quantidade_de_itens_do_carrinho" type="text" value="<%=produto.qt%>">
+                                                        <a href="/carrinho/adicionarQtNoItem/<%= produto.id %>" class="botao_de_mais_itens_do_carrinho btn-adicao-subtracao-qt">+</a>
+                                                    </div>
+                
+                                                    <div class="valor_do_iten_do_carrinho">
+                                                        <%= (produto.qt * produto.preco).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    <% }} %>
+                                        
+                                    <% if(!locals.carrinho || carrinho == "") { %>                                    
+                                        <li>Carrinho vazio.</li>
+                                    <% } %>
+                                
+                                </ul>
+
+                                <br>
+                                <a href="/carrinho/limparCarrinho">LIMPAR CARRINHO</a>
+                                <br><br>
+                                
+                                
+                                <div class="bucador_de_cep_carrinho">
+                                    <h2 class="h2_frete_carrinho">CALCULE SEU FRETE</h2>
+        
+                                    <form class="form_pesquisa_cep_carrinho" action="">
+                                        <input  type="text" placeholder="QUAL O CEP DE ENTREGA? ">
+                                        <button type="submit">CALCULAR</button>
+                                    </form>
+                                </div>                            
+                        </div>
+
+                        <div class="div_Caixa_Esquerda">
+
+                            <div class="caixa_continuar_comprando">
+                                <a href="/" class="continuar_comprando_carrinho" >CONTINUAR COMPRANDO</a>
+                            </div>
+
+                            <% let subTotal = 0;  
+                                
+                                if(locals.carrinho) {
+                                    for(let i = 0; i < carrinho.length; i++) {
+                                        subTotal = subTotal + (carrinho[i].preco * carrinho[i].qt);
+                                    }
+                                }
+                            %>
+
+                            <div class="subtotal_carrinho">
+
+                                <div class="subtotal_filho_carrinho">
+                                    <p>Subtotal</p>
+                                    <p><%= subTotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+                                </div>
+
+                                <div class="valor_frete_carrinho"> 
+                                    <p>Frete</p>
+                                    <% let valorFrete = 0%>
+                                    <p><%= valorFrete.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+                                </div>
+                            </div>
+
+                            <div class="total_carrinho">
+                                <div class="valor_total_carrinho">
+                                    <p>total</p>
+                                    <p><%= (subTotal + valorFrete).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+                                </div>
+
+                                <div class="caixa_finalizar_pedido_carrinho" >
+                                    <a href="/checkout/checkout-endereco?linkCarrinho=linkCarrinho" class="botao_finalizar_pedido_carrinho">finalizar  pedido</a>
+                                </div>                            
+                            </div>
+                        </div>
+
+                    </div>
+
+                <% } %>
+                
+
+            </div>
+        </div>
+    </main>
+
+    <%- include("./partials/footer")%>
+
+</body>
+</html>
