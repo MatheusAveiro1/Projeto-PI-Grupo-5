@@ -51,16 +51,10 @@
                             </a>
 
                             <ul class="submenu-departamentos-mobile">
-                                <li><a href="#">Notebook</a></li>   
-                                <li><a href="#">Smartphone</a></li>   
-                                <li><a href="#">Desktop</a></li>   
-                                <li><a href="#">Hardware</a></li>    
-                                <li><a href="#">Tablet</a></li>                               
-                                <li><a href="#">Periféricos</a></li>   
-                                <li><a href="#">Eletrônicos</a></li>                             
-                                <li><a href="#">All In One</a></li>                             
-                                <li><a href="#">Cadeira Gamer</a></li>                             
-                                <li><a href="#">Geek</a></li>                             
+                                <% if(locals.categorias){
+                                    for(categoria of categorias){ %>
+                                        <li><a href="/produtosPorCategoria/<%= categoria.id %>"><%=categoria.nome %></a></li>   
+                                <%}}%>
                             </ul>
                         </li>
                         
@@ -123,25 +117,19 @@
                     <button class="btn-departamentos">
                         <span class="material-icons-outlined">menu</span> DEPARTAMENTOS
                         <ul class="submenu-departamentos">
-                            <li class="submenu-departamentos-li-pc-gamer">
+                            <!--li class="submenu-departamentos-li-pc-gamer">
                                 <a href="#">Notebook</a>
-                                <!--span class="material-icons-outlined">navigate_next</span>
+                                <span class="material-icons-outlined">navigate_next</span>
                                 <ul class="submenu-pc-gamer">
                                     <li><a href="#">Fast White</a></li>
                                     <li><a href="#">Red Force</a></li>
-                                </ul-->
-                            </li>
+                                </ul>
+                            </li-->
                             
-                            <li><a href="#">Smartphone</a></li>   
-                            <li><a href="#">Desktop</a></li>   
-                            <li><a href="#">Hardware</a></li>    
-                            <li><a href="#">Tablet</a></li>                               
-                            <li><a href="#">Periféricos</a></li>   
-                            <li><a href="#">Eletrônicos</a></li>                             
-                            <li><a href="#">All In One</a></li>                             
-                            <li><a href="#">Cadeira Gamer</a></li>                             
-                            <li><a href="#">Geek</a></li> 
-
+                                <% if(locals.categorias){
+                                    for(categoria of categorias){ %>
+                                        <li onclick="location.href='/produtosPorCategoria/<%= categoria.id %>';"><a><%=categoria.nome %></a></li>   
+                                <%}}%>  
                         </ul>
                         <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
                     </button>                        
