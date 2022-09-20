@@ -13,7 +13,7 @@
 
     <div class="div-subtotal">
         <p>Subtotal</p>
-        <p><%= subTotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+        <p><%=  ((subTotal / 10) * 9.5).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
     </div>
 
     <div class="div-disconto">
@@ -30,7 +30,7 @@
     
     <div class="div-total-para-pagar">
         <p>Total</p>
-        <p><%= (subTotal + valorFrete + valorDesconto).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+        <p><%= (((subTotal / 10) * 9.5) + valorFrete + valorDesconto).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
     </div>
 
     <div class="div-total-a-vista-pagar">        

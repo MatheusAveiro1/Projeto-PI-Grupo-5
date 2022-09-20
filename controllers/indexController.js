@@ -1,4 +1,4 @@
-const { track } = require('cordova/src/telemetry');
+//const { track } = require('cordova/src/telemetry');
 const fs = require('fs');//metodo fs Manipulador de arquivos
 const {sequelize, Produto, Categoria} = require('../models');
 
