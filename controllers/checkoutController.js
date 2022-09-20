@@ -26,7 +26,17 @@ const controlador = {
           enderecoEscolhido = ''
         }
         
-        res.render ('checkout-endereco', {paginaAtual: 'checkoutEndereco', enderecos: enderecos, enderecoEscolhido: enderecoEscolhido, enderecoNaoExiste: enderecoNaoExiste, carrinho: req.session.carrinho});
+        //Adssionando a transportadora no carrinho
+        if(!req.session.transportadora) {
+          req.session.transportadora = "TopSales Trans"
+        }
+        
+        res.render ('checkout-endereco', {paginaAtual: 'checkoutEndereco',
+                                          enderecos: enderecos,
+                                          enderecoEscolhido: enderecoEscolhido,
+                                          enderecoNaoExiste: enderecoNaoExiste,
+                                          carrinho: req.session.carrinho,
+                                          enderecoCadastrado: req.query.enderecoCadastrado});
       }
       catch (err) {
         if(err){

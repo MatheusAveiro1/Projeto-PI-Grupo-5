@@ -1,0 +1,56 @@
+<% let subTotal = 0;                                
+    if(locals.carrinho) {
+        for(let i = 0; i < carrinho.length; i++) {
+            subTotal = subTotal + (carrinho[i].preco * carrinho[i].qt);
+        }
+    }
+%>
+
+<div class="div-checkout-resuso-preco">
+    <div class="div-titulo-resumo">
+        <h2>Resumo</h2>
+    </div>
+
+    <div class="div-subtotal">
+        <p>Subtotal</p>
+        <p><%= subTotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+    </div>
+
+    <div class="div-disconto">
+        <% let valorDesconto = 0%>
+        <p>Cupom de Desconto</p>
+        <p><%= valorDesconto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+    </div>
+
+    <div class="div-transportadora-escolhida">
+        <p>TopSales6 Trans - 7 dias úteis</p>
+        <% let valorFrete = 0%>
+        <p><%= valorFrete.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+    </div>
+    
+    <div class="div-total-para-pagar">
+        <p>Total</p>
+        <p><%= (subTotal + valorFrete + valorDesconto).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+    </div>
+
+    <div class="div-total-a-vista-pagar">        
+        <p>à vista no Boleto - <%= (((subTotal + valorFrete + valorDesconto) / 10 ) * 9.5).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+                                
+    </div>
+
+    <% if(locals.paginaAtual && paginaAtual == 'carrinho'){ %> 
+        <a href="/checkout/checkout-endereco?linkCarrinho=linkCarrinho" class="btn-finalizar-pedido">
+            FINALIZAR PEDIDO
+            <span class="material-icons-outlined">shopping_cart_checkout</span>
+        </a>
+    <% } %>
+
+    <% if(locals.paginaAtual && paginaAtual == 'checkoutConfirmacaoPedido'){ %> 
+        <a href="" class="btn-finalizar-pedido">
+            FINALIZAR COMPRA
+            <span class="material-icons-outlined">check_circle</span>
+        </a>
+    <% } %>
+
+    
+</div>

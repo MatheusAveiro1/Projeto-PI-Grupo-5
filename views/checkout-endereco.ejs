@@ -43,6 +43,13 @@
                             <br>
                         <% } %> 
 
+                        <% if(locals.enderecoCadastrado && enderecoCadastrado == 'true') { %> 
+                            <p  class="msgStatusSucesso">
+                                Cadastro realizado com <b>sucesso</b>. Selecione o endereço para finalizar o pedido.                        
+                            </p>
+                            <br>
+                        <% } %>
+
                         <% if(locals.enderecos) {
 
                                     if(locals.enderecoEscolhido && enderecoEscolhido != '') { %> 
@@ -52,9 +59,10 @@
                                                 <span class="material-icons-outlined span-opcao-escolhida">adjust</span>
                                             </div>
                                             <div class="div-info-texto">
-                                                <p class="nome-destinatario"></p>
-                                                <p class="info-endereco"><%=enderecoEscolhido.rua%>, <%=enderecoEscolhido.bairo%>, <%=enderecoEscolhido.numero%>, <%=enderecoEscolhido.complemento%> - <%=enderecoEscolhido.cep%></p>
-                                                <p class="info-cidade-estado"><%=enderecoEscolhido.cidade%> / <%=enderecoEscolhido.estado%></p>
+                                                <p class="nome-destinatario"><%=enderecoEscolhido.destinatario%></p>
+                                                <p class="info-endereco"><%=enderecoEscolhido.rua%>, <%=enderecoEscolhido.numero%> - <%=enderecoEscolhido.complemento%></p>
+                                                <p class="info-endereco">Cep: <%=enderecoEscolhido.cep%></p>
+                                                <p class="info-cidade-estado"><%=enderecoEscolhido.bairro%> - <%=enderecoEscolhido.cidade%> / <%=enderecoEscolhido.estado%></p>
                                             </div>
                                         </a>
 
@@ -69,9 +77,10 @@
                                                 <span class="material-icons-outlined">circle</span>
                                             </div>
                                             <div class="div-info-texto">
-                                                <p class="nome-destinatario"></p>
-                                                <p class="info-endereco"><%=endereco.rua%>, <%=endereco.bairo%>, <%=endereco.numero%>, <%=endereco.complemento%> - <%=endereco.cep%></p>
-                                                <p class="info-cidade-estado"><%=endereco.cidade%> / <%=endereco.estado%></p>
+                                                <p class="nome-destinatario"><%=endereco.destinatario%></p>
+                                                <p class="info-endereco"><%=endereco.rua%>, <%=endereco.numero%> - <%=endereco.complemento%></p>                                                
+                                                <p class="info-endereco">Cep: <%=endereco.cep%></p>
+                                                <p class="info-cidade-estado"><%=endereco.bairro%> - <%=endereco.cidade%> / <%=endereco.estado%></p>
                                             </div>
                                         </a>
                         <% }}} %> 
@@ -110,36 +119,9 @@
                         </a>
                     </div>            
                 </div>
-    
-                <div class="div-checkout-resuso-preco">
-                    <div class="div-titulo-resumo">
-                        <h2>Resumo</h2>
-                    </div>
 
-                    <div class="div-subtotal">
-                        <p>Subtotal</p>
-                        <p>R$500,00</p>
-                    </div>
-
-                    <div class="div-disconto">
-                        <p>Desconto</p>
-                        <p>R$25,00</p>
-                    </div>
-
-                    <div class="div-transportadora-escolhida">
-                        <p>TopSales6 7 dias úteis</p>
-                        <p>R$0,00</p>
-                    </div>
-                    
-                    <div class="div-total-para-pagar">
-                        <p>Total</p>
-                        <p>R$525,00</p>
-                    </div>
-
-                    <div class="div-total-a-vista-pagar">
-                        <p>à vista no Boleto - R$525,00</p>                        
-                    </div>
-                </div>
+                <%- include('./partials/resumo-valores-carrinho') %>    
+                
             </main>
         </div>
     </div>

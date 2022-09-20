@@ -1,13 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
 
     const Endereco = sequelize.define("Endereco", {
-
         rua: DataTypes.STRING,
         numero: DataTypes.INTEGER,
         complemento: DataTypes.STRING,
         bairro: DataTypes.STRING,
         cidade: DataTypes.STRING,
         estado: DataTypes.STRING,
+        destinatario: DataTypes.STRING,
         cep: DataTypes.INTEGER,
         id_usuario: DataTypes.INTEGER,
     },

@@ -2,6 +2,8 @@
 const {check} = require('express-validator');
 
 module.exports = [
+    check('destinatario')
+        .notEmpty().withMessage("Esse campo não pode ficar vazio!").bail(),
     check('rua')
         .notEmpty().withMessage("Esse campo não pode ficar vazio!").bail(),
     check('numero')
