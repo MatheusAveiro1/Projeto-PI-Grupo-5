@@ -57,8 +57,10 @@
 
                                     <button class="button-produto">
 
-                                        <span class="material-icons-outlined">shopping_cart</span>
-                                        Comprar
+                                        <a class="linkCarrinho" href="/carrinho?idProd=<%=produto.id%>">        
+                                            <span class="material-icons-outlined">shopping_cart</span>
+                                            Comprar
+                                        </a>
                                     </button> 
 
                                 
@@ -107,9 +109,11 @@
                         <div class="valor-parcelado">
                             <p class="valor-parcelado"> 12x de <%= (produtosRelacionado.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </p>
                         </div>
-                        <button class="button-produto">
+                        <button class="button-produto"> 
+                            <a class="linkCarrinho" href="/carrinho?idProd=<%=produtosRelacionado.id%>">
                             <span class="material-icons-outlined" > shopping_cart</span>
                             Comprar
+                            </a>
                         </button>
 
 
