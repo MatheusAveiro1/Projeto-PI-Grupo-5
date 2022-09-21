@@ -12,6 +12,7 @@ router.get('/checkout-endereco',usuarioNaoLogadoMiddleware,checkCarrinhoVazioMid
 router.get('/checkout-endereco-escolhido/:id',usuarioNaoLogadoMiddleware,checkCarrinhoVazioMiddleware,checkoutController.checkoutEnderecoEscolhido);
 router.get('/checkout-pagamento',usuarioNaoLogadoMiddleware,checkCarrinhoVazioMiddleware,checkCarrinhoEnderecoExisteMiddlewares,checkoutController.checkoutPagamento);
 router.get('/checkout-confirmacao-pedido',usuarioNaoLogadoMiddleware,checkCarrinhoVazioMiddleware,checkCarrinhoPagamentoExisteMiddlewares,checkoutController.checkoutConfirmacaoPedido);
+router.post('/checkout-gravar-pedido',usuarioNaoLogadoMiddleware,checkCarrinhoVazioMiddleware,checkCarrinhoPagamentoExisteMiddlewares,checkoutController.checkoutGravarPedido);
 router.get('/pedido-concluido',usuarioNaoLogadoMiddleware,checkCarrinhoVazioMiddleware,checkoutController.pedidoConcluido);
 
 module.exports = router;

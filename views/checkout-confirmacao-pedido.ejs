@@ -42,7 +42,7 @@
                                     <span class="material-icons-outlined">person</span>
                                     Meus Dados
                                 </h3>
-                                <p> <%= meusDados.nome %> </p>
+                                <p> <%= meusDados.nome + ' ' + meusDados.sobrenome %></p>
                                 <p> <%= meusDados.email %></p>
                                 <p>CPF: <%= meusDados.cpf %> </p>
                             </div>
@@ -54,7 +54,7 @@
                                 </h3>
                                 <p>Destinatário: <b> <%= endereco.destinatario %> </b></p>
                                 <p> <%= endereco.rua %> , <%= endereco.bairro %>, <%= endereco.numero %>, <%= endereco.complemento %></p>
-                                <p><%= endereco.cep %> - <%= endereco.cidade %> / <%= endereco.estado %></p>
+                                <p>CEP: <%= endereco.cep %> - <%= endereco.cidade %> / <%= endereco.estado %></p>
                             </div>
 
                             <div class="div-pagamento">
