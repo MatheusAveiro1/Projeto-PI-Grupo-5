@@ -131,6 +131,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    border: none;
     text-decoration: none;
     padding: 15px;
     background: #00a202;

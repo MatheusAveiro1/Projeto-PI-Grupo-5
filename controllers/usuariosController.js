@@ -22,7 +22,7 @@ const funcoesUsuarios = {
       //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
       if (!errors.isEmpty()) {
         //Retornaremos para page de cadastro com os erros
-        reject(res.render('login', { errors: errors.mapped(), dadosPreenchido: req.body }));
+        reject(res.render('login', { errors: errors.mapped(), carrinho: req.session.carrinho, dadosPreenchido: req.body }));
       } else {
         resolve();
       }
@@ -63,13 +63,13 @@ const funcoesUsuarios = {
           }
 
         }else{
-          reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", dadosPreenchido: req.body}))
+          reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", carrinho: req.session.carrinho, dadosPreenchido: req.body}))
         }
 
       }else{
 
        //Retorna o erro para usuário
-       reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", dadosPreenchido: req.body}));
+       reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", carrinho: req.session.carrinho ,dadosPreenchido: req.body}));
 
       }
 
@@ -95,7 +95,7 @@ const funcoesUsuarios = {
         }
 
         //Retornaremos para page de cadastro com os erros
-        reject (res.render('cadastro', { errorsFormCadastro: errors.mapped(), dadosPreenchido: req.body }));
+        reject (res.render('cadastro', { errorsFormCadastro: errors.mapped(),carrinho: req.session.carrinho, dadosPreenchido: req.body }));
         
       } else {
         resolve();
@@ -187,7 +187,7 @@ const funcoesUsuarios = {
       //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
       if (!errors.isEmpty()) {
         //Retornaremos para page de cadatro de endereço com os erros
-        reject (res.render('cadastroDeEndereco', { errorsFormEndereco: errors.mapped(), dadosPreenchido: req.body, paginaAtual: 'enderecos'}));
+        reject (res.render('cadastroDeEndereco', { errorsFormEndereco: errors.mapped(), carrinho: req.session.carrinho, dadosPreenchido: req.body, paginaAtual: 'enderecos'}));
       } else {
         resolve();
       }
@@ -200,7 +200,7 @@ const funcoesUsuarios = {
       //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
       if (!errors.isEmpty()) {
         //Retornaremos para page de cadatro de endereço com os erros
-        reject (res.render('editarEndereco', { errorsFormEndereco: errors.mapped(), endereco: req.body, paginaAtual: 'enderecos'}));
+        reject (res.render('editarEndereco', { errorsFormEndereco: errors.mapped(), carrinho: req.session.carrinho, endereco: req.body, paginaAtual: 'enderecos'}));
       } else {
         resolve();
       }
@@ -213,7 +213,7 @@ const funcoesUsuarios = {
       //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
       if (!errors.isEmpty()) {        
         //Retornaremos para page de cadatro de endereço com os erros
-        reject (res.render('meus-dados', { errorsFormCadastro: errors.mapped(), paginaAtual: 'meusDados', dadosPreenchido: req.body, carrinho: req.session.carrinho}));
+        reject (res.render('meus-dados', { errorsFormCadastro: errors.mapped(), carrinho: req.session.carrinho, paginaAtual: 'meusDados', dadosPreenchido: req.body, carrinho: req.session.carrinho}));
       } else {
         resolve();
       }

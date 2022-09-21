@@ -61,6 +61,8 @@ const controlador = {
       //Recupera o ID do produto que será adicionado 1 na qt
       let itemParaAdicionarQt = req.params.id;
 
+      console.log(req.session.carrinho);
+
       //Adicionando 1 na QT do item
       for(let i = 0; i < req.session.carrinho.length; i++) {
         if(req.session.carrinho[i].id == itemParaAdicionarQt){

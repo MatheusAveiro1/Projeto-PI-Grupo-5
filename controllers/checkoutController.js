@@ -76,7 +76,7 @@ const controlador = {
     },
     checkoutPagamento: (req, res)=> {  
       //Adicionando metodos de pagamento na seção
-     req.session.metodoPagamento = "BOLETO BANCÁRIO";  
+      req.session.metodoPagamento = "BOLETO BANCÁRIO";  
 
       //recuperado varialvel que diz se o usuario escolheu o metodo de pagamento
       let pagamentoNaoExiste = req.query.pagamentoNaoExiste;
@@ -97,6 +97,59 @@ const controlador = {
         metodoPagamento: metodoPagamento,
         produtos: produtos            
       });
+    },
+    checkoutGravarPedido: async (req, res)=> {
+      try {
+        //Verificando se foi clicado no botão "Finalizar Pedido"
+        if(req.body.gravarPedido == 'true') {
+          //Recuperando id do usuário
+          const idUsuario = req.session.usuarioLogado.id;
+
+          //Recuperando endereço de entrega
+          let endereco = req.session.enderecoEscolhido;
+          endereco = `${endereco.destinatario}, ${endereco.rua}, ${endereco.numero}, ${endereco.complemento}, ${endereco.bairro}, ${endereco.cidade}, ${endereco.estado}, ${endereco.cep}`;
+
+          //Recuperando as informações dos produtos
+          const produtos = req.session.carrinho;
+
+          //Calculando o preço total
+          let precoTotal = 0;
+          for(let i = 0; i < produtos.length; i++) {
+            precoTotal = precoTotal + (produtos[i].preco * produtos[i].qt);
+          }
+          precoTotal = (precoTotal / 10) * 9.5;
+          
+          //Definindo o status do pedido
+          const statusPedido = "Pendente";
+
+          //Gravando as informações do pedido na tabela "pedidos"
+          // await Endereco.create({
+          //   id_usuario: idUsuario,
+          //   endereco: endereco,
+          //   preco_total: precoTotal,
+          //   status: statusPedido            
+          // });
+
+
+          //Recuperando o id do pedido
+
+          
+
+          //console.log(endereco);
+
+          res.send("Pedido Gravado!!!");
+
+
+
+        } else {
+          res.send("Por favor finalizar o pedido!!!");
+        }
+
+        
+      }
+      catch (err) {
+        console.log(err);
+      }
     },
     pedidoConcluido: (req, res)=> {    
       res.render ('pedido-concluido');
