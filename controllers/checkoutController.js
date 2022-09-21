@@ -1,4 +1,5 @@
 //Chamando nosso model
+const { localsName } = require('ejs');
 const {sequelize, Endereco} = require('../models');
 
 const funcoes = {
@@ -73,11 +74,29 @@ const controlador = {
         }
       }           
     },
-    checkoutPagamento: (req, res)=> {      
-      res.render ('checkout-pagamento', {paginaAtual: 'checkoutPagamento', carrinho: req.session.carrinho});
+    checkoutPagamento: (req, res)=> {  
+      //Adicionando metodos de pagamento na seção
+     req.session.metodoPagamento = "BOLETO BANCÁRIO";  
+
+      //recuperado varialvel que diz se o usuario escolheu o metodo de pagamento
+      let pagamentoNaoExiste = req.query.pagamentoNaoExiste;
+
+      res.render ('checkout-pagamento', {paginaAtual: 'checkoutPagamento', pagamentoNaoExiste: pagamentoNaoExiste , carrinho: req.session.carrinho});
     },    
     checkoutConfirmacaoPedido: (req, res)=> {
-      res.render ('checkout-confirmacao-pedido', {paginaAtual: 'checkoutConfirmacaoPedido', carrinho: req.session.carrinho});
+      //Recuperando informações do pedido para revisao
+      const meusDados = req.session.usuarioLogado;
+      const endereco = req.session.enderecoEscolhido;
+      const metodoPagamento = req.session.metodoPagamento;
+      const produtos = req.session.carrinho;
+
+      res.render ('checkout-confirmacao-pedido', {paginaAtual: 'checkoutConfirmacaoPedido',
+        carrinho: req.session.carrinho,
+        meusDados: meusDados,
+        endereco: endereco,
+        metodoPagamento: metodoPagamento,
+        produtos: produtos            
+      });
     },
     pedidoConcluido: (req, res)=> {    
       res.render ('pedido-concluido');
