@@ -2,6 +2,9 @@
 const fs = require('fs');//metodo fs Manipulador de arquivos
 const {sequelize, Produto, Categoria} = require('../models');
 
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 const controlador = {
   index: async (req, res)=> {
     try {
@@ -50,6 +53,44 @@ const controlador = {
       console.log(err);
     }
   },
+  produtosPorBarraPesquisa: async (req, res)=> {
+    try{
+      //Recuperando a informação da pesquisa
+      const pesquisa = req.query.produtoPesquisado;
+      //Buscando os produtos pelo conteudo da pesquisa
+      const produtos = await Produto.findAll(
+        {
+          // limit:24,
+          include:[
+            'produto_categoria', 'produto_marca'
+          ],
+          where: {            
+              [Op.or]: [
+                {
+                  nome: {
+                    [Op.like]: '%'+pesquisa+'%'
+                  }
+                },
+                {
+                  descricao: {
+                    [Op.like]: '%'+pesquisa+'%'
+                  }
+                }
+              ]
+          }          
+        }
+      );
+      
+      // //Buscando as categorias no BD 
+      const categorias = await Categoria.findAll();      
+      
+      res.render('index', {produtos: produtos, categorias:categorias, carrinho: req.session.carrinho});
+
+    }
+    catch(err){
+      console.log(err);
+    }
+  },
   produto: async (req, res)=>{
 
     try {
@@ -88,11 +129,6 @@ const controlador = {
       console.log(err)
       }
   }
-    
-
-  
-
-  
 }
 
 module.exports = controlador;

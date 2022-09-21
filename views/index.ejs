@@ -52,29 +52,34 @@
                 </h2>  
                 <div class="div-cards-principal">      
                     <div class="div-cards">
-                        
-                        <% for (const produto of produtos) { %> 
+                        <% if(produtos != "") {                            
+                            for (const produto of produtos) { %> 
 
-                            <article class="card" onclick="location.href='/produto/<%=produto.id%>';">
-                                <div class="div-card-img-infos">
-                                    <figure>
-                                        <img src="/images/produtos/<%= produto.img %> " alt="Imagem PC Gamer">
-                                    </figure>
-                                    <div class="card-infos">
-                                        <p class="card-nome-produto"><%= produto.produto_categoria.nome + " " + produto.produto_marca.nome + " " + produto.nome %></p>
-                                        <p class="card-preco-anterior">De: <span><%= produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></span> por:</p>
-                                        <p class="card-preco-atual"><strong><%= ((produto.preco / 10 ) * 9.5).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %> à vista</strong></p>
-                                        <!--p class="card-preco-parcelado">12 x de <%= (produto.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p-->
-                                    </div>                              
-                                </div>
-                                <button>
-                                    <a class="btn_a" href="/carrinho?idProd=<%=produto.id%>">
-                                        <span class="material-icons-outlined">shopping_cart</span> Comprar
-                                    </a>
-                                </button>
-                            </article>
+                                <article class="card" onclick="location.href='/produto/<%=produto.id%>';">
+                                    <div class="div-card-img-infos">
+                                        <figure>
+                                            <img src="/images/produtos/<%= produto.img %> " alt="Imagem PC Gamer">
+                                        </figure>
+                                        <div class="card-infos">
+                                            <p class="card-nome-produto"><%= produto.produto_categoria.nome + " " + produto.produto_marca.nome + " " + produto.nome %></p>
+                                            <p class="card-preco-anterior">De: <span><%= produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></span> por:</p>
+                                            <p class="card-preco-atual"><strong><%= ((produto.preco / 10 ) * 9.5).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %> à vista</strong></p>
+                                            <!--p class="card-preco-parcelado">12 x de <%= (produto.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p-->
+                                        </div>                              
+                                    </div>
+                                    <button>
+                                        <a class="btn_a" href="/carrinho?idProd=<%=produto.id%>">
+                                            <span class="material-icons-outlined">shopping_cart</span> Comprar
+                                        </a>
+                                    </button>
+                                </article>
 
-                        <% } %> 
+                        <% }} else { %>
+                            <div class="div-sem-produtos">
+                                <span class="material-icons-outlined">thumb_down</span>
+                                <h1>Produto não encontrado!</h1>
+                            </div>                            
+                        <% } %>
             
                     </div>
                 </div>                                  
