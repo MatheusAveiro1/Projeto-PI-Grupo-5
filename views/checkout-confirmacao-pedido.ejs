@@ -42,9 +42,9 @@
                                     <span class="material-icons-outlined">person</span>
                                     Meus Dados
                                 </h3>
-                                <p>Fernando Ferreira Mendonca</p>
-                                <p>fernandofm3@gmail.com</p>
-                                <p>CPF: 65496325856</p>
+                                <p> <%= meusDados.nome %> </p>
+                                <p> <%= meusDados.email %></p>
+                                <p>CPF: <%= meusDados.cpf %> </p>
                             </div>
                                                         
                             <div class="div-entrega">
@@ -52,9 +52,9 @@
                                     <span class="material-icons-outlined">local_shipping</span>
                                     Entrega
                                 </h3>
-                                <p>Destinatário: <b>Fernando Ferreira Mendonca</b></p>
-                                <p>Rua Doutor Ubaldo Franco Caiubi, Vila São Paulo, 313, Casa 12</p>
-                                <p>04651-020 - São Paulo / SP</p>
+                                <p>Destinatário: <b> <%= endereco.destinatario %> </b></p>
+                                <p> <%= endereco.rua %> , <%= endereco.bairro %>, <%= endereco.numero %>, <%= endereco.complemento %></p>
+                                <p><%= endereco.cep %> - <%= endereco.cidade %> / <%= endereco.estado %></p>
                             </div>
 
                             <div class="div-pagamento">
@@ -66,7 +66,8 @@
                             </div>
                         </div>
 
-                        <div href="#" class="div-conteudo-confirmacao">
+                        <% for(produto of produtos){ %>
+                            <div href="#" class="div-conteudo-confirmacao">
                             <h3>
                                 <span class="material-icons-outlined">shopping_bag</span>
                                 Produto
@@ -74,25 +75,26 @@
 
                             <div class="div-info-produto">
                                 <div class="img-produto">
-                                    <img src="/images/produtos/placa-de-video-gigabyte-nvidia-geforce-rtx-3060.jpg " alt="">
+                                    <img src="/images/produtos/<%= produto.img%> " alt="">
                                     <p>
-                                        Lampada Inteligente Zinnia Crux CR100, 10W <br>
-                                        Wi-Fi, RGB, Branca, ZNS-ZNCR10W-RGBC01 <br>
-                                        SKU: ZNS-ZNCR10W-RGBC01
+                                        <%= produto.nome%>  <br>
+                                        <%= produto.produto_categoria.nome %>, <%= produto.produto_marca.nome%><br>
+                                        <%= produto.modelo%>
                                     </p>
                                 </div>
 
                                 <div class="div-qt-produto">
                                     <p class="p-titulos">QT</p>
-                                    <p>1</p>
+                                    <p> <%= produto.qt %> </p>
                                 </div>
                                 
                                 <div class="div-preco-produto">
                                     <p class="p-titulos">Preço</p>
-                                    <p>1x R$100,00</p>
+                                    <p> <%=produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})%> </p>
                                 </div> 
                             </div>
-                        </div>
+                            </div>
+                        <% } %>
                     </div>        
 
                     <div class="div-botoes-continuar-voltar">

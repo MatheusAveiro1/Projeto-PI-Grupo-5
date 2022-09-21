@@ -33,9 +33,16 @@
                     <div class="div-opcao-pagamento">
                         <h2>
                             <span class="material-icons-outlined">credit_card</span>
-                            Mátodo do Pagamento
+                            Método do Pagamento
                         </h2>
-                        
+
+                        <% if(locals.pagamentoNaoExiste && pagamentoNaoExiste == 'true') { %> 
+                            <p  class="msgStatusErro">
+                                Por favor escolha o <strong>metodo de pagamento</strong> para finalizar o pedido.                        
+                            </p>
+                            <br>
+                        <% } %> 
+
                         <a href="#" class="link-card link-card-escolhido">
                             <div class="div-radio">
                                 <span class="material-icons-outlined span-opcao-escolhida">adjust</span>
@@ -52,7 +59,7 @@
                             </div>
                         </a>
 
-                        <a href="#" class="link-card">
+                        <!--a href="#" class="link-card">
                             <div class="div-radio">
                                 <span class="material-icons-outlined">circle</span>
                             </div>
@@ -66,7 +73,7 @@
                                     <p>Em um prazo de 2 dias úteis seu pedido será processado.</p>                                                               
                                 </div>
                             </div>
-                        </a>
+                        </a-->
                     </div>        
                     
                     <div class="div-botoes-continuar-voltar">
