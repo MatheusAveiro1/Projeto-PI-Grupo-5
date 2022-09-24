@@ -128,21 +128,43 @@
     display: flex;
     flex-direction: column;
 }
-
 .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega {
     margin-bottom: 30px;
     padding-bottom: 15px;
     border-bottom: 1px solid #ccc;
 }
-
 .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega .titulo-end {
     font-size: 0.75rem;
     font-weight: bold;
     margin-bottom: 15px;
 }
-
 .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega p {
     font-size: 0.75rem;    
+    margin-bottom: 5px;
+}
+
+
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-transportadora {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-transportadora .titulo-trans {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 15px;
+}
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-transportadora .nome-trans {
+    font-size: 0.75rem; 
+    font-weight: bold; 
+    color: #333;  
+    margin-bottom: 5px;
+}
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-transportadora p {
+    font-size: 0.75rem;
+    font-weight: bold; 
+    color: #777;   
     margin-bottom: 5px;
 }
 

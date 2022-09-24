@@ -122,16 +122,21 @@ const controlador = {
           //Definindo o status do pedido
           const statusPedido = "Pendente";
 
-          //Definindo o status do pedido
+          //Recuperando o método de pagamento
           const metodoPagamento = req.session.metodoPagamento;
 
-          console.log(req.session);
+          //Recuperando a transportadora
+          const transportadora = req.session.transportadora;
+
+
+          console.log(transportadora);
 
           //Gravando as informações do pedido no BD e pegando o retorno e salvando na variavel infoPedido
           const infoPedido =  await Pedido.create({
             id_usuario: idUsuario,
             endereco: endereco,
             preco_total: precoTotal,
+            transportadora: transportadora,
             metodo_pagamento: metodoPagamento,
             status: statusPedido            
           });

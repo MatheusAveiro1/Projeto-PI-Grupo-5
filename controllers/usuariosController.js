@@ -285,7 +285,7 @@ const controlador = {
   perfil: async (req, res)=> {
     try{
       //Recuperando informação do último realizado
-      const ultimoPedido = await Pedido.findAll({
+      let ultimoPedido = await Pedido.findAll({
         order:[['id','DESC']],
         limit:[1],
         include:[
@@ -302,10 +302,18 @@ const controlador = {
         }
       });
 
-      // console.log(ultimoPedido[0].pedido_produto[0]);
+      //Convertendo a hora que o pedido foi registrado       
+      function getDateTime(date) {
+          const moment = require('moment');
+          return moment(date).format('DD/MM/YYYY - HH:mm');
+      } 
+      let datahora = getDateTime(ultimoPedido[0].datahora);     
+
+      // console.log('<<<<< Aqui >>>>>');
+      // console.log(ultimoPedido[0].id);      
       // console.log(ultimoPedidoPrecoQtProduto);
 
-      return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil', ultimoPedido: ultimoPedido, ultimoPedidoPrecoQtProduto: ultimoPedidoPrecoQtProduto , carrinho: req.session.carrinho})
+      return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil', ultimoPedido: ultimoPedido, ultimoPedidoPrecoQtProduto: ultimoPedidoPrecoQtProduto, datahoraPedido: datahora, carrinho: req.session.carrinho})
     }
     catch (err){
       console.log(err);

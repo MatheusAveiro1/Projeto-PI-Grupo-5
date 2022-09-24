@@ -5,8 +5,10 @@ module.exports = (sequelize, DataTypes) => {
             id_usuario: DataTypes.INTEGER,
             endereco: DataTypes.STRING,
             preco_total: DataTypes.FLOAT,
+            transportadora: DataTypes.STRING,
             metodo_pagamento: DataTypes.STRING,
             status: DataTypes.STRING,
+            datahora: DataTypes.DATE
         },
         {
             tableName: 'pedidos', //informações da identificação da tabela  do banco de dados

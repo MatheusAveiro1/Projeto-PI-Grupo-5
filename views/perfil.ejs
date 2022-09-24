@@ -63,9 +63,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td># <%= ultimoPedido[0].id %> </td>
-                                            <td> <%= ultimoPedido[0].status %>  </td>
-                                            <td>05/04/2022</td>
+                                            <td>#<%= ultimoPedido[0].id %> </td>
+                                            <td> <%= ultimoPedido[0].status %> </td>                                            
+                                            <td> <%= datahoraPedido %>  </td>
                                             <td> <%= ultimoPedido[0].metodo_pagamento %> </td>
                                         </tr>
                                     </tbody>
@@ -79,6 +79,13 @@
                                         <!-- <p>Fernando Ferreira Mendonça</p>
                                         <p>Rua Novo Horizonte do Belo Paraíso, 456</p>                                    
                                         <p>Vale da sorte, CEP 8429554 - Sãp Paulo, SP</p> -->
+                                    </div> 
+
+                                    <div class="div-transportadora">
+                                        <p class="titulo-trans">TRANSPORTADORA</p>
+
+                                        <p class="nome-trans"><%= ultimoPedido[0].transportadora %></p>
+                                        <p>Seu pedido será entregue até 7 dias útis após o Pagamento.</p>                                       
                                     </div> 
 
                                     <p class="titulo-produto">PRODUTO COMPRADO</p>
