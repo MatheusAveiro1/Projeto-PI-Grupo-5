@@ -1,6 +1,6 @@
 //Chamando nosso model
 const { localsName } = require('ejs');
-const {sequelize, Endereco} = require('../models');
+const {sequelize, Endereco, Pedido, ProdutoHasPedido} = require('../models');
 
 const funcoes = {
   
@@ -76,7 +76,7 @@ const controlador = {
     },
     checkoutPagamento: (req, res)=> {  
       //Adicionando metodos de pagamento na seção
-      req.session.metodoPagamento = "BOLETO BANCÁRIO";  
+      req.session.metodoPagamento = "Boleto";  
 
       //recuperado varialvel que diz se o usuario escolheu o metodo de pagamento
       let pagamentoNaoExiste = req.query.pagamentoNaoExiste;
@@ -122,27 +122,40 @@ const controlador = {
           //Definindo o status do pedido
           const statusPedido = "Pendente";
 
-          //Gravando as informações do pedido na tabela "pedidos"
-          // await Endereco.create({
-          //   id_usuario: idUsuario,
-          //   endereco: endereco,
-          //   preco_total: precoTotal,
-          //   status: statusPedido            
-          // });
+          //Definindo o status do pedido
+          const metodoPagamento = req.session.metodoPagamento;
 
+          console.log(req.session);
 
-          //Recuperando o id do pedido
+          //Gravando as informações do pedido no BD e pegando o retorno e salvando na variavel infoPedido
+          const infoPedido =  await Pedido.create({
+            id_usuario: idUsuario,
+            endereco: endereco,
+            preco_total: precoTotal,
+            metodo_pagamento: metodoPagamento,
+            status: statusPedido            
+          });
 
+          for (let i = 0; i < produtos.length; i++) {
+            //Gravando os produtos do pedino na tabela intermediaria
+            await ProdutoHasPedido.create({
+              pedidos_id: infoPedido.id,
+              produtos_id: produtos[i].id,
+              qt_produto: produtos[i].qt,              
+              preco_produto: (produtos[i].preco / 10) * 9.5           
+            });
+          }          
+
+          //Excluindo dados do carrinho
+          delete req.session.carrinho;
+          delete req.session.transportadora;
+          delete req.session.enderecoEscolhido;
+          delete req.session.metodoPagamento;
           
-
-          //console.log(endereco);
-
-          res.send("Pedido Gravado!!!");
-
-
+          res.redirect('/checkout/pedido-concluido/' + infoPedido.id);
 
         } else {
-          res.send("Por favor finalizar o pedido!!!");
+          res.redirect('/carrinho');
         }
 
         

@@ -90,7 +90,7 @@
                                 
                                 <div class="div-preco-produto">
                                     <p class="p-titulos">Preço</p>
-                                    <p> <%=produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})%> </p>
+                                    <p> <%=(((produto.preco * produto.qt) / 10) * 9.5).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})%> </p>
                                 </div> 
                             </div>
                             </div>

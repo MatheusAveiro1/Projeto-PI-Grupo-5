@@ -3,7 +3,7 @@ const {validationResult, Result} = require('express-validator');
 //Chamando o fs
 const fs = require('fs');
 //Chamando nosso model
-const {sequelize, Usuario, Endereco} = require('../models')
+const {sequelize, Usuario, Endereco, Pedido, ProdutoHasPedido} = require('../models')
 //Chamando o manipulado de hash
 const bcrypt = require('bcrypt');
 const db = require('../models');
@@ -282,10 +282,34 @@ const controlador = {
       console.log(err)
     }
   },
-  perfil: (req, res)=> {
+  perfil: async (req, res)=> {
+    try{
+      //Recuperando informação do último realizado
+      const ultimoPedido = await Pedido.findAll({
+        order:[['id','DESC']],
+        limit:[1],
+        include:[
+          'pedido_produto'          
+      ],
+        where: {
+            id_usuario: req.session.usuarioLogado.id
+        }
+      });
 
-    return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil', carrinho: req.session.carrinho})
-    
+      const ultimoPedidoPrecoQtProduto = await ProdutoHasPedido.findAll({      
+        where: {
+            pedidos_id: ultimoPedido[0].id
+        }
+      });
+
+      // console.log(ultimoPedido[0].pedido_produto[0]);
+      // console.log(ultimoPedidoPrecoQtProduto);
+
+      return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil', ultimoPedido: ultimoPedido, ultimoPedidoPrecoQtProduto: ultimoPedidoPrecoQtProduto , carrinho: req.session.carrinho})
+    }
+    catch (err){
+      console.log(err);
+    }
   },
   meusDados: (req, res)=> {
     const meusDados = req.session.usuarioLogado;   
@@ -326,7 +350,7 @@ const controlador = {
     },
   mostraEnderecos: async (req, res) =>{
     try{
-       const enderecos = await Endereco.findAll({
+      const enderecos = await Endereco.findAll({
         where: {
             id_usuario: req.session.usuarioLogado.id
         }
