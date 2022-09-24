@@ -64,7 +64,7 @@
                                             <p class="card-nome-produto"><%= produto.produto_categoria.nome + " " + produto.produto_marca.nome + " " + produto.nome %></p>
                                             <p class="card-preco-anterior">De: <span><%= produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></span> por:</p>
                                             <p class="card-preco-atual"><strong><%= ((produto.preco / 10 ) * 9.5).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %> à vista</strong></p>
-                                            <!--p class="card-preco-parcelado">12 x de <%= (produto.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p-->
+                                            <p class="card-preco-parcelado">1 x de <%= ((produto.preco /10)* 9.5).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %> no Boleto</p>
                                         </div>                              
                                     </div>
                                     <button>

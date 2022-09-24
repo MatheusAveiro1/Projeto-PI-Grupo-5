@@ -1,5 +1,5 @@
 //const { track } = require('cordova/src/telemetry');
-const fs = require('fs');//metodo fs Manipulador de arquivos
+//const fs = require('fs');//metodo fs Manipulador de arquivos
 const {sequelize, Produto, Categoria} = require('../models');
 
 const Sequelize = require('sequelize');
@@ -15,12 +15,13 @@ const controlador = {
               'produto_categoria',
               'produto_marca'
           ]
-      })
-      //Buscando as categorias no BD 
-      const categorias = await Categoria.findAll()
+      });
       
       
-      res.render('index', {produtos: produtos, categorias:categorias, carrinho: req.session.carrinho})
+      console.log('>>>>>>> Carrinho atual >>>>>>>>');
+            console.log(req.session.carrinho);
+      
+      res.render('index', {produtos: produtos, carrinho: req.session.carrinho})
 
     }
     catch (err){
