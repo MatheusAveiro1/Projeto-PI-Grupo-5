@@ -15,14 +15,13 @@ const controlador = {
               'produto_categoria',
               'produto_marca'
           ]
-      })
-      //Buscando as categorias no BD 
-      const categorias = await Categoria.findAll();
+      });
+      
       
       console.log('>>>>>>> Carrinho atual >>>>>>>>');
             console.log(req.session.carrinho);
       
-      res.render('index', {produtos: produtos, categorias:categorias, carrinho: req.session.carrinho})
+      res.render('index', {produtos: produtos, carrinho: req.session.carrinho})
 
     }
     catch (err){

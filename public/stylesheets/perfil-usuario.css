@@ -138,6 +138,12 @@
     font-weight: bold;
     margin-bottom: 15px;
 }
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega .nome-destinatario {
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #333;    
+}
 .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega p {
     font-size: 0.75rem;    
     margin-bottom: 5px;

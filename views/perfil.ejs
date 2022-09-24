@@ -74,11 +74,11 @@
                                     <div class="div-end-entrega">
                                         <p class="titulo-end">ENDEREÇO DA ENTREGA</p>
 
-                                        <p><%= ultimoPedido[0].endereco %></p>
+                                        <% let novoEndereco = ultimoPedido[0].endereco.split(','); %> 
 
-                                        <!-- <p>Fernando Ferreira Mendonça</p>
-                                        <p>Rua Novo Horizonte do Belo Paraíso, 456</p>                                    
-                                        <p>Vale da sorte, CEP 8429554 - Sãp Paulo, SP</p> -->
+                                        <p class="nome-destinatario"><%= novoEndereco[0] %></p>
+                                        <p><%= novoEndereco[1] + ', ' + novoEndereco[2] + ' - ' + novoEndereco[3] %></p>
+                                        <p><%= novoEndereco[4] + ' - ' + novoEndereco[5] + ' / ' + novoEndereco[6] + ' - CEP:' +  novoEndereco[7] %></p>                                        
                                     </div> 
 
                                     <div class="div-transportadora">

@@ -51,10 +51,16 @@
                             </a>
 
                             <ul class="submenu-departamentos-mobile">
-                                <% if(locals.categorias){
-                                    for(categoria of categorias){ %>
-                                        <li><a href="/produtosPorCategoria/<%= categoria.id %>"><%=categoria.nome %></a></li>   
-                                <%}}%>
+                                <li onclick="location.href='/produtosPorCategoria/1';"><a>Notebook</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/2';"><a>Smartphone</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/3';"><a>Descktop</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/4';"><a>Hardware</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/5';"><a>Tablet</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/6';"><a>Periféricos</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/7';"><a>Eletrônicos</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/8';"><a>All In One</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/9';"><a>Cadeira Gamer</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/10';"><a>Geek</a></li>
                             </ul>
                         </li>
                         
@@ -124,12 +130,18 @@
                                     <li><a href="#">Fast White</a></li>
                                     <li><a href="#">Red Force</a></li>
                                 </ul>
-                            </li-->
-                            
-                                <% if(locals.categorias){
-                                    for(categoria of categorias){ %>
-                                        <li onclick="location.href='/produtosPorCategoria/<%= categoria.id %>';"><a><%=categoria.nome %></a></li>   
-                                <%}}%>  
+                            </li-->                            
+                                
+                            <li onclick="location.href='/produtosPorCategoria/1';"><a>Notebook</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/2';"><a>Smartphone</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/3';"><a>Descktop</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/4';"><a>Hardware</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/5';"><a>Tablet</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/6';"><a>Periféricos</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/7';"><a>Eletrônicos</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/8';"><a>All In One</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/9';"><a>Cadeira Gamer</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/10';"><a>Geek</a></li>
                         </ul>
                         <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
                     </button>                        
