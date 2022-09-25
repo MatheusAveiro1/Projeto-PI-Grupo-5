@@ -129,7 +129,16 @@ const controlador = {
     catch (err){
       console.log(err)
       }
-  }
+  },
+  centralDeAtendimento: async (req, res)=>{
+    try {
+      res.render('central-de-atendimento');
+    }
+    catch (err){
+      console.log(err)
+      }
+  },
+
 }
 
 module.exports = controlador;
