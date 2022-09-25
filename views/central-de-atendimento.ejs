@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wclass th=device-wclass th, initial-scale=1.0">
+    <title>TopSales6</title>
+    <link rel="shortcut icon" href="/images/fivicon.ico">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/central-de-atendimento.css">
+</head>
+<body>  
+
+<%- include("./partials/header")%>
+
+<main class="main-central-de-atendimento">
+    <div class="container">
+        <div class="div-main-config-padrao">
+            <form>
+                <h1>TIRE SUAS DÚVIDAS</h1>
+                <p>Este canal de comunicação está preparado para sanar qualquer dúvida que você tenha em nosso site.</p>
+
+                <label for="email"> 
+                    <span class="material-icons-outlined">email</span>
+                    E-mail
+                </label>
+                <input type="email" class="email" name="email" placeholder="Exp: email@topsale6.com" >
+                
+                <label for="tel">
+                    <span class="material-icons-outlined">smartphone</span>
+                    Telefone
+                </label>
+                <input id="tel" type="text" name="tel" placeholder="Digite seu telefone" >
+
+                <label for="duvida">
+                    <span class="material-icons-outlined">contact_support</span>
+                    Dúvida
+                </label>
+                <textarea name="duvida" id="duvida"></textarea>
+                                
+                <button class="botao-duvida-enviar" type="submit">
+                    ENVIAR DÚVIDA
+                    <span class="material-icons-outlined">send</span>
+                </button> 
+                
+                <div class="div-central-fale-conosco">                    
+                    <p>
+                        <span class="material-icons-outlined">support_agent</span>
+                        (11) 3355-3355
+                    </p>
+                    <p>
+                        <span class="material-icons">email</span>
+                        sac@topsales6.com.br
+                    </p>
+                </div>
+            </form>            
+        </div>
+    </div>
+</main>
+
+<%- include("./partials/footer")%>
+
+</body>
+</html>
