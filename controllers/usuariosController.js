@@ -294,23 +294,30 @@ const controlador = {
         where: {
             id_usuario: req.session.usuarioLogado.id
         }
-      });
+      });      
 
-      const ultimoPedidoPrecoQtProduto = await ProdutoHasPedido.findAll({      
-        where: {
-            pedidos_id: ultimoPedido[0].id
-        }
-      });
+      //Definindo variaveis
+      let ultimoPedidoPrecoQtProduto = "";
+      let datahora = "";
+      //Verificando se a variavel ultomoPedido está vazia
+      if (ultimoPedido != "") {
+        ultimoPedidoPrecoQtProduto = await ProdutoHasPedido.findAll({      
+          where: {
+              pedidos_id: ultimoPedido[0].id
+          }
+        });
 
-      //Convertendo a hora que o pedido foi registrado       
-      function getDateTime(date) {
+        //Convertendo a hora que o pedido foi registrado       
+        function getDateTime(date) {
           const moment = require('moment');
           return moment(date).format('DD/MM/YYYY - HH:mm');
-      } 
-      let datahora = getDateTime(ultimoPedido[0].datahora);     
+        } 
+        datahora = getDateTime(ultimoPedido[0].datahora);
 
+      }
+       
       // console.log('<<<<< Aqui >>>>>');
-      // console.log(ultimoPedido[0].id);      
+      // console.log(ultimoPedido);
       // console.log(ultimoPedidoPrecoQtProduto);
 
       return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil', ultimoPedido: ultimoPedido, ultimoPedidoPrecoQtProduto: ultimoPedidoPrecoQtProduto, datahoraPedido: datahora, carrinho: req.session.carrinho})
@@ -356,6 +363,34 @@ const controlador = {
       }
 
     },
+  meusPedidos: async (req, res) =>{
+    try{
+      //Recuperando os pedidos
+      let pedidos = await Pedido.findAll({
+        order:[['id','DESC']],
+        where: {
+            id_usuario: req.session.usuarioLogado.id
+        }
+      });
+
+      //Convertendo a datahora que o pedido foi registrado       
+      function getDateTime(date) {
+        const moment = require('moment');
+        return moment(date).format('DD/MM/YYYY - HH:mm');
+      }      
+      let datashoras = [];
+      for(let i = 0; i < pedidos.length; i++){
+        datashoras.push(getDateTime(pedidos[i].datahora));
+      }
+
+      return res.render ('meusPedidos', {paginaAtual: 'meusPedidos', pedidos: pedidos, datashoras: datashoras, carrinho: req.session.carrinho})
+    }
+    catch (err) {
+      if(err){
+        console.log(err);        
+      }
+    }
+  },
   mostraEnderecos: async (req, res) =>{
     try{
       const enderecos = await Endereco.findAll({

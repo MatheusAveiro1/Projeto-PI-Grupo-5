@@ -4,6 +4,8 @@
         let paginaPerfil = '';
         let paginaMeusDados = '';
         let paginaEnderecos = '';
+        let paginaMeusPedidos = '';
+
 
         switch (paginaAtual) {
             case "perfil":
@@ -14,6 +16,9 @@
                 break;
             case  "enderecos":
                 paginaEnderecos =  'pagina-ativa';
+                break;
+            case  "meusPedidos":
+                paginaMeusPedidos =  'pagina-ativa';
                 break;
         }       
     %>
@@ -27,8 +32,14 @@
         </li>
         <li>
             <a href="/usuario/meus-dados" class="<%= paginaMeusDados %>">
-                <span class="material-icons">article</span>
+                <span class="material-icons-outlined">folder_shared</span>
                 Meus Dados
+            </a>
+        </li>   
+        <li>
+            <a href="/usuario/meus-pedidos" class="<%= paginaMeusPedidos %>">
+                <span class="material-icons-outlined">assignment</span>
+                Meus Pedidos
             </a>
         </li>   
         <li>

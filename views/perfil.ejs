@@ -55,18 +55,24 @@
                                 <table class="tabela-pedido">
                                     <thead>
                                         <tr>
-                                            <th>NÚMERO DO PEDIDO</th>
-                                            <th>STATUS</th>
+                                            <th>PEDIDO</th>
                                             <th>DATA</th>
-                                            <th>PAGAMENTO</th>
+                                            <th>MÉTODO</th>
+                                            <th>TOTAL</th>
+                                            <th>STATUS</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>#<%= ultimoPedido[0].id %> </td>
-                                            <td> <%= ultimoPedido[0].status %> </td>                                            
+                                            <td># <%= ultimoPedido[0].id %> </td>
                                             <td> <%= datahoraPedido %>  </td>
                                             <td> <%= ultimoPedido[0].metodo_pagamento %> </td>
+                                            <td> <%= ultimoPedido[0].preco_total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </td>
+                                            <td> 
+                                                <span style="background-color: #9a6700;color: #fff; font-size: 0.7rem;padding: 3px;border-radius: 4px;"> 
+                                                    <%= ultimoPedido[0].status %>
+                                                </span>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
