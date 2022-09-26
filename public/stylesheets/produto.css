@@ -163,6 +163,7 @@ main div div .home-produto {
     flex-flow: column;
     justify-content: space-around;
     margin: 1% 0% 4% 0%;
+    cursor: pointer;
 
 }
 .paginaproduto div div .mais-produtos .produto .img-produto img{
