@@ -104,7 +104,7 @@
                             <p class="valor-anterior">De: <span style="text-decoration: line-through"> <%= produtosRelacionado.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </span> </p>
                         </div>
                         <div class="valor-atual">
-                            <p class="valor-atual"> <%= ((produtosRelacionado.preco / 10 ) * 9).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista </p>
+                            <p class="valor-atual"> <%= ((produtosRelacionado.preco / 10 ) * 9.5).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista </p>
                         </div>
                         <div class="valor-parcelado">
                             <p class="valor-parcelado"> 12x de <%= (produtosRelacionado.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </p>
