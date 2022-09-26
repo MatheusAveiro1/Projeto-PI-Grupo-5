@@ -44,16 +44,18 @@
                         <% if(locals.statusAlteracaoSenha && statusAlteracaoSenha == "sucesso") { %>                            
                             <p  class="msgStatusSucesso">
                                 Senha <strong>atualizada</strong> com sucesso.                                
-                            </p>       
+                            </p>
+                            <br>       
                         <% } %>
 
                         <% if(locals.statusAlteracaoSenha && statusAlteracaoSenha == "erro") { %>                            
                             <p  class="msgStatusErro">
                                 <strong><%=msgErro%>!</strong> O processo não foi concluído!                                
-                            </p>       
+                            </p>  
+                            <br>     
                         <% } %>
 
-                        <br>
+                        
                         
                         <div class="div-alerta-senha">
                             <h2>Atenção - Sua senha é pessoal e intransferível</h2>
