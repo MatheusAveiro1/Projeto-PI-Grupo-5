@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TopSales6</title>    
+
+    <title>TopSales6</title>
+
+    <link rel="shortcut icon" href="/images/fivicon.ico">
+    <!--Fonte / Icons-->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">     
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/base-area-restrita.css">
+    <link rel="stylesheet" href="/stylesheets/alterar-senha.css">
+    
+</head>
+<body>    
+
+    <%- include('./partials/header') %>
+
+    <main>
+        <div class="container">
+            <div class="div-main-config-padrao">
+                <!--Comece aqui!-->
+                <div class="div-area-restrita">
+
+                    <%- include('./partials/menu-lateral-perfil') %>
+                    
+                    <div class="div-info-usuario-principal">
+                        <p class="titulo-alterar-senha">
+                            <span class="material-icons-outlined">lock</span> ALTERAR SENHA
+                        </p> 
+
+                        <% if(locals.statusAlteracaoSenha && statusAlteracaoSenha == "sucesso") { %>                            
+                            <p  class="msgStatusSucesso">
+                                Senha <strong>atualizada</strong> com sucesso.                                
+                            </p>       
+                        <% } %>
+
+                        <% if(locals.statusAlteracaoSenha && statusAlteracaoSenha == "erro") { %>                            
+                            <p  class="msgStatusErro">
+                                <strong><%=msgErro%>!</strong> O processo não foi concluído!                                
+                            </p>       
+                        <% } %>
+
+                        <br>
+                        
+                        <div class="div-alerta-senha">
+                            <h2>Atenção - Sua senha é pessoal e intransferível</h2>
+                            <p>Não basta apenas criar uma boa senha. É preciso também saber cuidar delas e usá-las corretamente, para que possam cumprir a sua função.</p>
+                            <ul>
+                                <li>* Use o bom senso na escolha da senha.</li>
+                                <li>* Não "empreste" a sua senha para ninguém.</li>
+                                <li>* Troque a sua senha periodicamente.</li>
+                                <li>* Troque a senha imediatamente quando necessário.</li>
+                                <li>* Nunca use a mesma senha em outras contas.</li>
+                                <li>* Não reutilize as suas senhas anteriores.</li>
+                                <li>* Use programas de gerenciamento de senhas.</li>
+                            </ul>
+                        </div>
+                        
+                        <form action="/usuario/alterar-senha?_method=PUT" method="POST" class="form-alterar-senha">
+                            <div class="div-senha-atual-principal">                                
+                                <div class="div-senha-atual">
+                                    <label for="senhaAtual">Senha Atual</label>
+
+                                    <% if(locals.dadosPreenchido) {%>
+                                        <input id="senhaAtual" name="senhaAtual" value="<%= locals.dadosPreenchido && dadosPreenchido.senhaAtual %>" type="password" placeholder="Digite dua Senha Atual" >
+                                    <% } else { %>
+                                        <input id="senhaAtual" name="senhaAtual" value="" type="password" placeholder="Digite sua Senha Atual" >
+                                    <% } %> 
+                                    
+                                    <% if(locals.errors && errors.senhaAtual) { %>
+                                        <p class="msg-erro-form-alterar-senha">
+                                            <b><%= errors.senhaAtual.param + ":  " %></b>  <%= errors.senhaAtual.msg %>
+                                        </p>                                        
+                                    <% } %>
+                                
+                                </div>                                
+                            </div>
+
+                            <div class="div-nova-senha-principal">
+                                <div class="div-nova-senha">
+                                    <label for="novaSenha">Nova Senha</label>
+
+                                    <% if(locals.dadosPreenchido) {%>
+                                        <input id="novaSenha" name="novaSenha" value="<%= locals.dadosPreenchido && dadosPreenchido.novaSenha %>" type="password" placeholder="Digite a nova Senha" >
+                                    <% } else { %>
+                                        <input id="novaSenha" name="novaSenha" value="" type="password" placeholder="Digite a nova Senha" >
+                                    <% } %>                                   
+                                    
+                                    <% if(locals.errors && errors.novaSenha) { %>
+                                        <p class="msg-erro-form-alterar-senha"> 
+                                            <b><%= errors.novaSenha.param + ":  " %></b>  <%= errors.novaSenha.msg %>
+                                        </p>                                        
+                                    <% } %> 
+
+                                </div>
+                                <div class="div-confirmacao-senha">
+                                    <label for="confirmacaoNovaSenha">Confirmação da nova Senha</label>
+
+                                    <% if(locals.dadosPreenchido) {%>
+                                        <input id="confirmacaoNovaSenha" name="confirmacaoNovaSenha" value="<%= locals.dadosPreenchido && dadosPreenchido.confirmacaoNovaSenha %>" type="password" placeholder="Confirme a nova senha" >
+                                    <% } else { %>
+                                        <input id="confirmacaoNovaSenha" name="confirmacaoNovaSenha" value="" type="password" placeholder="Confirme a nova senha" >
+                                    <% } %> 
+                                    
+                                    <% if(locals.errors && errors.confirmacaoNovaSenha) { %>
+                                        <p class="msg-erro-form-alterar-senha"> 
+                                            <b><%= errors.confirmacaoNovaSenha.param + ":  " %></b>  <%= errors.confirmacaoNovaSenha.msg %>
+                                        </p>                                        
+                                    <% } %>
+                                
+                                </div>                                
+                            </div>
+
+                            <div class="div-btn-alterar-senha">
+                                <button type="submit">ALTERAR SENHA</button>                                
+                            </div>                             
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <%- //include('./partials/footer') %>
+
+</body>
+</html>

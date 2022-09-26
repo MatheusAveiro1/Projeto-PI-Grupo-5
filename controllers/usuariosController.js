@@ -243,6 +243,54 @@ const controlador = {
       console.log(err)
     }
   },
+  alterarSenha: async (req, res) => {
+    try{      
+      res.render('alterar-senha',{paginaAtual: "alterarSenha", carrinho: req.session.carrinho});
+    }
+    catch (err) {
+      console.log(err)
+    }
+  },
+  ValidaAlterarSenha: async (req, res) => {
+    try{      
+      //Recuperando possiveis erros do form
+      let errors = validationResult(req);
+      //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
+      if (!errors.isEmpty()) {
+        //Retornaremos para page de cadastro com os erros
+        res.render('alterar-senha', { errors: errors.mapped(), paginaAtual: "alterarSenha", carrinho: req.session.carrinho, dadosPreenchido: req.body });
+      } 
+
+      //Recuperando a senha atual digitada
+      let senhaAtual = req.body.senhaAtual;
+      //Recuperando senha do BD
+      let senhaAtualBd = await Usuario.findByPk(req.session.usuarioLogado.id);
+      senhaAtualBd = senhaAtualBd.senha;
+      //Comparando a senha atual digitada com a senha do BD
+      let senhaComparada = bcrypt.compareSync(senhaAtual, senhaAtualBd);
+
+      //Verificando se a senha atual digitada confere com a senha do BD
+      if(senhaComparada){
+        //Recuperando a nova senha digitada
+        let novaSenha = req.body.novaSenha;
+        novaSenha  = bcrypt.hashSync(novaSenha, 10);
+
+        //Alterando a senha no BD        
+        await Usuario.update({
+          senha: novaSenha          
+        },
+        { where: { id: req.session.usuarioLogado.id} });
+
+        res.render('alterar-senha', {paginaAtual: "alterarSenha", carrinho: req.session.carrinho, statusAlteracaoSenha: 'sucesso'});
+      }      
+    }
+    catch (err) {
+      if(err != '') {
+        res.render('alterar-senha', {paginaAtual: "alterarSenha", carrinho: req.session.carrinho, statusAlteracaoSenha: 'erro', msgErro: err});
+      }
+      console.log(err)
+    }
+  },
   cadastro: (req, res)=> {
     res.render ('cadastro',{carrinho: req.session.carrinho})
   },
