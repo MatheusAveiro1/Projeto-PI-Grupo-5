@@ -1,6 +1,6 @@
 //Chamando nosso model
 const { localsName } = require('ejs');
-const {sequelize, Endereco, Pedido, ProdutoHasPedido} = require('../models');
+const {sequelize, Endereco, Pedido, ProdutoHasPedido, Usuario} = require('../models');
 
 const funcoes = {
   
@@ -169,8 +169,55 @@ const controlador = {
         console.log(err);
       }
     },
-    pedidoConcluido: (req, res)=> {    
-      res.render ('pedido-concluido');
+    pedidoConcluido: async (req, res)=> {  
+      
+      try {
+         //Recuperando o número do pedido
+        let numPedido = req.params.pedido;
+        //Recuperando ID do usuário logado
+        let idUsuarioLogado = req.session.usuarioLogado.id;
+      
+        let infoPedido = await Pedido.findOne({
+            where: {
+              id: numPedido,
+              id_usuario: idUsuarioLogado              
+          }
+        })
+        
+        res.render ('pedido-concluido', {paginaAtual: 'pedidoConcluido', infoPedido: infoPedido});
+      }
+
+      catch (err) {
+        console.log(err);
+      }     
+    },
+    gerarBoleto: async (req, res)=> {  
+      
+      try {
+         //Recuperando o número do pedido
+        let numPedido = req.params.pedido;
+        //Recuperando ID do usuário logado
+        let idUsuarioLogado = req.session.usuarioLogado.id;
+        //Recuperando as informações do pedido
+        let infoPedido = await Pedido.findOne({
+            where: {
+              id: numPedido,
+              id_usuario: idUsuarioLogado              
+          }
+        })
+        //Recuperando informações do usuário
+        let infoUsuario = await Usuario.findByPk(idUsuarioLogado,{
+          include:[
+            'usuario_endereco'
+          ],
+        })
+                
+        res.render ('boleto', {infoPedido: infoPedido, infoUsuario: infoUsuario});
+      }
+
+      catch (err) {
+        console.log(err);
+      }     
     }
   }
   
