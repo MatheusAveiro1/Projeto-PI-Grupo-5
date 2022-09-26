@@ -211,8 +211,27 @@ const controlador = {
             'usuario_endereco'
           ],
         })
-                
-        res.render ('boleto', {infoPedido: infoPedido, infoUsuario: infoUsuario});
+
+        let dataRegistroPedido = "";
+        let dataRegistroPedidoBoleto = "";
+        
+        if (infoPedido != null) {
+          //Convertendo a hora que o pedido foi registrado       
+          function getDateTime(date) {
+            const moment = require('moment');
+            return moment(date).format('DD/MM/YYYY');
+          } 
+          dataRegistroPedido = getDateTime(infoPedido.datahora);
+          
+          //Convertendo a hora que o pedido foi registrado para gerar a data de vencimento do boleto
+          function getDateBoleto(date) {
+            const moment = require('moment');
+            return moment(date).format('YYYY,MM,DD');
+          } 
+          dataRegistroPedidoBoleto = getDateBoleto(infoPedido.datahora);
+        }
+                        
+        res.render ('boleto', {infoPedido: infoPedido, infoUsuario: infoUsuario, dataRegistroPedido: dataRegistroPedido, dataRegistroPedidoBoleto: dataRegistroPedidoBoleto});
       }
 
       catch (err) {
