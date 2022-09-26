@@ -16,49 +16,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">    
     <!--CSS-->
     <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/barra-progresso-pedido.css">
+    <link rel="stylesheet" href="/stylesheets/checkout.css">
     <link rel="stylesheet" href="/stylesheets/pedido_concluido.css">
 </head>
 <body>    
     
     <%- include('./partials/header') %>
     
+    <div class="container">
+        <div class="div-main-config-padrao">
+            <!--Comece aqui!-->
+            <%- include('./partials/barra-progresso-pedido') %>
 
-    <main>
-        <div class="container">
-            <div class="div-main-config-padrao">
-                <!--Comece aqui!-->
-                
-            </div>
+            <main class="main-checkout">
+
+                <% if(infoPedido && infoPedido != null){ %> 
+
+                    <div class="div-pedido-concluido">
+                        <div class = "div-info-pedido-concluido">
+                            <p class="msg-pedido-concluido">                            
+                                Seu pedido foi realizado com sucesso!
+                            </p>
+                                                    
+                            <p class="num-pedido">Pedido #<%= infoPedido.id %> </p>
+                            <p class="prazo-pedido">*Os produtos serão enviados em até 7 dias úteis após a confirmação do pagamento</p>
+
+                            <a href = "/usuario/perfil" class="btn-ver-pedido" > VER PEDIDO </a>
+                            
+                            <a href = "/" class="btn-continuar-comprando">
+                                <span class="material-icons-outlined">shopping_cart</span>
+                                    Continuar Comprando
+                                </a>
+                        </div>
+        
+                        <div class = "div-metodo-pagamento-pedido-concluido">                        
+                            <h2>Forma de Pagamento - Boleto Bancário</h2>
+                            <p>O seu Boleto vencerá em três dias!</p>
+
+                            <a href="/checkout/gerar-boleto/<%= infoPedido.id %>" target="_blank">
+                                <span class="material-icons-outlined">file_download</span>
+                                Gerar Boleto
+                            </a>
+                        </div>
+                    </div>
+
+                <% } else { %>
+                    <div class="div-pedido-concluido"> 
+                        <span class="material-icons-outlined icon-alerta">warning</span>                                               
+                        <p class="msg-pedido-nao-encontrado">                                                   
+                            Não encontramos seu pedido!
+                        </p>                        
+                    </div>
+                <% } %> 
+
+                <h2 class="saudacao-topsales">
+                    TopSales Agradece
+                    <span class="material-icons-outlined">emoji_emotions</span>
+                </h2>
+            </main>
+
+            
+            
         </div>
-    </main>
-
-
-    <main class = "main-pedido-concluido">
-        <section class = "conteudo">
-                <div class = "div-pedido-concluido">
-                    <p class = pedido-concluido> PEDIDO CONCLUÍDO </p>
-                    <br>
-                    <p class = realizado-com-sucesso> Seu pedido foi realizado com sucesso! </p>
-                    <br>
-                    <p class = informacoes-pedido>Número do pedido: <br>
-                        Total: <br>
-                        Forma de pagamento: Boleto <br>
-                        Endereço de entrega: <br>
-                        <br>
-                        <br>
-                        *Os produtos serão enviados em até 3 dias úteis após a confirmação do pagamento
-                        <br>
-                        <br>
-                    </p>
-                <div class = btn-gerar-boleto>
-                   <a href = "#" > GERAR BOLETO </a>
-                </div>
-            </div>
-        </section>
-    </main>
+    </div>        
 
     <%-include('./partials/footer')%>
 
-   
 </body>
 </html>

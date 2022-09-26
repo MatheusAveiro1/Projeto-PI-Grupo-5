@@ -1,68 +1,160 @@
 /*@Nathaly*/
 
-/*** Main ***/
-
-/************/
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-size: 1rem;
-    font-family: 'Rajdhani', sans-serif;
-}
-
-main .main-pedido-concluido {
+.main-checkout {
     display: flex;
+    flex-direction: column;
 }
 
-main .conteudo {
+.div-pedido-concluido {
     display: flex;
-    margin: 5px;
-    margin-bottom: 20px;
-    justify-content: center;
-    box-shadow: 2px 1px 5px 2px #888;
-}
-
-main .conteudo .div-pedido-concluido {
-    justify-items: center;
-    font-weight: bold;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
     width: 100%;
+}
+
+.div-info-pedido-concluido {
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.div-info-pedido-concluido .msg-pedido-concluido {    
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.div-info-pedido-concluido .num-pedido {
+    font-size: 1.5rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.div-info-pedido-concluido .prazo-pedido {
+    font-size: 0.875rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.div-info-pedido-concluido .btn-ver-pedido {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
+    background-color: #009432;
+    width: 150px;
+    text-decoration: none;
+    border-radius: 7px; 
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px; 
+    transition: 0.3s;  
 }
 
-main .pedido-concluido {
-    text-align: center;
-    background-color: rgb(233, 231, 227);
+.div-info-pedido-concluido .btn-ver-pedido:hover {
+    background-color: #007a29;
+}
+
+.div-info-pedido-concluido .btn-continuar-comprando {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #555;
+    transition: 0.3s;
+}
+.div-info-pedido-concluido .btn-continuar-comprando:hover {    
+    color: #000;    
+}
+.div-info-pedido-concluido .btn-continuar-comprando span {
+    margin-right: 5px;
+}
+
+
+.div-metodo-pagamento-pedido-concluido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    padding: 30px;
+    border-radius: 7px;
+    margin-top: 30px;
+}
+
+.div-metodo-pagamento-pedido-concluido h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 1.25rem;
+}
+
+.div-metodo-pagamento-pedido-concluido p {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 00.875rem;
+}
+
+.div-metodo-pagamento-pedido-concluido a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
-}
-
-main .realizado-com-sucesso {
-    text-align: center;
-}
-
-main .informacoes-pedido {
-    text-align: left;
-}
-
-main .btn-gerar-boleto {
-    text-align: center;
-    background-color: rgb(233, 231, 227);
-    padding: 10px;
-    border-bottom: 20px;
-    cursor: pointer;
+    background-color: #ff5722;
+    width: 150px;
+    text-decoration: none;
+    border-radius: 7px; 
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #fff;
     transition: 0.3s;
 }
 
-main .main-pedido-concluido .btn-gerar-boleto :hover {
-    background-color: #ed7d31;
+.div-metodo-pagamento-pedido-concluido a span {
+    margin-right: 5px;
 }
 
-
-a:link {
-    color: black;
-    text-decoration: none;
+.msg-pedido-nao-encontrado {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-top: 20px;
+    text-transform: uppercase;
+    color: #333;
+}
+.icon-alerta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    font-size: 4rem;   
+    color: #777;
 }
 
+.saudacao-topsales {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;    
+    margin-top: 80px;
+    margin-bottom: 40px;
+    font-size: 1.75rem;
+    color: #bbb;
+}
+
+.saudacao-topsales span {
+    font-size: 3rem;
+    margin-left: 10px;
+}
 
 /******************* @media ****************************/
 
@@ -80,9 +172,19 @@ a:link {
 }
 
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
     /*** Main ***/
+    .div-pedido-concluido {        
+        flex-direction: row;        
+    }
 
+    .div-info-pedido-concluido {
+        width: 48%;        
+    }
+
+    .div-metodo-pagamento-pedido-concluido {        
+        width: 48%;        
+    }
     /************/
 }
 

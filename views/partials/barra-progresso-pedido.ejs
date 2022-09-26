@@ -72,6 +72,24 @@
             <span class="span-barra-progresso-pedido-editando material-icons-outlined">done_outline</span>                        
         </li>  
     <% } %>
+
+    <% if(locals.paginaAtual && paginaAtual == 'pedidoConcluido'){ %>
+        <li class="li-barra-progresso-pedido-concluido">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">shopping_cart</span>
+        </li> 
+        <li class="li-barra-progresso-pedido-concluido">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">lock</span>
+        </li>
+        <li class="li-barra-progresso-pedido-concluido">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">location_on</span>
+        </li>
+        <li class="li-barra-progresso-pedido-concluido">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">attach_money</span>
+        </li>
+        <li class="li-barra-progresso-pedido-concluido">
+            <span class="span-barra-progresso-pedido-concluido material-icons-outlined">done_outline</span>                        
+        </li>  
+    <% } %>
     
     
 
@@ -100,6 +118,13 @@
         <% } %> 
 
         <% if(locals.paginaAtual && paginaAtual == 'checkoutConfirmacaoPedido'){ %>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+            <div class="div-linha-progersso-concluido div-linha-progersso"></div>
+        <% } %>
+
+        <% if(locals.paginaAtual && paginaAtual == 'pedidoConcluido'){ %>
             <div class="div-linha-progersso-concluido div-linha-progersso"></div>
             <div class="div-linha-progersso-concluido div-linha-progersso"></div>
             <div class="div-linha-progersso-concluido div-linha-progersso"></div>
