@@ -10,10 +10,15 @@ const usuarioNaoLogadoMiddleware = require('../middlewares/usuarioNaoLogadoMiddl
 const usuarioLogadoMiddleware = require('../middlewares/usuarioLogadoMiddleware');
 const validaEnderecoMiddlewares = require('../middlewares/validaEnderecoMiddlewares');
 const validaAtualizacaoMeusDadosMiddlewares = require('../middlewares/validaAtualizacaoMeusDadosMiddlewares');
+const validaAlterarSenha = require('../middlewares/validaAlterarSenha');
 
 //rota get e post da pagina de login
 router.get('/login',usuarioLogadoMiddleware, usuariosController.login); 
-router.post('/login',validaLogin, usuariosController.validaLogin); 
+router.post('/login',usuarioLogadoMiddleware, validaLogin, usuariosController.validaLogin); 
+
+//rota post da pagina altarar senha
+router.get('/alterar-senha', usuarioNaoLogadoMiddleware, usuariosController.alterarSenha); 
+router.put('/alterar-senha', usuarioNaoLogadoMiddleware, validaAlterarSenha, usuariosController.ValidaAlterarSenha); 
 
 //rota get e post da pagina de cadastro
 router.get('/cadastro',usuarioLogadoMiddleware, usuariosController.cadastro);

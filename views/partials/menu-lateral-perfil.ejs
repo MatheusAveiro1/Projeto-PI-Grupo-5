@@ -5,7 +5,7 @@
         let paginaMeusDados = '';
         let paginaEnderecos = '';
         let paginaMeusPedidos = '';
-
+        let paginaAlterarSenha = '';
 
         switch (paginaAtual) {
             case "perfil":
@@ -19,6 +19,9 @@
                 break;
             case  "meusPedidos":
                 paginaMeusPedidos =  'pagina-ativa';
+                break;
+            case  "alterarSenha":
+                paginaAlterarSenha =  'pagina-ativa';
                 break;
         }       
     %>
@@ -46,6 +49,12 @@
             <a href="/usuario/enderecos" class="<%= paginaEnderecos %>">
                 <span class="material-icons-outlined">location_on</span>
                 Endereço
+            </a>
+        </li>                           
+        <li>
+            <a href="/usuario/alterar-senha" class="<%= paginaAlterarSenha %>">
+                <span class="material-icons-outlined">lock</span>
+                Alterar Senha
             </a>
         </li>                           
     </ul>

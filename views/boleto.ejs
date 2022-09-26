@@ -2,6 +2,8 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <style>
         body {
@@ -152,7 +154,26 @@
     </div>
     <br/> -->
 
-    <% if(infoPedido && infoPedido != null){ %>
+    <%  
+        //Função que adiciona dia(s) em uma data
+        function addDaysToDate(data, dias){
+            let res = new Date(data);
+            res.setDate(res.getDate() + dias);
+            return res;
+        }
+        let data = new Date();
+        let tmpDate = new Date(dataRegistroPedidoBoleto); // Data que o pedido foi registrato
+        let newDate = addDaysToDate(tmpDate, 3);                            
+
+        let dataVencimento = new Date(newDate);
+        dataVencimento = dataVencimento.getDate() + '/' + (dataVencimento.getMonth() + 1) + '/' + dataVencimento.getFullYear();
+
+        let dataAtual = new Date();
+        dataAtual = dataAtual.getDate() + '/' + (dataAtual.getMonth() + 1) + '/' + dataAtual.getFullYear();
+        
+    %>
+
+    <% if(infoPedido && infoPedido != null && dataAtual <= dataVencimento){ %>
 
         <div class="document">
             <table cellspacing="0" cellpadding="0">
@@ -176,24 +197,8 @@
                         <span class="title">Data de Vencimento</span>
                         <br/>
                         <br/>
-                        <p class="content right text" style="font-weight:bold;">
-                            <%  
-                                //Função que adiciona dia(s) em uma data
-                                function addDaysToDate(data, dias){
-                                    let res = new Date(data);
-                                    res.setDate(res.getDate() + dias);
-                                    return res;
-                                }
-                                let data = new Date();
-                                let tmpDate = new Date(data.getFullYear(), data.getMonth(), data.getDate()); // Data atual
-                                let newDate = addDaysToDate(tmpDate, 3);                            
-
-                                let dataVencimento = new Date(newDate);
-                                dataVencimento = dataVencimento.getDate() + '/' + (dataVencimento.getMonth() + 1) + '/' + dataVencimento.getFullYear();
-                            %>
-                                
-                            <%= dataVencimento %>                 
-                        
+                        <p class="content right text" style="font-weight:bold;"> 
+                            <%= dataVencimento %>
                         </p>
                     </td>
                 </tr>
@@ -222,12 +227,8 @@
                     <td width="15%">
                         <span class="title">Data do Documento</span>
                         <br/>
-                        <p class="content center">
-                            <%  data = new Date();
-                                dataAtual = data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear();
-                            %>
-                            
-                            <%= dataAtual %> 
+                        <p class="content center">                                                        
+                            <%= dataRegistroPedido %> 
                         </p>
                     </td>
                     <td width="17%" colspan="2">
@@ -249,12 +250,8 @@
                         <span class="title">Data Processamento</span>
                         <br/>
                         <p class="content center">
-                            <p class="content center">
-                                <%  data = new Date();
-                                    dataAtual = data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear();
-                                %>
-                                
-                                <%= dataAtual %> 
+                            <p class="content center">                         
+                                <%= dataRegistroPedido %>
                             </p>
                         </p>
                     </td>
@@ -370,17 +367,7 @@
                         <span class="title">Data de Vencimento</span>
                         <br/>
                         <br/>
-                        <p class="content right text" style="font-weight:bold;">
-                            <%  
-                                //Função que adiciona dia(s) em uma data                                
-                                data = new Date();
-                                tmpDate = new Date(data.getFullYear(), data.getMonth(), data.getDate()); // Data atual
-                                newDate = addDaysToDate(tmpDate, 3);                            
-
-                                dataVencimento = new Date(newDate);
-                                dataVencimento = dataVencimento.getDate() + '/' + (dataVencimento.getMonth() + 1) + '/' + dataVencimento.getFullYear();
-                            %>
-                                
+                        <p class="content right text" style="font-weight:bold;">                                                           
                             <%= dataVencimento %>   
                         </p>
                     </td>
@@ -411,17 +398,13 @@
                         <span class="title">Data do Documento</span>
                         <br/>
                         <p class="content center">
-                            <%  data = new Date();
-                                dataAtual = data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear();
-                            %>
-                                
-                            <%= dataAtual %> 
+                            <%= dataRegistroPedido %>
                         </p>
                     </td>
                     <td width="17%" colspan="2">
                         <span class="title">Num. do Documento</span>
                         <br/>
-                        <p class="content center">1</p>
+                        <p class="content center"><%= infoPedido.id %></p>
                     </td>
                     <td width="10%">
                         <span class="title">Espécie doc</span>
@@ -437,11 +420,7 @@
                         <span class="title">Data Processamento</span>
                         <br/>
                         <p class="content center">
-                            <%  data = new Date();
-                                dataAtual = data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear();
-                            %>
-                                
-                            <%= dataAtual %> 
+                            <%= dataRegistroPedido %>
                         </p>
                     </td>
                     <td width="30%">
@@ -541,8 +520,17 @@
         </div>
 
     <% } else { %>
-        <h1>Não foi possível gerar o Boleto!</h1>
-        <a href="/">Voltar para Home</a>
+        <div style="padding: 30px 60px;">
+            <img src="/images/logo.svg" alt="Imagem do logo TopSales6" style="width: 200px;">
+            <h1>Não foi possível gerar o Boleto!</h1>
+            <p style="color: red; margin-bottom: 40px;"><b>Pedido não encontrado ou Boleto vencido.</b></p>
+            <a href="/" style="text-decoration: none;
+                                background-color: #FF914D;
+                                color: #fff;
+                                padding: 10px;
+                                font-weight: bold;
+                                border-radius: 7px;">Voltar ao Site</a>
+        </div>
     <% } %>
 
 </body>

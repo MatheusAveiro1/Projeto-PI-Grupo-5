@@ -1,0 +1,136 @@
+.msg-erro-form-alterar-senha {
+    margin-top: 10px;
+    margin-left: 10px;   
+    font-size: 0.875rem;
+    color: #c0392b; 
+}
+
+.msg-erro-form-alterar-senha b {
+    font-size: 0.875rem;
+    text-transform: capitalize;
+}
+
+.titulo-alterar-senha {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.titulo-alterar-senha span {
+    margin-right: 5px;
+    font-size: 2rem;
+}
+
+
+.div-alerta-senha {
+    padding: 20px;
+    margin: 5px 0;
+    border: 1px solid #eee;    
+    border-left-width: 5px;
+    border-left-color: #ce4844; 
+    border-radius: 3px;
+    margin-bottom: 40px ;
+    padding: 30px;
+}
+
+.div-alerta-senha h2 {
+    color: #ce4844;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+}
+
+.div-alerta-senha p {   
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.div-alerta-senha ul {   
+    list-style: none;
+}
+
+.div-alerta-senha ul li {   
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+
+
+.form-alterar-senha {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-alterar-senha .div-senha-atual-principal {    
+    margin-bottom: 0;        
+}
+
+.form-alterar-senha div {
+    margin-bottom: 25px;
+}
+
+.form-alterar-senha div label {
+    font-size: 0.875rem;
+}
+
+.form-alterar-senha div input {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 7px;
+}
+
+.form-alterar-senha div input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-alterar-senha div input::-moz-placeholder { /* Firefox 19+ */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-alterar-senha div input:-ms-input-placeholder { /* IE 10+ */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-alterar-senha div input:-moz-placeholder { /* Firefox 18- */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.form-alterar-senha .div-btn-alterar-senha button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #00A000;
+    border-radius: 7px;
+    color: #fff;
+    background-color: #00A000;
+    font-size: 0.75rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.form-alterar-senha .div-btn-alterar-senha button:hover {   
+    background-color: #008900;   
+}
+
+@media (min-width: 769px) {
+    .form-alterar-senha .div-nova-senha-principal {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .form-alterar-senha .div-nova-senha-principal .div-nova-senha, .form-alterar-senha .div-nova-senha-principal .div-confirmacao-senha {
+        width: 49%;
+    }
+    
+}
