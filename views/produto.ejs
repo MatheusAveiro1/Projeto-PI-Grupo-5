@@ -51,14 +51,16 @@
                                     </div>
                                     <div class="valor-produto">
                                         <p class="valor-anterior" > De: <span style="text-decoration: line-through"> <%= produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </span> por:</p>
-                                        <p class="valor-atual"> <%= ((produto.preco / 10 ) * 9).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista</p>
+                                        <p class="valor-atual"> <%= ((produto.preco / 10 ) * 9.5).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista</p>
                                         <p class="valor-parcelado"> 12x de <%= (produto.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %></p>
                                     </div>
 
                                     <button class="button-produto">
 
-                                        <span class="material-icons-outlined">shopping_cart</span>
-                                        Comprar
+                                        <a class="linkCarrinho" href="/carrinho?idProd=<%=produto.id%>">        
+                                            <span class="material-icons-outlined">shopping_cart</span>
+                                            Comprar
+                                        </a>
                                     </button> 
 
                                 
@@ -91,7 +93,7 @@
 
                         
                          %>
-                    <section class="produto">
+                    <section class="produto" onclick="location.href='/produto/<%= produtosRelacionado.id %>' ">
                         <div class="img-produto">
                             <img src="/images/produtos/<%= produtosRelacionado.img %>" alt="">
                         </div>
@@ -102,14 +104,16 @@
                             <p class="valor-anterior">De: <span style="text-decoration: line-through"> <%= produtosRelacionado.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </span> </p>
                         </div>
                         <div class="valor-atual">
-                            <p class="valor-atual"> <%= ((produtosRelacionado.preco / 10 ) * 9).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista </p>
+                            <p class="valor-atual"> <%= ((produtosRelacionado.preco / 10 ) * 9.5).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> à vista </p>
                         </div>
                         <div class="valor-parcelado">
                             <p class="valor-parcelado"> 12x de <%= (produtosRelacionado.preco / 12).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </p>
                         </div>
-                        <button class="button-produto">
+                        <button class="button-produto"> 
+                            <a class="linkCarrinho" href="/carrinho?idProd=<%=produtosRelacionado.id%>">
                             <span class="material-icons-outlined" > shopping_cart</span>
                             Comprar
+                            </a>
                         </button>
 
 
