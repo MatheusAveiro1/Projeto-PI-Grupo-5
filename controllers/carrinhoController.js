@@ -6,6 +6,9 @@ const controlador = {
       try{
 
         if(req.query.idProd) {
+
+          console.log('>>>>>> query OK >>>>>>>>>');
+
           //Recuperar o ID do Produto
           let idProduto = req.query.idProd;
 
@@ -21,7 +24,11 @@ const controlador = {
           infoProduto = infoProduto.dataValues;
 
           //Verificando se a sessão "carrinho" existe
-          if(req.session.carrinho){           
+          if(req.session.carrinho){  
+            
+            console.log('>>>>>>> Sessão carrinho existe >>>>>>>>');
+            console.log(req.session.carrinho);
+
             //Criando variavel para conter a informação se o produto existe ou não no carrinho 
             let produtoPesquisado = '';
             //Pesquisando se o produto existe ou não no carrinho
@@ -37,12 +44,18 @@ const controlador = {
             if(!produtoPesquisado){
               infoProduto.qt = 1;
               req.session.carrinho.push(infoProduto);
+
+              console.log('>>>>>>> Produto adicionado no carrinho >>>>>>>>');
+              console.log(req.session.carrinho);
             }
 
-          } else {
+          } else {            
             req.session.carrinho = []; 
             infoProduto.qt = 1;           
-            req.session.carrinho.push(infoProduto);
+            req.session.carrinho.push(infoProduto);            
+
+            console.log('>>>>>>> Sessão carrinho criada >>>>>>>>');
+            console.log(req.session.carrinho);
           }           
 
           res.render ('carrinho',{carrinho: req.session.carrinho, paginaAtual: 'carrinho'});
@@ -60,6 +73,8 @@ const controlador = {
     adicionarQtNoItem: (req, res)=>{
       //Recupera o ID do produto que será adicionado 1 na qt
       let itemParaAdicionarQt = req.params.id;
+
+      console.log(req.session.carrinho);
 
       //Adicionando 1 na QT do item
       for(let i = 0; i < req.session.carrinho.length; i++) {

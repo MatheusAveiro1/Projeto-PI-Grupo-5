@@ -26,13 +26,13 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey:'id_marca'
         });
 
-        // Produto.belongsToMany(models.Pedido,{
-        //     as:'produto_pedido',
-        //     through:'produtos_has_pedidos',
-        //     foreignKey:'produtos_id',
-        //     otherKey:'pedidos_id',
-        //     timestamps: false
-        // })   
+        Produto.belongsToMany(models.Pedido,{
+            as:'produto_pedido',
+            through:'produtos_has_pedidos',
+            foreignKey:'produtos_id',
+            otherKey:'pedidos_id',
+            timestamps: false
+        });   
     } 
 
     return Produto;

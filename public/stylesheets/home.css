@@ -103,6 +103,22 @@
         font-size: 1.25rem;
         margin-right: 5px;
     }
+
+    .div-sem-produtos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .div-sem-produtos span {
+        font-size: 5rem;
+        color: #ccc; 
+        margin-bottom: 30px;       
+    }
+    .div-sem-produtos h1{
+        font-size: 1.75rem;
+        color: #bbb;
+        margin-bottom: 30px;
+    }
 /************/
 
 

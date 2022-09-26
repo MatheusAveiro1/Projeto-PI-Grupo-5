@@ -13,7 +13,7 @@
 
     <div class="div-subtotal">
         <p>Subtotal</p>
-        <p><%= subTotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+        <p><%=  ((subTotal / 10) * 9.5).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
     </div>
 
     <div class="div-disconto">
@@ -30,7 +30,7 @@
     
     <div class="div-total-para-pagar">
         <p>Total</p>
-        <p><%= (subTotal + valorFrete + valorDesconto).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
+        <p><%= (((subTotal / 10) * 9.5) + valorFrete + valorDesconto).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %></p>
     </div>
 
     <div class="div-total-a-vista-pagar">        
@@ -46,10 +46,16 @@
     <% } %>
 
     <% if(locals.paginaAtual && paginaAtual == 'checkoutConfirmacaoPedido'){ %> 
-        <a href="" class="btn-finalizar-pedido">
-            FINALIZAR COMPRA
-            <span class="material-icons-outlined">check_circle</span>
-        </a>
+        <form action="/checkout/checkout-gravar-pedido" method="POST">
+
+            <input type="hidden" name="gravarPedido" value="true">
+
+            <button type="submit" class="btn-finalizar-pedido">
+                FINALIZAR COMPRA
+                <span class="material-icons-outlined">check_circle</span>
+            </button>
+        </form>
+        
     <% } %>
 
     

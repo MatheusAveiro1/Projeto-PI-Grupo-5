@@ -77,6 +77,29 @@
     margin-bottom: 30px;
 }
 
+.btn-pag-perfil-ir-as-compras {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3482b6;
+    padding: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 7px;
+    box-shadow: 2px 1px 6px 3px #888;
+    transition: 0.3s;
+}
+.btn-pag-perfil-ir-as-compras:hover {
+    background-color: #388cc4;
+    box-shadow: 3px 2px 10px 4px #888;
+}
+
+.btn-pag-perfil-ir-as-compras span {
+        margin-right: 10px;
+        font-size: 2rem;
+}
+
 /*** Tabela Pedido ***/
 .div-area-restrita .div-ultimo-pedido .tabela-pedido {
     display: flex;
@@ -105,24 +128,54 @@
     display: flex;
     flex-direction: column;
 }
-
 .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega {
     margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
 }
-
 .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega .titulo-end {
     font-size: 0.75rem;
     font-weight: bold;
     margin-bottom: 15px;
 }
-
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega .nome-destinatario {
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #333;    
+}
 .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega p {
-    font-size: 0.688rem;    
-    margin-bottom: 10px;
+    font-size: 0.75rem;    
+    margin-bottom: 5px;
+}
+
+
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-transportadora {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-transportadora .titulo-trans {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 15px;
+}
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-transportadora .nome-trans {
+    font-size: 0.75rem; 
+    font-weight: bold; 
+    color: #333;  
+    margin-bottom: 5px;
+}
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-transportadora p {
+    font-size: 0.75rem;
+    font-weight: bold; 
+    color: #777;   
+    margin-bottom: 5px;
 }
 
 /*** Card ****************/
-.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-produto .titulo-produto {
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .titulo-produto {
     font-size: 0.75rem;
     font-weight: bold;
     margin-bottom: 20px;
@@ -134,7 +187,7 @@
 }
 
 .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-produto .card .div-card-img-infos figure img {
-    width: 120px;
+    width: 60px;
     margin-bottom: 15px;
 }
 
@@ -161,8 +214,15 @@
     font-size: 0.813rem;    
     color: #333;    
     font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-produto .card .div-card-img-infos .card-infos .card-qt-produto {
+    font-size: 0.813rem;    
+    color: #777;   
     margin-bottom: 20px;
 }
+
 /**********************/
 
 .div-ultimo-pedido .btn-ver-todos-pedidos {
@@ -238,46 +298,30 @@
         font-weight: normal;
     }
 
-    .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto {        
+    .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-produtos {        
+        display: flex;
         flex-direction: row;
-    }
-
-    .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega {
-        margin-right: 80px;
-    }
-
-    .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-produto .card .div-card-img-infos figure img{
-        width: 120px;
-    }
-}
-
-
-@media (min-width: 900px) {
-    .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega {
-        margin-right: 40px;
-    }
-
-    .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-produto .card .div-card-img-infos figure img{
-        width: 77px;
-    }
-}
-
-
-@media (min-width: 1024px) {     
-    .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega {
+        flex-wrap: wrap;        
+    } 
+    
+    .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-produtos .div-produto {
         margin-right: 60px;
     }
+}
 
-    .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-produto .card .div-card-img-infos figure img{
-        width: 150px;
-    }
+
+@media (min-width: 900px) { 
+    
+}
+
+
+@media (min-width: 1024px) {
+    
 }
 
 
 @media (min-width: 1280px) { 
-    .div-area-restrita .div-ultimo-pedido .div-end-entrega-produto .div-end-entrega {
-        margin-right: 150px;
-    }
+    
 }
 
 

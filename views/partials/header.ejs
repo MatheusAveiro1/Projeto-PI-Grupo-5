@@ -35,7 +35,7 @@
                         <% } %>
                             
                         <li>
-                            <a id="" href="#">
+                            <a href="/central-de-atendimento">
                                 <span class="material-icons-outlined">headset_mic</span>
                                 Central de Atendimento
                             </a>
@@ -51,16 +51,16 @@
                             </a>
 
                             <ul class="submenu-departamentos-mobile">
-                                <li><a href="#">Notebook</a></li>   
-                                <li><a href="#">Smartphone</a></li>   
-                                <li><a href="#">Desktop</a></li>   
-                                <li><a href="#">Hardware</a></li>    
-                                <li><a href="#">Tablet</a></li>                               
-                                <li><a href="#">Periféricos</a></li>   
-                                <li><a href="#">Eletrônicos</a></li>                             
-                                <li><a href="#">All In One</a></li>                             
-                                <li><a href="#">Cadeira Gamer</a></li>                             
-                                <li><a href="#">Geek</a></li>                             
+                                <li onclick="location.href='/produtosPorCategoria/1';"><a>Notebook</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/2';"><a>Smartphone</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/3';"><a>Desktop</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/4';"><a>Hardware</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/5';"><a>Tablet</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/6';"><a>Periféricos</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/7';"><a>Eletrônicos</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/8';"><a>All In One</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/9';"><a>Cadeira Gamer</a></li>
+                                <li onclick="location.href='/produtosPorCategoria/10';"><a>Geek</a></li>
                             </ul>
                         </li>
                         
@@ -94,7 +94,7 @@
                         <% }%>                        
 
                         <li>
-                            <a href="#"><span class="material-icons-outlined imgBtnMenuNav">headset_mic</span>Central de Atendimento</a>
+                            <a href="/central-de-atendimento"><span class="material-icons-outlined imgBtnMenuNav">headset_mic</span>Central de Atendimento</a>
                         </li>                                                   
                     </ul>
                 </div>
@@ -123,32 +123,32 @@
                     <button class="btn-departamentos">
                         <span class="material-icons-outlined">menu</span> DEPARTAMENTOS
                         <ul class="submenu-departamentos">
-                            <li class="submenu-departamentos-li-pc-gamer">
+                            <!--li class="submenu-departamentos-li-pc-gamer">
                                 <a href="#">Notebook</a>
-                                <!--span class="material-icons-outlined">navigate_next</span>
+                                <span class="material-icons-outlined">navigate_next</span>
                                 <ul class="submenu-pc-gamer">
                                     <li><a href="#">Fast White</a></li>
                                     <li><a href="#">Red Force</a></li>
-                                </ul-->
-                            </li>
-                            
-                            <li><a href="#">Smartphone</a></li>   
-                            <li><a href="#">Desktop</a></li>   
-                            <li><a href="#">Hardware</a></li>    
-                            <li><a href="#">Tablet</a></li>                               
-                            <li><a href="#">Periféricos</a></li>   
-                            <li><a href="#">Eletrônicos</a></li>                             
-                            <li><a href="#">All In One</a></li>                             
-                            <li><a href="#">Cadeira Gamer</a></li>                             
-                            <li><a href="#">Geek</a></li> 
-
+                                </ul>
+                            </li-->                            
+                                
+                            <li onclick="location.href='/produtosPorCategoria/1';"><a>Notebook</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/2';"><a>Smartphone</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/3';"><a>Desktop</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/4';"><a>Hardware</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/5';"><a>Tablet</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/6';"><a>Periféricos</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/7';"><a>Eletrônicos</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/8';"><a>All In One</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/9';"><a>Cadeira Gamer</a></li>
+                            <li onclick="location.href='/produtosPorCategoria/10';"><a>Geek</a></li>
                         </ul>
                         <span class="material-icons-outlined btn-departamentos-seta-para-baixo">arrow_drop_down</span>
                     </button>                        
                 </div>
                 <div class="div-barra-pesquisa">
-                    <form action="#" method="POST">
-                        <input class="barra-pesquisa" type="text" name="pesquisa-produto" placeholder="PESQUISE SEU PRODUTO">
+                    <form action="/produtosPorPesquisa" method="GET">
+                        <input class="barra-pesquisa" type="text" name="produtoPesquisado" placeholder="PESQUISE SEU PRODUTO">
                         <span class="material-icons-outlined icon-lupa">search</span>
                     </form>
                 </div>                    

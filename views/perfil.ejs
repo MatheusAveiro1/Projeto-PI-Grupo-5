@@ -30,6 +30,7 @@
                 <div class="div-area-restrita">
                     <%- include('./partials/menu-lateral-perfil') %>
                     <div class="div-info-usuario-principal">
+
                         <div class="div-info-acesso">
                             <div class="div-info-avatar">
 
@@ -41,60 +42,100 @@
                                     <p class="email-usuario"><%= usuarioLogado.email %></p>
                                 </div>
                             </div>
-
                             
                             <a class="btn-alterar-senha" href="">
                                 <span class="material-icons">lock</span> ALTERAR SENHA
                             </a>
                         </div>
-                        <div class="div-ultimo-pedido">
-                            <p class="titulo-ultimo-pedido">ÚLTIMO PEDIDO REALIZADO</p>
-                            <table class="tabela-pedido">
-                                <thead>
-                                    <tr>
-                                        <th>NÚMERO DO PEDIDO</th>
-                                        <th>STATUS</th>
-                                        <th>DATA</th>
-                                        <th>PAGAMENTO</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>#36524</td>
-                                        <td style="color: #C60C0C;">CANCELADO</td>
-                                        <td>05/04/2022</td>
-                                        <td>BOLETO</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="div-end-entrega-produto">
-                                <div class="div-end-entrega">
-                                    <p class="titulo-end">ENDEREÇO DA ENTREGA</p>
-                                    <p>RUA NOVO HORIZONTE DO BELO PARAÍSO</p>
-                                    <p>NÚMERO 456, VALE DA SORTE</p>
-                                    <p>CEP 8429554 - SÃO PAULO, SP</p>
-                                </div>
-                                <div class="div-produto">
+
+                        <% if(locals.ultimoPedido && ultimoPedido != ""){ %> 
+
+                            <div class="div-ultimo-pedido">
+                                <p class="titulo-ultimo-pedido">ÚLTIMO PEDIDO REALIZADO</p>
+                                <table class="tabela-pedido">
+                                    <thead>
+                                        <tr>
+                                            <th>PEDIDO</th>
+                                            <th>DATA</th>
+                                            <th>MÉTODO</th>
+                                            <th>TOTAL</th>
+                                            <th>STATUS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td># <%= ultimoPedido[0].id %> </td>
+                                            <td> <%= datahoraPedido %>  </td>
+                                            <td> <%= ultimoPedido[0].metodo_pagamento %> </td>
+                                            <td> <%= ultimoPedido[0].preco_total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </td>
+                                            <td> 
+                                                <span style="background-color: #9a6700;color: #fff; font-size: 0.7rem;padding: 3px;border-radius: 4px;"> 
+                                                    <%= ultimoPedido[0].status %>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="div-end-entrega-produto">
+                                    <div class="div-end-entrega">
+                                        <p class="titulo-end">ENDEREÇO DA ENTREGA</p>
+
+                                        <% let novoEndereco = ultimoPedido[0].endereco.split(','); %> 
+
+                                        <p class="nome-destinatario"><%= novoEndereco[0] %></p>
+                                        <p><%= novoEndereco[1] + ', ' + novoEndereco[2] + ' - ' + novoEndereco[3] %></p>
+                                        <p><%= novoEndereco[4] + ' - ' + novoEndereco[5] + ' / ' + novoEndereco[6] + ' - CEP:' +  novoEndereco[7] %></p>                                        
+                                    </div> 
+
+                                    <div class="div-transportadora">
+                                        <p class="titulo-trans">TRANSPORTADORA</p>
+
+                                        <p class="nome-trans"><%= ultimoPedido[0].transportadora %></p>
+                                        <p>Seu pedido será entregue até 7 dias útis após o Pagamento.</p>                                       
+                                    </div> 
+
                                     <p class="titulo-produto">PRODUTO COMPRADO</p>
-                                    <article class="card">
-                                        <div class="div-card-img-infos">                                            
-                                            <figure>
-                                                <img src="/images/produtos/computador-lenovo.jpg" alt="Imagem PC Gamer">
-                                            </figure>
-                                            <div class="card-infos">
-                                                <p class="card-nome-produto">PC Gamer Fast White + HeadSet</p>
-                                                <p class="card-preco-anterior">De: R$2.500,00 por:</p>
-                                                <p class="card-preco-atual"><strong>R$2.299,00 à vista</strong></p>
-                                                <p class="card-preco-parcelado">12x de R$191,58</p>
-                                            </div>                                
-                                        </div>                                       
-                                    </article>
-                                </div>                                
+                                    <div class="div-produtos">
+
+                                        <% for(let i = 0; i < ultimoPedido[0].pedido_produto.length; i++) { %>  
+                                        
+                                        <div class="div-produto">                                        
+                                            <article class="card">
+                                                <div class="div-card-img-infos">                                            
+                                                    <figure>
+                                                        <img src="/images/produtos/<%=ultimoPedido[0].pedido_produto[i].img %>" alt="Imagem PC Gamer">
+                                                    </figure>
+                                                    <div class="card-infos">
+                                                        <p class="card-nome-produto"><%=ultimoPedido[0].pedido_produto[i].nome %></p>                                                    
+                                                        <p class="card-preco-atual"><strong><%=ultimoPedidoPrecoQtProduto[i].preco_produto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %></strong></p>
+                                                        <p class="card-preco-parcelado">1x de <%=ultimoPedidoPrecoQtProduto[i].preco_produto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> no Boleto</p>
+                                                        <p class="card-qt-produto"><%=ultimoPedidoPrecoQtProduto[i].qt_produto %> unidade(s)</p>
+                                                    </div>                                
+                                                </div>                                       
+                                            </article>
+                                        </div>
+
+                                        <% } %> 
+
+                                    </div>
+                                </div>
+                                <div class="btn-ver-todos-pedidos">
+                                    <a href="#">VER TODOS OS PEDIDOS</a>
+                                </div>                            
                             </div>
-                            <div class="btn-ver-todos-pedidos">
-                                <a href="#">VER TODOS OS PEDIDOS</a>
-                            </div>                            
-                        </div>
+
+                        <% } else { %>
+
+                            <div class="div-ultimo-pedido">
+                                <p class="titulo-ultimo-pedido">ESTAMOS AGUARDANDO SEU PRIMEIRO PEDIDO...</p>
+                                <a href="/" class="btn-pag-perfil-ir-as-compras">
+                                    <span id="img-carrinho" class="material-icons-outlined img-carrinho-2">shopping_cart</span>
+                                    IR AS COMPRAS
+                                </a>
+                            </div>
+
+                        <% } %> 
+
                     </div>
                 </div>
                 

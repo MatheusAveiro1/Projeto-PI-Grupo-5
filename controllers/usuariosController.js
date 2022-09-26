@@ -3,7 +3,7 @@ const {validationResult, Result} = require('express-validator');
 //Chamando o fs
 const fs = require('fs');
 //Chamando nosso model
-const {sequelize, Usuario, Endereco} = require('../models')
+const {sequelize, Usuario, Endereco, Pedido, ProdutoHasPedido} = require('../models')
 //Chamando o manipulado de hash
 const bcrypt = require('bcrypt');
 const db = require('../models');
@@ -22,7 +22,7 @@ const funcoesUsuarios = {
       //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
       if (!errors.isEmpty()) {
         //Retornaremos para page de cadastro com os erros
-        reject(res.render('login', { errors: errors.mapped(), dadosPreenchido: req.body }));
+        reject(res.render('login', { errors: errors.mapped(), carrinho: req.session.carrinho, dadosPreenchido: req.body }));
       } else {
         resolve();
       }
@@ -63,13 +63,13 @@ const funcoesUsuarios = {
           }
 
         }else{
-          reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", dadosPreenchido: req.body}))
+          reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", carrinho: req.session.carrinho, dadosPreenchido: req.body}))
         }
 
       }else{
 
        //Retorna o erro para usuário
-       reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", dadosPreenchido: req.body}));
+       reject(res.render('login', {falhaLogin: "Usuário ou Senha incorreto!", carrinho: req.session.carrinho ,dadosPreenchido: req.body}));
 
       }
 
@@ -95,7 +95,7 @@ const funcoesUsuarios = {
         }
 
         //Retornaremos para page de cadastro com os erros
-        reject (res.render('cadastro', { errorsFormCadastro: errors.mapped(), dadosPreenchido: req.body }));
+        reject (res.render('cadastro', { errorsFormCadastro: errors.mapped(),carrinho: req.session.carrinho, dadosPreenchido: req.body }));
         
       } else {
         resolve();
@@ -187,7 +187,7 @@ const funcoesUsuarios = {
       //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
       if (!errors.isEmpty()) {
         //Retornaremos para page de cadatro de endereço com os erros
-        reject (res.render('cadastroDeEndereco', { errorsFormEndereco: errors.mapped(), dadosPreenchido: req.body, paginaAtual: 'enderecos'}));
+        reject (res.render('cadastroDeEndereco', { errorsFormEndereco: errors.mapped(), carrinho: req.session.carrinho, dadosPreenchido: req.body, paginaAtual: 'enderecos'}));
       } else {
         resolve();
       }
@@ -200,7 +200,7 @@ const funcoesUsuarios = {
       //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
       if (!errors.isEmpty()) {
         //Retornaremos para page de cadatro de endereço com os erros
-        reject (res.render('editarEndereco', { errorsFormEndereco: errors.mapped(), endereco: req.body, paginaAtual: 'enderecos'}));
+        reject (res.render('editarEndereco', { errorsFormEndereco: errors.mapped(), carrinho: req.session.carrinho, endereco: req.body, paginaAtual: 'enderecos'}));
       } else {
         resolve();
       }
@@ -213,7 +213,7 @@ const funcoesUsuarios = {
       //Verifica se houve erros no formulário, se sim, devolve os erros para que o usuário
       if (!errors.isEmpty()) {        
         //Retornaremos para page de cadatro de endereço com os erros
-        reject (res.render('meus-dados', { errorsFormCadastro: errors.mapped(), paginaAtual: 'meusDados', dadosPreenchido: req.body, carrinho: req.session.carrinho}));
+        reject (res.render('meus-dados', { errorsFormCadastro: errors.mapped(), carrinho: req.session.carrinho, paginaAtual: 'meusDados', dadosPreenchido: req.body, carrinho: req.session.carrinho}));
       } else {
         resolve();
       }
@@ -282,10 +282,49 @@ const controlador = {
       console.log(err)
     }
   },
-  perfil: (req, res)=> {
+  perfil: async (req, res)=> {
+    try{
+      //Recuperando informação do último realizado
+      let ultimoPedido = await Pedido.findAll({
+        order:[['id','DESC']],
+        limit:[1],
+        include:[
+          'pedido_produto'          
+      ],
+        where: {
+            id_usuario: req.session.usuarioLogado.id
+        }
+      });      
 
-    return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil', carrinho: req.session.carrinho})
-    
+      //Definindo variaveis
+      let ultimoPedidoPrecoQtProduto = "";
+      let datahora = "";
+      //Verificando se a variavel ultomoPedido está vazia
+      if (ultimoPedido != "") {
+        ultimoPedidoPrecoQtProduto = await ProdutoHasPedido.findAll({      
+          where: {
+              pedidos_id: ultimoPedido[0].id
+          }
+        });
+
+        //Convertendo a hora que o pedido foi registrado       
+        function getDateTime(date) {
+          const moment = require('moment');
+          return moment(date).format('DD/MM/YYYY - HH:mm');
+        } 
+        datahora = getDateTime(ultimoPedido[0].datahora);
+
+      }
+       
+      // console.log('<<<<< Aqui >>>>>');
+      // console.log(ultimoPedido);
+      // console.log(ultimoPedidoPrecoQtProduto);
+
+      return res.render('perfil',{usuarioLogado: req.session.usuarioLogado, paginaAtual: 'perfil', ultimoPedido: ultimoPedido, ultimoPedidoPrecoQtProduto: ultimoPedidoPrecoQtProduto, datahoraPedido: datahora, carrinho: req.session.carrinho})
+    }
+    catch (err){
+      console.log(err);
+    }
   },
   meusDados: (req, res)=> {
     const meusDados = req.session.usuarioLogado;   
@@ -324,9 +363,37 @@ const controlador = {
       }
 
     },
+  meusPedidos: async (req, res) =>{
+    try{
+      //Recuperando os pedidos
+      let pedidos = await Pedido.findAll({
+        order:[['id','DESC']],
+        where: {
+            id_usuario: req.session.usuarioLogado.id
+        }
+      });
+
+      //Convertendo a datahora que o pedido foi registrado       
+      function getDateTime(date) {
+        const moment = require('moment');
+        return moment(date).format('DD/MM/YYYY - HH:mm');
+      }      
+      let datashoras = [];
+      for(let i = 0; i < pedidos.length; i++){
+        datashoras.push(getDateTime(pedidos[i].datahora));
+      }
+
+      return res.render ('meusPedidos', {paginaAtual: 'meusPedidos', pedidos: pedidos, datashoras: datashoras, carrinho: req.session.carrinho})
+    }
+    catch (err) {
+      if(err){
+        console.log(err);        
+      }
+    }
+  },
   mostraEnderecos: async (req, res) =>{
     try{
-       const enderecos = await Endereco.findAll({
+      const enderecos = await Endereco.findAll({
         where: {
             id_usuario: req.session.usuarioLogado.id
         }

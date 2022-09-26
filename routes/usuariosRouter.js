@@ -24,6 +24,9 @@ router.get('/perfil',usuarioNaoLogadoMiddleware, usuariosController.perfil);
 router.get('/meus-dados',usuarioNaoLogadoMiddleware, usuariosController.meusDados);
 router.put('/meus-dados',usuarioNaoLogadoMiddleware, validaAtualizacaoMeusDadosMiddlewares, usuariosController.atualizarMeusDados);
 
+//Rota get da página Meus Pedidos
+router.get('/meus-pedidos',usuarioNaoLogadoMiddleware, usuariosController.meusPedidos);
+
 //rota de endereço
 router.get('/enderecos',usuarioNaoLogadoMiddleware, usuariosController.mostraEnderecos);
 router.get('/enderecos/criar',usuarioNaoLogadoMiddleware, usuariosController.criarEndereco);
