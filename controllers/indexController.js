@@ -132,7 +132,7 @@ const controlador = {
   },
   centralDeAtendimento: async (req, res)=>{
     try {
-      res.render('central-de-atendimento');
+      res.render('central-de-atendimento', {carrinho: req.session.carrinho});
     }
     catch (err){
       console.log(err)
