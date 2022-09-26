@@ -98,6 +98,17 @@ main div div .home-produto {
     
 
 }
+
+.paginaproduto div div section .img-nome-valor-comprar .nome-valor-comprar .button-produto .linkCarrinho {
+
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
 .paginaproduto div div section {
     display: flex;
     flex-flow: column;
@@ -152,6 +163,7 @@ main div div .home-produto {
     flex-flow: column;
     justify-content: space-around;
     margin: 1% 0% 4% 0%;
+    cursor: pointer;
 
 }
 .paginaproduto div div .mais-produtos .produto .img-produto img{
@@ -198,6 +210,15 @@ main div div .home-produto {
     cursor: pointer;
     margin-top: 5%;
 
+}
+
+.paginaproduto div div .mais-produtos .produto .button-produto .linkCarrinho {
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 
