@@ -282,7 +282,9 @@ const controlador = {
         { where: { id: req.session.usuarioLogado.id} });
 
         res.render('alterar-senha', {paginaAtual: "alterarSenha", carrinho: req.session.carrinho, statusAlteracaoSenha: 'sucesso'});
-      }      
+      } else {
+        res.render('alterar-senha', {paginaAtual: "alterarSenha", carrinho: req.session.carrinho, statusAlteracaoSenha: 'erroSenhaAtual'});
+      }     
     }
     catch (err) {
       if(err != '') {
