@@ -48,6 +48,13 @@
                             <br>       
                         <% } %>
 
+                        <% if(locals.statusAlteracaoSenha && statusAlteracaoSenha == "erroSenhaAtual") { %>                            
+                            <p  class="msgStatusErro">
+                                Senha  <b>atual incorreta</b>! O processo não foi concluído!                                
+                            </p>  
+                            <br>     
+                        <% } %>
+
                         <% if(locals.statusAlteracaoSenha && statusAlteracaoSenha == "erro") { %>                            
                             <p  class="msgStatusErro">
                                 <strong><%=msgErro%>!</strong> O processo não foi concluído!                                
