@@ -35,4 +35,15 @@ __Página Checkout Revisão do Pedido__ - Para finalizar, nesta página o client
 __Página Checkout Pedido Concluído__ - Após finalizar a compra na etapa anterior, você será redirecionado para está página. Aqui será apresentado o número
 do Pedido, um botão para ver o Pedido e um botão para gerar o Boleto.
 
-__Página Central de Atendimento__ - Esta página é direcionada para dúvidas dos clientes. Nela contém um simples formulário, número de contato e um e-mail do SAC.
+__Página Central de Atendimento__ - Esta página é direcionada para dúvidas dos clientes. Nela contém um simples formulário, número de contato e um e-mail do SAC.    
+
+
+## Tecnologias Utilizadas
+
+__Ferramentas__ - Node.JS
+
+__Linguagens__ - HTML / CSS / JS
+
+__Banco de Dados__ - Mysql
+
+__Metodologia__ - MVC
