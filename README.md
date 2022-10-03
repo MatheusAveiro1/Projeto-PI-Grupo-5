@@ -62,6 +62,11 @@ __Página Central de Atendimento__ - Esta página é direcionada para dúvidas d
   <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/nodemon-v2.0.19-orange">
 </div>
 
+## Inicialização
 
+__Repositório__ - https://github.com/MatheusAveiro1/Projeto-PI-Grupo-5.git
+
+__Dependências__ - Para o projeto funcionar perfeitamente primeiro será necessário fazer a instalação do Node.js. Depois será necessário instalar o banco de dados
+Mysql (Link da estrutura de dados - )
 
 
