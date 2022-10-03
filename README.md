@@ -66,7 +66,22 @@ __Página Central de Atendimento__ - Esta página é direcionada para dúvidas d
 
 __Repositório__ - https://github.com/MatheusAveiro1/Projeto-PI-Grupo-5.git
 
-__Dependências__ - Para o projeto funcionar perfeitamente primeiro será necessário fazer a instalação do Node.js. Depois será necessário instalar o banco de dados
-Mysql (Link da estrutura de dados - )
+__Dependências__ - Para que o projeto possa funcionar perfeitamente primeiro será necessário fazer a instalação do Node.js (https://nodejs.org/en/). Depois será necessário instalar o banco de dados Mysql (https://www.mysql.com/downloads/), "o arquivo contendo a estrutura de dados está no seguinte caminho --> Projeto-PI-Grupo-5/database/topsales6.sql".  
+Após a primeira etapa, você vai pode instalar o Git caso esteja no Windows (https://git-scm.com/downloads), no Linux e Mac não é necessário (isso facilitará o proceso de clonagem do projeto).
+A IDE utilizada no projeto foi o Visual Studio Code (https://code.visualstudio.com/download), com ela você terá acesso aos terminais disponivéis instalados no Sistema Operacional.  
+Agora com um terminal aberto e tudo instalado corretamente, você fará o clone do projeto em uma pasta da sua escolha com seguinte comando:  
+
+_git clone https://github.com/MatheusAveiro1/Projeto-PI-Grupo-5.git _
+
+Após a clonagem do projeto, você baixar todas as depências com seguinte comando:
+
+_npm install_
+
+Nessa altura o projeto já deve esta clonado e com as dependências instaladas corretamente, agora basta iniciar com seguinte comando:
+
+_nodemon start_
+
+Por fim, basta abrir o seu navedagor de preferência e a acesar o link --> http://localhost:3000  
+Se tudo correu bem você acessará a página Home do Projeto.
 
 
