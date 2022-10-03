@@ -37,6 +37,7 @@ do Pedido, um botão para ver o Pedido e um botão para gerar o Boleto.
 
 __Página Central de Atendimento__ - Esta página é direcionada para dúvidas dos clientes. Nela contém um simples formulário, número de contato e um e-mail do SAC.    
 
+<br>
 
 ## Tecnologias Utilizadas
 
@@ -46,8 +47,8 @@ __Página Central de Atendimento__ - Esta página é direcionada para dúvidas d
   <img algin="center" alt="CCS3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
   <img algin="center" alt="JAVASCRIPT" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
   <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white">
- </div>
-
+</div>
+<br>
 <div stayle="display: inline_block;margin: 0 0 40px 0">
   <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/bcrypt-v5.0.1-yellow">
   <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/cookie--parser-v1.4.4-orange">
@@ -61,6 +62,8 @@ __Página Central de Atendimento__ - Esta página é direcionada para dúvidas d
   <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/sequelize-v6.23.0-lightgrey">
   <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/nodemon-v2.0.19-orange">
 </div>
+
+<br>
 
 ## Inicialização
 
@@ -91,6 +94,8 @@ __nodemon start__
 Por fim, basta abrir o seu navegador de preferência e a acessar o link --> http://localhost:3000  
 Se tudo correu bem, você acessará a página Home do Projeto.
 
+<br>
+
 ## Colaboradores
 
 * Alisson Mendes - https://github.com/Alisson-Mendes
@@ -100,3 +105,13 @@ Se tudo correu bem, você acessará a página Home do Projeto.
 * Nathally Nayanne Alencar Silva Leão - https://github.com/Nathallyleao
 * Weslei Macedo Teixeira - https://github.com/WESLEIACTION
 
+<br>
+
+## Status do Projeto
+
+Atualmente o Projeto Topsales6 está em __"Andamento"__.  
+Algumas mudificações como por exemplo implementação do __React no Front End__ poderão ocorrer em breve.
+
+<br><br>
+
+Obrigado por visitar nossa página.
