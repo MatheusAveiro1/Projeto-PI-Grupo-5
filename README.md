@@ -40,10 +40,28 @@ __Página Central de Atendimento__ - Esta página é direcionada para dúvidas d
 
 ## Tecnologias Utilizadas
 
-__Ferramentas__ - Node.JS
+<div stayle="display: inline_block">
+  <img algin="center" alt="NODE.JS" src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white">
+  <img algin="center" alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img algin="center" alt="CCS3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <img algin="center" alt="JAVASCRIPT" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white">
+ </div>
 
-__Linguagens__ - HTML / CSS / JS
+<div stayle="display: inline_block;margin: 0 0 40px 0">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/bcrypt-v5.0.1-yellow">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/cookie--parser-v1.4.4-orange">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/ejs-v2.6.9-brightgreen">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/express-4.16.1-yellowgreen">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/express--session-v1.17.3-yellowgreen">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/express--validator-v6.14.2-yellowgreen">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/method--override-v3.0.0-red">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/multer-v1.4.5--lts.1-blue">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/mysql2-v2.3.3-lightgrey">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/sequelize-v6.23.0-lightgrey">
+  <img algin="center" alt="MYSQL" src="https://img.shields.io/badge/nodemon-v2.0.19-orange">
+</div>
 
-__Banco de Dados__ - Mysql
 
-__Metodologia__ - MVC
+
+
