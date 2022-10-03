@@ -66,22 +66,29 @@ __Página Central de Atendimento__ - Esta página é direcionada para dúvidas d
 
 __Repositório__ - https://github.com/MatheusAveiro1/Projeto-PI-Grupo-5.git
 
-__Dependências__ - Para que o projeto possa funcionar perfeitamente primeiro será necessário fazer a instalação do Node.js (https://nodejs.org/en/). Depois será necessário instalar o banco de dados Mysql (https://www.mysql.com/downloads/), "o arquivo contendo a estrutura de dados está no seguinte caminho --> Projeto-PI-Grupo-5/database/topsales6.sql".  
-Após a primeira etapa, você vai pode instalar o Git caso esteja no Windows (https://git-scm.com/downloads), no Linux e Mac não é necessário (isso facilitará o proceso de clonagem do projeto).
-A IDE utilizada no projeto foi o Visual Studio Code (https://code.visualstudio.com/download), com ela você terá acesso aos terminais disponivéis instalados no Sistema Operacional.  
+__Dependências:__ 
+
+Para que o projeto possa funcionar perfeitamente primeiro será necessário fazer a instalação do Node.js (https://nodejs.org/en/).  
+
+Depois será necessário instalar o banco de dados Mysql (https://www.mysql.com/downloads/), "o arquivo contendo a estrutura de dados está no seguinte caminho --> Projeto-PI-Grupo-5/database/topsales6.sql".  
+
+Após a primeira etapa, você pode instalar o Git caso esteja no Windows (https://git-scm.com/downloads), no Linux e Mac não é necessário (o Git facilitará o processo de clonagem do projeto).
+
+A IDE utilizada no projeto foi o Visual Studio Code (https://code.visualstudio.com/download), com ela você terá acesso aos terminais disponíveis instalados no Sistema Operacional.  
+
 Agora com um terminal aberto e tudo instalado corretamente, você fará o clone do projeto em uma pasta da sua escolha com seguinte comando:  
 
-_git clone https://github.com/MatheusAveiro1/Projeto-PI-Grupo-5.git _
+__git clone https://github.com/MatheusAveiro1/Projeto-PI-Grupo-5.git__
 
-Após a clonagem do projeto, você baixar todas as depências com seguinte comando:
+Após a clonagem do projeto, você baixar todas as depedências com seguinte comando:
 
-_npm install_
+__npm install__
 
-Nessa altura o projeto já deve esta clonado e com as dependências instaladas corretamente, agora basta iniciar com seguinte comando:
+Nessa altura o projeto já deve está clonado e com as dependências instaladas corretamente, agora basta iniciar com seguinte comando:
 
-_nodemon start_
+__nodemon start__
 
-Por fim, basta abrir o seu navedagor de preferência e a acesar o link --> http://localhost:3000  
-Se tudo correu bem você acessará a página Home do Projeto.
+Por fim, basta abrir o seu navegador de preferência e a acessar o link --> http://localhost:3000  
+Se tudo correu bem, você acessará a página Home do Projeto.
 
 
