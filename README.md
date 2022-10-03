@@ -1,4 +1,4 @@
-# TopSales6
+<img style="width: 300px;" src="https://raw.githubusercontent.com/MatheusAveiro1/Projeto-PI-Grupo-5/9cdbfebb094f72f7cf534305545ce43766407878/public/images/logo.svg" alt="Logo TopSales6" />
 
 O projeto TopSales6 é um E-Commerce que tem como objetivo facilitar o processo de compra online de forma segura.
 A iniciativa do projeto se deu durante o curso de Desenvolvimento Web Full Stack na Digital House. O E-Commerce TopSales6 foi apresentado 
@@ -69,7 +69,7 @@ __Página Central de Atendimento__ - Esta página é direcionada para dúvidas d
 
 __Repositório__ - https://github.com/MatheusAveiro1/Projeto-PI-Grupo-5.git
 
-__Dependências:__ 
+__Instalações:__ 
 
 Para que o projeto possa funcionar perfeitamente primeiro será necessário fazer a instalação do Node.js (https://nodejs.org/en/).  
 
@@ -110,8 +110,8 @@ Se tudo correu bem, você acessará a página Home do Projeto.
 ## Status do Projeto
 
 Atualmente o Projeto Topsales6 está em __"Andamento"__.  
-Algumas mudificações como por exemplo implementação do __React no Front End__ poderão ocorrer em breve.
+Algumas mudificações como por exemplo, a implementação do __React no Front End__ poderão ocorrer em breve.
 
-<br><br>
+<br>
 
 Obrigado por visitar nossa página.
