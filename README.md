@@ -91,4 +91,12 @@ __nodemon start__
 Por fim, basta abrir o seu navegador de preferência e a acessar o link --> http://localhost:3000  
 Se tudo correu bem, você acessará a página Home do Projeto.
 
+## Colaboradores
+
+* Alisson Mendes - https://github.com/Alisson-Mendes
+* Diya Mustafa Mohammad Shami - https://github.com/dyshami
+* Fernando Ferreira Mendonça - https://github.com/fernandofm3
+* Matheus Aveiro de Souza - https://github.com/MatheusAveiro1
+* Nathally Nayanne Alencar Silva Leão - https://github.com/Nathallyleao
+* Weslei Macedo Teixeira - https://github.com/WESLEIACTION
 
