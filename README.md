@@ -73,7 +73,7 @@ __Instalações:__
 
 Para que o projeto possa funcionar perfeitamente primeiro será necessário fazer a instalação do Node.js (https://nodejs.org/en/).  
 
-Depois será necessário instalar o banco de dados Mysql (https://www.mysql.com/downloads/), "o arquivo contendo a estrutura de dados está no seguinte caminho --> Projeto-PI-Grupo-5/database/topsales6.sql".  
+Depois será necessário instalar o Mysql (https://www.mysql.com/downloads/). Em seguda crie um novo banco de dados com nome "topsales6" sem aspas (o arquivo contendo a estrutura de dados está no seguinte caminho --> Projeto-PI-Grupo-5/database/topsales6.sql).  
 
 Após a primeira etapa, você pode instalar o Git caso esteja no Windows (https://git-scm.com/downloads), no Linux e Mac não é necessário (o Git facilitará o processo de clonagem do projeto).
 
@@ -83,11 +83,11 @@ Agora com um terminal aberto e tudo instalado corretamente, você fará o clone 
 
 __git clone https://github.com/MatheusAveiro1/Projeto-PI-Grupo-5.git__
 
-Após a clonagem do projeto, você baixar todas as depedências com seguinte comando:
+Após a clonagem do projeto, você irá baixar todas as depedências com seguinte comando:
 
 __npm install__
 
-Nessa altura o projeto já deve está clonado e com as dependências instaladas corretamente, agora basta iniciar com seguinte comando:
+Nessa altura, o projeto já deve está clonado e com as dependências instaladas corretamente, agora basta iniciar com seguinte comando:
 
 __nodemon start__
 
